@@ -1,0 +1,68 @@
+# Общие тексты. Русский.
+
+app.tagline = Приватность и очистка
+app.alreadyOpen.title = TURBiX уже открыт
+app.alreadyOpen.text = Окно TURBiX уже запущено.
+app.unhandled = Необработанная ошибка: {0}
+app.unexpected.log = Непредвиденная ошибка: {0}
+app.unexpected.title = Непредвиденная ошибка
+app.unexpected.text = {0}\n\nПодробности записаны в журнал действий.
+changelog.readError = Не удалось прочитать историю изменений: {0}
+
+nav.section.menu = МЕНЮ
+nav.section.system = СИСТЕМА
+nav.home = Главная
+nav.privacy = Конфиденциальность
+nav.cleanup = Очистка
+nav.performance = Производительность
+nav.apps = Приложения
+nav.health = Состояние
+nav.tools = Исправления
+nav.restore = Восстановление
+nav.log = Журнал действий
+nav.changelog = Что нового
+nav.about = О TURBiX
+
+common.refresh = Обновить
+common.refreshState = Обновить состояние
+common.quickSelect = Быстрый выбор
+common.recommended = Рекомендуемые
+common.maximum = Максимум
+common.all = Все
+common.none = Ничего
+common.optional = НЕОБЯЗАТЕЛЬНО
+common.advanced = ДЛЯ ОПЫТНЫХ
+common.security = БЕЗОПАСНОСТЬ
+common.continue = Продолжить
+common.cancel = Отмена
+common.ok = Понятно
+common.open = Открыть
+common.close = Закрыть
+common.noInternet = Не использует интернет
+common.noData = Нет данных
+common.state.applied = Применено
+common.state.notApplied = Не применено
+common.state.partial = Частично
+common.state.notApplicable = Не требуется
+common.state.enabled = Включено
+common.state.disabled = Отключено
+
+unit.b = Б
+unit.kb = КБ
+unit.mb = МБ
+unit.gb = ГБ
+unit.percent = {0}\u00A0%
+
+log.title = Журнал действий
+log.subtitle = Всё, что делает TURBiX, записывается здесь и в текстовый файл, включая прошлые сеансы, — так всегда видно, что и когда изменилось.
+log.copy = Копировать
+log.openFolder = Открыть папку журналов
+log.clearView = Очистить окно
+log.help = Журналы сохраняются по дням в C:\ProgramData\TURBiX\Logs, а при запуске TURBiX подгружаются записи за прошлые дни. «Очистить окно» убирает записи только с экрана — файлы остаются.\n\nЕсли что-то работает не так, как вы ожидали, скопируйте журнал и приложите его к сообщению о проблеме.
+log.today = Сегодня
+log.yesterday = Вчера
+log.level.info = ИНФО
+log.level.success = ОК
+log.level.warning = ВНИМАНИЕ
+log.level.error = ОШИБКА
+log.level.step = ШАГ

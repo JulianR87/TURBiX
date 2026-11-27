@@ -1,0 +1,267 @@
+# Fixes: Repair, Windows Registry and Windows settings tabs. English.
+
+tools.subtitle = Fixes for the most common Windows problems, and settings to get rid of its annoyances.
+tools.tab.repair = Repair
+tools.tab.registry = Windows Registry
+tools.tab.windows = Windows settings
+
+# Diagnostics (summary shown on Home)
+tools.diag.checking = Checking your PC…
+tools.diag.issues.one = {0} thing to improve
+tools.diag.issues.other = {0} things to improve
+tools.diag.notes.one = {0} suggestion
+tools.diag.notes.other = {0} suggestions
+tools.diag.none = No problems found
+tools.diag.failed = The check couldn't be completed.
+tools.diag.log.error = Diagnostics: {0}
+
+# ------------------------------------------------------------------ Repair
+tools.repair.note = These are the repairs Microsoft support recommends, using the tools built into Windows. Use them when you have the problem they describe; there's no need to run them “just in case”. Everything they do is written to the Activity log.
+tools.repair.run = Run
+tools.repair.takes = Takes {0}
+tools.repair.helpDuration = Takes about {0}.
+tools.repair.confirm = Takes about {0}. It can't be canceled once it starts.
+tools.repair.failed = Couldn't finish
+tools.repair.log = {0}: {1}
+
+repair.duration.range = {0}–{1} min
+repair.duration.underMinute = under 1 min
+repair.duration.seconds = a few seconds
+repair.progress.percent = {0}… {1}%
+repair.progress.done = Done
+
+repair.sfc.name = Repair Windows files
+repair.sfc.summary = Finds damaged system files and restores them (SFC).
+repair.sfc.help = Runs the Windows System File Checker (sfc /scannow). It checks every protected Windows file and replaces any that are damaged or modified with a good copy.\n\nWhen to use it: strange errors, Windows apps that won't open, blue screens or unexpected crashes.
+repair.sfc.log = Repairing Windows files (sfc /scannow)
+repair.sfc.status = Checking Windows files
+repair.sfc.ok = Windows found no damaged files, or repaired all of them. The details are in the Activity log.
+repair.sfc.warn = The check finished with warnings (code {0}). If it says some files couldn't be repaired, run “Repair the Windows image” and then run this repair again.
+
+repair.dism.name = Repair the Windows image
+repair.dism.summary = Repairs the store SFC takes its good files from (DISM).
+repair.dism.help = Runs DISM /Online /Cleanup-Image /RestoreHealth. It repairs the internal copy of Windows that updates and SFC rely on.\n\nWhen to use it: if “Repair Windows files” says it couldn't repair something, or if Windows Update keeps failing. Afterwards, it's a good idea to run the file repair again.
+repair.dism.warning = Windows may download missing files from Windows Update (Windows does this, not TURBiX).
+repair.dism.log = Repairing the Windows image (DISM RestoreHealth)
+repair.dism.status = Repairing the Windows image
+repair.dism.ok = The Windows image is healthy. You can now run “Repair Windows files”.
+repair.dism.fail = DISM finished with code {0}. Check the Activity log. If source files are missing, make sure Windows can reach the internet and try again.
+
+repair.chkdsk.name = Check the disk
+repair.chkdsk.summary = Scans the system drive for errors without changing anything.
+repair.chkdsk.help = Runs chkdsk /scan on the Windows drive. It's an online scan: it doesn't restart or change anything, it only reports file system errors.\n\nWhen to use it: files that get corrupted, the PC freezing while copying, or Windows warning about disk errors.
+repair.chkdsk.log = Checking drive {0} (chkdsk /scan)
+repair.chkdsk.status = Scanning drive {0}
+repair.chkdsk.ok = No errors were found on the disk.
+repair.chkdsk.fail = The scan found something to look at (code {0}). See the Activity log. If it asks for a repair, open a command prompt as administrator and run “chkdsk {1} /f”; it will run at the next restart.
+
+repair.network.name = Reset the network
+repair.network.summary = Fixes “connected, no internet” and pages that won't load.
+repair.network.help = Resets the Windows network components (Winsock and TCP/IP) and clears the DNS cache. It's the standard fix when Wi-Fi or Ethernet shows as connected but there's no internet, or when some websites won't open.
+repair.network.warning = If you set a static IP or DNS by hand, you'll need to enter them again. Some VPNs ask you to reinstall their adapter. A restart is required.
+repair.network.log = Resetting the network
+repair.network.winsock = Resetting Winsock…
+repair.network.tcpip = Resetting TCP/IP…
+repair.network.dns = Clearing the DNS cache…
+repair.network.done = Network reset
+repair.network.ok = The network was reset. Restart your PC to finish the repair.
+repair.network.fail = Winsock couldn't be reset (code {0}/{1}). Check the Activity log.
+
+repair.spooler.name = Clear a stuck print queue
+repair.spooler.summary = Removes stuck jobs when the printer won't print.
+repair.spooler.help = Stops the Print Spooler service, deletes the documents stuck in the queue and starts it again. It's the usual fix when a document stays on “Printing” or “Deleting” and blocks everything behind it.
+repair.spooler.warning = All documents waiting to print are canceled.
+repair.spooler.log = Clearing the print queue
+repair.spooler.stopping = Stopping the Print Spooler service…
+repair.spooler.stopFailed = The Print Spooler service couldn't be stopped. Close any programs that are printing and try again.
+repair.spooler.deleting = Deleting stuck documents…
+repair.spooler.starting = Starting the Print Spooler service…
+repair.spooler.startFailed = The Print Spooler service couldn't be started: {0}
+repair.spooler.logDone.one = Print queue: {0} file deleted.
+repair.spooler.logDone.other = Print queue: {0} files deleted.
+repair.spooler.empty = The queue was already empty. The Print Spooler service was restarted.
+repair.spooler.deleted.one = {0} file was deleted from the queue and the Print Spooler service was restarted.
+repair.spooler.deleted.other = {0} files were deleted from the queue and the Print Spooler service was restarted.
+
+repair.explorer.name = Restart Windows Explorer
+repair.explorer.summary = Fixes the taskbar, Start menu or desktop when they freeze.
+repair.explorer.help = Closes and reopens Windows Explorer (taskbar, Start menu, desktop and folders) without restarting the PC. Your programs stay open.
+repair.explorer.warning = Open folder windows will close.
+repair.explorer.log = Restarting Windows Explorer
+repair.explorer.closing = Closing Explorer…
+repair.explorer.waiting = Waiting for it to come back…
+repair.explorer.logDone = Windows Explorer restarted.
+repair.explorer.done = Windows Explorer was restarted.
+
+# ------------------------------------------------------------------ Windows Registry
+regfix.note = TURBiX looks for registry entries that point to programs or files that no longer exist: broken startup items, “ghost” programs in the uninstall list and leftovers from deleted programs. Removing them stops error messages, but it won't make your PC any faster; no registry cleaner does. Only entries that can be verified are flagged, and everything is backed up before it's deleted.
+regfix.scan = Find problems
+regfix.help = What gets checked:\n\n• Broken startup: programs Windows tries to open at startup that no longer exist.\n• Ghost program: listed as installed, but its files and uninstaller are gone.\n• App path and Shared DLL: references to deleted files.\n• Name cache: names of programs that are no longer there.\n\nWhat is NOT touched: COM classes, file associations, services or anything that can't be verified. Nor anything on removable or network drives, since they may simply be disconnected.
+regfix.footer = Each entry is backed up before it's deleted. You can get it back from Restore.
+
+regfix.cat.startup = Broken startup
+regfix.cat.uninstall = Ghost program
+regfix.cat.appPath = App path
+regfix.cat.sharedDll = Shared DLL
+regfix.cat.muiCache = Name cache
+
+regfix.detail.missing = Missing: {0}
+regfix.detail.missingFolder = Folder missing: {0}
+regfix.help.startup = Windows tries to open this program every time you sign in, but the file no longer exists (usually because it was uninstalled). It can cause an error message at startup.
+regfix.help.uninstall = It shows up in the list of installed programs, but its files and uninstaller no longer exist. That's why it can't be uninstalled from Windows and stays in the list as a “ghost”.
+regfix.help.appPath = Windows uses this entry to find the program when you type its name in Run. The program is gone, so the entry is useless.
+regfix.help.sharedDll = A counter for a file shared by several programs. The file no longer exists, so the counter isn't needed.
+regfix.help.muiCache = Windows remembers the name of every program that was ever opened, even if it was later deleted or was just a downloaded installer. It's only a cache: removing these entries doesn't affect anything, and neither does leaving them.
+regfix.muiCache.name.one = Name of {0} program that no longer exists
+regfix.muiCache.name.other = Names of {0} programs that no longer exist
+
+regfix.progress.startup = Startup programs…
+regfix.progress.installed = Installed programs…
+regfix.progress.appPaths = App paths…
+regfix.progress.sharedDlls = Shared DLLs…
+regfix.progress.muiCache = Program name cache…
+regfix.progress.scanDone = Scan finished
+regfix.progress.fixDone = Registry repaired
+
+regfix.session.one = Registry: {0} entry
+regfix.session.other = Registry: {0} entries
+regfix.log.scan = Looking for broken entries in the Windows Registry
+regfix.log.found.one = Registry: {0} broken entry found.
+regfix.log.found.other = Registry: {0} broken entries found.
+regfix.log.fixing.one = Repairing {0} registry entry
+regfix.log.fixing.other = Repairing {0} registry entries
+regfix.log.fixFailed = Couldn't repair “{0}”: {1}
+regfix.log.backupSaved = Backup saved to {0}
+regfix.log.fixed.one = Registry: {0} entry repaired, {1} with errors.
+regfix.log.fixed.other = Registry: {0} entries repaired, {1} with errors.
+regfix.log.error = Registry: {0}
+regfix.error.exportFailed = the key couldn't be backed up, so it wasn't deleted.
+regfix.error.backupMissing = Backup file missing: {0}
+regfix.error.importFailed = Windows couldn't import {0}
+
+# ------------------------------------------------------------------ Windows settings
+wintweak.presets.help = Recommended: changes almost everyone appreciates that don't remove any feature.\n\nAll: also adds the OPTIONAL ones, which are a matter of taste or only make sense on some PCs. Read each one's explanation before applying it.
+wintweak.restorePoint = Create a restore point before applying
+wintweak.restorePoint.help = Creates a Windows restore point before applying the changes, on top of the backup TURBiX always keeps so you can undo them from Restore.
+
+wintweak.apply.button.one = Apply {0} setting
+wintweak.apply.button.other = Apply {0} settings
+wintweak.apply.confirm.one = {0} Windows setting will be applied.\n\nTURBiX will back up every value it changes so you can undo it from Restore.
+wintweak.apply.confirm.other = {0} Windows settings will be applied.\n\nTURBiX will back up every value it changes so you can undo them from Restore.
+wintweak.apply.warnings = Keep in mind:
+wintweak.apply.title = Apply Windows settings
+wintweak.apply.confirmButton = Apply settings
+wintweak.apply.busy = Applying Windows settings
+wintweak.apply.error = Something went wrong
+wintweak.result.nothing = All the selected settings were already applied. Nothing needed to change.
+wintweak.result.changed.one = {0} change was made.
+wintweak.result.changed.other = {0} changes were made.
+wintweak.result.changedErrors.one = {0} change was made ({1} with errors, see the Activity log).
+wintweak.result.changedErrors.other = {0} changes were made ({1} with errors, see the Activity log).
+wintweak.result.restart = Sign out or restart your PC for all the changes to take effect.
+wintweak.result.title = Settings applied
+wintweak.result.titleWarnings = Settings applied with warnings
+
+wintweak.cat.interface = Windows annoyances
+wintweak.cat.interface.help = Changes to the Windows interface that many people prefer done differently.
+wintweak.cat.boot = Startup and disk
+wintweak.cat.boot.help = Windows behaviors that affect startup and disk usage, especially on PCs with a hard drive or little free space.
+wintweak.cat.taskbar = Taskbar and Start
+wintweak.cat.taskbar.help = Taskbar and Start menu buttons and suggestions that many people don't use.
+wintweak.cat.services = Optional services
+wintweak.cat.services.help = Windows services for features hardly anyone uses. They're disabled (not deleted) and can be turned back on from Restore.\n\nTURBiX leaves out services whose removal would break something important: Windows Update, security, networking, audio, Bluetooth, Xbox or SysMain on an SSD.
+
+wintweak.fileExtensions.name = Show file extensions
+wintweak.fileExtensions.summary = You'll see “photo.jpg” or “invoice.pdf.exe” with their full names.
+wintweak.fileExtensions.help = By default Windows hides file extensions (.jpg, .pdf, .exe). Showing them tells you what each file really is, and it's a simple security measure: a virus disguised as “invoice.pdf.exe” no longer looks like a PDF.
+wintweak.searchHighlights.name = Search highlights
+wintweak.searchHighlights.summary = Removes the drawings and news from the search box.
+wintweak.searchHighlights.help = Turns off search highlights: the icon in the taskbar search box that changes every day, and the news and “on this day” suggestions that appear when you open it.
+wintweak.startAccountNotifications.name = Account notifications in Start
+wintweak.startAccountNotifications.summary = Removes prompts like “back up to OneDrive” or “finish setting up”.
+wintweak.startAccountNotifications.help = Turns off Microsoft account notifications in the Start menu (OneDrive backup, Microsoft 365, finish setting up your device).
+wintweak.taskbarEndTask.name = “End task” on the taskbar
+wintweak.taskbarEndTask.summary = Close a frozen program by right-clicking its icon.
+wintweak.taskbarEndTask.help = Adds “End task” to the menu you get when you right-click a program on the taskbar, so you can close a program that's not responding without opening Task Manager. Requires Windows 11 23H2 or later.
+wintweak.classicContextMenu.name = Classic context menu
+wintweak.classicContextMenu.summary = Right-click shows every option, without “Show more options”.
+wintweak.classicContextMenu.help = Windows 11 shows a shorter right-click menu and hides the rest behind “Show more options”. This brings back the full Windows 10 menu, with every option in view.
+wintweak.classicContextMenu.warning = Takes effect after you sign out or restart Windows Explorer (Repair tab).
+wintweak.explorerThisPc.name = File Explorer opens to This PC
+wintweak.explorerThisPc.summary = Opening a folder window shows your drives instead of Home.
+wintweak.explorerThisPc.help = Makes File Explorer open straight to This PC (drives and main folders) instead of the Home page with recent files.
+
+wintweak.storageSense.name = Turn on Storage Sense
+wintweak.storageSense.summary = Windows deletes temporary files by itself when space runs low.
+wintweak.storageSense.help = Turns on Windows Storage Sense, which automatically deletes temporary files and empties old items from the Recycle Bin when the drive is running out of space. It keeps the disk from filling up without you noticing.
+wintweak.fastStartup.name = Turn off Fast startup
+wintweak.fastStartup.summary = “Shut down” really shuts Windows down again.
+wintweak.fastStartup.help = With Fast startup, shutting down doesn't fully turn Windows off: it hibernates the kernel so it boots faster. That's why some problems aren't fixed by turning the PC off and on, drivers get stuck, and dual boot misbehaves. With it off, every power-on is a clean start.
+wintweak.fastStartup.warning = On PCs with a hard drive, startup will take a few seconds longer. With an SSD you'll hardly notice.
+wintweak.sysmainHdd.name = SysMain on hard drives
+wintweak.sysmainHdd.summary = Stops the program preloading that keeps the disk at 100%.
+wintweak.sysmainHdd.help = SysMain (formerly Superfetch) preloads the programs you use most into memory. On an SSD it helps and should stay on. On a hard drive (HDD) with little memory it can keep the disk at 100% for minutes after you turn the PC on. TURBiX only offers this setting when Windows is installed on an HDD; on an SSD it shows “Doesn't apply”.
+wintweak.sysmainHdd.warning = Programs may take a little longer to open the first time.
+wintweak.hibernation.name = Turn off hibernation
+wintweak.hibernation.summary = Frees several GB of disk space (the hiberfil.sys file).
+wintweak.hibernation.help = Windows keeps a file on the disk about the size of a large part of your RAM (hiberfil.sys) so it can hibernate. If you never use Hibernate, turning it off frees that space after a restart: usually between 3 and 13 GB.\n\nIt also turns off Fast startup, which depends on hibernation.
+wintweak.hibernation.warning = The Hibernate option goes away. On laptops, the PC will shut down instead of hibernating when the battery runs out.
+
+wintweak.edgeShortcut.name = Edge shortcut after every update
+wintweak.edgeShortcut.summary = Edge stops putting its icon back on the desktop.
+wintweak.edgeShortcut.help = Every time Microsoft Edge updates, it can put its desktop shortcut back even if you deleted it. This official Edge policy prevents that. It doesn't uninstall or change anything else in Edge.
+wintweak.meetNow.name = Meet Now button
+wintweak.meetNow.summary = Removes the Skype video call icon from the taskbar.
+wintweak.meetNow.help = Windows 10 added a button next to the clock for starting Skype meetings. Skype no longer exists, so the button is useless.
+wintweak.teamsChat.name = Teams Chat button
+wintweak.teamsChat.summary = Removes the personal Teams icon from the taskbar.
+wintweak.teamsChat.help = Early versions of Windows 11 had a Chat button on the taskbar for personal Microsoft Teams. This removes it.
+wintweak.cortana.name = Cortana button
+wintweak.cortana.summary = Removes the Cortana button from the taskbar.
+wintweak.cortana.help = Microsoft retired Cortana, but on Windows 10 its button may still be on the taskbar.
+wintweak.taskView.name = Task View button
+wintweak.taskView.summary = Removes the virtual desktops button from the taskbar.
+wintweak.taskView.help = Removes the Task View button from the taskbar. The feature is still there with Win+Tab.
+wintweak.searchIcon.name = Search as an icon
+wintweak.searchIcon.summary = Replaces the taskbar search box with a small icon.
+wintweak.searchIcon.help = The search box takes up a lot of room on the taskbar. With this setting only the magnifier stays; you can also search by pressing the Windows key and typing.
+wintweak.taskbarLeft.name = Taskbar aligned left
+wintweak.taskbarLeft.summary = The Start button goes back to the corner, like in Windows 10.
+wintweak.taskbarLeft.help = Windows 11 centers the taskbar icons. This setting aligns them to the left.
+wintweak.recentFiles.name = Recent files in Start and File Explorer
+wintweak.recentFiles.summary = Stops showing the last files you opened.
+wintweak.recentFiles.help = Windows shows the files you opened recently in the Start menu, in Quick access and in each program's jump list. It's handy, but anyone using your PC can see them. This setting stops tracking and showing them.
+wintweak.recentFiles.warning = Programs' recent file lists (right-click on the taskbar) will be empty.
+wintweak.hiddenFiles.name = Show hidden files
+wintweak.hiddenFiles.summary = File Explorer shows hidden files and folders.
+wintweak.hiddenFiles.help = Shows files and folders marked as hidden (AppData, for example). Useful for finding settings files or seeing what's taking up space. Protected system files stay hidden.
+
+wintweak.svc.fax.name = Fax
+wintweak.svc.fax.summary = Sending and receiving faxes with a modem.
+wintweak.svc.fax.help = Lets you send and receive faxes with a fax modem connected to the PC. Almost no modern PC has one.
+wintweak.svc.retailDemo.name = Retail demo mode
+wintweak.svc.retailDemo.summary = Only used by display PCs in stores.
+wintweak.svc.retailDemo.help = The service behind the demo mode used by PCs on display in stores. On a personal PC it does nothing.
+wintweak.svc.maps.name = Offline maps
+wintweak.svc.maps.summary = Downloads and updates maps for use without internet.
+wintweak.svc.maps.help = Manages downloaded maps for the Maps app. If you haven't downloaded maps for offline use, you don't need it.
+wintweak.svc.maps.warning = Maps downloaded in the Maps app will stop updating on their own.
+wintweak.svc.wmp.name = Windows Media Player library sharing
+wintweak.svc.wmp.summary = Shares music and videos with other PCs on the network.
+wintweak.svc.wmp.help = Shares the library of the old Windows Media Player with other devices on your home network.
+wintweak.svc.insider.name = Windows Insider Program
+wintweak.svc.insider.summary = Only used to get preview builds of Windows.
+wintweak.svc.insider.help = Handles your participation in the Windows Insider Program (preview builds of Windows).
+wintweak.svc.insider.warning = If you're enrolled in Windows Insider, don't turn this off.
+wintweak.svc.pca.name = Program Compatibility Assistant
+wintweak.svc.pca.summary = Watches old programs to suggest fixes.
+wintweak.svc.pca.help = Detects known problems with old programs and offers to run them in compatibility mode. It checks every program you open.
+wintweak.svc.pca.warning = If you use very old programs, Windows will no longer offer automatic compatibility settings.
+wintweak.svc.spooler.name = Print Spooler
+wintweak.svc.spooler.summary = Only if you don't have a printer.
+wintweak.svc.spooler.help = The service that handles printing. If you don't have a printer and won't use one, it can be turned off. It has also been the way in for several well-known security flaws (“PrintNightmare”).
+wintweak.svc.spooler.warning = You won't be able to print, not even with “Microsoft Print to PDF”, until you undo it from Restore.
+wintweak.svc.search.name = Windows Search indexing
+wintweak.svc.search.summary = Stops indexing files in the background.
+wintweak.svc.search.help = Windows Search reads your files in the background so search results are instant. On PCs with a hard drive it can cause high disk usage. Without it, search still works but is slower.
+wintweak.svc.search.warning = Searching for files and searching in Outlook will be much slower.

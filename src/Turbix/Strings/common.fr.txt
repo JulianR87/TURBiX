@@ -1,0 +1,68 @@
+# Textes communs. Français.
+
+app.tagline = Confidentialité et nettoyage
+app.alreadyOpen.title = TURBiX est déjà ouvert
+app.alreadyOpen.text = Une fenêtre de TURBiX est déjà en cours d’exécution.
+app.unhandled = Erreur non gérée : {0}
+app.unexpected.log = Erreur inattendue : {0}
+app.unexpected.title = Erreur inattendue
+app.unexpected.text = {0}\n\nLe détail a été enregistré dans le journal d’activité.
+changelog.readError = Impossible de lire l’historique des modifications : {0}
+
+nav.section.menu = MENU
+nav.section.system = SYSTÈME
+nav.home = Accueil
+nav.privacy = Confidentialité
+nav.cleanup = Nettoyage
+nav.performance = Performances
+nav.apps = Applications
+nav.health = Santé
+nav.tools = Dépannage
+nav.restore = Restaurer
+nav.log = Journal d’activité
+nav.changelog = Nouveautés
+nav.about = À propos de TURBiX
+
+common.refresh = Actualiser
+common.refreshState = Actualiser l’état
+common.quickSelect = Sélection rapide
+common.recommended = Recommandé
+common.maximum = Maximum
+common.all = Tout
+common.none = Aucun
+common.optional = FACULTATIF
+common.advanced = AVANCÉ
+common.security = SÉCURITÉ
+common.continue = Continuer
+common.cancel = Annuler
+common.ok = Compris
+common.open = Ouvrir
+common.close = Fermer
+common.noInternet = N’utilise pas Internet
+common.noData = Aucune donnée
+common.state.applied = Appliqué
+common.state.notApplied = Non appliqué
+common.state.partial = Partiel
+common.state.notApplicable = Sans objet
+common.state.enabled = Activé
+common.state.disabled = Désactivé
+
+unit.b = o
+unit.kb = Ko
+unit.mb = Mo
+unit.gb = Go
+unit.percent = {0}\u00A0%
+
+log.title = Journal d’activité
+log.subtitle = Tout ce que fait TURBiX est noté ici et dans un fichier texte, y compris les sessions précédentes, pour que vous sachiez ce qui a changé et quand.
+log.copy = Copier
+log.openFolder = Ouvrir le dossier des journaux
+log.clearView = Vider l’affichage
+log.help = Les journaux sont enregistrés jour par jour dans C:\ProgramData\TURBiX\Logs, et ceux des jours précédents sont chargés à l’ouverture de TURBiX. « Vider l’affichage » vide seulement cet écran : les fichiers restent.\n\nSi quelque chose ne fonctionne pas comme prévu, copiez le journal et joignez-le à votre signalement.
+log.today = Aujourd’hui
+log.yesterday = Hier
+log.level.info = INFO
+log.level.success = OK
+log.level.warning = ALERTE
+log.level.error = ERREUR
+log.level.step = ÉTAPE

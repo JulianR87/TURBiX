@@ -1,0 +1,180 @@
+# Hauptfenster, Abläufe für Datenschutz/Bereinigung/Schnelloptimierung/Wiederherstellung, Wiederherstellen, Über,
+# Neuigkeiten, Dialoge, Design und Texte des Kerns. Deutsch.
+
+# --- Fenster
+shell.minimize = Minimieren
+shell.maximize = Maximieren
+shell.restoreDown = Verkleinern
+shell.help = Hilfe
+shell.status.help = Administratormodus: TURBiX hat die Berechtigungen, die Windows verlangt, um Systemeinstellungen zu ändern und temporäre Dateien zu löschen. Steht dort „Keine Administratorrechte“, schließen Sie TURBiX und öffnen Sie es erneut, wobei Sie die Windows-Abfrage bestätigen.\n\nNutzt kein Internet: TURBiX verbindet sich mit keinem Server. Es sendet keine Daten, hat keine Telemetrie und keine Werbung und lädt nichts herunter. Mit Ihrer Verbindung hat das nichts zu tun: Ihr Internet funktioniert ganz normal weiter.\n\nDarunter steht die installierte Version. Ihre Änderungen finden Sie unter „Neuigkeiten“.
+shell.busy.dontClose = Schließen Sie TURBiX nicht und schalten Sie den PC nicht aus, bis die Aufgabe abgeschlossen ist.
+shell.busyClose.title = Eine Aufgabe läuft noch
+shell.busyClose.text = TURBiX arbeitet gerade. Wenn Sie es jetzt schließen, könnte der PC in einem halbfertigen Zustand bleiben (zum Beispiel mit angehaltenen Windows-Diensten).\n\nBitte warten Sie, bis es fertig ist; danach lässt sich das Fenster sofort schließen.
+
+# --- Darstellung
+theme.caption = DARSTELLUNG
+theme.system = System
+theme.light = Hell
+theme.dark = Dunkel
+theme.log.changed = Design: {0}.
+theme.log.light = hell
+theme.log.dark = dunkel
+theme.log.system = wie Windows
+theme.log.saveFailed = Das gewählte Design konnte nicht gespeichert werden: {0}
+
+# --- Allgemeiner Status und Start
+main.admin.on = Administratormodus
+main.admin.off = Keine Administratorrechte
+main.greeting.hello = Hallo
+main.greeting.morning = Guten Morgen, {0}
+main.greeting.afternoon = Guten Tag, {0}
+main.greeting.evening = Guten Abend, {0}
+main.log.started = TURBiX {0} gestartet.
+main.log.system = System: {0} {1}
+main.editionNote = Unter Windows {0} ist die niedrigste Stufe für Diagnosedaten, die Microsoft zulässt, „Erforderlich“. TURBiX senkt sie auf dieses Minimum und blockiert zusätzlich den Dienst und die Aufgaben, die die Daten senden.
+main.ram = {0} von {1} belegt
+main.disk = frei auf {0} · {1} von {2} belegt
+main.busy.preparing = Wird vorbereitet…
+main.error.title = Etwas ist schiefgelaufen
+main.warnings = Bitte beachten:
+main.restartNeeded = Starten Sie den PC neu, damit alle Änderungen wirksam werden.
+main.restorePointNote = Windows konnte keinen Wiederherstellungspunkt erstellen (der Computerschutz ist deaktiviert oder Windows hat es nicht zugelassen). Die eigene Sicherung von TURBiX wurde aber gespeichert.
+
+# --- Datenschutz
+main.checking = Wird geprüft…
+main.privacy.level.excellent = Sehr gut
+main.privacy.level.good = Gut
+main.privacy.level.fair = Ausbaufähig
+main.privacy.level.low = Niedrig
+main.privacy.summary.one = {1} von {0} Schutzmaßnahme aktiv
+main.privacy.summary.other = {1} von {0} Schutzmaßnahmen aktiv
+main.privacy.applyButton.one = {0} Einstellung anwenden
+main.privacy.applyButton.other = {0} Einstellungen anwenden
+main.apply.confirm.title = Datenschutzeinstellungen anwenden
+main.apply.confirm.button = Einstellungen anwenden
+main.apply.confirm.text.one = {0} Datenschutzeinstellung wird angewendet.\n\nTURBiX sichert jeden Wert, den es ändert, damit Sie die Änderung unter „Wiederherstellen“ rückgängig machen können.
+main.apply.confirm.text.other = {0} Datenschutzeinstellungen werden angewendet.\n\nTURBiX sichert jeden Wert, den es ändert, damit Sie die Änderungen unter „Wiederherstellen“ rückgängig machen können.
+main.apply.confirm.advanced.one = Darunter ist {0} erweiterte Einstellung, die eine Windows-Funktion abschalten kann. Beachten Sie die gelben Hinweise.
+main.apply.confirm.advanced.other = Darunter sind {0} erweiterte Einstellungen, die Windows-Funktionen abschalten können. Beachten Sie die gelben Hinweise.
+main.apply.busy = Datenschutzeinstellungen werden angewendet
+main.apply.nothing = Alle ausgewählten Einstellungen waren bereits angewendet. Es musste nichts geändert werden.
+main.apply.changed.one = {0} Änderung vorgenommen.
+main.apply.changed.other = {0} Änderungen vorgenommen.
+main.apply.changedErrors.one = {0} Änderung vorgenommen ({1} mit Fehlern, siehe Aktivitätsprotokoll).
+main.apply.changedErrors.other = {0} Änderungen vorgenommen ({1} mit Fehlern, siehe Aktivitätsprotokoll).
+main.apply.done.title = Einstellungen angewendet
+main.apply.doneWarn.title = Einstellungen mit Warnungen angewendet
+
+# --- Bereinigung
+main.cleanup.notAnalyzed = Noch nicht analysiert
+main.cleanup.analyzedAt = Analysiert um {0}
+main.cleanup.cleanedAt = Bereinigt um {0}
+main.cleanup.button.one = {0} Kategorie bereinigen
+main.cleanup.button.other = {0} Kategorien bereinigen
+main.cleanup.busyAnalyze = PC wird analysiert
+main.cleanup.busyClean = Dateien werden bereinigt
+main.cleanup.confirm.title = Dateien bereinigen
+main.cleanup.confirm.button = Jetzt bereinigen
+main.cleanup.confirm.text.one = {0} Kategorie wird bereinigt.
+main.cleanup.confirm.text.other = {0} Kategorien werden bereinigt.
+main.cleanup.freed = {0} freigegeben.
+main.cleanup.skipped = Übersprungen, weil sie geöffnet waren: {0}. Schließen Sie sie und bereinigen Sie erneut, um sie einzubeziehen.
+main.cleanup.inUse = Einige Dateien waren in Verwendung und wurden behalten. Das ist normal.
+main.cleanup.done.title = Bereinigung abgeschlossen
+
+# --- Schnelloptimierung
+main.quick.confirm.title = Schnelloptimierung
+main.quick.confirm.button = Jetzt optimieren
+main.quick.confirm.tweaks.one = TURBiX wendet {0} empfohlene Datenschutzeinstellung an.
+main.quick.confirm.tweaks.other = TURBiX wendet die {0} empfohlenen Datenschutzeinstellungen an.
+main.quick.confirm.clean.one = Außerdem wird {0} Kategorie mit temporären Dateien und Cache bereinigt.
+main.quick.confirm.clean.other = Außerdem werden {0} Kategorien mit temporären Dateien und Cache bereinigt.
+main.quick.confirm.safe = Diese Optionen sind für jeden PC sicher: Windows Update, Defender und Ihre persönlichen Dateien bleiben unberührt. Die Einstellungen lassen sich unter „Wiederherstellen“ rückgängig machen; die gelöschten Dateien sind nur temporäre Dateien und Cache und lassen sich nicht wiederherstellen.
+main.quick.busy = Ihr PC wird optimiert
+main.quick.summary.privacy.one = Datenschutz: {0} Änderung angewendet.
+main.quick.summary.privacy.other = Datenschutz: {0} Änderungen angewendet.
+main.quick.summary.privacyErrors.one = Datenschutz: {0} Änderung angewendet ({1} mit Fehlern, siehe Aktivitätsprotokoll).
+main.quick.summary.privacyErrors.other = Datenschutz: {0} Änderungen angewendet ({1} mit Fehlern, siehe Aktivitätsprotokoll).
+main.quick.summary.freed = Freigegebener Speicherplatz: {0}.
+main.quick.summary.skipped = Übersprungen, weil sie geöffnet waren: {0}.
+main.quick.done.title = PC optimiert
+main.quick.doneWarn.title = PC optimiert, mit Warnungen
+
+# --- Rückgängig machen
+main.revert.confirm.title = Änderungen rückgängig machen
+main.revert.confirm.text.one = {0} ursprünglicher Wert, gespeichert am {1}, wird wiederhergestellt.\n\nDie Einstellungen dieser Sitzung werden wieder so, wie sie vorher waren.
+main.revert.confirm.text.other = Die {0} ursprünglichen Werte, gespeichert am {1}, werden wiederhergestellt.\n\nDie Einstellungen dieser Sitzung werden wieder so, wie sie vorher waren.
+main.revert.busy = Änderungen werden rückgängig gemacht
+main.revert.done.title = Änderungen rückgängig gemacht
+main.revert.done.text = Die ursprünglichen Werte wurden wiederhergestellt. Starten Sie den PC neu, um den Vorgang abzuschließen.
+main.revert.partial.title = Nicht vollständig rückgängig gemacht
+main.revert.partial.text.one = Wiederhergestellt: {0} Wert. Fehlgeschlagen: {1} (Details im Aktivitätsprotokoll).\n\nDie Sicherung ist weiterhin vorhanden: Klicken Sie erneut auf „Rückgängig“, um es noch einmal zu versuchen.
+main.revert.partial.text.other = Wiederhergestellt: {0} Werte. Fehlgeschlagen: {1} (Details im Aktivitätsprotokoll).\n\nDie Sicherung ist weiterhin vorhanden: Klicken Sie erneut auf „Rückgängig“, um es noch einmal zu versuchen.
+
+# --- Seite Wiederherstellen
+restore.subtitle = Jedes Mal, wenn Sie Einstellungen anwenden, speichert TURBiX die ursprünglichen Werte. Hier können Sie den PC genau so zurücksetzen, wie er vorher war.
+restore.openFolder = Ordner öffnen
+restore.backups.title = TURBiX-Sicherungen
+restore.backups.text = Macht eine bestimmte Sitzung mit Einstellungen rückgängig.
+restore.backups.help = JSON-Dateien mit dem ursprünglichen Wert jeder Änderung (Registrierung, Dienste und Aufgaben). Sie liegen in C:\ProgramData\TURBiX\Backups und erlauben es, Sitzung für Sitzung rückgängig zu machen.
+restore.system.title = Systemwiederherstellung
+restore.system.text = Kehrt zu einem Windows-Wiederherstellungspunkt zurück.
+restore.system.help = Öffnet das Windows-Tool, mit dem Sie zu einem Wiederherstellungspunkt zurückkehren, etwa dem, den TURBiX vor dem Anwenden von Einstellungen erstellt. Es macht Systemänderungen, Treiber und Programme rückgängig, die nach diesem Punkt installiert wurden (Ihre Dokumente bleiben unberührt).
+restore.history = ÄNDERUNGSVERLAUF
+restore.empty.title = Noch keine gespeicherten Änderungen
+restore.empty.text = Wenn Sie Datenschutzeinstellungen anwenden, erscheinen sie hier, damit Sie sie rückgängig machen können.
+restore.reverted = RÜCKGÄNGIG GEMACHT
+restore.revert = Rückgängig
+
+# --- Sicherungen (Kern)
+backup.describe.service = Dienst {0}
+backup.describe.powerPlan = Energiesparplan
+backup.describe.regKey = Schlüssel {0}
+backup.describe.task = Aufgabe {0}
+backup.log.untrusted = Sicherung ignoriert, weil sie nicht von einem Administrator erstellt wurde: {0}
+backup.log.damaged = Sicherung beschädigt, kann nicht gelesen werden: {0}
+backup.log.reverting.one = {0} Änderung von „{1}“ wird rückgängig gemacht
+backup.log.reverting.other = {0} Änderungen von „{1}“ werden rückgängig gemacht
+backup.progress.restoring = Wird wiederhergestellt: {0}
+backup.log.restoreFailed = {0} konnte nicht wiederhergestellt werden: {1}
+backup.log.revertDone.one = Rückgängig gemacht: {0} Element wiederhergestellt. Starten Sie den PC neu, um den Vorgang abzuschließen.
+backup.log.revertDone.other = Rückgängig gemacht: {0} Elemente wiederhergestellt. Starten Sie den PC neu, um den Vorgang abzuschließen.
+backup.log.revertPartial.one = Nicht vollständig rückgängig gemacht: {0} Element wiederhergestellt, {1} mit Fehlern. Sie können es erneut versuchen.
+backup.log.revertPartial.other = Nicht vollständig rückgängig gemacht: {0} Elemente wiederhergestellt, {1} mit Fehlern. Sie können es erneut versuchen.
+
+# --- Kern
+core.restorePoint.creating = Systemwiederherstellungspunkt wird erstellt…
+core.restorePoint.created = Wiederherstellungspunkt erstellt.
+core.restorePoint.failedCode = Der Wiederherstellungspunkt konnte nicht erstellt werden (Code {0}). Wahrscheinlich ist der Computerschutz auf diesem PC deaktiviert.
+core.restorePoint.noReason = Windows hat keinen Grund angegeben (0x{0}). Wahrscheinlich ist der Computerschutz auf diesem PC deaktiviert.
+core.restorePoint.failed = Der Wiederherstellungspunkt konnte nicht erstellt werden: {0}
+core.restorePoint.continuing = Es geht trotzdem weiter: TURBiX legt von jeder Änderung eine eigene Sicherung an.
+core.registry.badRoot = Ungültiger Registrierungsstamm: {0}
+core.registry.createKeyFailed = Der Schlüssel {0} konnte nicht erstellt werden
+core.tasks.readFailed = Die Aufgaben in {0} konnten nicht gelesen werden: {1}
+core.settings.saveFailed = Die Einstellung „{0}“ konnte nicht gespeichert werden: {1}
+
+# --- Über
+about.subtitle = Datenschutz und Bereinigung für Windows 10 und 11
+about.facts = Open Source · MIT-Lizenz · Keine Installation · Nutzt kein Internet
+about.principles = Unsere Grundsätze
+about.principle.security = Wir deaktivieren nie Windows Update, Microsoft Defender, SmartScreen oder die Firewall und ändern nie die hosts-Datei.
+about.principle.revert = Jede Änderung wird vor dem Anwenden gesichert und lässt sich unter „Wiederherstellen“ rückgängig machen.
+about.principle.noInternet = TURBiX verbindet sich nicht mit dem Internet und sammelt keinerlei Daten. Ein Datenschutz-Tool sollte Sie nicht ausspionieren.
+about.principle.personal = Ihre Dokumente, Fotos, Kennwörter, Cookies und Ihr Verlauf werden nie gelöscht.
+about.principle.honest = Jede Option erklärt über ihre „?“-Schaltfläche, was sie tut. Keine Tricks und keine falschen Versprechen wie „PC 300 % schneller“.
+about.data.title = Wo TURBiX seine Daten speichert
+about.data.backups = SICHERUNGEN
+about.data.logs = AKTIVITÄTSPROTOKOLLE
+about.data.requirements = VORAUSSETZUNGEN
+about.data.requirementsText = Windows 10 (ab 1607) oder 11, 32 oder 64 Bit. Verwendet .NET Framework 4.6.2+, das bereits in Windows enthalten ist: Sie müssen nichts installieren.
+about.data.openBackups = Sicherungen
+about.data.openLogs = Protokolle
+about.disclaimer = TURBiX wird „wie besehen“ und ohne Gewährleistung bereitgestellt. Microsoft, Windows, Edge, Office und Copilot sind Marken der Microsoft Corporation; TURBiX steht in keiner Verbindung zu Microsoft.
+
+# --- Neuigkeiten
+whatsnew.subtitle = Die wichtigen Änderungen jeder Version. Sie verwenden {0}.
+whatsnew.help = Alle Versionen von TURBiX, die neueste zuerst, mit ihren wichtigen Änderungen in wenigen Worten. Die mit „Installiert“ markierte ist die, die Sie gerade verwenden.
+whatsnew.installed = INSTALLIERT
+
+shell.notify.error = Die Windows-Benachrichtigung konnte nicht angezeigt werden: {0}

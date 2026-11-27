@@ -1,0 +1,37 @@
+# Performances › Processus
+
+perf.tab.processes = Processus
+proc.help = La même liste que le Gestionnaire des tâches, mais regroupée : chaque programme affiche en dessous les processus qu’il a lancés (un navigateur, par exemple, en lance un par onglet). Cliquez sur la flèche pour les afficher. Repliée, la ligne additionne la consommation de tout le groupe.\n\nLes « Hôte de service » sont des services Windows ; le nom du service qui tourne dans chacun est indiqué.\n\n« Threads » est le nombre de threads de chaque processus, la même valeur que dans le Gestionnaire des tâches.\n\nLe X ferme un processus immédiatement, comme « Fin de tâche ». Les processus dont Windows a besoin pour fonctionner sont verrouillés.
+proc.search = Processus, PID ou service
+proc.loading = Lecture des processus…
+proc.noMatches = Aucun processus ne correspond à la recherche.
+proc.expandAll = Tout développer
+proc.collapseAll = Tout réduire
+proc.col.name = Nom
+proc.col.cpu = Processeur
+proc.col.memory = Mémoire
+proc.col.threads = Threads
+proc.count.processes.one = {0} processus
+proc.count.processes.other = {0} processus
+proc.count.threads.one = {0} thread
+proc.count.threads.other = {0} threads
+proc.count.handles.one = {0} handle
+proc.count.handles.other = {0} handles
+proc.usage.cpu = Processeur à {0}
+proc.usage.memory = Mémoire : {0} sur {1}
+proc.pid = PID {0}
+proc.serviceHost = Hôte de service : {0}
+proc.serviceHostMore.one = Hôte de service : {1} et {0} autre
+proc.serviceHostMore.other = Hôte de service : {1} et {0} autres
+proc.end = Fin de tâche
+proc.critical = Windows en a besoin pour fonctionner : TURBiX ne le ferme pas.
+proc.end.title = Arrêter « {0} » ?
+proc.end.text = Il se ferme immédiatement. Si c’est un programme avec du travail non enregistré, il sera perdu.
+proc.end.textGroup.one = {0} processus se ferme immédiatement. Si c’est un programme avec du travail non enregistré, il sera perdu.
+proc.end.textGroup.other = {0} processus se ferment immédiatement : le principal et ceux qu’il a lancés. Si c’est un programme avec du travail non enregistré, il sera perdu.
+proc.end.confirm = Fin de tâche
+proc.end.failed.title = Impossible d’arrêter la tâche
+proc.end.failed.text = Windows n’a pas permis de fermer « {0} » : {1}\n\nCertains processus ne peuvent être fermés qu’en tant qu’administrateur, ou appartiennent à un autre utilisateur.
+proc.log.ended = Processus arrêté : {0} (PID {1}).
+proc.log.failed = Impossible d’arrêter {0} (PID {1}) : {2}
+proc.log.readError = Impossible de lire la liste des processus : {0}

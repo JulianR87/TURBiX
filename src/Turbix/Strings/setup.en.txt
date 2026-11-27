@@ -1,0 +1,24 @@
+# Installer and uninstaller. English.
+
+setup.title = Install TURBiX
+setup.text = TURBiX will be copied to this folder and will show up in the Start menu and in the Windows apps list, where you can uninstall it whenever you like.
+setup.folder = INSTALL FOLDER
+setup.desktop = Create a desktop shortcut
+setup.replace = Version {0} is already installed. It will be replaced with {1}; your settings and backups are kept.
+setup.reinstall = Version {0} is already installed. It will be installed again; your settings and backups are kept.
+setup.install = Install
+setup.done.title = TURBiX is installed
+setup.done.text = You'll find it in the Start menu. To remove it, go to Settings › Apps in Windows.
+setup.open = Open TURBiX
+setup.retry = Try again
+setup.running.title = TURBiX is open
+setup.running.text = It has to be closed to continue: right-click its icon next to the clock and choose “Exit TURBiX”. Then select “Try again”.
+setup.error.title = Couldn't install TURBiX
+setup.error.text = Windows didn't allow the installation to finish.\n\n{0}
+uninstall.confirm.title = Uninstall TURBiX?
+uninstall.confirm.text = The program, its shortcuts and its preferences will be removed.\n\nThe changes TURBiX made to Windows are not undone by uninstalling: if you want to go back, cancel and use the “Restore” section first.\n\nBackups and the activity log are kept in {0}.
+uninstall.confirm.button = Uninstall
+uninstall.done.title = TURBiX was uninstalled
+uninstall.done.text = Backups and the activity log are still in {0}. You can delete that folder if you no longer need them.
+uninstall.done.leftover = Couldn't delete {0}. You can delete it by hand.
+uninstall.error.title = Couldn't uninstall TURBiX

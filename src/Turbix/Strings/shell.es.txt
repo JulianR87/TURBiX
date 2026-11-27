@@ -1,0 +1,180 @@
+# Ventana principal, flujos de privacidad/limpieza/optimización/restauración, Restaurar, Acerca de, Novedades,
+# diálogos, tema y ayudas del núcleo. Español.
+
+# --- Ventana
+shell.minimize = Minimizar
+shell.maximize = Maximizar
+shell.restoreDown = Restaurar
+shell.help = Ayuda
+shell.status.help = Modo administrador: TURBiX tiene los permisos que Windows exige para cambiar la configuración del sistema y borrar archivos temporales. Si dice «Sin permisos», cierra TURBiX y ábrelo de nuevo aceptando el aviso de Windows.\n\nNo usa Internet: TURBiX no se conecta a ningún servidor. No envía datos, no tiene telemetría ni publicidad y no descarga nada. No tiene que ver con tu conexión: tu Internet sigue funcionando normal.\n\nAbajo, la versión instalada. Sus cambios están en «Novedades».
+shell.busy.dontClose = No cierres TURBiX ni apagues el equipo mientras se completa la tarea.
+shell.busyClose.title = Hay una tarea en curso
+shell.busyClose.text = TURBiX está trabajando y cerrarlo ahora podría dejar el equipo a medias (por ejemplo, con servicios de Windows detenidos).\n\nEspera a que termine; la ventana se podrá cerrar en cuanto acabe.
+
+# --- Apariencia
+theme.caption = APARIENCIA
+theme.system = Sistema
+theme.light = Claro
+theme.dark = Oscuro
+theme.log.changed = Tema: {0}.
+theme.log.light = claro
+theme.log.dark = oscuro
+theme.log.system = el del sistema
+theme.log.saveFailed = No se pudo guardar el tema elegido: {0}
+
+# --- Estado general e inicio
+main.admin.on = Modo administrador
+main.admin.off = Sin permisos
+main.greeting.hello = Hola
+main.greeting.morning = Buenos días, {0}
+main.greeting.afternoon = Buenas tardes, {0}
+main.greeting.evening = Buenas noches, {0}
+main.log.started = TURBiX {0} iniciado.
+main.log.system = Sistema: {0} {1}
+main.editionNote = En Windows {0} el nivel mínimo de datos de diagnóstico que permite Microsoft es «Obligatorio». TURBiX lo reduce a ese mínimo y además bloquea el servicio y las tareas que los envían.
+main.ram = {0} en uso de {1}
+main.disk = libres en {0} · {1} usados de {2}
+main.busy.preparing = Preparando…
+main.error.title = Algo salió mal
+main.warnings = Ten en cuenta:
+main.restartNeeded = Reinicia el equipo para que todos los cambios surtan efecto.
+main.restorePointNote = No se pudo crear el punto de restauración de Windows (la Protección del sistema está desactivada o Windows no lo permitió). La copia de seguridad de TURBiX sí se guardó.
+
+# --- Privacidad
+main.checking = Comprobando…
+main.privacy.level.excellent = Excelente
+main.privacy.level.good = Buena
+main.privacy.level.fair = Mejorable
+main.privacy.level.low = Baja
+main.privacy.summary.one = {1} de {0} protección activa
+main.privacy.summary.other = {1} de {0} protecciones activas
+main.privacy.applyButton.one = Aplicar {0} ajuste
+main.privacy.applyButton.other = Aplicar {0} ajustes
+main.apply.confirm.title = Aplicar ajustes de privacidad
+main.apply.confirm.button = Aplicar ajustes
+main.apply.confirm.text.one = Se aplicará {0} ajuste de privacidad.\n\nTURBiX guardará una copia de seguridad de cada valor que modifique para que puedas revertirlo desde «Restaurar».
+main.apply.confirm.text.other = Se aplicarán {0} ajustes de privacidad.\n\nTURBiX guardará una copia de seguridad de cada valor que modifique para que puedas revertirlo desde «Restaurar».
+main.apply.confirm.advanced.one = Incluye {0} ajuste avanzado que puede desactivar alguna función de Windows. Revisa los avisos en amarillo.
+main.apply.confirm.advanced.other = Incluye {0} ajustes avanzados que pueden desactivar alguna función de Windows. Revisa los avisos en amarillo.
+main.apply.busy = Aplicando ajustes de privacidad
+main.apply.nothing = Todos los ajustes seleccionados ya estaban aplicados. No fue necesario cambiar nada.
+main.apply.changed.one = Se realizó {0} cambio.
+main.apply.changed.other = Se realizaron {0} cambios.
+main.apply.changedErrors.one = Se realizó {0} cambio ({1} con errores, revisa el Registro de actividad).
+main.apply.changedErrors.other = Se realizaron {0} cambios ({1} con errores, revisa el Registro de actividad).
+main.apply.done.title = Ajustes aplicados
+main.apply.doneWarn.title = Ajustes aplicados con avisos
+
+# --- Limpieza
+main.cleanup.notAnalyzed = Aún sin analizar
+main.cleanup.analyzedAt = Analizado a las {0}
+main.cleanup.cleanedAt = Limpiado a las {0}
+main.cleanup.button.one = Limpiar {0} categoría
+main.cleanup.button.other = Limpiar {0} categorías
+main.cleanup.busyAnalyze = Analizando el equipo
+main.cleanup.busyClean = Limpiando archivos
+main.cleanup.confirm.title = Limpiar archivos
+main.cleanup.confirm.button = Limpiar ahora
+main.cleanup.confirm.text.one = Se limpiará {0} categoría.
+main.cleanup.confirm.text.other = Se limpiarán {0} categorías.
+main.cleanup.freed = Se liberaron {0}.
+main.cleanup.skipped = Se omitieron porque estaban abiertos: {0}. Ciérralos y vuelve a limpiar para incluirlos.
+main.cleanup.inUse = Algunos archivos estaban en uso y se conservaron; es normal.
+main.cleanup.done.title = Limpieza completada
+
+# --- Optimización rápida
+main.quick.confirm.title = Optimización rápida
+main.quick.confirm.button = Optimizar ahora
+main.quick.confirm.tweaks.one = TURBiX aplicará {0} ajuste de privacidad recomendado.
+main.quick.confirm.tweaks.other = TURBiX aplicará los {0} ajustes de privacidad recomendados.
+main.quick.confirm.clean.one = También limpiará {0} categoría de archivos temporales y caché.
+main.quick.confirm.clean.other = También limpiará {0} categorías de archivos temporales y caché.
+main.quick.confirm.safe = Son opciones seguras para cualquier equipo: no se toca Windows Update, Defender ni tus archivos personales. Los ajustes se pueden revertir desde «Restaurar»; los archivos borrados son temporales y caché, y no se recuperan.
+main.quick.busy = Optimizando tu equipo
+main.quick.summary.privacy.one = Privacidad: {0} cambio aplicado.
+main.quick.summary.privacy.other = Privacidad: {0} cambios aplicados.
+main.quick.summary.privacyErrors.one = Privacidad: {0} cambio aplicado ({1} con errores, revisa el Registro de actividad).
+main.quick.summary.privacyErrors.other = Privacidad: {0} cambios aplicados ({1} con errores, revisa el Registro de actividad).
+main.quick.summary.freed = Espacio liberado: {0}.
+main.quick.summary.skipped = Se omitieron porque estaban abiertos: {0}.
+main.quick.done.title = Equipo optimizado
+main.quick.doneWarn.title = Equipo optimizado, con avisos
+
+# --- Revertir
+main.revert.confirm.title = Revertir cambios
+main.revert.confirm.text.one = Se restaurará {0} valor original guardado el {1}.\n\nLos ajustes de esa sesión volverán a como estaban antes de aplicarlos.
+main.revert.confirm.text.other = Se restaurarán los {0} valores originales guardados el {1}.\n\nLos ajustes de esa sesión volverán a como estaban antes de aplicarlos.
+main.revert.busy = Revirtiendo cambios
+main.revert.done.title = Cambios revertidos
+main.revert.done.text = Los valores originales se restauraron. Reinicia el equipo para completar la reversión.
+main.revert.partial.title = Reversión incompleta
+main.revert.partial.text.one = Se restauró {0} valor, pero en {1} hubo errores (el detalle está en el Registro de actividad).\n\nLa copia sigue disponible: puedes volver a pulsar «Revertir» para reintentarlo.
+main.revert.partial.text.other = Se restauraron {0} valores, pero en {1} hubo errores (el detalle está en el Registro de actividad).\n\nLa copia sigue disponible: puedes volver a pulsar «Revertir» para reintentarlo.
+
+# --- Página Restaurar
+restore.subtitle = Cada vez que aplicas ajustes, TURBiX guarda los valores originales. Desde aquí puedes devolver el equipo exactamente a como estaba.
+restore.openFolder = Abrir carpeta
+restore.backups.title = Copias de TURBiX
+restore.backups.text = Revierte una sesión concreta de ajustes.
+restore.backups.help = Archivos JSON con el valor original de cada cambio (registro, servicios y tareas). Se guardan en C:\ProgramData\TURBiX\Backups y permiten revertir sesión por sesión.
+restore.system.title = Restaurar sistema
+restore.system.text = Vuelve a un punto de restauración de Windows.
+restore.system.help = Abre la herramienta de Windows para volver a un punto de restauración, como el que TURBiX crea antes de aplicar ajustes. Revierte cambios de sistema, controladores y programas instalados después de ese punto (no toca tus documentos).
+restore.history = HISTORIAL DE CAMBIOS
+restore.empty.title = Todavía no hay cambios guardados
+restore.empty.text = Cuando apliques ajustes de privacidad aparecerán aquí para que puedas revertirlos.
+restore.reverted = REVERTIDO
+restore.revert = Revertir
+
+# --- Copias de seguridad (núcleo)
+backup.describe.service = servicio {0}
+backup.describe.powerPlan = plan de energía
+backup.describe.regKey = clave {0}
+backup.describe.task = tarea {0}
+backup.log.untrusted = Copia ignorada porque no la creó un administrador: {0}
+backup.log.damaged = Copia dañada, no se puede leer: {0}
+backup.log.reverting.one = Revirtiendo {0} cambio de «{1}»
+backup.log.reverting.other = Revirtiendo {0} cambios de «{1}»
+backup.progress.restoring = Restaurando {0}
+backup.log.restoreFailed = No se pudo restaurar {0}: {1}
+backup.log.revertDone.one = Reversión terminada: {0} elemento restaurado. Reinicia el equipo para completarla.
+backup.log.revertDone.other = Reversión terminada: {0} elementos restaurados. Reinicia el equipo para completarla.
+backup.log.revertPartial.one = Reversión incompleta: {0} elemento restaurado y {1} con errores. Puedes volver a intentarlo.
+backup.log.revertPartial.other = Reversión incompleta: {0} elementos restaurados y {1} con errores. Puedes volver a intentarlo.
+
+# --- Núcleo
+core.restorePoint.creating = Creando punto de restauración del sistema…
+core.restorePoint.created = Punto de restauración creado.
+core.restorePoint.failedCode = No se pudo crear el punto de restauración (código {0}). Es probable que la Protección del sistema esté desactivada en este equipo.
+core.restorePoint.noReason = Windows no dio el motivo (0x{0}). Es probable que la Protección del sistema esté desactivada en este equipo.
+core.restorePoint.failed = No se pudo crear el punto de restauración: {0}
+core.restorePoint.continuing = Se continúa igualmente: TURBiX guarda su propia copia de seguridad de cada cambio.
+core.registry.badRoot = Raíz de registro no válida: {0}
+core.registry.createKeyFailed = No se pudo crear la clave {0}
+core.tasks.readFailed = No se pudieron leer las tareas de {0}: {1}
+core.settings.saveFailed = No se pudo guardar la preferencia «{0}»: {1}
+
+# --- Acerca de
+about.subtitle = Privacidad y limpieza para Windows 10 y 11
+about.facts = Código abierto · Licencia MIT · Sin instalación · No usa Internet
+about.principles = Nuestros principios
+about.principle.security = Nunca desactivamos Windows Update, Microsoft Defender, SmartScreen ni el firewall, ni modificamos el archivo hosts.
+about.principle.revert = Cada cambio se guarda antes de aplicarse y se puede revertir desde «Restaurar».
+about.principle.noInternet = TURBiX no se conecta a Internet ni recopila ningún dato. Una herramienta de privacidad no debe espiarte.
+about.principle.personal = Tus documentos, fotos, contraseñas, cookies e historial nunca se borran.
+about.principle.honest = Cada opción explica qué hace con el botón «?». Sin trucos ni promesas falsas de «acelerar el PC un 300 %».
+about.data.title = Dónde guarda TURBiX sus datos
+about.data.backups = COPIAS DE SEGURIDAD
+about.data.logs = REGISTROS DE ACTIVIDAD
+about.data.requirements = REQUISITOS
+about.data.requirementsText = Windows 10 (1607 o superior) u 11, 32 o 64 bits. Usa .NET Framework 4.6.2+, que ya viene incluido en Windows: no hay que instalar nada.
+about.data.openBackups = Copias
+about.data.openLogs = Registros
+about.disclaimer = TURBiX se ofrece «tal cual», sin garantías. Microsoft, Windows, Edge, Office y Copilot son marcas de Microsoft Corporation; TURBiX no está afiliado a Microsoft.
+
+# --- Novedades
+whatsnew.subtitle = Los cambios importantes de cada versión. Estás usando la {0}.
+whatsnew.help = Todas las versiones de TURBiX, de la más nueva a la más antigua, con sus cambios importantes contados en pocas palabras. La marcada como «Instalada» es la que estás usando ahora.
+whatsnew.installed = INSTALADA
+
+shell.notify.error = No se pudo mostrar la notificación de Windows: {0}

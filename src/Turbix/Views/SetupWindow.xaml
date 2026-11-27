@@ -1,0 +1,66 @@
+<Window x:Class="Turbix.Views.SetupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:l="clr-namespace:Turbix.Localization"
+        Title="TURBiX" Icon="/Turbix;component/Assets/Turbix.ico"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        ResizeMode="NoResize" SizeToContent="Height" Width="560"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="{StaticResource UiFont}" FontSize="13.5" Foreground="{DynamicResource Text}"
+        TextOptions.TextFormattingMode="Ideal" UseLayoutRounding="True">
+  <!-- Ventana del instalador (Turbix-Setup.exe). Dos estados: antes de instalar y «listo». -->
+  <Border x:Name="Frame" Margin="18" Background="{DynamicResource Surface}" BorderBrush="{DynamicResource StrokeStrong}"
+          BorderThickness="1" CornerRadius="14" MouseLeftButtonDown="OnDrag">
+    <Border.Effect>
+      <DropShadowEffect BlurRadius="30" ShadowDepth="8" Opacity="0.3" Color="Black"/>
+    </Border.Effect>
+    <StackPanel Margin="30,28,30,24">
+      <StackPanel Orientation="Horizontal">
+        <ContentControl Template="{StaticResource LogoMark}" Width="52" Height="52" Focusable="False"/>
+        <StackPanel Margin="16,0,0,0" VerticalAlignment="Center">
+          <TextBlock FontFamily="{StaticResource DisplayFont}" FontSize="24" FontWeight="Bold">
+            <Run Text="TURBiX"/><Run Text=" "/><Run x:Name="VersionRun" FontSize="14" FontWeight="Normal" Foreground="{DynamicResource TextMuted}"/>
+          </TextBlock>
+          <TextBlock Text="{l:T app.tagline}" FontSize="12.5" Foreground="{DynamicResource TextDim}"/>
+        </StackPanel>
+      </StackPanel>
+
+      <!-- Antes de instalar -->
+      <StackPanel x:Name="ReadyPanel" Margin="0,24,0,0">
+        <TextBlock Text="{l:T setup.title}" Style="{StaticResource H2}" FontSize="17"/>
+        <TextBlock Text="{l:T setup.text}" Style="{StaticResource Muted}" Foreground="{DynamicResource TextBody}"
+                   TextWrapping="Wrap" LineHeight="21" Margin="0,8,0,0"/>
+        <TextBlock Text="{l:T setup.folder}" Style="{StaticResource Caption}" Margin="0,18,0,6"/>
+        <Border Background="{DynamicResource Surface2}" BorderBrush="{DynamicResource Stroke}" BorderThickness="1"
+                CornerRadius="9" Padding="12,9">
+          <TextBlock x:Name="FolderText" FontFamily="{StaticResource MonoFont}" FontSize="12.5"
+                     Foreground="{DynamicResource TextBody}" TextTrimming="CharacterEllipsis"/>
+        </Border>
+        <TextBlock x:Name="ReplaceText" Style="{StaticResource Muted}" FontSize="12.5" TextWrapping="Wrap"
+                   Margin="0,10,0,0" Visibility="Collapsed"/>
+        <CheckBox x:Name="DesktopCheck" Content="{l:T setup.desktop}" IsChecked="True" Margin="0,18,0,0"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,26,0,0">
+          <Button x:Name="CancelButton" Content="{l:T common.cancel}" IsCancel="True" Margin="0,0,10,0" Click="OnCloseClick"/>
+          <Button x:Name="InstallButton" Style="{StaticResource PrimaryButton}" Content="{l:T setup.install}" IsDefault="True" Click="OnInstall"/>
+        </StackPanel>
+      </StackPanel>
+
+      <!-- Listo -->
+      <StackPanel x:Name="DonePanel" Margin="0,24,0,0" Visibility="Collapsed">
+        <StackPanel Orientation="Horizontal">
+          <Border Width="34" Height="34" CornerRadius="9" Background="{DynamicResource SuccessSoft}">
+            <TextBlock Style="{StaticResource Icon}" Text="&#xE73E;" FontSize="16" HorizontalAlignment="Center"
+                       Foreground="{DynamicResource Success}"/>
+          </Border>
+          <TextBlock Text="{l:T setup.done.title}" Style="{StaticResource H2}" FontSize="17" Margin="12,0,0,0" VerticalAlignment="Center"/>
+        </StackPanel>
+        <TextBlock Text="{l:T setup.done.text}" Style="{StaticResource Muted}" Foreground="{DynamicResource TextBody}"
+                   TextWrapping="Wrap" LineHeight="21" Margin="0,12,0,0"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,26,0,0">
+          <Button Content="{l:T common.close}" IsCancel="True" Margin="0,0,10,0" Click="OnCloseClick"/>
+          <Button Style="{StaticResource PrimaryButton}" Content="{l:T setup.open}" IsDefault="True" Click="OnOpen"/>
+        </StackPanel>
+      </StackPanel>
+    </StackPanel>
+  </Border>
+</Window>

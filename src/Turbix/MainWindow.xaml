@@ -1,0 +1,164 @@
+<Window x:Class="Turbix.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:Turbix.Controls"
+        xmlns:l="clr-namespace:Turbix.Localization"
+        Title="TURBiX" Width="1200" Height="800" MinWidth="1000" MinHeight="660"
+        WindowStartupLocation="CenterScreen"
+        Icon="Assets/Turbix.ico"
+        Background="{DynamicResource Bg}" Foreground="{DynamicResource Text}"
+        FontFamily="{StaticResource UiFont}" FontSize="13.5"
+        UseLayoutRounding="True" TextOptions.TextFormattingMode="Ideal">
+  <WindowChrome.WindowChrome>
+    <WindowChrome CaptionHeight="40" ResizeBorderThickness="6" GlassFrameThickness="0,0,0,1"
+                  CornerRadius="0" UseAeroCaptionButtons="False"/>
+  </WindowChrome.WindowChrome>
+
+  <Grid x:Name="Root" Background="{DynamicResource Bg}">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="240"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <!-- ================================================================ Barra lateral -->
+    <Border x:Name="Sidebar" Background="{DynamicResource SidebarBg}" BorderBrush="{DynamicResource Stroke}" BorderThickness="0,0,1,0">
+      <DockPanel Margin="14,0,14,16">
+        <!-- Logo -->
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="8,22,0,26">
+          <ContentControl Template="{StaticResource LogoMark}" Width="38" Height="38"/>
+          <StackPanel Margin="12,0,0,0" VerticalAlignment="Center">
+            <TextBlock Text="TURBiX" FontFamily="{StaticResource DisplayFont}" FontSize="20" FontWeight="Bold"/>
+            <TextBlock Text="{l:T app.tagline}" FontSize="11.5" Foreground="{DynamicResource TextDim}" Margin="0,-1,0,0"/>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- Estado inferior -->
+        <Border DockPanel.Dock="Bottom" Background="{DynamicResource Surface}" BorderBrush="{DynamicResource Stroke}"
+                BorderThickness="1" CornerRadius="10" Padding="12,10">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Border Width="30" Height="30" CornerRadius="8" Background="{DynamicResource SuccessSoft}" VerticalAlignment="Top" Margin="0,2,0,0">
+              <TextBlock Style="{StaticResource Icon}" Text="&#xE83D;" FontSize="14" HorizontalAlignment="Center"
+                         Foreground="{DynamicResource Success}"/>
+            </Border>
+            <StackPanel Grid.Column="1" Margin="10,0,6,0" VerticalAlignment="Center">
+              <TextBlock Text="{Binding AdminText}" FontSize="12" FontWeight="SemiBold" TextWrapping="Wrap"/>
+              <TextBlock Text="{l:T common.noInternet}" FontSize="11" TextWrapping="Wrap" Foreground="{DynamicResource TextMuted}" Margin="0,1,0,0"/>
+              <TextBlock FontSize="11" Foreground="{DynamicResource TextDim}">
+                <Run Text="TURBiX"/> <Run Text="{Binding Version, Mode=OneWay}"/>
+              </TextBlock>
+            </StackPanel>
+            <c:HelpTip Grid.Column="2" Width="18" Height="18" VerticalAlignment="Top"
+                       Text="{l:T shell.status.help}"/>
+          </Grid>
+        </Border>
+
+        <!-- Ajustes generales (antes, aquí estaba el selector de tema) -->
+        <RadioButton x:Name="NavSettings" DockPanel.Dock="Bottom" Style="{StaticResource NavItem}" Tag="&#xE713;"
+                     Content="{l:T nav.settings}" Checked="OnNav" Margin="0,0,0,10"/>
+
+        <!-- Navegación -->
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Focusable="False" Margin="0,0,-8,10" Padding="0,0,8,0">
+        <StackPanel>
+          <TextBlock Text="{l:T nav.section.menu}" Style="{StaticResource Caption}" Margin="10,0,0,10"/>
+          <RadioButton x:Name="NavHome" Style="{StaticResource NavItem}" Tag="&#xE80F;" Content="{l:T nav.home}" IsChecked="True" Checked="OnNav"/>
+          <RadioButton x:Name="NavPrivacy" Style="{StaticResource NavItem}" Tag="&#xEA18;" Content="{l:T nav.privacy}" Checked="OnNav"/>
+          <RadioButton x:Name="NavCleanup" Style="{StaticResource NavItem}" Tag="&#xEA99;" Content="{l:T nav.cleanup}" Checked="OnNav"/>
+          <RadioButton x:Name="NavPerformance" Style="{StaticResource NavItem}" Tag="&#xEC4A;" Content="{l:T nav.performance}" Checked="OnNav"/>
+          <RadioButton x:Name="NavApps" Style="{StaticResource NavItem}" Tag="&#xE71D;" Content="{l:T nav.apps}" Checked="OnNav"/>
+          <RadioButton x:Name="NavHealth" Style="{StaticResource NavItem}" Tag="&#xE95E;" Content="{l:T nav.health}" Checked="OnNav"/>
+          <RadioButton x:Name="NavTools" Style="{StaticResource NavItem}" Tag="&#xE90F;" Content="{l:T nav.tools}" Checked="OnNav"/>
+          <RadioButton x:Name="NavRestore" Style="{StaticResource NavItem}" Tag="&#xE777;" Content="{l:T nav.restore}" Checked="OnNav"/>
+          <TextBlock Text="{l:T nav.section.system}" Style="{StaticResource Caption}" Margin="10,18,0,10"/>
+          <RadioButton x:Name="NavLog" Style="{StaticResource NavItem}" Tag="&#xE9F9;" Content="{l:T nav.log}" Checked="OnNav"/>
+          <RadioButton x:Name="NavChangelog" Style="{StaticResource NavItem}" Tag="&#xE8FD;" Content="{l:T nav.changelog}" Checked="OnNav"/>
+          <RadioButton x:Name="NavAbout" Style="{StaticResource NavItem}" Tag="&#xE946;" Content="{l:T nav.about}" Checked="OnNav"/>
+        </StackPanel>
+        </ScrollViewer>
+      </DockPanel>
+    </Border>
+
+    <!-- ================================================================ Contenido -->
+    <Grid Grid.Column="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="40"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+
+      <!-- Barra de título -->
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <Button Style="{StaticResource ChromeButton}" Content="&#xE921;" Click="OnMinimize" ToolTip="{l:T shell.minimize}"/>
+        <Button x:Name="MaxButton" Style="{StaticResource ChromeButton}" Content="&#xE922;" Click="OnMaximize" ToolTip="{l:T shell.maximize}"/>
+        <Button Style="{StaticResource ChromeCloseButton}" Content="&#xE8BB;" Click="OnClose" ToolTip="{l:T common.close}"/>
+      </StackPanel>
+
+      <ContentControl x:Name="PageHost" Grid.Row="1" Focusable="False"/>
+
+      <!-- Aviso breve (ej.: memoria liberada). Lo maneja ShowToast en el código. -->
+      <Border x:Name="Toast" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,24,24"
+              Width="360" Background="{DynamicResource Surface}" BorderBrush="{DynamicResource StrokeStrong}"
+              BorderThickness="1" CornerRadius="12" Padding="14,14,8,14" Visibility="Collapsed" Opacity="0"
+              MouseEnter="OnToastMouseEnter" MouseLeave="OnToastMouseLeave">
+        <Border.RenderTransform>
+          <TranslateTransform x:Name="ToastShift" Y="0"/>
+        </Border.RenderTransform>
+        <Border.Effect>
+          <DropShadowEffect BlurRadius="24" ShadowDepth="6" Opacity="0.22" Color="Black"/>
+        </Border.Effect>
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <Border x:Name="ToastIconBox" Width="36" Height="36" CornerRadius="9" VerticalAlignment="Top"
+                  Background="{DynamicResource AccentSoft}">
+            <TextBlock x:Name="ToastIcon" Style="{StaticResource Icon}" FontSize="17" HorizontalAlignment="Center"
+                       Foreground="{DynamicResource AccentText}" Text="&#xE964;"/>
+          </Border>
+          <StackPanel Grid.Column="1" Margin="12,1,6,0" VerticalAlignment="Center">
+            <TextBlock x:Name="ToastTitle" FontSize="13.5" FontWeight="SemiBold" TextWrapping="Wrap"
+                       Foreground="{DynamicResource Text}"/>
+            <TextBlock x:Name="ToastText" Style="{StaticResource Muted}" FontSize="12.5" LineHeight="18" Margin="0,3,0,0"/>
+          </StackPanel>
+          <Button Grid.Column="2" Style="{StaticResource RowIconButton}" VerticalAlignment="Top" Click="OnToastClose"
+                  ToolTip="{l:T common.close}">
+            <TextBlock Style="{StaticResource Icon}" FontSize="9" Text="&#xE8BB;"/>
+          </Button>
+        </Grid>
+      </Border>
+
+      <!-- Capa de tarea en curso -->
+      <Grid Grid.Row="0" Grid.RowSpan="2" Background="{DynamicResource Overlay}"
+            Visibility="{Binding IsBusy, Converter={StaticResource BoolToVis}}">
+        <Border Width="500" Background="{DynamicResource Surface}" BorderBrush="{DynamicResource StrokeStrong}"
+                BorderThickness="1" CornerRadius="16" Padding="28,26" HorizontalAlignment="Center" VerticalAlignment="Center">
+          <Border.Effect>
+            <DropShadowEffect BlurRadius="40" ShadowDepth="10" Opacity="0.3" Color="Black"/>
+          </Border.Effect>
+          <StackPanel>
+            <StackPanel Orientation="Horizontal">
+              <ContentControl Style="{StaticResource Spinner}"/>
+              <TextBlock Text="{Binding BusyTitle}" Style="{StaticResource H2}" FontSize="17" Margin="14,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+            <TextBlock Text="{Binding BusyStatus}" Style="{StaticResource Muted}" Margin="0,16,0,12" TextTrimming="CharacterEllipsis"
+                       TextWrapping="NoWrap"/>
+            <ProgressBar Value="{Binding BusyProgress, Mode=OneWay}" Maximum="100"/>
+            <Grid Margin="0,10,0,0">
+              <TextBlock Text="{Binding BusyDetail}" FontFamily="{StaticResource MonoFont}" FontSize="11"
+                         Foreground="{DynamicResource TextDim}" TextTrimming="CharacterEllipsis" Margin="0,0,50,0"/>
+              <TextBlock HorizontalAlignment="Right" FontSize="12" FontWeight="SemiBold" Foreground="{DynamicResource TextMuted}"
+                         Text="{Binding BusyProgress, StringFormat={}{0:0}%}"/>
+            </Grid>
+            <TextBlock Text="{l:T shell.busy.dontClose}" FontSize="11.5" TextWrapping="Wrap"
+                       Foreground="{DynamicResource TextDim}" Margin="0,16,0,0"/>
+          </StackPanel>
+        </Border>
+      </Grid>
+    </Grid>
+  </Grid>
+</Window>

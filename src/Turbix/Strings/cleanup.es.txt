@@ -1,0 +1,146 @@
+# Limpieza. Español.
+
+cleanup.subtitle = Elimina archivos temporales, cachés y restos que Windows y los programas acumulan. Tus documentos, fotos y contraseñas nunca se tocan.
+cleanup.recoverable = Recuperable en la selección
+cleanup.recoverable.help = Suma del tamaño de las categorías marcadas según el último análisis. Es una estimación: los archivos en uso o de programas abiertos se omiten al limpiar.
+cleanup.selectedCount.one = {0} categoría seleccionada
+cleanup.selectedCount.other = {0} categorías seleccionadas
+cleanup.presets.help = «Recomendado»: limpieza segura que no cambia cómo funciona el equipo.\n\n«Todo»: añade las categorías OPCIONALES (papelera, Prefetch, registros de eventos, WinSxS...). Revisa sus avisos antes de limpiar.
+cleanup.analyze = Analizar
+cleanup.aggressive = Modo agresivo
+cleanup.aggressive.help = Por seguridad, TURBiX conserva los archivos temporales modificados en las últimas 24 horas, por si alguna instalación o actualización está en curso. El modo agresivo los incluye también. Úsalo después de reiniciar el equipo.
+cleanup.cleanButton.one = Limpiar {0} categoría
+cleanup.cleanButton.other = Limpiar {0} categorías
+cleanup.lastAnalysis.analyzed = Analizado a las {0}
+cleanup.lastAnalysis.cleaned = Limpiado a las {0}
+cleanup.size.done = Hecho
+cleanup.group.teamsClassic = Teams clásico
+
+# Categorías
+cleanup.item.userTemp.name = Archivos temporales de usuario
+cleanup.item.userTemp.summary = Carpeta %TEMP% de todos los usuarios del equipo.
+cleanup.item.userTemp.help = Archivos que los programas crean mientras trabajan y casi nunca borran: restos de instaladores, descargas parciales, archivos descomprimidos... Se conservan los de las últimas 24 horas por si alguna instalación está en curso (desactívalo con el modo agresivo).
+
+cleanup.item.windowsTemp.name = Archivos temporales de Windows
+cleanup.item.windowsTemp.summary = Carpeta C:\Windows\Temp.
+cleanup.item.windowsTemp.help = Temporales del propio sistema, de servicios y de actualizaciones. Igual que en los temporales de usuario, se conservan los de las últimas 24 horas salvo en modo agresivo.
+
+cleanup.item.windowsUpdate.name = Descargas de Windows Update
+cleanup.item.windowsUpdate.summary = Descargas de Windows Update, instaladas o pendientes (se vuelven a bajar si hacen falta).
+cleanup.item.windowsUpdate.help = Windows guarda en SoftwareDistribution\Download los paquetes de actualización que descargó. Una vez instalados ya no sirven. TURBiX detiene Windows Update mientras limpia y lo vuelve a iniciar al terminar. También soluciona actualizaciones que se quedan atascadas.
+cleanup.item.windowsUpdate.warning = No lo ejecutes mientras Windows está instalando actualizaciones.
+
+cleanup.item.deliveryOptimization.name = Caché de Optimización de distribución
+cleanup.item.deliveryOptimization.summary = Copias de actualizaciones guardadas para compartir.
+cleanup.item.deliveryOptimization.help = Windows conserva copias de las actualizaciones descargadas para enviarlas a otros equipos de tu red o de Internet. Borrarlas es seguro: no afecta a las actualizaciones instaladas.
+
+cleanup.item.errorReports.name = Informes de errores de Windows
+cleanup.item.errorReports.summary = Informes de bloqueos en cola o archivados.
+cleanup.item.errorReports.help = Cuando un programa falla, Windows guarda un informe del error. Los antiguos ya no tienen utilidad para el usuario y pueden ocupar bastante espacio.
+
+cleanup.item.memoryDumps.name = Volcados de memoria
+cleanup.item.memoryDumps.summary = MEMORY.DMP y minidumps de pantallazos azules.
+cleanup.item.memoryDumps.help = Cuando Windows o un programa se bloquean se guarda una copia de la memoria para diagnosticar el fallo. MEMORY.DMP puede ocupar tanto como la memoria RAM del equipo.
+cleanup.item.memoryDumps.warning = Si estás investigando pantallazos azules, guarda antes los minidumps.
+
+cleanup.item.systemLogs.name = Archivos de registro de Windows
+cleanup.item.systemLogs.summary = Logs de CBS, DISM, Windows Update e instalación.
+cleanup.item.systemLogs.help = Archivos de texto donde Windows anota lo que hace al instalar actualizaciones y componentes. Solo sirven para diagnosticar problemas puntuales y crecen sin límite.
+
+cleanup.item.inetCache.name = Caché de Internet de Windows
+cleanup.item.inetCache.summary = Caché de WinINet usada por Windows y muchas apps.
+cleanup.item.inetCache.help = Caché compartida que usan Windows, el antiguo Internet Explorer y muchas aplicaciones para guardar páginas y archivos descargados. Se regenera según se necesita. Las carpetas donde Office guarda los adjuntos abiertos desde Outlook no se tocan.
+
+cleanup.item.browsers.name = Caché de navegadores
+cleanup.item.browsers.summary = Chrome, Edge, Brave, Vivaldi, Opera y Firefox.
+cleanup.item.browsers.help = Borra solo la caché de todos los perfiles: imágenes, scripts y shaders guardados para cargar páginas más rápido. Contraseñas, cookies, historial, marcadores y sesiones abiertas NO se tocan. Las páginas cargarán un poco más lento la primera vez.
+cleanup.item.browsers.warning = Cierra los navegadores: los que estén abiertos se omiten.
+
+cleanup.item.appsCache.name = Caché de aplicaciones populares
+cleanup.item.appsCache.summary = Discord, Teams, Spotify, Steam, Slack y VS Code.
+cleanup.item.appsCache.help = Estas aplicaciones están hechas con tecnología web y acumulan cientos de MB de caché. Se borra solo la caché: no se cierra ninguna sesión ni se pierden mensajes, música descargada ni ajustes.
+cleanup.item.appsCache.warning = Las aplicaciones abiertas se omiten.
+
+cleanup.item.storeCache.name = Caché de Microsoft Store
+cleanup.item.storeCache.summary = Archivos temporales de la Tienda de Microsoft.
+cleanup.item.storeCache.help = Caché de la Microsoft Store. Borrarla también ayuda cuando la Tienda no descarga o no abre.
+
+cleanup.item.dns.name = Caché DNS
+cleanup.item.dns.summary = Vacía la caché de direcciones de Internet.
+cleanup.item.dns.help = Windows recuerda la dirección IP de cada web que visitas. Vaciar esta caché soluciona webs que no cargan tras cambiar de red, de DNS o de proveedor. No libera espacio en disco.
+
+cleanup.item.shaderCache.name = Caché de shaders de la GPU
+cleanup.item.shaderCache.summary = DirectX, NVIDIA, AMD e Intel.
+cleanup.item.shaderCache.help = Shaders ya compilados de juegos y programas 3D. Borrarlos es útil tras actualizar el controlador de vídeo o si un juego muestra errores gráficos; el sistema los vuelve a crear.
+cleanup.item.shaderCache.warning = Los juegos recompilarán shaders: las primeras partidas pueden ir a tirones.
+
+cleanup.item.thumbnails.name = Caché de miniaturas e iconos
+cleanup.item.thumbnails.summary = Soluciona miniaturas o iconos que se ven mal.
+cleanup.item.thumbnails.help = Windows guarda una copia de las miniaturas de fotos y vídeos y de los iconos para mostrarlos rápido. Si se corrompe, ves iconos en blanco o miniaturas equivocadas. Se regenera sola.
+cleanup.item.thumbnails.warning = Se reinicia el Explorador de Windows: la barra de tareas desaparece unos segundos.
+
+cleanup.item.driverInstallers.name = Instaladores extraídos de drivers
+cleanup.item.driverInstallers.summary = Carpetas C:\NVIDIA y C:\AMD.
+cleanup.item.driverInstallers.help = Los instaladores de NVIDIA y AMD se descomprimen en estas carpetas y no las borran. Pueden ocupar varios GB y no se necesitan una vez instalado el controlador.
+
+cleanup.item.recycleBin.name = Papelera de reciclaje
+cleanup.item.recycleBin.summary = Todas las unidades y todos los usuarios.
+cleanup.item.recycleBin.help = Vacía la Papelera de reciclaje de todos los discos y de todas las cuentas del equipo.
+cleanup.item.recycleBin.warning = Los archivos de la papelera se borran definitivamente.
+
+cleanup.item.recentItems.name = Elementos recientes y listas de salto
+cleanup.item.recentItems.summary = Historial de archivos abiertos recientemente.
+cleanup.item.recentItems.help = Borra la lista de archivos abiertos recientemente del Explorador, del menú Inicio y de la barra de tareas. Útil por privacidad si el equipo es compartido.
+cleanup.item.recentItems.warning = También se quitan los elementos anclados en las listas de la barra de tareas, en todas las cuentas del equipo.
+
+cleanup.item.prefetch.name = Prefetch
+cleanup.item.prefetch.summary = Datos para abrir programas más rápido.
+cleanup.item.prefetch.help = Windows guarda cómo se cargan los programas para abrirlos más rápido la próxima vez. Borrarlo NO acelera el equipo (es un mito común); solo tiene sentido para solucionar problemas.
+cleanup.item.prefetch.warning = Los programas pueden tardar más en abrir durante unos días.
+
+cleanup.item.eventLogs.name = Registros del Visor de eventos
+cleanup.item.eventLogs.summary = Vacía Aplicación, Sistema, Seguridad y demás.
+cleanup.item.eventLogs.help = Vacía todos los registros del Visor de eventos de Windows. Libera espacio y borra el historial de actividad del sistema.
+cleanup.item.eventLogs.warning = Se pierde el historial útil para diagnosticar problemas. Tarda alrededor de un minuto.
+
+cleanup.item.componentStore.name = Almacén de componentes (WinSxS)
+cleanup.item.componentStore.summary = Versiones antiguas reemplazadas por actualizaciones.
+cleanup.item.componentStore.help = Usa la herramienta oficial de Windows (DISM /StartComponentCleanup) para eliminar versiones antiguas de componentes que las actualizaciones ya sustituyeron. No usa /ResetBase, así que las actualizaciones instaladas se pueden seguir desinstalando.
+cleanup.item.componentStore.warning = Puede tardar entre 5 y 20 minutos.
+
+cleanup.item.windowsOld.name = Instalación anterior de Windows
+cleanup.item.windowsOld.summary = Windows.old y restos de las actualizaciones grandes.
+cleanup.item.windowsOld.help = Tras una actualización grande (por ejemplo, de Windows 10 a 11, o a una versión nueva cada año), Windows guarda la instalación anterior en «Windows.old» durante 10 días por si quieres volver atrás, además de archivos temporales de la instalación. Suelen ocupar entre 10 y 30 GB.\n\nTURBiX usa el Liberador de espacio en disco del propio Windows, que es la forma segura de borrarlos. Los archivos que necesita «Restablecer este PC» no se tocan.
+cleanup.item.windowsOld.warning = Ya no podrás volver a la versión anterior de Windows desde Configuración › Recuperación.
+
+# Progreso y registro de actividad
+cleanup.progress.analyzing = Analizando: {0}
+cleanup.progress.analyzed = Análisis completado
+cleanup.progress.cleaning = Limpiando: {0}
+cleanup.progress.cleaned = Limpieza completada
+
+cleanup.log.analyzing.one = Analizando {0} categoría de limpieza...
+cleanup.log.analyzing.other = Analizando {0} categorías de limpieza...
+cleanup.log.recoverable = Espacio recuperable aproximado: {0}
+cleanup.log.cleaning.one = Limpiando {0} categoría
+cleanup.log.cleaning.other = Limpiando {0} categorías
+cleanup.log.cleaningAggressive.one = Limpiando {0} categoría (modo agresivo)
+cleanup.log.cleaningAggressive.other = Limpiando {0} categorías (modo agresivo)
+cleanup.log.appOpen = {0} está abierto: ciérralo para limpiar su caché (omitido).
+cleanup.log.appOpenEdge = {0} está abierto: ciérralo para limpiar su caché (omitido). Edge suele seguir abierto en segundo plano: lo evita el ajuste «Microsoft Edge en segundo plano» de Rendimiento › Juegos.
+cleanup.log.error = Error: {0}
+cleanup.log.freed = Liberado: {0}
+cleanup.log.freedSkipped.one = Liberado: {1} ({0} archivo en uso omitido)
+cleanup.log.freedSkipped.other = Liberado: {1} ({0} archivos en uso omitidos)
+cleanup.log.finished = Limpieza terminada. Liberado: {0} (espacio libre del disco del sistema: +{1}).
+cleanup.log.dnsFlushed = Caché DNS vaciada.
+cleanup.log.dnsFailed = No se pudo vaciar la caché DNS.
+cleanup.log.noOldWindows = No hay instalación anterior de Windows ni restos de actualizaciones.
+cleanup.log.noCleanmgr = Este Windows no incluye el Liberador de espacio en disco.
+cleanup.log.cleanmgrRunning = Ejecutando el Liberador de espacio en disco de Windows (puede tardar varios minutos)...
+cleanup.log.cleanmgrStillRunning = El Liberador de espacio en disco sigue trabajando; TURBiX continúa sin esperarlo.
+cleanup.log.serviceSlow = El servicio {0} tarda en detenerse; algunos archivos pueden quedar en uso.
+cleanup.log.eventLogsCleared.one = {1} de {0} registro vaciado.
+cleanup.log.eventLogsCleared.other = {1} de {0} registros vaciados.
+cleanup.log.dismRunning = Ejecutando DISM /StartComponentCleanup (no cierres TURBiX)...
+cleanup.log.dismExit = DISM terminó con código {0}: {1}

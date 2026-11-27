@@ -1,0 +1,250 @@
+# Início (painel), diagnóstico, informações do sistema e Saúde. Português (Brasil).
+
+# ------------------------------------------------------------------ Início
+home.subtitle = Veja como está a privacidade e o espaço em disco do seu computador.
+home.quick.title = Otimização rápida
+home.quick.help = Aplica de uma vez todas as configurações de privacidade marcadas como recomendadas e limpa as categorias de arquivos recomendadas. São opções seguras para qualquer PC: o Windows Update, o Microsoft Defender e seus documentos não são tocados, e tudo pode ser desfeito em Restaurar.
+home.quick.text = Bloqueia a telemetria e os anúncios do Windows e libera espaço removendo arquivos temporários e cache. Seguro e reversível.
+home.quick.chip.backup = Backup automático
+home.quick.chip.restorePoint = Ponto de restauração
+home.quick.chip.safe = Sem mexer no Windows Update nem no Defender
+home.quick.button = Otimizar agora
+home.privacy.help = Porcentagem de proteções de privacidade ativas neste computador, considerando todas as configurações que o TURBiX oferece (as parciais contam pela metade). As configurações que não se aplicam ao seu computador não entram na conta.
+home.privacy.review = Revisar configurações
+home.space.title = Espaço recuperável
+home.space.help = Espaço ocupado por arquivos temporários, cache e os outros itens que o TURBiX pode limpar. Clique em “Analisar” para calcular; a análise só lê, não apaga nada.
+home.space.analyze = Analisar
+home.space.details = Ver detalhes
+home.disk.title = Disco do sistema
+home.disk.help = Espaço livre no disco onde o Windows está instalado. Com menos de 10–15% livre, o Windows fica mais lento e as atualizações podem falhar.
+home.diag.title = Diagnóstico do computador
+home.diag.help = O TURBiX verifica as causas mais comuns de um computador lento: tipo e estado do disco, espaço livre, memória, programas de inicialização, dias sem reiniciar e reinicializações pendentes. Só lê informações; não muda nada.\n\nAlgumas coisas nenhum programa resolve (um disco rígido mecânico ou pouca memória). Nesses casos, o TURBiX diz isso com clareza em vez de prometer milagres.
+home.diag.recheck = Verificar de novo
+home.pc.title = Seu computador
+home.pc.help = Informações básicas do seu computador. O TURBiX as lê localmente só para mostrar a você e não as envia para lugar nenhum: o TURBiX não usa a Internet.
+home.pc.os = Sistema operacional
+home.pc.cpu = Processador
+home.pc.ram = Memória RAM
+home.pc.gpu = Placa de vídeo
+home.pc.user = Computador e usuário
+home.pc.uptime = Tempo ligado
+
+# ------------------------------------------------------------------ Sistema
+sys.unknown = Desconhecido
+# {0} = número de threads, {1} = nome do processador
+sys.cpuThreads.one = {1} · {0} thread
+sys.cpuThreads.other = {1} · {0} threads
+# {0} = versão (22H2…), {1}.{2} = build
+sys.osVersion = {0} · build {1}.{2}
+sys.uptime.days = {0} d {1} h
+sys.uptime.hours = {0} h {1} min
+sys.uptime.minutes = {0} min
+
+# ------------------------------------------------------------------ Diagnóstico
+diag.allOk.title = Tudo certo
+diag.allOk.text = Nenhuma das causas comuns de lentidão foi encontrada: disco, memória, espaço livre e inicialização estão bem.
+# {0} = conta de administrador com que o TURBiX roda, {1} = conta conectada
+diag.otherUser.title = O TURBiX foi aberto com a conta “{0}”, não com a sua
+diag.otherUser.text = Você entrou como “{0}”, mas a permissão de administrador foi dada por “{1}”. As configurações por usuário (anúncios, pesquisa, mouse, Game Bar, programas de inicialização) serão aplicadas a “{1}” e não à sua conta. Para que valham para você, entre no Windows como “{1}” ou transforme sua conta em administrador. A limpeza e as configurações do computador todo funcionam normalmente.
+diag.diskFailing.title = O disco está relatando problemas
+diag.diskFailing.text = O Windows indica que o disco do sistema não está em bom estado. Faça uma cópia dos seus arquivos importantes o quanto antes e pense em trocá-lo: um disco com falhas deixa o computador inteiro lento.
+diag.diskFailing.textModel = O Windows indica que o disco do sistema ({0}) não está em bom estado. Faça uma cópia dos seus arquivos importantes o quanto antes e pense em trocá-lo: um disco com falhas deixa o computador inteiro lento.
+diag.hdd.title = O Windows está em um disco rígido mecânico (HD)
+diag.hdd.text = É a principal causa de um computador lento e do “disco em 100%”. Nenhum programa compensa isso: trocar por um SSD é a melhoria que mais se nota. Enquanto isso, ajuda tirar programas da inicialização e desativar o SysMain.
+diag.hdd.action = Ver configurações de inicialização e disco
+diag.diskFull.title = O disco está quase cheio
+diag.diskLow.title = Pouco espaço em disco
+# {0} = espaço livre, {1} = unidade (C:)
+diag.diskLow.text = Restam apenas {0} livres em {1}. Com pouco espaço, o Windows fica mais lento e as atualizações podem falhar.
+diag.diskLow.action = Liberar espaço
+diag.lowRam.title = Pouca memória RAM ({0} GB)
+diag.lowRam.text = O Windows e um navegador já ocupam quase toda essa memória. O ideal é manter poucos programas abertos ao mesmo tempo e poucos na inicialização. Aumentar para 8 ou 16 GB é a segunda melhoria que mais se nota, depois do SSD.
+diag.lowRam.action = Ver uso de memória
+# {0} = porcentagem já formatada (“87%”)
+diag.ramFull.title = A memória está em {0}
+diag.ramFull.text = Com a memória quase cheia, o Windows começa a usar o disco como memória e tudo fica lento. Veja qual programa ocupa mais e feche-o, ou libere memória.
+diag.ramFull.action = Ver o que está ocupando
+diag.startup.title.one = {0} programa inicia com o Windows
+diag.startup.title.other = {0} programas iniciam com o Windows
+diag.startup.text = Cada um deixa a inicialização mais demorada e ocupa memória o dia todo. É a causa mais comum de uma inicialização lenta. Desative os que você não precisa logo de cara.
+diag.startup.action = Revisar programas de inicialização
+diag.uptime.title.one = O computador está há {0} dia sem reiniciar
+diag.uptime.title.other = O computador está há {0} dias sem reiniciar
+diag.uptime.text = “Desligar” não reinicia o Windows por completo se a Inicialização rápida estiver ativada. Use “Reiniciar” de vez em quando: isso resolve muitas falhas e lentidões que se acumulam com os dias.
+diag.uptime.action = Ver a configuração de Inicialização rápida
+diag.reboot.title = O Windows tem uma reinicialização pendente
+diag.reboot.text = Há atualizações instaladas pela metade. Até você reiniciar, o Windows continua trabalhando nelas em segundo plano e pode ficar mais lento.
+diag.powerSaver.title = O plano “Economia de energia” está ativo
+diag.powerSaver.text = Esse plano de energia limita a velocidade do processador para poupar bateria. Se o computador parecer lento, mude para “Equilibrado” em Painel de Controle › Opções de Energia.
+diag.win10.title = O Windows 10 não recebe mais atualizações de segurança
+diag.win10.text = O suporte ao Windows 10 terminou em outubro de 2025. O computador continua funcionando, mas sem novas correções, a menos que você se inscreva nas Atualizações de Segurança Estendidas (ESU) da Microsoft ou passe para o Windows 11.
+
+# ------------------------------------------------------------------ Saúde: página
+health.subtitle = O estado dos componentes do computador, de acordo com o que cada um informa ao Windows. Só lê informações: nada é alterado.
+health.summary.help = O TURBiX reúne o que o Windows já sabe sobre o hardware: dados S.M.A.R.T. dos discos, desgaste da bateria, módulos de memória, erros de hardware do processador, estado da placa de vídeo e do driver, dispositivos com problemas e desligamentos inesperados dos últimos 30 dias.\n\n“Bom” significa que não há nenhum sinal de falha registrado, não é uma garantia. O Windows não expõe todos os sensores (por exemplo, a temperatura real do processador ou da placa de vídeo em muitos computadores).
+health.rescan = Analisar de novo
+health.summary.caption = ESTADO GERAL
+health.analyzing = Analisando os componentes…
+health.summary.problems.one = {0} componente com problemas
+health.summary.problems.other = {0} componentes com problemas
+# {1} = componentes para acompanhar
+health.summary.problemsAndWatch.one = {0} componente com problemas e {1} para acompanhar
+health.summary.problemsAndWatch.other = {0} componentes com problemas e {1} para acompanhar
+health.summary.watch.one = {0} componente para acompanhar
+health.summary.watch.other = {0} componentes para acompanhar
+health.summary.allGood = Todos os componentes estão bem
+health.summary.noData = Não foi possível ler o estado dos componentes.
+health.summary.failed = Não foi possível concluir a análise.
+health.log.summary = Saúde do computador: {0}.
+health.log.error = Saúde: {0}
+health.level.good = Bom
+health.level.attention = Atenção
+health.level.problem = Problema
+
+# ------------------------------------------------------------------ Saúde: comuns
+health.goodCondition = Em bom estado
+health.noErrors = Nenhum erro registrado
+health.temperature = Temperatura
+health.unit.celsius = {0} °C
+health.unit.hours = {0} h
+health.unit.mhz = {0} MHz
+# Formato de data do .NET para a data do driver
+health.dateFormat = dd/MM/yyyy
+
+# ------------------------------------------------------------------ Saúde: discos
+health.disk.name = Disco: {0}
+health.disk.noName = sem nome
+health.disk.kind.ssd = SSD
+health.disk.kind.hdd = Disco rígido mecânico (HD)
+health.disk.kind.other = Disco
+health.disk.help = O TURBiX lê o estado S.M.A.R.T. que o próprio disco informa ao Windows: saúde geral, desgaste (em SSDs), temperatura, horas de uso e erros de leitura.\n\nUm disco com alertas pode falhar sem outros sinais: é o componente que mais causa perda de dados. Tenha sempre uma cópia do que é importante.
+health.disk.type = Tipo
+health.disk.capacity = Capacidade
+health.disk.failing = O disco está relatando falhas
+health.disk.failing.advice = Copie seus arquivos importantes agora e troque o disco o quanto antes.
+health.disk.warning = O disco está relatando alertas
+health.disk.warning.advice = Faça uma cópia dos seus arquivos importantes e fique de olho neste disco; ele pode começar a falhar.
+health.disk.lifeLeft = Vida útil restante
+health.disk.ssdEnd = SSD no fim da vida útil
+health.disk.ssdEnd.advice = Troque-o logo e copie seus dados.
+health.disk.ssdWear = SSD com desgaste alto
+health.disk.ssdWear.advice = Ainda funciona, mas é bom ir pensando em trocá-lo.
+health.disk.hot = Temperatura do disco alta
+health.disk.hot.advice = Verifique a ventilação do computador; o calor encurta a vida do disco.
+health.disk.hours = Horas ligado
+health.disk.readErrors = Erros de leitura não corrigidos
+health.disk.readErrors.headline = O disco teve erros de leitura
+health.disk.readErrors.advice = Faça uma cópia dos seus dados e execute “Verificar o disco” em Soluções › Reparar.
+
+# ------------------------------------------------------------------ Saúde: bateria
+health.battery.name = Bateria
+health.battery.help = Compara a carga que a bateria consegue armazenar hoje com a que tinha de fábrica. Toda bateria perde capacidade com os ciclos de carga; abaixo de 60% a autonomia já fica bem menor.
+health.battery.charge = Carga atual
+health.battery.cycles = Ciclos de carga
+health.battery.capacity = Capacidade em relação à nova
+health.battery.worn.high = Bateria muito desgastada
+health.battery.worn.high.advice = Dura muito pouco fora da tomada; vale a pena trocá-la.
+health.battery.worn = Bateria desgastada
+health.battery.worn.advice = A autonomia está bem menor do que quando era nova. Pense em trocá-la se isso atrapalha você.
+health.battery.noWearData = O computador não informa o desgaste
+
+# ------------------------------------------------------------------ Saúde: memória
+health.memory.name = Memória RAM
+health.memory.help = Mostra os módulos instalados e se o Windows registrou erros de memória. A RAM não tem indicador de desgaste: quando falha, causa telas azuis, programas fechando sozinhos ou arquivos corrompidos.\n\nPara testá-la a fundo, use o “Diagnóstico de Memória do Windows” (procure no menu Iniciar): ele reinicia o computador e analisa a memória antes de carregar o Windows.
+health.memory.installed = Instalada
+health.memory.modules = Módulos
+health.memory.speed = Velocidade
+health.memory.errors = O Diagnóstico de Memória do Windows encontrou erros
+health.memory.errors.advice = Um módulo de RAM pode estar danificado. Teste os módulos um de cada vez e troque o que falhar.
+health.memory.singleModule = Nenhum erro registrado (um só módulo rende menos que dois em dual channel)
+
+# ------------------------------------------------------------------ Saúde: processador
+health.cpu.name = Processador
+health.cpu.nameModel = Processador: {0}
+# {0} = dias analisados (30)
+health.cpu.help = Mostra a carga atual, a temperatura (se a placa-mãe a informa ao Windows) e os erros de hardware (WHEA) que o processador ou a placa-mãe tenham relatado nos últimos {0} dias.\n\nO Windows nem sempre expõe a temperatura real do processador. Se ela não aparece aqui, é uma limitação do computador, não um defeito.
+health.cpu.coresThreads = Núcleos / threads
+health.cpu.coresThreads.value = {0} / {1}
+health.cpu.sockets = Processadores
+health.cpu.load = Carga agora
+health.cpu.temperature = Temperatura (zona térmica)
+health.cpu.hot = Temperatura muito alta
+health.cpu.hot.advice = Limpe a poeira das ventoinhas e das grades e verifique a pasta térmica. Com tanto calor, o processador reduz a própria velocidade.
+# {0} = dias (30)
+health.cpu.whea.label = Erros de hardware ({0} dias)
+health.cpu.whea = O Windows registrou erros de hardware
+health.cpu.whea.advice = Costumam ser causados por overclock ou tensões instáveis, temperatura alta ou um componente que começa a falhar. Se você fez overclock, volte aos valores de fábrica.
+
+# ------------------------------------------------------------------ Saúde: placa de vídeo
+health.gpu.name = Placa de vídeo: {0}
+health.gpu.help = Verifica se o Windows não informa erros na placa de vídeo e a idade do driver. Um driver antigo é a causa mais comum de engasgos, jogos fechando e tela preta.
+health.gpu.driverVersion = Versão do driver
+health.gpu.driverDate = Data do driver
+health.gpu.error = O Windows informa um erro na placa de vídeo (código {0})
+health.gpu.error.advice = Reinstale o driver pelo site do fabricante (NVIDIA, AMD ou Intel).
+health.gpu.basic = Usando o driver básico do Windows
+health.gpu.basic.advice = Instale o driver do fabricante: com o básico não há aceleração e tudo fica lento.
+health.gpu.oldDriver = Driver com mais de dois anos
+health.gpu.oldDriver.advice = Baixe o driver atual no site do fabricante da placa de vídeo.
+health.gpu.ok = Funcionando corretamente
+
+# ------------------------------------------------------------------ Saúde: dispositivos
+health.dev.name = Dispositivos e drivers
+health.dev.help = Procura dispositivos que o Gerenciador de Dispositivos marca com um problema (o triângulo amarelo): driver não instalado, dispositivo que não inicia ou que parou de responder. Os que você desativou de propósito não contam.
+health.dev.allOk = Todos os dispositivos estão funcionando
+health.dev.problems.one = {0} dispositivo com problemas
+health.dev.problems.other = {0} dispositivos com problemas
+health.dev.problems.advice = Instale ou atualize o driver pelo Windows Update (Atualizações opcionais) ou pelo site do fabricante do computador.
+health.dev.unknown = Dispositivo desconhecido
+health.dev.err.noDriver = Driver não instalado
+health.dev.err.cantStart = Não consegue iniciar
+health.dev.err.driverLoad = Não foi possível carregar o driver
+health.dev.err.stopped = Parou de responder (possível falha de hardware)
+health.dev.err.resources = Conflito de recursos
+health.dev.err.code = Erro (código {0})
+
+# ------------------------------------------------------------------ Saúde: estabilidade
+health.stab.name = Estabilidade do Windows
+# {0} = dias (30)
+health.stab.help = Conta, nos últimos {0} dias, as telas azuis, os desligamentos inesperados (quedas de energia, travamentos ou desligar pelo botão) e os erros de disco registrados no Visualizador de Eventos do Windows.\n\nUm fechamento isolado não é preocupante; vários seguidos apontam para um driver, a temperatura ou um componente com defeito.
+health.stab.bsod = Telas azuis
+health.stab.power = Desligamentos inesperados
+health.stab.disk = Erros de disco
+health.stab.diskErrors = O Windows registrou erros de disco
+health.stab.diskErrors.advice = Veja o estado do disco mais acima, faça uma cópia dos seus dados e execute “Verificar o disco” em Soluções › Reparar.
+# {0} = telas azuis (3 ou mais), {1} = dias (30)
+health.stab.bsodMany.one = {0} tela azul em {1} dias
+health.stab.bsodMany.other = {0} telas azuis em {1} dias
+health.stab.bsodMany.advice = Atualize os drivers (principalmente da placa de vídeo e do chipset), execute “Reparar arquivos do Windows” e teste a memória RAM.
+health.stab.crashes = Houve desligamentos inesperados
+health.stab.crashes.advice = Se continuarem, verifique temperaturas e drivers. Uma queda de energia ou desligar pelo botão também contam aqui.
+health.stab.ok = Nenhum incidente em {0} dias
+
+# ------------------------------------------------------------------ Registro do Windows (Soluções › Registro)
+health.reg.intro = Clique em “Procurar problemas” para analisar o Registro. A análise só lê: não muda nada.
+health.reg.where = Local: {0}
+health.reg.values = Valores: {0}
+health.reg.value = Valor: {0}
+health.reg.backupNote = Uma cópia é salva antes de apagar; você pode recuperá-la em Restaurar.
+health.reg.fixButton.one = Reparar {0} entrada
+health.reg.fixButton.other = Reparar {0} entradas
+health.reg.scanning = Analisando o Registro do Windows
+health.reg.fixing = Reparando o Registro do Windows
+health.reg.error.title = Algo deu errado
+health.reg.none = Nenhuma entrada quebrada encontrada. O Registro está limpo.
+health.reg.found.one = {0} entrada quebrada encontrada. Revise a lista e desmarque o que preferir manter.
+health.reg.found.other = {0} entradas quebradas encontradas. Revise a lista e desmarque o que preferir manter.
+health.reg.confirm.title = Reparar o Registro
+health.reg.confirm.text.one = {0} entrada quebrada será apagada do Registro do Windows.\n\nAntes de apagar, uma cópia é salva, e você pode recuperá-la em Restaurar.
+health.reg.confirm.text.other = {0} entradas quebradas serão apagadas do Registro do Windows.\n\nAntes de apagar cada uma, uma cópia é salva, e você pode recuperar todas em Restaurar.
+health.reg.confirm.button = Reparar
+health.reg.clean = O Registro está limpo.
+health.reg.remaining.one = {0} entrada ainda não foi reparada.
+health.reg.remaining.other = {0} entradas ainda não foram reparadas.
+health.reg.done.title = Registro reparado
+health.reg.done.text.one = {0} entrada reparada. A cópia ficou salva em Restaurar.
+health.reg.done.text.other = {0} entradas reparadas. A cópia ficou salva em Restaurar.
+health.reg.doneWarn.title = Registro reparado com avisos
+# {0} = reparadas, {1} = com erro
+health.reg.doneWarn.text.one = {0} entrada reparada; {1} não puderam ser reparadas (os detalhes estão no Registro de atividades).
+health.reg.doneWarn.text.other = {0} entradas reparadas; {1} não puderam ser reparadas (os detalhes estão no Registro de atividades).

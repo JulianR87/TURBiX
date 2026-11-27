@@ -1,0 +1,250 @@
+# Home (dashboard), diagnostics, system info and Health. English.
+
+# ------------------------------------------------------------------ Home
+home.subtitle = Here's where your PC stands on privacy and disk space.
+home.quick.title = Quick optimization
+home.quick.help = Applies all privacy settings marked as recommended and cleans the recommended file categories, all in one go. These are safe for any PC: Windows Update, Microsoft Defender and your documents are left alone, and everything can be undone from Restore.
+home.quick.text = Blocks Windows telemetry and ads, and frees up space by removing temporary files and caches. Safe and reversible.
+home.quick.chip.backup = Automatic backup
+home.quick.chip.restorePoint = Restore point
+home.quick.chip.safe = Windows Update and Defender untouched
+home.quick.button = Optimize now
+home.privacy.help = Share of privacy protections turned on in this PC, counting every setting TURBiX offers (partial ones count as half). Settings that don't apply to your PC aren't counted.
+home.privacy.review = Review settings
+home.space.title = Recoverable space
+home.space.help = Space taken up by temporary files, caches and the other items TURBiX can clean. Click “Analyze” to work it out; the analysis only reads, it doesn't delete anything.
+home.space.analyze = Analyze
+home.space.details = See details
+home.disk.title = System drive
+home.disk.help = Free space on the drive where Windows is installed. With less than 10–15% free, Windows gets slower and updates may fail.
+home.diag.title = PC checkup
+home.diag.help = TURBiX checks the most common reasons a PC is slow: drive type and health, free space, memory, startup apps, days without a restart and pending restarts. It only reads information; nothing is changed.\n\nSome things no program can fix (a hard disk drive or too little memory). When that's the case, TURBiX tells you plainly instead of promising miracles.
+home.diag.recheck = Check again
+home.pc.title = Your PC
+home.pc.help = Basic information about your PC. TURBiX reads it locally to show it to you and doesn't send it anywhere: TURBiX doesn't use the Internet.
+home.pc.os = Operating system
+home.pc.cpu = Processor
+home.pc.ram = Memory (RAM)
+home.pc.gpu = Graphics
+home.pc.user = Device and user
+home.pc.uptime = Up time
+
+# ------------------------------------------------------------------ System
+sys.unknown = Unknown
+# {0} = thread count, {1} = processor name
+sys.cpuThreads.one = {1} · {0} thread
+sys.cpuThreads.other = {1} · {0} threads
+# {0} = version (22H2…), {1}.{2} = build
+sys.osVersion = {0} · build {1}.{2}
+sys.uptime.days = {0} d {1} h
+sys.uptime.hours = {0} h {1} min
+sys.uptime.minutes = {0} min
+
+# ------------------------------------------------------------------ Diagnostics
+diag.allOk.title = All good
+diag.allOk.text = None of the usual causes of a slow PC were found: drive, memory, free space and startup all look fine.
+# {0} = admin account TURBiX runs as, {1} = signed-in account
+diag.otherUser.title = TURBiX was opened with the “{0}” account, not yours
+diag.otherUser.text = You're signed in as “{0}”, but administrator permission was given by “{1}”. Per-user settings (ads, search, mouse, Game Bar, startup apps) will be applied to “{1}”, not to your account. To have them apply to you, sign in to Windows as “{1}” or make your account an administrator. Cleanup and PC-wide settings work as usual.
+diag.diskFailing.title = The drive is reporting problems
+diag.diskFailing.text = Windows reports that the system drive isn't healthy. Back up your important files as soon as you can and think about replacing it: a failing drive slows down the whole PC.
+diag.diskFailing.textModel = Windows reports that the system drive ({0}) isn't healthy. Back up your important files as soon as you can and think about replacing it: a failing drive slows down the whole PC.
+diag.hdd.title = Windows is on a hard disk drive (HDD)
+diag.hdd.text = It's the number one cause of a slow PC and of “disk at 100%”. No program can make up for it: switching to an SSD is the upgrade you'll notice most. In the meantime, removing startup apps and turning off SysMain helps.
+diag.hdd.action = See startup and disk settings
+diag.diskFull.title = The drive is almost full
+diag.diskLow.title = Running low on disk space
+# {0} = free space, {1} = drive (C:)
+diag.diskLow.text = Only {0} free on {1}. With little space left, Windows runs slower and updates may fail.
+diag.diskLow.action = Free up space
+diag.lowRam.title = Low memory ({0} GB of RAM)
+diag.lowRam.text = Windows and a browser already use almost all of that memory. Try to keep few programs open at once and few in startup. Upgrading to 8 or 16 GB is the second most noticeable improvement, after an SSD.
+diag.lowRam.action = See memory usage
+# {0} = formatted percentage (“87%”)
+diag.ramFull.title = Memory is at {0}
+diag.ramFull.text = When memory is nearly full, Windows starts using the disk as memory and everything slows down. Check which program is using the most and close it, or free up memory.
+diag.ramFull.action = See what's using it
+diag.startup.title.one = {0} app starts with Windows
+diag.startup.title.other = {0} apps start with Windows
+diag.startup.text = Each one makes startup longer and uses memory all day. It's the most common cause of a slow startup. Turn off the ones you don't need right away.
+diag.startup.action = Review startup apps
+diag.uptime.title.one = This PC hasn't restarted in {0} day
+diag.uptime.title.other = This PC hasn't restarted in {0} days
+diag.uptime.text = “Shut down” doesn't fully restart Windows when Fast startup is on. Use “Restart” now and then: it clears up many glitches and slowdowns that build up over time.
+diag.uptime.action = See the Fast startup setting
+diag.reboot.title = Windows has a pending restart
+diag.reboot.text = Some updates are only partly installed. Until you restart, Windows keeps working on them in the background and may be slower.
+diag.powerSaver.title = The “Power saver” plan is on
+diag.powerSaver.text = That power plan limits processor speed to save battery. If the PC feels slow, switch to “Balanced” in Control Panel › Power Options.
+diag.win10.title = Windows 10 no longer gets security updates
+diag.win10.text = Support for Windows 10 ended in October 2025. The PC keeps working, but without new patches unless you enroll in Microsoft's Extended Security Updates (ESU) or move to Windows 11.
+
+# ------------------------------------------------------------------ Health: page
+health.subtitle = The condition of your PC's components, based on what each one reports to Windows. Information is only read: nothing is changed.
+health.summary.help = TURBiX gathers what Windows already knows about the hardware: S.M.A.R.T. data from the drives, battery wear, memory modules, processor hardware errors, the state of the graphics card and its driver, devices with problems, and unexpected shutdowns in the last 30 days.\n\n“Good” means no signs of failure have been recorded. It isn't a guarantee. Windows doesn't expose every sensor (for example, the real processor or graphics temperature on many PCs).
+health.rescan = Check again
+health.summary.caption = OVERALL STATUS
+health.analyzing = Checking components…
+health.summary.problems.one = {0} component with problems
+health.summary.problems.other = {0} components with problems
+# {1} = components to watch
+health.summary.problemsAndWatch.one = {0} component with problems, {1} to keep an eye on
+health.summary.problemsAndWatch.other = {0} components with problems, {1} to keep an eye on
+health.summary.watch.one = {0} component to keep an eye on
+health.summary.watch.other = {0} components to keep an eye on
+health.summary.allGood = All components look good
+health.summary.noData = Couldn't read the status of the components.
+health.summary.failed = The check couldn't be completed.
+health.log.summary = PC health: {0}.
+health.log.error = Health: {0}
+health.level.good = Good
+health.level.attention = Attention
+health.level.problem = Problem
+
+# ------------------------------------------------------------------ Health: shared
+health.goodCondition = In good condition
+health.noErrors = No errors recorded
+health.temperature = Temperature
+health.unit.celsius = {0} °C
+health.unit.hours = {0} h
+health.unit.mhz = {0} MHz
+# .NET date format for the driver date
+health.dateFormat = MMM d, yyyy
+
+# ------------------------------------------------------------------ Health: drives
+health.disk.name = Drive: {0}
+health.disk.noName = unnamed
+health.disk.kind.ssd = SSD
+health.disk.kind.hdd = Hard disk drive (HDD)
+health.disk.kind.other = Drive
+health.disk.help = TURBiX reads the S.M.A.R.T. status the drive itself reports to Windows: overall health, wear (on SSDs), temperature, hours in use and read errors.\n\nA drive with warnings can fail with no further signs, and it's the component that loses the most data when it does. Always keep a backup of what matters.
+health.disk.type = Type
+health.disk.capacity = Capacity
+health.disk.failing = The drive is reporting failures
+health.disk.failing.advice = Copy your important files now and replace the drive as soon as you can.
+health.disk.warning = The drive is reporting warnings
+health.disk.warning.advice = Back up your important files and keep an eye on this drive; it may start to fail.
+health.disk.lifeLeft = Remaining life
+health.disk.ssdEnd = SSD at the end of its life
+health.disk.ssdEnd.advice = Replace it soon and copy your data.
+health.disk.ssdWear = SSD with high wear
+health.disk.ssdWear.advice = It still works, but it's time to start thinking about a replacement.
+health.disk.hot = High drive temperature
+health.disk.hot.advice = Check the PC's airflow; heat shortens a drive's life.
+health.disk.hours = Power-on hours
+health.disk.readErrors = Uncorrected read errors
+health.disk.readErrors.headline = The drive had read errors
+health.disk.readErrors.advice = Back up your data and run “Check the disk” under Fixes › Repair.
+
+# ------------------------------------------------------------------ Health: battery
+health.battery.name = Battery
+health.battery.help = Compares how much charge the battery can hold today with what it held when new. All batteries lose capacity with charge cycles; below 60% you'll notice much shorter battery life.
+health.battery.charge = Current charge
+health.battery.cycles = Charge cycles
+health.battery.capacity = Capacity compared to new
+health.battery.worn.high = Battery badly worn
+health.battery.worn.high.advice = It lasts very little when unplugged; it's worth replacing.
+health.battery.worn = Battery worn
+health.battery.worn.advice = Battery life is noticeably shorter than when it was new. Consider replacing it if it holds you back.
+health.battery.noWearData = This PC doesn't report battery wear
+
+# ------------------------------------------------------------------ Health: memory
+health.memory.name = Memory (RAM)
+health.memory.help = Shows the installed modules and whether Windows has recorded memory errors. RAM has no wear indicator: when it fails, you get blue screens, programs closing or corrupted files.\n\nTo test it thoroughly, use “Windows Memory Diagnostic” (search for it in the Start menu): it restarts the PC and checks the memory before Windows loads.
+health.memory.installed = Installed
+health.memory.modules = Modules
+health.memory.speed = Speed
+health.memory.errors = Windows Memory Diagnostic found memory errors
+health.memory.errors.advice = A RAM module may be damaged. Test the modules one at a time and replace the one that fails.
+health.memory.singleModule = No errors recorded (a single module is slower than two in dual channel)
+
+# ------------------------------------------------------------------ Health: processor
+health.cpu.name = Processor
+health.cpu.nameModel = Processor: {0}
+# {0} = days checked (30)
+health.cpu.help = Shows the current load, the temperature if the motherboard reports it to Windows, and any hardware errors (WHEA) the processor or motherboard reported in the last {0} days.\n\nWindows doesn't always expose the real processor temperature. If it doesn't show up here, that's a limitation of the PC, not a fault.
+health.cpu.coresThreads = Cores / threads
+health.cpu.coresThreads.value = {0} / {1}
+health.cpu.sockets = Processors
+health.cpu.load = Current load
+health.cpu.temperature = Temperature (thermal zone)
+health.cpu.hot = Very high temperature
+health.cpu.hot.advice = Clean the dust out of fans and vents and check the thermal paste. When it gets this hot, the processor slows itself down.
+# {0} = days (30)
+health.cpu.whea.label = Hardware errors ({0} days)
+health.cpu.whea = Windows recorded hardware errors
+health.cpu.whea.advice = They're usually caused by overclocking or unstable voltages, high temperatures, or a component that's starting to fail. If you overclocked, go back to the factory settings.
+
+# ------------------------------------------------------------------ Health: graphics
+health.gpu.name = Graphics: {0}
+health.gpu.help = Checks that Windows isn't reporting errors on the graphics card, and how old its driver is. An old driver is the most common cause of stutter, game crashes and black screens.
+health.gpu.driverVersion = Driver version
+health.gpu.driverDate = Driver date
+health.gpu.error = Windows reports an error on the graphics card (code {0})
+health.gpu.error.advice = Reinstall the driver from the manufacturer's website (NVIDIA, AMD or Intel).
+health.gpu.basic = Using the Microsoft Basic Display driver
+health.gpu.basic.advice = Install the manufacturer's driver: the basic one has no acceleration and everything is slow.
+health.gpu.oldDriver = Driver is more than two years old
+health.gpu.oldDriver.advice = Download the current driver from the graphics card manufacturer's website.
+health.gpu.ok = Working properly
+
+# ------------------------------------------------------------------ Health: devices
+health.dev.name = Devices and drivers
+health.dev.help = Looks for devices that Device Manager flags with a problem (the yellow triangle): driver not installed, device that won't start or stopped responding. Devices you turned off on purpose don't count.
+health.dev.allOk = All devices are working
+health.dev.problems.one = {0} device with problems
+health.dev.problems.other = {0} devices with problems
+health.dev.problems.advice = Install or update its driver from Windows Update (Optional updates) or the PC manufacturer's website.
+health.dev.unknown = Unknown device
+health.dev.err.noDriver = Driver not installed
+health.dev.err.cantStart = Can't start
+health.dev.err.driverLoad = Driver couldn't be loaded
+health.dev.err.stopped = Stopped responding (possible hardware fault)
+health.dev.err.resources = Resource conflict
+health.dev.err.code = Error (code {0})
+
+# ------------------------------------------------------------------ Health: stability
+health.stab.name = Windows stability
+# {0} = days (30)
+health.stab.help = Counts the blue screens, unexpected shutdowns (power cuts, freezes or holding the power button) and disk errors recorded in Windows Event Viewer over the last {0} days.\n\nA single crash is nothing to worry about; several in a row point to a driver, temperature or a failing component.
+health.stab.bsod = Blue screens
+health.stab.power = Unexpected shutdowns
+health.stab.disk = Disk errors
+health.stab.diskErrors = Windows recorded disk errors
+health.stab.diskErrors.advice = Check the drive status above, back up your data and run “Check the disk” under Fixes › Repair.
+# {0} = blue screens (3 or more), {1} = days (30)
+health.stab.bsodMany.one = {0} blue screen in {1} days
+health.stab.bsodMany.other = {0} blue screens in {1} days
+health.stab.bsodMany.advice = Update your drivers (especially graphics and chipset), run “Repair Windows files” and test the RAM.
+health.stab.crashes = There were unexpected shutdowns
+health.stab.crashes.advice = If they keep happening, check temperatures and drivers. A power cut or holding the power button also counts here.
+health.stab.ok = No incidents in {0} days
+
+# ------------------------------------------------------------------ Windows registry (Fixes › Registry)
+health.reg.intro = Click “Find problems” to scan the registry. The scan only reads: nothing is changed.
+health.reg.where = Location: {0}
+health.reg.values = Values: {0}
+health.reg.value = Value: {0}
+health.reg.backupNote = A copy is saved before it's deleted; you can get it back from Restore.
+health.reg.fixButton.one = Fix {0} entry
+health.reg.fixButton.other = Fix {0} entries
+health.reg.scanning = Scanning the Windows registry
+health.reg.fixing = Fixing the Windows registry
+health.reg.error.title = Something went wrong
+health.reg.none = No broken entries found. The registry is clean.
+health.reg.found.one = Found {0} broken entry. Review the list and uncheck anything you'd rather keep.
+health.reg.found.other = Found {0} broken entries. Review the list and uncheck anything you'd rather keep.
+health.reg.confirm.title = Fix the registry
+health.reg.confirm.text.one = {0} broken entry will be deleted from the Windows registry.\n\nA copy is saved first, and you can get it back from Restore.
+health.reg.confirm.text.other = {0} broken entries will be deleted from the Windows registry.\n\nA copy of each one is saved first, and you can get them all back from Restore.
+health.reg.confirm.button = Fix
+health.reg.clean = The registry is clean.
+health.reg.remaining.one = {0} entry left unfixed.
+health.reg.remaining.other = {0} entries left unfixed.
+health.reg.done.title = Registry fixed
+health.reg.done.text.one = Fixed {0} entry. The backup is saved in Restore.
+health.reg.done.text.other = Fixed {0} entries. The backup is saved in Restore.
+health.reg.doneWarn.title = Registry fixed with warnings
+# {0} = fixed, {1} = failed
+health.reg.doneWarn.text.one = Fixed {0} entry; {1} couldn't be fixed (details are in the Activity log).
+health.reg.doneWarn.text.other = Fixed {0} entries; {1} couldn't be fixed (details are in the Activity log).

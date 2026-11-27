@@ -1,0 +1,24 @@
+# Programme d’installation et de désinstallation. Français.
+
+setup.title = Installer TURBiX
+setup.text = TURBiX sera copié dans ce dossier et apparaîtra dans le menu Démarrer et dans la liste des applications de Windows, d’où vous pourrez le désinstaller quand vous voudrez.
+setup.folder = DOSSIER D’INSTALLATION
+setup.desktop = Créer un raccourci sur le bureau
+setup.replace = La version {0} est déjà installée. Elle sera remplacée par la {1} ; vos paramètres et vos sauvegardes sont conservés.
+setup.reinstall = La version {0} est déjà installée. Elle sera réinstallée ; vos paramètres et vos sauvegardes sont conservés.
+setup.install = Installer
+setup.done.title = TURBiX est installé
+setup.done.text = Vous le trouverez dans le menu Démarrer. Pour le supprimer, ouvrez Paramètres › Applications dans Windows.
+setup.open = Ouvrir TURBiX
+setup.retry = Réessayer
+setup.running.title = TURBiX est ouvert
+setup.running.text = Il faut le fermer pour continuer : faites un clic droit sur son icône à côté de l’horloge et choisissez « Quitter TURBiX ». Cliquez ensuite sur « Réessayer ».
+setup.error.title = Impossible d’installer TURBiX
+setup.error.text = Windows n’a pas permis de terminer l’installation.\n\n{0}
+uninstall.confirm.title = Désinstaller TURBiX ?
+uninstall.confirm.text = Le programme, ses raccourcis et ses préférences seront supprimés.\n\nLes modifications que TURBiX a apportées à Windows ne sont pas annulées par la désinstallation : pour revenir en arrière, annulez et utilisez d’abord la section « Restaurer ».\n\nLes sauvegardes et le journal d’activité sont conservés dans {0}.
+uninstall.confirm.button = Désinstaller
+uninstall.done.title = TURBiX a été désinstallé
+uninstall.done.text = Les sauvegardes et le journal d’activité se trouvent toujours dans {0}. Vous pouvez supprimer ce dossier si vous n’en avez plus besoin.
+uninstall.done.leftover = Impossible de supprimer {0}. Vous pouvez le supprimer à la main.
+uninstall.error.title = Impossible de désinstaller TURBiX

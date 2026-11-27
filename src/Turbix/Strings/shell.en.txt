@@ -1,0 +1,180 @@
+# Main window, privacy/cleanup/quick optimize/restore flows, Restore, About, What's new, dialogs, theme and core
+# helpers. English.
+
+# --- Window
+shell.minimize = Minimize
+shell.maximize = Maximize
+shell.restoreDown = Restore down
+shell.help = Help
+shell.status.help = Administrator mode: TURBiX has the permissions Windows requires to change system settings and delete temporary files. If it says “No admin rights”, close TURBiX and open it again, accepting the Windows prompt.\n\nDoesn't use the internet: TURBiX doesn't connect to any server. It sends no data, has no telemetry or ads, and downloads nothing. This has nothing to do with your connection: your internet keeps working as usual.\n\nBelow that is the installed version. Its changes are listed under “What's new”.
+shell.busy.dontClose = Don't close TURBiX or turn off the PC until the task is finished.
+shell.busyClose.title = A task is still running
+shell.busyClose.text = TURBiX is working, and closing it now could leave the PC halfway through (for example, with Windows services stopped).\n\nPlease wait until it's done; you can close the window as soon as it finishes.
+
+# --- Appearance
+theme.caption = APPEARANCE
+theme.system = System
+theme.light = Light
+theme.dark = Dark
+theme.log.changed = Theme: {0}.
+theme.log.light = light
+theme.log.dark = dark
+theme.log.system = same as Windows
+theme.log.saveFailed = Couldn't save the chosen theme: {0}
+
+# --- General status and home
+main.admin.on = Administrator mode
+main.admin.off = No admin rights
+main.greeting.hello = Hello
+main.greeting.morning = Good morning, {0}
+main.greeting.afternoon = Good afternoon, {0}
+main.greeting.evening = Good evening, {0}
+main.log.started = TURBiX {0} started.
+main.log.system = System: {0} {1}
+main.editionNote = On Windows {0}, the lowest diagnostic data level Microsoft allows is “Required”. TURBiX sets it to that minimum and also blocks the service and tasks that send the data.
+main.ram = {0} used of {1}
+main.disk = free on {0} · {1} used of {2}
+main.busy.preparing = Getting ready…
+main.error.title = Something went wrong
+main.warnings = Keep in mind:
+main.restartNeeded = Restart the PC for all changes to take effect.
+main.restorePointNote = Windows couldn't create the restore point (System Protection is turned off, or Windows didn't allow it). TURBiX's own backup was saved.
+
+# --- Privacy
+main.checking = Checking…
+main.privacy.level.excellent = Excellent
+main.privacy.level.good = Good
+main.privacy.level.fair = Could be better
+main.privacy.level.low = Low
+main.privacy.summary.one = {1} of {0} protection active
+main.privacy.summary.other = {1} of {0} protections active
+main.privacy.applyButton.one = Apply {0} setting
+main.privacy.applyButton.other = Apply {0} settings
+main.apply.confirm.title = Apply privacy settings
+main.apply.confirm.button = Apply settings
+main.apply.confirm.text.one = {0} privacy setting will be applied.\n\nTURBiX backs up every value it changes, so you can undo it from Restore.
+main.apply.confirm.text.other = {0} privacy settings will be applied.\n\nTURBiX backs up every value it changes, so you can undo them from Restore.
+main.apply.confirm.advanced.one = This includes {0} advanced setting that may turn off a Windows feature. Check the warnings in yellow.
+main.apply.confirm.advanced.other = This includes {0} advanced settings that may turn off some Windows features. Check the warnings in yellow.
+main.apply.busy = Applying privacy settings
+main.apply.nothing = All the selected settings were already applied. Nothing needed to change.
+main.apply.changed.one = {0} change was made.
+main.apply.changed.other = {0} changes were made.
+main.apply.changedErrors.one = {0} change was made ({1} with errors, see the Activity log).
+main.apply.changedErrors.other = {0} changes were made ({1} with errors, see the Activity log).
+main.apply.done.title = Settings applied
+main.apply.doneWarn.title = Settings applied with warnings
+
+# --- Cleanup
+main.cleanup.notAnalyzed = Not scanned yet
+main.cleanup.analyzedAt = Scanned at {0}
+main.cleanup.cleanedAt = Cleaned at {0}
+main.cleanup.button.one = Clean {0} category
+main.cleanup.button.other = Clean {0} categories
+main.cleanup.busyAnalyze = Scanning the PC
+main.cleanup.busyClean = Cleaning up files
+main.cleanup.confirm.title = Clean up files
+main.cleanup.confirm.button = Clean now
+main.cleanup.confirm.text.one = {0} category will be cleaned.
+main.cleanup.confirm.text.other = {0} categories will be cleaned.
+main.cleanup.freed = {0} freed.
+main.cleanup.skipped = Skipped because they were open: {0}. Close them and clean again to include them.
+main.cleanup.inUse = Some files were in use and were kept. That's normal.
+main.cleanup.done.title = Cleanup finished
+
+# --- Quick optimize
+main.quick.confirm.title = Quick optimize
+main.quick.confirm.button = Optimize now
+main.quick.confirm.tweaks.one = TURBiX will apply {0} recommended privacy setting.
+main.quick.confirm.tweaks.other = TURBiX will apply the {0} recommended privacy settings.
+main.quick.confirm.clean.one = It will also clean {0} category of temporary files and cache.
+main.quick.confirm.clean.other = It will also clean {0} categories of temporary files and cache.
+main.quick.confirm.safe = These options are safe for any PC: Windows Update, Defender and your personal files aren't touched. The settings can be undone from Restore; the deleted files are only temporary files and cache, and they can't be recovered.
+main.quick.busy = Optimizing your PC
+main.quick.summary.privacy.one = Privacy: {0} change applied.
+main.quick.summary.privacy.other = Privacy: {0} changes applied.
+main.quick.summary.privacyErrors.one = Privacy: {0} change applied ({1} with errors, see the Activity log).
+main.quick.summary.privacyErrors.other = Privacy: {0} changes applied ({1} with errors, see the Activity log).
+main.quick.summary.freed = Space freed: {0}.
+main.quick.summary.skipped = Skipped because they were open: {0}.
+main.quick.done.title = PC optimized
+main.quick.doneWarn.title = PC optimized, with warnings
+
+# --- Undo
+main.revert.confirm.title = Undo changes
+main.revert.confirm.text.one = {0} original value saved on {1} will be restored.\n\nThe settings from that session will go back to how they were before.
+main.revert.confirm.text.other = The {0} original values saved on {1} will be restored.\n\nThe settings from that session will go back to how they were before.
+main.revert.busy = Undoing changes
+main.revert.done.title = Changes undone
+main.revert.done.text = The original values were restored. Restart the PC to finish.
+main.revert.partial.title = Undo not complete
+main.revert.partial.text.one = {0} value was restored, but {1} had errors (details are in the Activity log).\n\nThe backup is still there: you can click “Undo” again to retry.
+main.revert.partial.text.other = {0} values were restored, but {1} had errors (details are in the Activity log).\n\nThe backup is still there: you can click “Undo” again to retry.
+
+# --- Restore page
+restore.subtitle = Every time you apply settings, TURBiX saves the original values. From here you can put the PC back exactly the way it was.
+restore.openFolder = Open folder
+restore.backups.title = TURBiX backups
+restore.backups.text = Undo one specific session of settings.
+restore.backups.help = JSON files with the original value of each change (registry, services and tasks). They're stored in C:\ProgramData\TURBiX\Backups and let you undo one session at a time.
+restore.system.title = System Restore
+restore.system.text = Go back to a Windows restore point.
+restore.system.help = Opens the Windows tool for going back to a restore point, like the one TURBiX creates before applying settings. It undoes system changes, drivers and programs installed after that point (your documents aren't touched).
+restore.history = CHANGE HISTORY
+restore.empty.title = No saved changes yet
+restore.empty.text = When you apply privacy settings, they'll show up here so you can undo them.
+restore.reverted = UNDONE
+restore.revert = Undo
+
+# --- Backups (core)
+backup.describe.service = service {0}
+backup.describe.powerPlan = power plan
+backup.describe.regKey = key {0}
+backup.describe.task = task {0}
+backup.log.untrusted = Backup ignored because it wasn't created by an administrator: {0}
+backup.log.damaged = Backup is damaged and can't be read: {0}
+backup.log.reverting.one = Undoing {0} change from “{1}”
+backup.log.reverting.other = Undoing {0} changes from “{1}”
+backup.progress.restoring = Restoring {0}
+backup.log.restoreFailed = Couldn't restore {0}: {1}
+backup.log.revertDone.one = Undo finished: {0} item restored. Restart the PC to complete it.
+backup.log.revertDone.other = Undo finished: {0} items restored. Restart the PC to complete it.
+backup.log.revertPartial.one = Undo not complete: {0} item restored and {1} with errors. You can try again.
+backup.log.revertPartial.other = Undo not complete: {0} items restored and {1} with errors. You can try again.
+
+# --- Core
+core.restorePoint.creating = Creating a system restore point…
+core.restorePoint.created = Restore point created.
+core.restorePoint.failedCode = Couldn't create the restore point (code {0}). System Protection is probably turned off on this PC.
+core.restorePoint.noReason = Windows didn't give a reason (0x{0}). System Protection is probably turned off on this PC.
+core.restorePoint.failed = Couldn't create the restore point: {0}
+core.restorePoint.continuing = Continuing anyway: TURBiX keeps its own backup of every change.
+core.registry.badRoot = Invalid registry root: {0}
+core.registry.createKeyFailed = Couldn't create the key {0}
+core.tasks.readFailed = Couldn't read the tasks in {0}: {1}
+core.settings.saveFailed = Couldn't save the “{0}” preference: {1}
+
+# --- About
+about.subtitle = Privacy and cleanup for Windows 10 and 11
+about.facts = Open source · MIT license · No installation · Doesn't use the internet
+about.principles = Our principles
+about.principle.security = We never turn off Windows Update, Microsoft Defender, SmartScreen or the firewall, and we never edit the hosts file.
+about.principle.revert = Every change is backed up before it's applied and can be undone from Restore.
+about.principle.noInternet = TURBiX doesn't connect to the internet and doesn't collect any data. A privacy tool shouldn't spy on you.
+about.principle.personal = Your documents, photos, passwords, cookies and history are never deleted.
+about.principle.honest = Every option explains what it does with its “?” button. No tricks and no fake promises to “speed up your PC by 300%”.
+about.data.title = Where TURBiX keeps its data
+about.data.backups = BACKUPS
+about.data.logs = ACTIVITY LOGS
+about.data.requirements = REQUIREMENTS
+about.data.requirementsText = Windows 10 (1607 or later) or 11, 32 or 64-bit. It uses .NET Framework 4.6.2+, which already comes with Windows: there's nothing to install.
+about.data.openBackups = Backups
+about.data.openLogs = Logs
+about.disclaimer = TURBiX is provided “as is”, without warranty. Microsoft, Windows, Edge, Office and Copilot are trademarks of Microsoft Corporation; TURBiX isn't affiliated with Microsoft.
+
+# --- What's new
+whatsnew.subtitle = The important changes in each version. You're using {0}.
+whatsnew.help = Every version of TURBiX, newest first, with its important changes in a few words. The one marked “Installed” is the one you're using now.
+whatsnew.installed = INSTALLED
+
+shell.notify.error = Couldn't show the Windows notification: {0}

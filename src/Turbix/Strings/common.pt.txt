@@ -1,0 +1,68 @@
+# Textos compartilhados. Português (Brasil).
+
+app.tagline = Privacidade e limpeza
+app.alreadyOpen.title = O TURBiX já está aberto
+app.alreadyOpen.text = Já existe uma janela do TURBiX em execução.
+app.unhandled = Erro não tratado: {0}
+app.unexpected.log = Erro inesperado: {0}
+app.unexpected.title = Erro inesperado
+app.unexpected.text = {0}\n\nOs detalhes ficaram no registro de atividades.
+changelog.readError = Não foi possível ler o histórico de alterações: {0}
+
+nav.section.menu = MENU
+nav.section.system = SISTEMA
+nav.home = Início
+nav.privacy = Privacidade
+nav.cleanup = Limpeza
+nav.performance = Desempenho
+nav.apps = Aplicativos
+nav.health = Saúde
+nav.tools = Soluções
+nav.restore = Restaurar
+nav.log = Registro de atividades
+nav.changelog = Novidades
+nav.about = Sobre o TURBiX
+
+common.refresh = Atualizar
+common.refreshState = Atualizar status
+common.quickSelect = Seleção rápida
+common.recommended = Recomendado
+common.maximum = Máximo
+common.all = Tudo
+common.none = Nenhum
+common.optional = OPCIONAL
+common.advanced = AVANÇADO
+common.security = SEGURANÇA
+common.continue = Continuar
+common.cancel = Cancelar
+common.ok = Entendi
+common.open = Abrir
+common.close = Fechar
+common.noInternet = Não usa a internet
+common.noData = Sem dados
+common.state.applied = Aplicado
+common.state.notApplied = Não aplicado
+common.state.partial = Parcial
+common.state.notApplicable = Não se aplica
+common.state.enabled = Ativado
+common.state.disabled = Desativado
+
+unit.b = B
+unit.kb = KB
+unit.mb = MB
+unit.gb = GB
+unit.percent = {0}%
+
+log.title = Registro de atividades
+log.subtitle = Tudo o que o TURBiX faz fica anotado aqui e em um arquivo de texto, inclusive o das sessões anteriores, para você saber o que mudou e quando.
+log.copy = Copiar
+log.openFolder = Abrir pasta de registros
+log.clearView = Limpar tela
+log.help = Os registros são salvos dia a dia em C:\ProgramData\TURBiX\Logs, e os dos dias anteriores são carregados ao abrir o TURBiX. “Limpar tela” só esvazia esta tela; os arquivos continuam lá.\n\nSe algo não funcionar como você esperava, copie o registro e anexe-o ao relatar o problema.
+log.today = Hoje
+log.yesterday = Ontem
+log.level.info = INFO
+log.level.success = OK
+log.level.warning = AVISO
+log.level.error = ERRO
+log.level.step = ETAPA

@@ -1,0 +1,24 @@
+# Instalador e desinstalador. Português (Brasil).
+
+setup.title = Instalar o TURBiX
+setup.text = O TURBiX será copiado para esta pasta e vai aparecer no menu Iniciar e na lista de aplicativos do Windows, por onde você pode desinstalá-lo quando quiser.
+setup.folder = PASTA DE INSTALAÇÃO
+setup.desktop = Criar um atalho na área de trabalho
+setup.replace = A versão {0} já está instalada. Ela será substituída pela {1}; seus ajustes e cópias de segurança são mantidos.
+setup.reinstall = A versão {0} já está instalada. Ela será instalada de novo; seus ajustes e cópias de segurança são mantidos.
+setup.install = Instalar
+setup.done.title = O TURBiX foi instalado
+setup.done.text = Você o encontra no menu Iniciar. Para removê-lo, vá em Configurações › Aplicativos do Windows.
+setup.open = Abrir o TURBiX
+setup.retry = Tentar de novo
+setup.running.title = O TURBiX está aberto
+setup.running.text = É preciso fechá-lo para continuar: clique com o botão direito no ícone ao lado do relógio e escolha “Sair do TURBiX”. Depois clique em “Tentar de novo”.
+setup.error.title = Não foi possível instalar o TURBiX
+setup.error.text = O Windows não permitiu concluir a instalação.\n\n{0}
+uninstall.confirm.title = Desinstalar o TURBiX?
+uninstall.confirm.text = O programa, os atalhos e as preferências serão removidos.\n\nAs mudanças que o TURBiX fez no Windows não são desfeitas ao desinstalar: se quiser voltar atrás, cancele e use antes a seção “Restaurar”.\n\nAs cópias de segurança e o registro de atividade ficam guardados em {0}.
+uninstall.confirm.button = Desinstalar
+uninstall.done.title = O TURBiX foi desinstalado
+uninstall.done.text = As cópias de segurança e o registro de atividade continuam em {0}. Você pode apagar essa pasta se não precisar mais deles.
+uninstall.done.leftover = Não foi possível apagar {0}. Você pode apagá-lo manualmente.
+uninstall.error.title = Não foi possível desinstalar o TURBiX

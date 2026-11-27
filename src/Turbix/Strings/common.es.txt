@@ -1,0 +1,69 @@
+# Textos compartidos por toda la interfaz. Español (idioma en que se escribe TURBiX).
+# Formato: clave = texto. \n = salto de línea, \u00A0 = espacio duro. Ver Localization\L.cs.
+
+app.tagline = Privacidad y limpieza
+app.alreadyOpen.title = TURBiX ya está abierto
+app.alreadyOpen.text = Ya hay una ventana de TURBiX en ejecución.
+app.unhandled = Error no controlado: {0}
+app.unexpected.log = Error inesperado: {0}
+app.unexpected.title = Error inesperado
+app.unexpected.text = {0}\n\nEl detalle quedó en el registro de actividad.
+changelog.readError = No se pudo leer el historial de cambios: {0}
+
+nav.section.menu = MENÚ
+nav.section.system = SISTEMA
+nav.home = Inicio
+nav.privacy = Privacidad
+nav.cleanup = Limpieza
+nav.performance = Rendimiento
+nav.apps = Aplicaciones
+nav.health = Salud
+nav.tools = Soluciones
+nav.restore = Restaurar
+nav.log = Registro de actividad
+nav.changelog = Novedades
+nav.about = Acerca de TURBiX
+
+common.refresh = Actualizar
+common.refreshState = Actualizar estado
+common.quickSelect = Selección rápida
+common.recommended = Recomendado
+common.maximum = Máximo
+common.all = Todo
+common.none = Ninguno
+common.optional = OPCIONAL
+common.advanced = AVANZADO
+common.security = SEGURIDAD
+common.continue = Continuar
+common.cancel = Cancelar
+common.ok = Entendido
+common.open = Abrir
+common.close = Cerrar
+common.noInternet = No usa Internet
+common.noData = Sin datos
+common.state.applied = Aplicado
+common.state.notApplied = No aplicado
+common.state.partial = Parcial
+common.state.notApplicable = No aplica
+common.state.enabled = Activado
+common.state.disabled = Desactivado
+
+unit.b = B
+unit.kb = KB
+unit.mb = MB
+unit.gb = GB
+unit.percent = {0}\u00A0%
+
+log.title = Registro de actividad
+log.subtitle = Todo lo que hace TURBiX queda anotado aquí y en un archivo de texto, también lo de sesiones anteriores, para que sepas qué se cambió y cuándo.
+log.copy = Copiar
+log.openFolder = Abrir carpeta de registros
+log.clearView = Limpiar vista
+log.help = Los registros se guardan día a día en C:\ProgramData\TURBiX\Logs. Al abrir TURBiX se cargan los de días anteriores. «Limpiar vista» solo vacía esta pantalla: los archivos no se borran.\n\nSi algo no funciona como esperabas, copia el registro y adjúntalo al reportar el problema.
+log.today = Hoy
+log.yesterday = Ayer
+log.level.info = INFO
+log.level.success = OK
+log.level.warning = AVISO
+log.level.error = ERROR
+log.level.step = PASO

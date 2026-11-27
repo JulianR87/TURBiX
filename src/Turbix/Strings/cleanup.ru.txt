@@ -1,0 +1,153 @@
+# Очистка. Русский.
+
+cleanup.subtitle = Удаляет временные файлы, кэш и остатки, которые накапливают Windows и программы. Ваши документы, фотографии и пароли не затрагиваются.
+cleanup.recoverable = Можно освободить в выбранном
+cleanup.recoverable.help = Суммарный размер отмеченных категорий по данным последнего анализа. Это оценка: файлы, которые сейчас используются или принадлежат открытым программам, при очистке пропускаются.
+cleanup.selectedCount.one = Выбрана {0} категория
+cleanup.selectedCount.few = Выбраны {0} категории
+cleanup.selectedCount.many = Выбрано {0} категорий
+cleanup.presets.help = «Рекомендуемые»: безопасная очистка, которая не меняет работу компьютера.\n\n«Все»: добавляет НЕОБЯЗАТЕЛЬНЫЕ категории (корзина, Prefetch, журналы событий, WinSxS...). Прочитайте их предупреждения перед очисткой.
+cleanup.analyze = Анализ
+cleanup.aggressive = Агрессивный режим
+cleanup.aggressive.help = Для безопасности TURBiX оставляет временные файлы, изменённые за последние 24 часа, на случай, если идёт установка или обновление. В агрессивном режиме удаляются и они. Включайте его сразу после перезагрузки компьютера.
+cleanup.cleanButton.one = Очистить {0} категорию
+cleanup.cleanButton.few = Очистить {0} категории
+cleanup.cleanButton.many = Очистить {0} категорий
+cleanup.lastAnalysis.analyzed = Анализ выполнен в {0}
+cleanup.lastAnalysis.cleaned = Очистка выполнена в {0}
+cleanup.size.done = Готово
+cleanup.group.teamsClassic = Teams (классический)
+
+# Категории
+cleanup.item.userTemp.name = Временные файлы пользователей
+cleanup.item.userTemp.summary = Папка %TEMP% всех пользователей компьютера.
+cleanup.item.userTemp.help = Файлы, которые программы создают во время работы и почти никогда не удаляют: остатки установщиков, недокачанные файлы, распакованные архивы... Файлы за последние 24 часа сохраняются на случай, если идёт установка (в агрессивном режиме — нет).
+
+cleanup.item.windowsTemp.name = Временные файлы Windows
+cleanup.item.windowsTemp.summary = Папка C:\Windows\Temp.
+cleanup.item.windowsTemp.help = Временные файлы самой системы, служб и обновлений. Как и у временных файлов пользователей, файлы за последние 24 часа сохраняются, кроме агрессивного режима.
+
+cleanup.item.windowsUpdate.name = Загрузки Центра обновления Windows
+cleanup.item.windowsUpdate.summary = Загрузки Центра обновления Windows, установленные или ожидающие (при необходимости скачиваются заново).
+cleanup.item.windowsUpdate.help = Windows хранит скачанные пакеты обновлений в SoftwareDistribution\Download. После установки они больше не нужны. TURBiX останавливает Центр обновления Windows на время очистки и запускает его снова в конце. Это также помогает, когда обновления зависают.
+cleanup.item.windowsUpdate.warning = Не запускайте, пока Windows устанавливает обновления.
+
+cleanup.item.deliveryOptimization.name = Кэш оптимизации доставки
+cleanup.item.deliveryOptimization.summary = Копии обновлений, сохранённые для раздачи.
+cleanup.item.deliveryOptimization.help = Windows хранит копии скачанных обновлений, чтобы раздавать их другим компьютерам в вашей сети или в интернете. Удалять их безопасно: на установленные обновления это не влияет.
+
+cleanup.item.errorReports.name = Отчёты об ошибках Windows
+cleanup.item.errorReports.summary = Отчёты о сбоях в очереди и в архиве.
+cleanup.item.errorReports.help = Когда программа аварийно завершается, Windows сохраняет отчёт об ошибке. Старые отчёты вам уже не нужны, а места могут занимать немало.
+
+cleanup.item.memoryDumps.name = Дампы памяти
+cleanup.item.memoryDumps.summary = MEMORY.DMP и мини-дампы синих экранов.
+cleanup.item.memoryDumps.help = Когда Windows или программа аварийно завершается, сохраняется копия памяти для поиска причины сбоя. MEMORY.DMP может занимать столько же, сколько оперативная память компьютера.
+cleanup.item.memoryDumps.warning = Если вы разбираетесь с синими экранами, сначала сохраните мини-дампы.
+
+cleanup.item.systemLogs.name = Файлы журналов Windows
+cleanup.item.systemLogs.summary = Журналы CBS, DISM, Центра обновления Windows и установки.
+cleanup.item.systemLogs.help = Текстовые файлы, в которые Windows записывает, что делает при установке обновлений и компонентов. Они нужны только для разбора конкретной проблемы и растут без ограничений.
+
+cleanup.item.inetCache.name = Интернет-кэш Windows
+cleanup.item.inetCache.summary = Кэш WinINet, которым пользуются Windows и многие приложения.
+cleanup.item.inetCache.help = Общий кэш, в котором Windows, старый Internet Explorer и многие приложения хранят страницы и скачанные файлы. Он создаётся заново по мере надобности. Папки, где Office хранит вложения, открытые из Outlook, не затрагиваются.
+
+cleanup.item.browsers.name = Кэш браузеров
+cleanup.item.browsers.summary = Chrome, Edge, Brave, Vivaldi, Opera и Firefox.
+cleanup.item.browsers.help = Удаляется только кэш всех профилей: изображения, скрипты и шейдеры, сохранённые для быстрой загрузки страниц. Пароли, файлы cookie, журнал, закладки и открытые сеансы НЕ затрагиваются. В первый раз страницы будут загружаться чуть медленнее.
+cleanup.item.browsers.warning = Закройте браузеры: открытые пропускаются.
+
+cleanup.item.appsCache.name = Кэш популярных приложений
+cleanup.item.appsCache.summary = Discord, Teams, Spotify, Steam, Slack и VS Code.
+cleanup.item.appsCache.help = Эти приложения сделаны на веб-технологиях и накапливают сотни МБ кэша. Удаляется только кэш: вы не выйдете из учётной записи и не потеряете сообщения, скачанную музыку и настройки.
+cleanup.item.appsCache.warning = Открытые приложения пропускаются.
+
+cleanup.item.storeCache.name = Кэш Microsoft Store
+cleanup.item.storeCache.summary = Временные файлы Microsoft Store.
+cleanup.item.storeCache.help = Кэш Microsoft Store. Его очистка помогает и тогда, когда Store ничего не скачивает или не открывается.
+
+cleanup.item.dns.name = Кэш DNS
+cleanup.item.dns.summary = Очищает кэш интернет-адресов.
+cleanup.item.dns.help = Windows запоминает IP-адрес каждого сайта, который вы открываете. Очистка этого кэша помогает, когда сайты перестают открываться после смены сети, DNS-сервера или провайдера. Места на диске это не освобождает.
+
+cleanup.item.shaderCache.name = Кэш шейдеров видеокарты
+cleanup.item.shaderCache.summary = DirectX, NVIDIA, AMD и Intel.
+cleanup.item.shaderCache.help = Уже скомпилированные шейдеры игр и 3D-программ. Удалять их полезно после обновления видеодрайвера или если в игре появились графические артефакты; система создаст их заново.
+cleanup.item.shaderCache.warning = Игры заново скомпилируют шейдеры: первые запуски могут подтормаживать.
+
+cleanup.item.thumbnails.name = Кэш эскизов и значков
+cleanup.item.thumbnails.summary = Помогает, если эскизы или значки отображаются неправильно.
+cleanup.item.thumbnails.help = Windows хранит копию эскизов фотографий и видео, а также значков, чтобы быстро их показывать. Если этот кэш повреждён, вы видите пустые значки или не те эскизы. Он создаётся заново сам.
+cleanup.item.thumbnails.warning = Проводник будет перезапущен: панель задач пропадёт на несколько секунд.
+
+cleanup.item.driverInstallers.name = Распакованные установщики драйверов
+cleanup.item.driverInstallers.summary = Папки C:\NVIDIA и C:\AMD.
+cleanup.item.driverInstallers.help = Установщики NVIDIA и AMD распаковываются в эти папки и не удаляют их. Они могут занимать несколько ГБ и после установки драйвера не нужны.
+
+cleanup.item.recycleBin.name = Корзина
+cleanup.item.recycleBin.summary = Все диски и все пользователи.
+cleanup.item.recycleBin.help = Очищает корзину на всех дисках и для всех учётных записей компьютера.
+cleanup.item.recycleBin.warning = Файлы из корзины удаляются безвозвратно.
+
+cleanup.item.recentItems.name = Недавние элементы и списки переходов
+cleanup.item.recentItems.summary = Журнал недавно открытых файлов.
+cleanup.item.recentItems.help = Очищает список недавно открытых файлов в проводнике, меню «Пуск» и на панели задач. Полезно для конфиденциальности, если компьютером пользуются несколько человек.
+cleanup.item.recentItems.warning = Также удаляются элементы, закреплённые в списках переходов на панели задач, во всех учётных записях компьютера.
+
+cleanup.item.prefetch.name = Prefetch
+cleanup.item.prefetch.summary = Данные для более быстрого запуска программ.
+cleanup.item.prefetch.help = Windows запоминает, как загружаются программы, чтобы в следующий раз открывать их быстрее. Удаление НЕ ускоряет компьютер (это распространённый миф); оно имеет смысл только при устранении неполадок.
+cleanup.item.prefetch.warning = Несколько дней программы могут открываться дольше.
+
+cleanup.item.eventLogs.name = Журналы просмотра событий
+cleanup.item.eventLogs.summary = Очищает журналы «Приложение», «Система», «Безопасность» и остальные.
+cleanup.item.eventLogs.help = Очищает все журналы в средстве «Просмотр событий» Windows. Освобождает место и стирает историю работы системы.
+cleanup.item.eventLogs.warning = Пропадает история, полезная для поиска причин неполадок. Занимает около минуты.
+
+cleanup.item.componentStore.name = Хранилище компонентов (WinSxS)
+cleanup.item.componentStore.summary = Старые версии, замещённые обновлениями.
+cleanup.item.componentStore.help = Использует официальное средство Windows (DISM /StartComponentCleanup), чтобы удалить старые версии компонентов, которые обновления уже заменили. Параметр /ResetBase не используется, поэтому установленные обновления по-прежнему можно удалить.
+cleanup.item.componentStore.warning = Может занять от 5 до 20 минут.
+
+cleanup.item.windowsOld.name = Предыдущая установка Windows
+cleanup.item.windowsOld.summary = Windows.old и остатки крупных обновлений.
+cleanup.item.windowsOld.help = После крупного обновления (например, с Windows 10 до 11 или до новой ежегодной версии) Windows 10 дней хранит предыдущую установку в папке «Windows.old» на случай, если вы захотите вернуться, а также временные файлы установки. Обычно это 10–30 ГБ.\n\nTURBiX использует встроенную в Windows «Очистку диска» — это безопасный способ их удалить. Файлы, нужные для функции «Вернуть компьютер в исходное состояние», не затрагиваются.
+cleanup.item.windowsOld.warning = Вернуться к предыдущей версии Windows через «Параметры › Восстановление» больше не получится.
+
+# Ход работы и журнал действий
+cleanup.progress.analyzing = Анализ: {0}
+cleanup.progress.analyzed = Анализ завершён
+cleanup.progress.cleaning = Очистка: {0}
+cleanup.progress.cleaned = Очистка завершена
+
+cleanup.log.analyzing.one = Анализ {0} категории очистки...
+cleanup.log.analyzing.few = Анализ {0} категорий очистки...
+cleanup.log.analyzing.many = Анализ {0} категорий очистки...
+cleanup.log.recoverable = Можно освободить примерно: {0}
+cleanup.log.cleaning.one = Очистка {0} категории
+cleanup.log.cleaning.few = Очистка {0} категорий
+cleanup.log.cleaning.many = Очистка {0} категорий
+cleanup.log.cleaningAggressive.one = Очистка {0} категории (агрессивный режим)
+cleanup.log.cleaningAggressive.few = Очистка {0} категорий (агрессивный режим)
+cleanup.log.cleaningAggressive.many = Очистка {0} категорий (агрессивный режим)
+cleanup.log.appOpen = {0} открыт: закройте его, чтобы очистить кэш (пропущено).
+cleanup.log.appOpenEdge = {0} открыт: закройте его, чтобы очистить кэш (пропущено). Edge часто продолжает работать в фоне; это отключает параметр «Microsoft Edge в фоновом режиме» в разделе «Производительность › Игры».
+cleanup.log.error = Ошибка: {0}
+cleanup.log.freed = Освобождено: {0}
+cleanup.log.freedSkipped.one = Освобождено: {1} (пропущено занятых файлов: {0})
+cleanup.log.freedSkipped.few = Освобождено: {1} (пропущено занятых файлов: {0})
+cleanup.log.freedSkipped.many = Освобождено: {1} (пропущено занятых файлов: {0})
+cleanup.log.finished = Очистка завершена. Освобождено: {0} (свободное место на системном диске: +{1}).
+cleanup.log.dnsFlushed = Кэш DNS очищен.
+cleanup.log.dnsFailed = Не удалось очистить кэш DNS.
+cleanup.log.noOldWindows = Предыдущей установки Windows и остатков обновлений нет.
+cleanup.log.noCleanmgr = В этой версии Windows нет «Очистки диска».
+cleanup.log.cleanmgrRunning = Запущена «Очистка диска» Windows (это может занять несколько минут)...
+cleanup.log.cleanmgrStillRunning = «Очистка диска» ещё работает; TURBiX продолжает, не дожидаясь её.
+cleanup.log.serviceSlow = Служба {0} долго останавливается; некоторые файлы могут остаться занятыми.
+cleanup.log.eventLogsCleared.one = Очищено журналов: {1} из {0}.
+cleanup.log.eventLogsCleared.few = Очищено журналов: {1} из {0}.
+cleanup.log.eventLogsCleared.many = Очищено журналов: {1} из {0}.
+cleanup.log.dismRunning = Выполняется DISM /StartComponentCleanup (не закрывайте TURBiX)...
+cleanup.log.dismExit = DISM завершился с кодом {0}: {1}

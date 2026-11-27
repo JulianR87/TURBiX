@@ -1,0 +1,68 @@
+# Gemeinsame Texte. Deutsch.
+
+app.tagline = Datenschutz und Bereinigung
+app.alreadyOpen.title = TURBiX ist bereits geöffnet
+app.alreadyOpen.text = Es läuft schon ein TURBiX-Fenster.
+app.unhandled = Unbehandelter Fehler: {0}
+app.unexpected.log = Unerwarteter Fehler: {0}
+app.unexpected.title = Unerwarteter Fehler
+app.unexpected.text = {0}\n\nDie Details stehen im Aktivitätsprotokoll.
+changelog.readError = Der Änderungsverlauf konnte nicht gelesen werden: {0}
+
+nav.section.menu = MENÜ
+nav.section.system = SYSTEM
+nav.home = Start
+nav.privacy = Datenschutz
+nav.cleanup = Bereinigung
+nav.performance = Leistung
+nav.apps = Apps
+nav.health = Zustand
+nav.tools = Problemlösung
+nav.restore = Wiederherstellen
+nav.log = Aktivitätsprotokoll
+nav.changelog = Neuigkeiten
+nav.about = Über TURBiX
+
+common.refresh = Aktualisieren
+common.refreshState = Status aktualisieren
+common.quickSelect = Schnellauswahl
+common.recommended = Empfohlen
+common.maximum = Maximal
+common.all = Alle
+common.none = Keine
+common.optional = OPTIONAL
+common.advanced = ERWEITERT
+common.security = SICHERHEIT
+common.continue = Weiter
+common.cancel = Abbrechen
+common.ok = Verstanden
+common.open = Öffnen
+common.close = Schließen
+common.noInternet = Nutzt kein Internet
+common.noData = Keine Daten
+common.state.applied = Angewendet
+common.state.notApplied = Nicht angewendet
+common.state.partial = Teilweise
+common.state.notApplicable = Nicht relevant
+common.state.enabled = Ein
+common.state.disabled = Aus
+
+unit.b = B
+unit.kb = KB
+unit.mb = MB
+unit.gb = GB
+unit.percent = {0}\u00A0%
+
+log.title = Aktivitätsprotokoll
+log.subtitle = Alles, was TURBiX tut, wird hier und in einer Textdatei festgehalten, auch aus früheren Sitzungen. So wissen Sie immer, was wann geändert wurde.
+log.copy = Kopieren
+log.openFolder = Protokollordner öffnen
+log.clearView = Ansicht leeren
+log.help = Die Protokolle werden tageweise in C:\ProgramData\TURBiX\Logs gespeichert; beim Start lädt TURBiX auch die der Vortage. „Ansicht leeren“ leert nur diese Anzeige, die Dateien bleiben erhalten.\n\nWenn etwas nicht wie erwartet funktioniert, kopieren Sie das Protokoll und hängen Sie es an Ihre Fehlermeldung an.
+log.today = Heute
+log.yesterday = Gestern
+log.level.info = INFO
+log.level.success = OK
+log.level.warning = WARNUNG
+log.level.error = FEHLER
+log.level.step = SCHRITT

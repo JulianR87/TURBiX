@@ -1,0 +1,37 @@
+# Leistung › Prozesse
+
+perf.tab.processes = Prozesse
+proc.help = Dieselbe Liste wie im Task-Manager, nur gruppiert: Unter jedem Programm stehen die Prozesse, die es gestartet hat (ein Browser startet zum Beispiel einen pro Tab). Mit dem Pfeil klappen Sie sie auf. Zugeklappt zeigt die Zeile die Summe der ganzen Gruppe.\n\nDie Einträge „Diensthost“ sind Windows-Dienste; angezeigt wird, welcher Dienst darin läuft.\n\n„Threads“ ist die Zahl der Threads je Prozess, derselbe Wert wie im Task-Manager.\n\nMit dem X wird ein Prozess sofort beendet, wie mit „Task beenden“. Prozesse, die Windows zum Laufen braucht, sind gesperrt.
+proc.search = Prozess, PID oder Dienst suchen
+proc.loading = Prozesse werden gelesen …
+proc.noMatches = Kein Prozess passt zur Suche.
+proc.expandAll = Alle aufklappen
+proc.collapseAll = Alle zuklappen
+proc.col.name = Name
+proc.col.cpu = CPU
+proc.col.memory = Arbeitsspeicher
+proc.col.threads = Threads
+proc.count.processes.one = {0} Prozess
+proc.count.processes.other = {0} Prozesse
+proc.count.threads.one = {0} Thread
+proc.count.threads.other = {0} Threads
+proc.count.handles.one = {0} Handle
+proc.count.handles.other = {0} Handles
+proc.usage.cpu = CPU bei {0}
+proc.usage.memory = Arbeitsspeicher: {0} von {1}
+proc.pid = PID {0}
+proc.serviceHost = Diensthost: {0}
+proc.serviceHostMore.one = Diensthost: {1} und {0} weiterer
+proc.serviceHostMore.other = Diensthost: {1} und {0} weitere
+proc.end = Task beenden
+proc.critical = Windows braucht diesen Prozess, deshalb beendet TURBiX ihn nicht.
+proc.end.title = „{0}“ beenden?
+proc.end.text = Der Prozess wird sofort beendet. Ungespeicherte Änderungen in diesem Programm gehen verloren.
+proc.end.textGroup.one = {0} Prozess wird sofort beendet. Ungespeicherte Änderungen in diesem Programm gehen verloren.
+proc.end.textGroup.other = {0} Prozesse werden sofort beendet: der Hauptprozess und alle, die er gestartet hat. Ungespeicherte Änderungen in diesem Programm gehen verloren.
+proc.end.confirm = Beenden
+proc.end.failed.title = Beenden nicht möglich
+proc.end.failed.text = Windows hat das Beenden von „{0}“ verweigert: {1}\n\nManche Prozesse lassen sich nur als Administrator beenden oder gehören einem anderen Benutzer.
+proc.log.ended = Prozess beendet: {0} (PID {1}).
+proc.log.failed = {0} (PID {1}) konnte nicht beendet werden: {2}
+proc.log.readError = Die Prozessliste konnte nicht gelesen werden: {0}

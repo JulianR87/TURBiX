@@ -1,0 +1,146 @@
+# Cleanup. English.
+
+cleanup.subtitle = Removes temporary files, caches and leftovers that Windows and your programs pile up. Your documents, photos and passwords are never touched.
+cleanup.recoverable = Recoverable in your selection
+cleanup.recoverable.help = Total size of the checked categories, based on the last scan. It's an estimate: files in use and files of open programs are skipped when cleaning.
+cleanup.selectedCount.one = {0} category selected
+cleanup.selectedCount.other = {0} categories selected
+cleanup.presets.help = “Recommended”: safe cleanup that doesn't change how your PC works.\n\n“All”: also adds the OPTIONAL categories (Recycle Bin, Prefetch, event logs, WinSxS...). Read their warnings before cleaning.
+cleanup.analyze = Scan
+cleanup.aggressive = Aggressive mode
+cleanup.aggressive.help = To be safe, TURBiX keeps temporary files changed in the last 24 hours, in case an installation or update is still in progress. Aggressive mode deletes those too. Use it right after restarting your PC.
+cleanup.cleanButton.one = Clean {0} category
+cleanup.cleanButton.other = Clean {0} categories
+cleanup.lastAnalysis.analyzed = Scanned at {0}
+cleanup.lastAnalysis.cleaned = Cleaned at {0}
+cleanup.size.done = Done
+cleanup.group.teamsClassic = Teams (classic)
+
+# Categories
+cleanup.item.userTemp.name = User temporary files
+cleanup.item.userTemp.summary = The %TEMP% folder of every user on this PC.
+cleanup.item.userTemp.help = Files that programs create while they work and hardly ever delete: installer leftovers, partial downloads, unpacked archives... Files from the last 24 hours are kept in case an installation is in progress (aggressive mode turns this off).
+
+cleanup.item.windowsTemp.name = Windows temporary files
+cleanup.item.windowsTemp.summary = The C:\Windows\Temp folder.
+cleanup.item.windowsTemp.help = Temporary files from Windows itself, its services and updates. As with user temporary files, files from the last 24 hours are kept unless you use aggressive mode.
+
+cleanup.item.windowsUpdate.name = Windows Update downloads
+cleanup.item.windowsUpdate.summary = Windows Update downloads, installed or pending (downloaded again if needed).
+cleanup.item.windowsUpdate.help = Windows keeps the update packages it downloaded in SoftwareDistribution\Download. Once they're installed, they're no longer needed. TURBiX stops Windows Update while cleaning and starts it again when done. This also helps with updates that get stuck.
+cleanup.item.windowsUpdate.warning = Don't run this while Windows is installing updates.
+
+cleanup.item.deliveryOptimization.name = Delivery Optimization cache
+cleanup.item.deliveryOptimization.summary = Copies of updates kept for sharing.
+cleanup.item.deliveryOptimization.help = Windows keeps copies of downloaded updates so it can send them to other PCs on your network or the internet. Deleting them is safe and doesn't affect installed updates.
+
+cleanup.item.errorReports.name = Windows error reports
+cleanup.item.errorReports.summary = Queued and archived crash reports.
+cleanup.item.errorReports.help = When a program crashes, Windows saves a report about the error. Old reports are no use to you and can take up quite a bit of space.
+
+cleanup.item.memoryDumps.name = Memory dump files
+cleanup.item.memoryDumps.summary = MEMORY.DMP and minidumps from blue screens.
+cleanup.item.memoryDumps.help = When Windows or a program crashes, a copy of the memory is saved to help find the cause. MEMORY.DMP can be as large as the PC's RAM.
+cleanup.item.memoryDumps.warning = If you're looking into blue screens, save the minidumps first.
+
+cleanup.item.systemLogs.name = Windows log files
+cleanup.item.systemLogs.summary = CBS, DISM, Windows Update and setup logs.
+cleanup.item.systemLogs.help = Text files where Windows records what it does when installing updates and components. They're only useful for troubleshooting a specific problem, and they keep growing.
+
+cleanup.item.inetCache.name = Windows internet cache
+cleanup.item.inetCache.summary = WinINet cache used by Windows and many apps.
+cleanup.item.inetCache.help = Shared cache used by Windows, the old Internet Explorer and many apps to store pages and downloaded files. It's rebuilt as needed. The folders where Office keeps attachments opened from Outlook are left alone.
+
+cleanup.item.browsers.name = Browser cache
+cleanup.item.browsers.summary = Chrome, Edge, Brave, Vivaldi, Opera and Firefox.
+cleanup.item.browsers.help = Deletes only the cache of every profile: images, scripts and shaders saved to load pages faster. Passwords, cookies, history, bookmarks and open sessions are NOT touched. Pages will load a little slower the first time.
+cleanup.item.browsers.warning = Close your browsers: any that are open are skipped.
+
+cleanup.item.appsCache.name = Popular app cache
+cleanup.item.appsCache.summary = Discord, Teams, Spotify, Steam, Slack and VS Code.
+cleanup.item.appsCache.help = These apps are built with web technology and collect hundreds of MB of cache. Only the cache is deleted: you stay signed in and don't lose messages, downloaded music or settings.
+cleanup.item.appsCache.warning = Apps that are open are skipped.
+
+cleanup.item.storeCache.name = Microsoft Store cache
+cleanup.item.storeCache.summary = Temporary files of the Microsoft Store.
+cleanup.item.storeCache.help = The Microsoft Store cache. Clearing it also helps when the Store won't download or won't open.
+
+cleanup.item.dns.name = DNS cache
+cleanup.item.dns.summary = Clears the cache of internet addresses.
+cleanup.item.dns.help = Windows remembers the IP address of every website you visit. Clearing this cache fixes sites that won't load after you change network, DNS server or provider. It doesn't free up disk space.
+
+cleanup.item.shaderCache.name = GPU shader cache
+cleanup.item.shaderCache.summary = DirectX, NVIDIA, AMD and Intel.
+cleanup.item.shaderCache.help = Precompiled shaders from games and 3D programs. Deleting them helps after updating your graphics driver or when a game shows graphics glitches; they're created again automatically.
+cleanup.item.shaderCache.warning = Games will recompile their shaders, so the first sessions may stutter.
+
+cleanup.item.thumbnails.name = Thumbnail and icon cache
+cleanup.item.thumbnails.summary = Fixes thumbnails or icons that look wrong.
+cleanup.item.thumbnails.help = Windows keeps a copy of photo and video thumbnails and of icons so it can show them quickly. If it gets corrupted, you see blank icons or the wrong thumbnails. It rebuilds itself.
+cleanup.item.thumbnails.warning = File Explorer restarts: the taskbar disappears for a few seconds.
+
+cleanup.item.driverInstallers.name = Unpacked driver installers
+cleanup.item.driverInstallers.summary = The C:\NVIDIA and C:\AMD folders.
+cleanup.item.driverInstallers.help = NVIDIA and AMD installers unpack into these folders and never delete them. They can take up several GB and aren't needed once the driver is installed.
+
+cleanup.item.recycleBin.name = Recycle Bin
+cleanup.item.recycleBin.summary = All drives and all users.
+cleanup.item.recycleBin.help = Empties the Recycle Bin on every drive and for every account on this PC.
+cleanup.item.recycleBin.warning = Files in the Recycle Bin are deleted permanently.
+
+cleanup.item.recentItems.name = Recent items and jump lists
+cleanup.item.recentItems.summary = History of recently opened files.
+cleanup.item.recentItems.help = Clears the list of recently opened files in File Explorer, the Start menu and the taskbar. Useful for privacy if the PC is shared.
+cleanup.item.recentItems.warning = Items pinned to taskbar jump lists are also removed, for every account on this PC.
+
+cleanup.item.prefetch.name = Prefetch
+cleanup.item.prefetch.summary = Data that helps programs open faster.
+cleanup.item.prefetch.help = Windows records how programs load so it can open them faster next time. Deleting it does NOT speed up your PC (that's a common myth); it only makes sense for troubleshooting.
+cleanup.item.prefetch.warning = Programs may take longer to open for a few days.
+
+cleanup.item.eventLogs.name = Event Viewer logs
+cleanup.item.eventLogs.summary = Clears Application, System, Security and the rest.
+cleanup.item.eventLogs.help = Clears every log in Windows Event Viewer. It frees up space and erases the system's activity history.
+cleanup.item.eventLogs.warning = You lose history that helps with troubleshooting. Takes about a minute.
+
+cleanup.item.componentStore.name = Component store (WinSxS)
+cleanup.item.componentStore.summary = Old versions replaced by updates.
+cleanup.item.componentStore.help = Uses the official Windows tool (DISM /StartComponentCleanup) to remove old versions of components that updates have already replaced. It doesn't use /ResetBase, so installed updates can still be uninstalled.
+cleanup.item.componentStore.warning = Can take 5 to 20 minutes.
+
+cleanup.item.windowsOld.name = Previous Windows installation
+cleanup.item.windowsOld.summary = Windows.old and leftovers from major updates.
+cleanup.item.windowsOld.help = After a major update (for example, from Windows 10 to 11, or to each year's new version), Windows keeps the previous installation in “Windows.old” for 10 days in case you want to go back, along with temporary setup files. Together they usually take 10 to 30 GB.\n\nTURBiX uses Windows' own Disk Cleanup, which is the safe way to delete them. Files needed by “Reset this PC” are left alone.
+cleanup.item.windowsOld.warning = You won't be able to go back to the previous version of Windows from Settings › Recovery.
+
+# Progress and activity log
+cleanup.progress.analyzing = Scanning: {0}
+cleanup.progress.analyzed = Scan complete
+cleanup.progress.cleaning = Cleaning: {0}
+cleanup.progress.cleaned = Cleanup complete
+
+cleanup.log.analyzing.one = Scanning {0} cleanup category...
+cleanup.log.analyzing.other = Scanning {0} cleanup categories...
+cleanup.log.recoverable = Approximate recoverable space: {0}
+cleanup.log.cleaning.one = Cleaning {0} category
+cleanup.log.cleaning.other = Cleaning {0} categories
+cleanup.log.cleaningAggressive.one = Cleaning {0} category (aggressive mode)
+cleanup.log.cleaningAggressive.other = Cleaning {0} categories (aggressive mode)
+cleanup.log.appOpen = {0} is open: close it to clear its cache (skipped).
+cleanup.log.appOpenEdge = {0} is open: close it to clear its cache (skipped). Edge often keeps running in the background; the “Microsoft Edge in the background” setting under Performance › Games prevents that.
+cleanup.log.error = Error: {0}
+cleanup.log.freed = Freed: {0}
+cleanup.log.freedSkipped.one = Freed: {1} ({0} file in use skipped)
+cleanup.log.freedSkipped.other = Freed: {1} ({0} files in use skipped)
+cleanup.log.finished = Cleanup finished. Freed: {0} (free space on the system drive: +{1}).
+cleanup.log.dnsFlushed = DNS cache cleared.
+cleanup.log.dnsFailed = Couldn't clear the DNS cache.
+cleanup.log.noOldWindows = No previous Windows installation or update leftovers found.
+cleanup.log.noCleanmgr = This edition of Windows doesn't include Disk Cleanup.
+cleanup.log.cleanmgrRunning = Running Windows Disk Cleanup (this can take several minutes)...
+cleanup.log.cleanmgrStillRunning = Disk Cleanup is still working; TURBiX carries on without waiting for it.
+cleanup.log.serviceSlow = The {0} service is taking a while to stop; some files may still be in use.
+cleanup.log.eventLogsCleared.one = Cleared {1} of {0} log.
+cleanup.log.eventLogsCleared.other = Cleared {1} of {0} logs.
+cleanup.log.dismRunning = Running DISM /StartComponentCleanup (don't close TURBiX)...
+cleanup.log.dismExit = DISM finished with code {0}: {1}

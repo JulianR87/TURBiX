@@ -1,0 +1,255 @@
+<UserControl x:Class="Turbix.Views.ToolsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:Turbix.Controls"
+             xmlns:l="clr-namespace:Turbix.Localization">
+  <UserControl.Resources>
+    <!-- Una reparación con su botón -->
+    <DataTemplate x:Key="RepairRow">
+      <Border Style="{StaticResource RowCard}" Cursor="Arrow" Padding="16,14">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <Border Style="{StaticResource IconTile}" Margin="0,0,14,0">
+            <TextBlock Style="{StaticResource Icon}" Text="{Binding Glyph}" HorizontalAlignment="Center" Foreground="{DynamicResource AccentText}"/>
+          </Border>
+          <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBlock Text="{Binding Name}" FontSize="14" FontWeight="SemiBold"/>
+            <TextBlock Style="{StaticResource Muted}" FontSize="12.5" Margin="0,2,0,0">
+              <Run Text="{Binding Summary, Mode=OneWay}"/><Run Text="  ·  " Foreground="{DynamicResource TextDim}"/><Run Text="{Binding Duration, Mode=OneWay}" Foreground="{DynamicResource TextDim}"/>
+            </TextBlock>
+            <TextBlock Margin="0,4,0,0" FontSize="12" Foreground="{DynamicResource Warning}" TextWrapping="Wrap"
+                       Visibility="{Binding HasWarning, Converter={StaticResource BoolToVis}}">
+              <Run FontFamily="{StaticResource IconFont}" Text="&#xE7BA;"/><Run Text="  "/><Run Text="{Binding Warning, Mode=OneWay}"/>
+            </TextBlock>
+          </StackPanel>
+          <Button Grid.Column="2" Content="{l:T tools.repair.run}" Command="{Binding RunCommand}" Padding="18,8" Margin="16,0,14,0" VerticalAlignment="Center"/>
+          <c:HelpTip Grid.Column="3" Text="{Binding Help}" Title="{Binding Name}"/>
+        </Grid>
+      </Border>
+    </DataTemplate>
+
+    <!-- Un ajuste de Windows (misma fila que en Privacidad) -->
+    <DataTemplate x:Key="TweakRow">
+      <Border Style="{StaticResource RowCard}">
+        <Border.InputBindings>
+          <MouseBinding Gesture="LeftClick" Command="{Binding ToggleCommand}"/>
+        </Border.InputBindings>
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <CheckBox IsChecked="{Binding IsSelected}" VerticalAlignment="Center" Margin="0,0,16,0"/>
+          <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Text="{Binding Name}" FontSize="14" FontWeight="SemiBold"/>
+              <Border Style="{StaticResource Chip}" Background="{DynamicResource WarningSoft}" Margin="10,0,0,0" Padding="6,1"
+                      Visibility="{Binding IsAdvanced, Converter={StaticResource BoolToVis}}">
+                <TextBlock Text="{l:T common.optional}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource Warning}"/>
+              </Border>
+            </StackPanel>
+            <TextBlock Text="{Binding Summary}" Style="{StaticResource Muted}" FontSize="12.5" Margin="0,2,0,0"/>
+            <TextBlock Margin="0,4,0,0" FontSize="12" Foreground="{DynamicResource Warning}" TextWrapping="Wrap"
+                       Visibility="{Binding HasWarning, Converter={StaticResource BoolToVis}}">
+              <Run FontFamily="{StaticResource IconFont}" Text="&#xE7BA;"/><Run Text="  "/><Run Text="{Binding Warning, Mode=OneWay}"/>
+            </TextBlock>
+          </StackPanel>
+          <Border Grid.Column="2" Style="{StaticResource StateChip}" Margin="16,0,14,0" MinWidth="92">
+            <TextBlock Text="{Binding StateText}" Style="{StaticResource StateChipText}" HorizontalAlignment="Center"/>
+          </Border>
+          <c:HelpTip Grid.Column="3" Text="{Binding Help}" Title="{Binding Name}"/>
+        </Grid>
+      </Border>
+    </DataTemplate>
+  </UserControl.Resources>
+
+  <Grid Margin="40,8,40,0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <StackPanel>
+      <TextBlock Text="{l:T nav.tools}" Style="{StaticResource H1}"/>
+      <TextBlock Style="{StaticResource Muted}" Margin="0,4,0,16"
+                 TextWrapping="Wrap" Text="{l:T tools.subtitle}"/>
+    </StackPanel>
+
+    <Border Grid.Row="1" Background="{DynamicResource Surface2}" BorderBrush="{DynamicResource Stroke}" BorderThickness="1"
+            CornerRadius="10" Padding="3" HorizontalAlignment="Left" Margin="0,0,0,16">
+      <StackPanel Orientation="Horizontal">
+        <RadioButton x:Name="TabRepairButton" Style="{StaticResource SegmentItem}" GroupName="ToolsTab" Height="34" FontSize="13"
+                     MinWidth="150" Padding="16,0" Tag="&#xE90F;" Content="{l:T tools.tab.repair}" IsChecked="True" Checked="OnTab"/>
+        <RadioButton x:Name="TabRegistryButton" Style="{StaticResource SegmentItem}" GroupName="ToolsTab" Height="34" FontSize="13"
+                     MinWidth="200" Padding="16,0" Tag="&#xE74C;" Content="{l:T tools.tab.registry}" Checked="OnTab"/>
+        <RadioButton x:Name="TabWindowsButton" Style="{StaticResource SegmentItem}" GroupName="ToolsTab" Height="34" FontSize="13"
+                     MinWidth="200" Padding="16,0" Tag="&#xE771;" Content="{l:T tools.tab.windows}" Checked="OnTab"/>
+      </StackPanel>
+    </Border>
+
+    <!-- ============================================================ Reparar -->
+    <ScrollViewer x:Name="TabRepair" Grid.Row="2" VerticalScrollBarVisibility="Auto" Focusable="False" Padding="0,0,10,0" Margin="0,0,-10,0">
+      <StackPanel Margin="0,0,0,24">
+        <Border Background="{DynamicResource NoteBg}" BorderBrush="{DynamicResource NoteStroke}" BorderThickness="1" CornerRadius="10"
+                Padding="14,11" Margin="0,0,0,14">
+          <DockPanel>
+            <TextBlock Style="{StaticResource Icon}" Text="&#xE946;" Foreground="{DynamicResource AccentText}" VerticalAlignment="Top" Margin="0,1,12,0"/>
+            <TextBlock Style="{StaticResource Muted}" Foreground="{DynamicResource NoteText}" FontSize="12.5"
+                       TextWrapping="Wrap" Text="{l:T tools.repair.note}"/>
+          </DockPanel>
+        </Border>
+        <ItemsControl ItemsSource="{Binding RepairTools}" ItemTemplate="{StaticResource RepairRow}" Focusable="False"/>
+      </StackPanel>
+    </ScrollViewer>
+
+    <!-- ============================================================ Registro de Windows -->
+    <Grid x:Name="TabRegistry" Grid.Row="2" Visibility="Collapsed">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+
+      <Border Background="{DynamicResource NoteBg}" BorderBrush="{DynamicResource NoteStroke}" BorderThickness="1" CornerRadius="10"
+              Padding="14,11" Margin="0,0,0,14">
+        <DockPanel>
+          <TextBlock Style="{StaticResource Icon}" Text="&#xE946;" Foreground="{DynamicResource AccentText}" VerticalAlignment="Top" Margin="0,1,12,0"/>
+          <TextBlock Style="{StaticResource Muted}" Foreground="{DynamicResource NoteText}" FontSize="12.5"
+                     TextWrapping="Wrap" Text="{l:T regfix.note}"/>
+        </DockPanel>
+      </Border>
+
+      <DockPanel Grid.Row="1" Margin="0,0,0,12">
+        <Button DockPanel.Dock="Right" Command="{Binding ScanRegistryCommand}" Padding="16,8" Margin="0">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Icon}" Text="&#xE721;" FontSize="13"/>
+            <TextBlock Text="{l:T regfix.scan}" Margin="8,0,0,0"/>
+          </StackPanel>
+        </Button>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="0,0,10,0"
+                    Visibility="{Binding HasRegistryIssues, Converter={StaticResource BoolToVis}}">
+          <Button Style="{StaticResource PillButton}" Content="{l:T common.all}" Command="{Binding SelectRegistryCommand}" CommandParameter="all"/>
+          <Button Style="{StaticResource PillButton}" Content="{l:T common.none}" Command="{Binding SelectRegistryCommand}" CommandParameter="none"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Text="{Binding RegistrySummary}" Foreground="{DynamicResource TextMuted}" FontSize="13" VerticalAlignment="Center"
+                     TextWrapping="Wrap" MaxWidth="520"/>
+          <c:HelpTip Margin="10,0,0,0" Text="{l:T regfix.help}"/>
+        </StackPanel>
+      </DockPanel>
+
+      <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Focusable="False" Padding="0,0,10,0" Margin="0,0,-10,0">
+        <ItemsControl ItemsSource="{Binding RegistryIssues}" Focusable="False" Margin="0,0,0,8">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <Border Style="{StaticResource RowCard}" Padding="16,10">
+                <Border.InputBindings>
+                  <MouseBinding Gesture="LeftClick" Command="{Binding ToggleCommand}"/>
+                </Border.InputBindings>
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                  </Grid.ColumnDefinitions>
+                  <CheckBox IsChecked="{Binding IsSelected}" VerticalAlignment="Center" Margin="0,0,16,0"/>
+                  <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Name}" FontSize="13.5" FontWeight="SemiBold" TextTrimming="CharacterEllipsis"/>
+                    <TextBlock Text="{Binding Detail}" FontFamily="{StaticResource MonoFont}" FontSize="11.5" Foreground="{DynamicResource TextMuted}"
+                               TextTrimming="CharacterEllipsis" Margin="0,2,0,0"/>
+                  </StackPanel>
+                  <Border Grid.Column="2" Style="{StaticResource Chip}" Background="{DynamicResource ChipNeutral}" Margin="16,0,14,0" Padding="8,2">
+                    <TextBlock Text="{Binding Category}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource TextMuted}"/>
+                  </Border>
+                  <c:HelpTip Grid.Column="3" Text="{Binding Help}" Title="{Binding Name}"/>
+                </Grid>
+              </Border>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </ScrollViewer>
+
+      <Border Grid.Row="3" BorderBrush="{DynamicResource Stroke}" BorderThickness="0,1,0,0" Padding="0,16,0,20" Margin="0,4,0,0">
+        <DockPanel>
+          <Button DockPanel.Dock="Right" Style="{StaticResource PrimaryButton}" Command="{Binding FixRegistryCommand}">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Style="{StaticResource Icon}" Text="&#xE90F;" FontSize="14"/>
+              <TextBlock Text="{Binding FixRegistryButtonText}" Margin="10,0,0,0"/>
+            </StackPanel>
+          </Button>
+          <TextBlock Text="{l:T regfix.footer}" Foreground="{DynamicResource TextDim}"
+                     FontSize="12.5" VerticalAlignment="Center" TextWrapping="Wrap"/>
+        </DockPanel>
+      </Border>
+    </Grid>
+
+    <!-- ============================================================ Ajustes de Windows -->
+    <Grid x:Name="TabWindows" Grid.Row="2" Visibility="Collapsed">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+
+      <DockPanel Margin="0,0,0,12">
+        <Button DockPanel.Dock="Right" Style="{StaticResource PillButton}" Command="{Binding RefreshWindowsCommand}" Margin="0">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Icon}" Text="&#xE72C;" FontSize="12"/>
+            <TextBlock Text="{l:T common.refreshState}" Margin="8,0,0,0"/>
+          </StackPanel>
+        </Button>
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Text="{l:T common.quickSelect}" Foreground="{DynamicResource TextDim}" VerticalAlignment="Center" Margin="0,0,12,0" FontSize="12.5"/>
+          <Button Style="{StaticResource PillButton}" Content="{l:T common.recommended}" Command="{Binding SelectWindowsPresetCommand}" CommandParameter="recommended"/>
+          <Button Style="{StaticResource PillButton}" Content="{l:T common.all}" Command="{Binding SelectWindowsPresetCommand}" CommandParameter="max"/>
+          <Button Style="{StaticResource PillButton}" Content="{l:T common.none}" Command="{Binding SelectWindowsPresetCommand}" CommandParameter="none"/>
+          <c:HelpTip Margin="4,0,0,0" Text="{l:T wintweak.presets.help}"/>
+        </StackPanel>
+      </DockPanel>
+
+      <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Focusable="False" Padding="0,0,10,0" Margin="0,0,-10,0">
+        <ItemsControl ItemsSource="{Binding WindowsGroups}" Focusable="False">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Margin="0,0,0,14">
+                <StackPanel Orientation="Horizontal" Margin="2,4,0,10">
+                  <TextBlock Style="{StaticResource Icon}" Text="{Binding Glyph}" FontSize="13" Foreground="{DynamicResource AccentText}"/>
+                  <TextBlock Text="{Binding Name, Converter={StaticResource Upper}}" Style="{StaticResource Caption}" FontSize="11.5"
+                             Foreground="{DynamicResource TextMuted}" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                  <TextBlock Text="{Binding CountText}" Style="{StaticResource Caption}" FontWeight="Normal" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                  <c:HelpTip Text="{Binding Help}" Width="18" Height="18" Margin="10,0,0,0"/>
+                </StackPanel>
+                <ItemsControl ItemsSource="{Binding Items}" ItemTemplate="{StaticResource TweakRow}" Focusable="False"/>
+              </StackPanel>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </ScrollViewer>
+
+      <Border Grid.Row="2" BorderBrush="{DynamicResource Stroke}" BorderThickness="0,1,0,0" Padding="0,16,0,20" Margin="0,4,0,0">
+        <DockPanel>
+          <Button DockPanel.Dock="Right" Style="{StaticResource PrimaryButton}" Command="{Binding ApplyWindowsCommand}">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Style="{StaticResource Icon}" Text="&#xE73E;" FontSize="14"/>
+              <TextBlock Text="{Binding WindowsApplyButtonText}" Margin="10,0,0,0"/>
+            </StackPanel>
+          </Button>
+          <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <CheckBox IsChecked="{Binding CreateRestorePoint}" Content="{l:T wintweak.restorePoint}"/>
+            <c:HelpTip Margin="10,0,0,0" Text="{l:T wintweak.restorePoint.help}"/>
+          </StackPanel>
+        </DockPanel>
+      </Border>
+    </Grid>
+  </Grid>
+</UserControl>

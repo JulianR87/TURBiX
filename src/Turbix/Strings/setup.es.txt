@@ -1,0 +1,24 @@
+# Instalador y desinstalador. Español.
+
+setup.title = Instalar TURBiX
+setup.text = TURBiX se copiará a esta carpeta y aparecerá en el menú Inicio y en la lista de aplicaciones de Windows, desde donde podrás desinstalarlo cuando quieras.
+setup.folder = CARPETA DE INSTALACIÓN
+setup.desktop = Crear un acceso directo en el escritorio
+setup.replace = Ya está instalada la versión {0}. Se reemplazará por la {1}; tus ajustes y copias de seguridad se conservan.
+setup.reinstall = La versión {0} ya está instalada. Se volverá a instalar; tus ajustes y copias de seguridad se conservan.
+setup.install = Instalar
+setup.done.title = TURBiX quedó instalado
+setup.done.text = Lo encontrarás en el menú Inicio. Para quitarlo, ve a Configuración › Aplicaciones de Windows.
+setup.open = Abrir TURBiX
+setup.retry = Reintentar
+setup.running.title = TURBiX está abierto
+setup.running.text = Hay que cerrarlo para continuar: haz clic derecho en su icono junto al reloj y elige «Salir de TURBiX». Después pulsa «Reintentar».
+setup.error.title = No se pudo instalar TURBiX
+setup.error.text = Windows no permitió completar la instalación.\n\n{0}
+uninstall.confirm.title = ¿Desinstalar TURBiX?
+uninstall.confirm.text = Se quitarán el programa, sus accesos directos y sus preferencias.\n\nLos cambios que TURBiX aplicó en Windows no se deshacen al desinstalar: si quieres volver atrás, cancela y usa antes la sección «Restaurar».\n\nLas copias de seguridad y el registro de actividad se conservan en {0}.
+uninstall.confirm.button = Desinstalar
+uninstall.done.title = TURBiX se desinstaló
+uninstall.done.text = Las copias de seguridad y el registro de actividad siguen en {0}. Puedes borrar esa carpeta si ya no los necesitas.
+uninstall.done.leftover = No se pudo borrar {0}. Puedes borrarlo a mano.
+uninstall.error.title = No se pudo desinstalar TURBiX

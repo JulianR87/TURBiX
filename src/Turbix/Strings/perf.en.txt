@@ -1,0 +1,193 @@
+# Performance › Windows startup, Memory and Gaming (the Processes tab lives in processes.*.txt)
+
+perf.subtitle = Choose what starts with Windows, free up RAM and get the PC ready for gaming.
+
+# ---------------------------------------------------------------- Windows startup
+startup.tab = Windows startup
+startup.help = Programs that open on their own when you sign in. Each one makes startup longer and keeps using memory the whole time, even if you don't use it.\n\nUse the switch to turn off the ones you don't need right away (game launchers, updaters, chat apps). Nothing gets uninstalled: they still work when you open them yourself. The change is saved immediately and takes effect the next time you sign in.\n\nIt's the same setting as “Startup apps” in Task Manager. Services and scheduled tasks aren't listed.
+startup.loading = Looking for programs…
+startup.readError = Couldn't read the list of startup programs.
+startup.summary.none = No programs start with Windows.
+startup.summary.total.one = {0} program
+startup.summary.total.other = {0} programs
+startup.summary.enabled.one = {0} starts with Windows
+startup.summary.enabled.other = {0} start with Windows
+startup.summary.disabled.one = {0} turned off
+startup.summary.disabled.other = {0} turned off
+startup.help.storeApp = Microsoft Store app that can open on its own when you sign in.\n\nPackage: {0}
+startup.help.program = Opens on its own every time you sign in to Windows.\n\nCommand: {0}
+startup.help.source = Where it's registered: {0}.
+startup.help.protected = It's part of Windows security, so TURBiX won't let you turn it off.
+startup.help.canDisable = If you turn it off, the program stays installed and works the same when you open it yourself; it just stops starting on its own. You can turn it back on here or in Task Manager.
+startup.toggleError.title = Couldn't change it
+startup.toggleError.text = Windows didn't allow changes to “{0}”.\n\n{1}
+startup.log.enabled = Windows startup: “{0}” turned on.
+startup.log.disabled = Windows startup: “{0}” turned off.
+startup.log.toggleError = Couldn't change “{0}”: {1}
+startup.log.readError = Couldn't read the startup list: {0}
+startup.log.readPartError = Windows startup: {0}
+startup.source.runUser = Registry · your account only
+startup.source.runAll = Registry · all users
+startup.source.run32 = Registry · all users (32-bit)
+startup.source.folderUser = Startup folder · your account only
+startup.source.folderAll = Startup folder · all users
+startup.source.store = Microsoft Store app
+startup.storeApp.description = Microsoft Store app
+startup.error.protected = It's a Windows security component and has to stay on.
+startup.error.openKey = Couldn't open the startup settings.
+
+# ---------------------------------------------------------------- Memory
+memory.tab = Memory (RAM)
+memory.usage.title = Memory usage
+memory.usage.help = How much RAM Windows and your programs are using right now. Above 85–90%, Windows starts using the disk as memory and everything slows down, games most of all.
+memory.available = {0} available
+memory.clean.button = Free up memory
+memory.clean.help = Frees up RAM now without closing any programs:\n\n1. Asks every program to give back memory it has reserved but isn't using.\n2. Empties “standby” memory (cache of files that are already closed), which Windows is sometimes slow to release and can cause stutter in games.\n\nNothing is lost: programs load whatever they need again on their own. That's why usage goes back up over time, and why a program may take a moment longer when you switch back to it. It helps right before you start a game or when memory is almost full; it won't speed up a PC that has plenty of RAM to spare.
+memory.last.never = Memory hasn't been freed up yet in this session.
+memory.last.freed = Last run at {0}: {1} freed.
+memory.last.nothing = Last run at {0}: there was no memory to free.
+memory.last.noAdmin = Couldn't free up memory: TURBiX needs administrator rights.
+memory.last.error = Couldn't free up memory: {0}
+memory.log.noAdmin = Memory: Windows didn't allow it (administrator rights missing).
+memory.log.freedAuto = Memory (automatic): {0} freed.
+memory.log.freedManual = Memory (manual): {0} freed.
+memory.log.error = Memory: {0}
+memory.auto.title = Automatic cleanup
+memory.auto.help = TURBiX repeats the memory cleanup every so often, without you having to press the button.\n\nIt works while TURBiX is open; you can leave it minimized while you play or work. So you don't have to open it every time, turn on “Open TURBiX when Windows starts”. Your choice is remembered next time.
+memory.auto.enable = Free up memory automatically
+memory.auto.interval = HOW OFTEN
+memory.auto.interval.help = Time between one cleanup and the next. For gaming, 10 to 30 minutes usually works well. Very short intervals don't help: programs have to reload their memory over and over.
+memory.interval.m5 = 5 min
+memory.interval.m10 = 10 min
+memory.interval.m15 = 15 min
+memory.interval.m30 = 30 min
+memory.interval.h1 = 1 hour
+memory.auto.onlyHigh = Only when usage is above 80%
+memory.auto.onlyHigh.help = Recommended. If there's plenty of free memory when it's time to clean up, TURBiX does nothing and waits for the next round. That way it only steps in when it's actually needed.
+memory.auto.off = Off.
+memory.auto.next = Next cleanup at {0}.
+memory.auto.skipped = At {0} usage was {1}, so no cleanup was needed. Next check at {2}.
+memory.auto.log.enabled.one = Automatic memory cleanup turned on: every {0} minute.
+memory.auto.log.enabled.other = Automatic memory cleanup turned on: every {0} minutes.
+memory.auto.log.disabled = Automatic memory cleanup turned off.
+memory.top.title = What's using memory
+memory.top.help = The programs using the most memory right now, adding up all their processes (a browser runs one per tab). Updates every few seconds.\n\nIf memory is full, closing the first one on the list helps more than any cleanup. The figure is approximate: some of that memory is shared between programs.
+
+# ---------------------------------------------------------------- Gaming
+gaming.tab = Gaming
+gaming.note = These settings remove real slowdowns in Windows (background recording, power saving, background programs) and make frame rates steadier. They aren't magic: what raises FPS the most is an up-to-date graphics driver and each game's own graphics settings. TURBiX leaves out “tricks” that break things, like turning off Xbox services or security.
+gaming.presets.help = Recommended: safe settings for any PC, desktop or laptop.\n\nMaximum: adds the ADVANCED ones, meant for gaming PCs plugged into the wall. They use more power or change how Windows looks and feels. Read their warnings in yellow.
+gaming.restorePoint = Create a restore point before applying
+gaming.restorePoint.help = Creates a Windows restore point before applying the changes, on top of the backup TURBiX always keeps so you can undo them from Restore.
+gaming.apply.button.one = Apply {0} setting
+gaming.apply.button.other = Apply {0} settings
+gaming.confirm.title = Apply gaming settings
+gaming.confirm.text.one = {0} gaming performance setting will be applied.
+gaming.confirm.text.other = {0} gaming performance settings will be applied.
+gaming.confirm.backup = TURBiX will back up every value it changes so you can undo it from Restore.
+gaming.confirm.warnings = Keep in mind:
+gaming.confirm.button = Apply settings
+gaming.applying = Applying gaming settings
+gaming.result.nothing = All the selected settings were already applied. Nothing needed to change.
+gaming.result.changed.one = {0} change made.
+gaming.result.changed.other = {0} changes made.
+gaming.result.errors.one = {0} couldn't be applied; check the Activity log.
+gaming.result.errors.other = {0} couldn't be applied; check the Activity log.
+gaming.result.restart = Restart the PC so all the changes take effect.
+gaming.result.title = Settings applied
+gaming.result.titleWarnings = Settings applied with warnings
+gaming.power.setError = Windows didn't allow the power plan to be changed (error {0}).
+
+gaming.cat.game = Windows gaming features
+gaming.cat.game.help = Features Windows includes for games: some help (Game Mode) and others use resources while you play (background recording).
+gaming.cat.input = Keyboard and mouse
+gaming.cat.input.help = Keyboard and mouse behaviors that get in the way when you play.
+gaming.cat.power = Graphics and power
+gaming.cat.power.help = How Windows shares out processor and graphics card power.
+gaming.cat.background = Background
+gaming.cat.background.help = Programs and effects that keep using the processor and memory even when you're not using them.
+
+gaming.gameMode.name = Game Mode on
+gaming.gameMode.summary = Windows gives the game priority and holds off its heavy tasks.
+gaming.gameMode.help = With Game Mode, Windows gives the game processor and graphics priority, and avoids installing drivers or showing Windows Update restart notifications while you play. It's usually on already; this makes sure it is.
+
+gaming.gameDvr.name = Background recording (Game DVR)
+gaming.gameDvr.summary = Stops recording your game nonstop “just in case.”
+gaming.gameDvr.help = Windows can keep recording the last few seconds of your game all the time so you can save a clip. That recording keeps the graphics card and disk busy, and it's a known cause of FPS drops and stutter, especially on modest PCs. This setting turns it off.
+gaming.gameDvr.warning = You won't be able to record clips or screenshots with Xbox Game Bar (Win+Alt+G). Recorders from NVIDIA, AMD, OBS or Steam aren't affected.
+
+gaming.gameBarPopups.name = Xbox Game Bar pop-ups
+gaming.gameBarPopups.summary = Removes the pop-up tips and stops it opening with the controller button.
+gaming.gameBarPopups.help = Stops Xbox Game Bar from showing tips when you start a game and from popping up over your game when you press the Xbox button on the controller. Game Bar stays installed and still opens with Win+G.
+
+gaming.stickyKeys.name = Keyboard accessibility shortcuts
+gaming.stickyKeys.summary = Pressing Shift 5 times no longer kicks you out of the game.
+gaming.stickyKeys.help = Turns off the shortcuts that open Sticky Keys (Shift five times), Filter Keys (hold right Shift for 8 seconds) and Toggle Keys (Num Lock for 5 seconds). In games they go off by accident and minimize the game. The features themselves are still available in Settings › Accessibility.
+gaming.stickyKeys.warning = If you use Sticky Keys, Filter Keys or Toggle Keys, don't apply this setting. Takes effect when you sign out.
+
+gaming.mouseAccel.name = Mouse acceleration
+gaming.mouseAccel.summary = The pointer always moves the same distance, whether you move fast or slow.
+gaming.mouseAccel.help = Turns off “Enhance pointer precision.” With that option on, the faster you move the mouse the farther the pointer goes, which makes aiming by muscle memory hard in shooters. Without it, movement is 1:1 and predictable.
+gaming.mouseAccel.warning = The mouse will also feel different on the desktop. Takes effect when you sign out or restart.
+
+gaming.mmcss.name = Multimedia priority for games
+gaming.mmcss.summary = Reserves less processor time for background tasks while you play.
+gaming.mmcss.help = By default, Windows reserves 20% of the processor for background tasks while multimedia is playing. This setting lowers that to 10% and raises the processor, graphics and disk priority of the “Games” profile. The gain is small, but it helps keep FPS steady on processors with few cores.
+
+gaming.hags.name = Hardware-accelerated GPU scheduling
+gaming.hags.summary = The graphics card manages its own memory (lower latency).
+gaming.hags.help = Turns on Hardware-accelerated GPU scheduling (HAGS). It lowers processor load and latency on modern cards, and it's required for DLSS 3 and FSR 3 frame generation. Needs Windows 10 version 2004 or later and an NVIDIA GTX 1000 / AMD RX 5000 card or newer with up-to-date drivers.
+gaming.hags.warning = Requires a restart. On older cards or with old drivers it can cause stutter; if that happens, revert the setting.
+
+gaming.powerPlan.name = “High performance” power plan
+gaming.powerPlan.summary = The processor doesn't slow down to save power.
+gaming.powerPlan.help = Turns on the Windows “High performance” plan. The processor stays at a high clock speed and doesn't “park” cores, which avoids micro-stutter when a game suddenly needs more power. If your PC doesn't have that plan (common on many modern laptops), the setting shows as “Doesn't apply.”
+gaming.powerPlan.warning = Uses more electricity and runs hotter. On laptops it shortens battery life, so use it plugged in.
+
+gaming.powerThrottling.name = Power throttling for programs
+gaming.powerThrottling.summary = Windows stops slowing down background programs to save battery.
+gaming.powerThrottling.help = Windows slows down programs it considers “in the background” to save power. Sometimes that also slows down launchers, voice chat or recorders while you play. This setting turns that throttling off.
+gaming.powerThrottling.warning = Uses more battery on laptops.
+
+gaming.edgeBackground.name = Microsoft Edge in the background
+gaming.edgeBackground.summary = Edge no longer stays in memory after you close it.
+gaming.edgeBackground.help = Turns off Edge's Startup boost (which preloads it when the PC starts) and stops its extensions from running after you close it. Frees memory and processes even if Edge isn't your browser.
+gaming.edgeBackground.warning = Edge will show “Managed by your organization” in its settings; that's normal when policies are used.
+
+gaming.backgroundApps.name = Store apps in the background
+gaming.backgroundApps.summary = Microsoft Store apps don't do any work while they're closed.
+gaming.backgroundApps.help = Stops Microsoft Store apps (Mail, Photos, Weather and so on) from running in the background to update themselves or send notifications. Frees up processor and memory, especially on Windows 10.
+gaming.backgroundApps.warning = Store apps won't notify you about new things (new mail, messages) while they're closed.
+
+gaming.widgets.name = Widgets and “News and interests”
+gaming.widgets.summary = Removes the news panel from the taskbar, along with its processes.
+gaming.widgets.help = Turns off Widgets on Windows 11 and “News and interests” on Windows 10. That panel keeps several browser processes open all the time to show weather and news.
+gaming.widgets.warning = The widgets/weather button disappears from the taskbar.
+
+gaming.visualEffects.name = Transparency and animations
+gaming.visualEffects.summary = Removes visual effects that use the graphics card on the desktop.
+gaming.visualEffects.help = Turns off transparency effects and window and taskbar animations. You'll notice it most on PCs with integrated graphics or little memory: the desktop responds faster and more of the graphics card is left for the game.
+gaming.visualEffects.warning = Windows will look flatter and without animations. Some of it takes effect when you sign out.
+
+# Notice after freeing memory
+memory.toast.freed.title = {0} of RAM freed
+memory.toast.freed.text = You now have {0} available.
+memory.toast.freedAuto.text = Automatic cleanup at {0}. You now have {1} available.
+memory.toast.nothing.title = No memory to free
+memory.toast.nothing.text = Memory was already clear. You have {0} available.
+memory.toast.failed.title = Couldn't free memory
+memory.toast.noAdmin.text = TURBiX needs administrator rights to do this.
+memory.auto.notify = Let me know each time it runs
+memory.auto.notify.help = Shows a Windows notification with how much memory each automatic cleanup freed.\n\nIf you're playing full screen or have Do not disturb on, Windows keeps it in the notification center instead of showing it. If nothing was freed, there's no notification.
+
+# Abrir TURBiX al iniciar Windows
+startup.self.title = Open TURBiX when Windows starts
+startup.self.detail = It waits next to the clock, so the automatic memory cleanup keeps working without you having to remember.
+startup.self.help = TURBiX opens by itself every time you sign in to Windows. If the icon next to the clock is on (Settings), it waits there without opening the window; otherwise it opens minimized to the taskbar. It's mainly so the automatic memory cleanup is always on.\n\nWhen it opens it doesn't apply settings or clean anything on its own: it only does what you've turned on.\n\nBecause TURBiX needs administrator rights, Windows won't open it from the usual startup list. So a task called “TURBiX” is created in Task Scheduler, which opens it without asking you to confirm. Turning the option off deletes the task.\n\nIf you move TURBiX to another folder, turn it on again.
+startup.self.taskDescription = Opens TURBiX when you sign in. Created and removed from TURBiX (Settings).
+startup.self.log.on = TURBiX will open when Windows starts (“TURBiX” task in Task Scheduler).
+startup.self.log.off = TURBiX no longer opens when Windows starts.
+startup.self.log.started = TURBiX opened when Windows started.
+startup.self.log.error = Couldn't change whether TURBiX opens with Windows: {0}
+startup.self.error.title = Couldn't change startup
+startup.self.error.text = Windows didn't allow creating or deleting the task that opens TURBiX when you sign in.\n\n{0}

@@ -1,0 +1,193 @@
+# Rendimiento › Inicio de Windows, Memoria RAM y Juegos (la pestaña Procesos está en processes.*.txt)
+
+perf.subtitle = Controla qué arranca con Windows, libera memoria RAM y prepara el equipo para jugar.
+
+# ---------------------------------------------------------------- Inicio de Windows
+startup.tab = Inicio de Windows
+startup.help = Programas que se abren solos al iniciar sesión. Cada uno alarga el arranque y ocupa memoria todo el tiempo, aunque no lo uses.\n\nDesactiva con el interruptor los que no necesites desde el primer minuto (lanzadores de juegos, actualizadores, chats). No se desinstala nada: siguen funcionando cuando los abres tú. El cambio se aplica al momento y vale desde el próximo inicio de sesión.\n\nEs el mismo ajuste que «Aplicaciones de arranque» del Administrador de tareas. No se listan servicios ni tareas programadas.
+startup.loading = Buscando programas…
+startup.readError = No se pudo leer la lista de programas de inicio.
+startup.summary.none = Ningún programa se inicia con Windows.
+startup.summary.total.one = {0} programa
+startup.summary.total.other = {0} programas
+startup.summary.enabled.one = {0} se inicia con Windows
+startup.summary.enabled.other = {0} se inician con Windows
+startup.summary.disabled.one = {0} desactivado
+startup.summary.disabled.other = {0} desactivados
+startup.help.storeApp = Aplicación de Microsoft Store que puede abrirse sola al iniciar sesión.\n\nPaquete: {0}
+startup.help.program = Se abre solo cada vez que inicias sesión en Windows.\n\nComando: {0}
+startup.help.source = Dónde está registrado: {0}.
+startup.help.protected = Es parte de la seguridad de Windows: TURBiX no permite desactivarlo.
+startup.help.canDisable = Si lo desactivas, el programa sigue instalado y funciona igual cuando lo abres tú; solo deja de arrancar solo. Puedes volver a activarlo aquí o en el Administrador de tareas.
+startup.toggleError.title = No se pudo cambiar
+startup.toggleError.text = Windows no permitió modificar «{0}».\n\n{1}
+startup.log.enabled = Inicio de Windows: «{0}» activado.
+startup.log.disabled = Inicio de Windows: «{0}» desactivado.
+startup.log.toggleError = No se pudo cambiar «{0}»: {1}
+startup.log.readError = No se pudo leer la lista de inicio: {0}
+startup.log.readPartError = Inicio de Windows: {0}
+startup.source.runUser = Registro · solo tu usuario
+startup.source.runAll = Registro · todos los usuarios
+startup.source.run32 = Registro · todos los usuarios (32 bits)
+startup.source.folderUser = Carpeta Inicio · solo tu usuario
+startup.source.folderAll = Carpeta Inicio · todos los usuarios
+startup.source.store = App de Microsoft Store
+startup.storeApp.description = Aplicación de Microsoft Store
+startup.error.protected = Es un componente de seguridad de Windows y debe seguir activo.
+startup.error.openKey = No se pudo abrir la configuración de inicio.
+
+# ---------------------------------------------------------------- Memoria RAM
+memory.tab = Memoria RAM
+memory.usage.title = Uso de memoria
+memory.usage.help = Memoria RAM que están usando Windows y tus programas ahora mismo. Si pasa del 85–90 %, Windows empieza a usar el disco como memoria y todo va más lento, sobre todo los juegos.
+memory.available = {0} disponibles
+memory.clean.button = Limpiar memoria
+memory.clean.help = Libera memoria RAM ahora, sin cerrar ningún programa:\n\n1. Hace que cada programa devuelva la memoria que tiene reservada y no está usando.\n2. Vacía la memoria «en espera» (caché de archivos ya cerrados), que a veces Windows tarda en soltar y provoca tirones en juegos.\n\nNo se pierde nada: lo que un programa necesite lo vuelve a cargar solo. Por eso es normal que el uso suba otra vez con el tiempo, y que algún programa tarde un instante más al volver a él. Es útil justo antes de abrir un juego o cuando la memoria está casi llena; no acelera un equipo al que le sobra RAM.
+memory.last.never = Todavía no se limpió la memoria en esta sesión.
+memory.last.freed = Última limpieza a las {0}: {1} liberados.
+memory.last.nothing = Última limpieza a las {0}: no había memoria que liberar.
+memory.last.noAdmin = No se pudo limpiar: TURBiX necesita permisos de administrador.
+memory.last.error = No se pudo limpiar la memoria: {0}
+memory.log.noAdmin = Memoria RAM: Windows no permitió la limpieza (faltan permisos de administrador).
+memory.log.freedAuto = Memoria RAM (automática): {0} liberados.
+memory.log.freedManual = Memoria RAM (manual): {0} liberados.
+memory.log.error = Memoria RAM: {0}
+memory.auto.title = Limpieza automática
+memory.auto.help = TURBiX repite la limpieza de memoria cada cierto tiempo, sin que tengas que pulsar el botón.\n\nFunciona mientras TURBiX esté abierto; puedes dejarlo minimizado mientras juegas o trabajas. Para no tener que abrirlo cada vez, activa «Abrir TURBiX al iniciar Windows». Tu elección se recuerda la próxima vez.
+memory.auto.enable = Limpiar la memoria automáticamente
+memory.auto.interval = CADA CUÁNTO
+memory.auto.interval.help = Tiempo entre una limpieza y la siguiente. Para jugar suele ir bien entre 10 y 30 minutos. Intervalos muy cortos no ayudan: los programas tienen que recargar su memoria una y otra vez.
+memory.interval.m5 = 5 min
+memory.interval.m10 = 10 min
+memory.interval.m15 = 15 min
+memory.interval.m30 = 30 min
+memory.interval.h1 = 1 hora
+memory.auto.onlyHigh = Solo si el uso supera el 80 %
+memory.auto.onlyHigh.help = Recomendado. Si cuando toca limpiar hay memoria de sobra, TURBiX no hace nada y espera al siguiente turno. Así solo actúa cuando de verdad hace falta.
+memory.auto.off = Desactivada.
+memory.auto.next = Próxima limpieza a las {0}.
+memory.auto.skipped = A las {0} el uso era del {1}: no hizo falta limpiar. Próxima revisión a las {2}.
+memory.auto.log.enabled.one = Limpieza automática de memoria activada: cada {0} minuto.
+memory.auto.log.enabled.other = Limpieza automática de memoria activada: cada {0} minutos.
+memory.auto.log.disabled = Limpieza automática de memoria desactivada.
+memory.top.title = Qué está usando la memoria
+memory.top.help = Los programas que más memoria ocupan ahora, sumando todos sus procesos (un navegador abre uno por pestaña). Se actualiza cada pocos segundos.\n\nSi la memoria está llena, cerrar el primero de la lista ayuda más que cualquier limpieza. La cifra es aproximada: parte de esa memoria la comparten varios programas.
+
+# ---------------------------------------------------------------- Juegos
+gaming.tab = Juegos
+gaming.note = Estos ajustes quitan frenos reales de Windows (grabación en segundo plano, ahorro de energía, programas de fondo) y dan más estabilidad a los FPS. No hacen magia: lo que más sube los FPS son los controladores de la gráfica al día y los ajustes gráficos de cada juego. TURBiX no incluye «trucos» que rompen cosas, como apagar los servicios de Xbox o la seguridad.
+gaming.presets.help = Recomendado: ajustes seguros para cualquier equipo, de sobremesa o portátil.\n\nMáximo: añade los AVANZADOS, pensados para equipos de juego enchufados a la corriente. Gastan más energía o cambian cómo se ve y se siente Windows. Lee sus avisos en amarillo.
+gaming.restorePoint = Crear punto de restauración antes de aplicar
+gaming.restorePoint.help = Crea un punto de restauración de Windows antes de aplicar los cambios, además de la copia que TURBiX guarda siempre y que permite revertir desde «Restaurar».
+gaming.apply.button.one = Aplicar {0} ajuste
+gaming.apply.button.other = Aplicar {0} ajustes
+gaming.confirm.title = Aplicar ajustes para juegos
+gaming.confirm.text.one = Se aplicará {0} ajuste de rendimiento para juegos.
+gaming.confirm.text.other = Se aplicarán {0} ajustes de rendimiento para juegos.
+gaming.confirm.backup = TURBiX guardará una copia de cada valor que modifique para que puedas revertirlo desde «Restaurar».
+gaming.confirm.warnings = Ten en cuenta:
+gaming.confirm.button = Aplicar ajustes
+gaming.applying = Aplicando ajustes para juegos
+gaming.result.nothing = Todos los ajustes seleccionados ya estaban aplicados. No fue necesario cambiar nada.
+gaming.result.changed.one = Se hizo {0} cambio.
+gaming.result.changed.other = Se hicieron {0} cambios.
+gaming.result.errors.one = {0} no se pudo aplicar: revisa el Registro de actividad.
+gaming.result.errors.other = {0} no se pudieron aplicar: revisa el Registro de actividad.
+gaming.result.restart = Reinicia el equipo para que todos los cambios surtan efecto.
+gaming.result.title = Ajustes aplicados
+gaming.result.titleWarnings = Ajustes aplicados con avisos
+gaming.power.setError = Windows no permitió cambiar el plan de energía (error {0}).
+
+gaming.cat.game = Funciones de juego de Windows
+gaming.cat.game.help = Funciones que Windows trae para juegos: algunas ayudan (Modo de juego) y otras gastan recursos mientras juegas (grabación en segundo plano).
+gaming.cat.input = Teclado y ratón
+gaming.cat.input.help = Comportamientos del teclado y el ratón que molestan al jugar.
+gaming.cat.power = Gráficos y energía
+gaming.cat.power.help = Cómo reparte Windows la potencia del procesador y de la tarjeta gráfica.
+gaming.cat.background = Segundo plano
+gaming.cat.background.help = Programas y efectos que siguen usando procesador y memoria aunque no los estés usando.
+
+gaming.gameMode.name = Modo de juego activado
+gaming.gameMode.summary = Windows da prioridad al juego y pausa sus tareas pesadas.
+gaming.gameMode.help = Con el Modo de juego, Windows da prioridad de procesador y gráfica al juego, y evita instalar controladores o mostrar avisos de reinicio de Windows Update mientras juegas. Suele venir activado; esto se asegura de que lo esté.
+
+gaming.gameDvr.name = Grabación en segundo plano (Game DVR)
+gaming.gameDvr.summary = Deja de grabar la partida continuamente «por si acaso».
+gaming.gameDvr.help = Windows puede grabar todo el tiempo los últimos segundos de tu partida para que guardes un clip. Esa grabación usa la tarjeta gráfica y el disco constantemente, y es una causa conocida de bajones de FPS y tirones, sobre todo en equipos modestos. Este ajuste la apaga.
+gaming.gameDvr.warning = No podrás grabar clips ni capturas con la Xbox Game Bar (Win+Alt+G). Los grabadores de NVIDIA, AMD, OBS o Steam no se ven afectados.
+
+gaming.gameBarPopups.name = Avisos de la Xbox Game Bar
+gaming.gameBarPopups.summary = Quita los avisos emergentes y que se abra con el botón del mando.
+gaming.gameBarPopups.help = Evita que la Xbox Game Bar muestre consejos al abrir un juego y que aparezca encima de la partida al pulsar el botón Xbox del mando. La Game Bar sigue instalada y se puede abrir con Win+G.
+
+gaming.stickyKeys.name = Atajos de accesibilidad del teclado
+gaming.stickyKeys.summary = Pulsar Mayús 5 veces ya no te saca del juego.
+gaming.stickyKeys.help = Desactiva los atajos que abren «Teclas especiales» (Mayús cinco veces), «Teclas filtro» (mantener Mayús derecha 8 segundos) y «Teclas de alternancia» (Bloq Num 5 segundos). En los juegos se disparan sin querer y minimizan la partida. Las funciones siguen disponibles en Configuración › Accesibilidad.
+gaming.stickyKeys.warning = Si usas Teclas especiales, Teclas filtro o Teclas de alternancia, no apliques este ajuste. Se aplica al cerrar sesión.
+
+gaming.mouseAccel.name = Aceleración del ratón
+gaming.mouseAccel.summary = El puntero recorre siempre la misma distancia, muevas rápido o lento.
+gaming.mouseAccel.help = Desactiva «Mejorar la precisión del puntero». Con esa opción, cuanto más rápido mueves el ratón más lejos va el puntero, lo que hace difícil apuntar de memoria en juegos de disparos. Sin ella, el movimiento es 1:1 y predecible.
+gaming.mouseAccel.warning = Cambia la sensación del ratón también en el escritorio. Se aplica al cerrar sesión o reiniciar.
+
+gaming.mmcss.name = Prioridad multimedia para juegos
+gaming.mmcss.summary = Reserva menos procesador para tareas de fondo mientras juegas.
+gaming.mmcss.help = Windows reserva por defecto un 20 % del procesador para tareas de segundo plano cuando hay multimedia en marcha. Este ajuste baja esa reserva al 10 % y sube la prioridad de procesador, gráfica y disco del perfil «Juegos». La mejora es pequeña, pero ayuda a la estabilidad de los FPS en procesadores con pocos núcleos.
+
+gaming.hags.name = Programación de GPU acelerada por hardware
+gaming.hags.summary = La tarjeta gráfica gestiona su propia memoria (menos latencia).
+gaming.hags.help = Activa la «Programación de GPU acelerada por hardware» (HAGS). Reduce la carga del procesador y la latencia en tarjetas modernas, y es obligatoria para la generación de fotogramas de DLSS 3 y FSR 3. Necesita Windows 10 2004 o superior y una gráfica NVIDIA GTX 1000 / AMD RX 5000 o más nueva con controladores actualizados.
+gaming.hags.warning = Requiere reiniciar. En gráficas antiguas o con controladores viejos puede causar tirones: si pasa, revierte el ajuste.
+
+gaming.powerPlan.name = Plan de energía «Alto rendimiento»
+gaming.powerPlan.summary = El procesador no baja de velocidad para ahorrar energía.
+gaming.powerPlan.help = Activa el plan «Alto rendimiento» de Windows. El procesador se mantiene a frecuencia alta y no «aparca» núcleos, lo que evita microcortes cuando el juego pide potencia de golpe. Si tu equipo no tiene ese plan (pasa en muchos portátiles modernos), el ajuste aparece como «No aplica».
+gaming.powerPlan.warning = Consume más electricidad y calienta más. En portátiles reduce la duración de la batería: úsalo enchufado.
+
+gaming.powerThrottling.name = Limitación de energía de programas
+gaming.powerThrottling.summary = Windows deja de frenar programas en segundo plano para ahorrar batería.
+gaming.powerThrottling.help = Windows reduce la velocidad de los programas que considera «en segundo plano» para ahorrar energía. A veces frena también lanzadores, chats de voz o grabadores mientras juegas. Este ajuste desactiva esa limitación.
+gaming.powerThrottling.warning = En portátiles gasta más batería.
+
+gaming.edgeBackground.name = Microsoft Edge en segundo plano
+gaming.edgeBackground.summary = Edge deja de quedarse abierto en memoria cuando lo cierras.
+gaming.edgeBackground.help = Desactiva el «Aumento de inicio» de Edge (que lo precarga al encender el equipo) y que sus extensiones sigan funcionando después de cerrarlo. Libera memoria y procesos aunque no uses Edge como navegador.
+gaming.edgeBackground.warning = Edge mostrará «Administrado por tu organización» en su configuración; es normal al usar directivas.
+
+gaming.backgroundApps.name = Apps de la Store en segundo plano
+gaming.backgroundApps.summary = Las apps de Microsoft Store no trabajan cuando están cerradas.
+gaming.backgroundApps.help = Impide que las aplicaciones de Microsoft Store (Correo, Fotos, El Tiempo, etc.) se ejecuten en segundo plano para actualizarse o enviar avisos. Libera procesador y memoria, sobre todo en Windows 10.
+gaming.backgroundApps.warning = Las apps de la Store no avisarán de novedades (correo nuevo, mensajes) mientras estén cerradas.
+
+gaming.widgets.name = Widgets y «Noticias e intereses»
+gaming.widgets.summary = Quita el panel de noticias de la barra de tareas y sus procesos.
+gaming.widgets.help = Desactiva los Widgets de Windows 11 y «Noticias e intereses» de Windows 10. Ese panel mantiene varios procesos de navegador abiertos todo el tiempo para mostrar el tiempo y las noticias.
+gaming.widgets.warning = Desaparece el botón de widgets/tiempo de la barra de tareas.
+
+gaming.visualEffects.name = Transparencias y animaciones
+gaming.visualEffects.summary = Quita efectos visuales que usan la gráfica en el escritorio.
+gaming.visualEffects.help = Desactiva el efecto de transparencia y las animaciones de ventanas y de la barra de tareas. Se nota sobre todo en equipos con gráfica integrada o poca memoria: el escritorio responde más rápido y queda más gráfica libre para el juego.
+gaming.visualEffects.warning = Windows se verá más plano y sin animaciones. Algunas se aplican al cerrar sesión.
+
+# Aviso al liberar memoria
+memory.toast.freed.title = Se liberaron {0} de RAM
+memory.toast.freed.text = Ahora tienes {0} disponibles.
+memory.toast.freedAuto.text = Limpieza automática de las {0}. Ahora tienes {1} disponibles.
+memory.toast.nothing.title = No había memoria para liberar
+memory.toast.nothing.text = La memoria ya estaba despejada. Tienes {0} disponibles.
+memory.toast.failed.title = No se pudo liberar la memoria
+memory.toast.noAdmin.text = TURBiX necesita permisos de administrador para hacerlo.
+memory.auto.notify = Avisarme cada vez que limpie
+memory.auto.notify.help = Muestra una notificación de Windows con la memoria que se liberó en cada limpieza automática.\n\nSi estás jugando a pantalla completa o tienes activado «No molestar», Windows la guarda en el centro de notificaciones en lugar de mostrarla. Cuando no se libera nada, no avisa.
+
+# Abrir TURBiX al iniciar Windows
+startup.self.title = Abrir TURBiX al iniciar Windows
+startup.self.detail = Se queda junto al reloj, así la limpieza automática de memoria funciona sin que tengas que acordarte.
+startup.self.help = TURBiX se abre solo cada vez que inicias sesión en Windows. Si el icono junto al reloj está activado (Ajustes), se queda ahí sin abrir la ventana; si no, se abre minimizado en la barra de tareas. Sirve sobre todo para que la limpieza automática de memoria esté siempre activa.\n\nAl abrirse no aplica ajustes ni limpia nada por su cuenta: solo hace lo que tengas activado.\n\nComo TURBiX necesita permisos de administrador, Windows no permite abrirlo desde la lista normal de inicio. Por eso se crea una tarea llamada «TURBiX» en el Programador de tareas, que lo abre sin pedirte confirmación. Al desactivar la opción, la tarea se borra.\n\nSi mueves TURBiX a otra carpeta, vuelve a activarla.
+startup.self.taskDescription = Abre TURBiX al iniciar sesión. Se crea y se borra desde TURBiX (Ajustes).
+startup.self.log.on = TURBiX se abrirá al iniciar Windows (tarea «TURBiX» en el Programador de tareas).
+startup.self.log.off = TURBiX ya no se abre al iniciar Windows.
+startup.self.log.started = TURBiX se abrió al iniciar Windows.
+startup.self.log.error = No se pudo cambiar el inicio de TURBiX con Windows: {0}
+startup.self.error.title = No se pudo cambiar el inicio
+startup.self.error.text = Windows no permitió crear o borrar la tarea que abre TURBiX al iniciar sesión.\n\n{0}

@@ -1,0 +1,172 @@
+# Конфиденциальность (вкладка и каталог настроек) + модуль настроек (tweak.*), общий для всех каталогов.
+
+# ---------------------------------------------------------------- вкладка
+privacy.title = Конфиденциальность и телеметрия
+privacy.subtitle = Выберите, какие данные Windows перестанет отправлять. Перед любыми изменениями TURBiX сохраняет резервную копию, чтобы всё можно было вернуть.
+privacy.preset.help = Рекомендуемые: безопасные настройки для любого компьютера, без заметных побочных эффектов.\n\nМаксимум: добавляет настройки с пометкой ДЛЯ ОПЫТНЫХ. Они блокируют больше данных, но могут отключить какую-либо функцию (голосовой ввод, расположение, Copilot…). Прочитайте жёлтые предупреждения, прежде чем их применять.
+privacy.restorePoint = Создать точку восстановления перед применением
+privacy.restorePoint.help = Перед применением изменений создаётся точка восстановления Windows. Это вторая страховка в дополнение к резервной копии, которую TURBiX сохраняет всегда. Для этого должна быть включена защита системы; если она выключена, TURBiX предупредит об этом и продолжит работу.
+
+# ---------------------------------------------------------------- категории
+privacy.cat.telemetry = Телеметрия Windows
+privacy.cat.telemetry.help = Данные об использовании и диагностические данные, которые Windows автоматически отправляет в Microsoft.
+privacy.cat.privacy = Конфиденциальность
+privacy.cat.privacy.help = Личные сведения, которые Windows и приложения собирают о вас и ваших действиях.
+privacy.cat.ads = Реклама и рекомендации
+privacy.cat.ads.help = Реклама, рекомендации и продвигаемые приложения, встроенные в Windows.
+privacy.cat.ai = Искусственный интеллект
+privacy.cat.ai.help = Функции ИИ в Windows 11, которые анализируют ваши действия.
+privacy.cat.apps = Приложения
+privacy.cat.apps.help = Телеметрия программ Microsoft и очень распространённых программ других разработчиков.
+
+# ---------------------------------------------------------------- Телеметрия
+privacy.tweak.diagnosticData.name = Минимум диагностических данных
+privacy.tweak.diagnosticData.summary = Сводит к минимуму то, что Windows отправляет в Microsoft.
+privacy.tweak.diagnosticData.help = Через политику задаёт самый низкий уровень диагностических данных, скрывает имя устройства в отчётах и ограничивает отправку журналов и дампов памяти.\n\nВ Windows «Домашняя» и Pro минимально допустимый уровень — «Обязательные», поэтому эта настройка дополняется отключением службы и задач телеметрии.
+
+privacy.tweak.telemetryServices.name = Служба телеметрии (DiagTrack)
+privacy.tweak.telemetryServices.summary = Останавливает службу, которая отправляет диагностические данные.
+privacy.tweak.telemetryServices.help = Отключает службу «Функциональные возможности для подключенных пользователей и телеметрия» (DiagTrack), которая собирает и отправляет диагностические данные, и сопутствующую ей службу маршрутизации push-сообщений WAP (dmwappushservice). Windows без них работает как обычно.
+privacy.tweak.telemetryServices.warning = На рабочих компьютерах, которыми управляют через Intune/MDM, служба dmwappushservice может быть нужна.
+
+privacy.tweak.telemetryTasks.name = Запланированные задачи сбора данных
+privacy.tweak.telemetryTasks.summary = Отключает 10 задач, которые собирают данные в фоне.
+privacy.tweak.telemetryTasks.help = Windows запускает задачи по расписанию, которые составляют опись компьютера и программ и отправляют результат: оценщик совместимости, программа улучшения качества программного обеспечения (CEIP), перепись устройства, SQM и сборщик диагностических данных диска. Если их отключить, заодно снизится фоновая нагрузка на диск и процессор.
+
+privacy.tweak.ceip.name = Программа улучшения качества (CEIP) и инвентаризация
+privacy.tweak.ceip.summary = Больше не собирает и не отправляет список установленных программ.
+privacy.tweak.ceip.help = Отключает программу улучшения качества программного обеспечения, сборщик инвентаризации приложений, телеметрию совместимости (AIT) и средство записи действий (старый инструмент, которым почти никто не пользуется).
+
+privacy.tweak.errorReporting.name = Отчёты об ошибках Windows
+privacy.tweak.errorReporting.summary = Не отправляет в Microsoft отчёты о сбоях.
+privacy.tweak.errorReporting.help = Когда программа неожиданно закрывается, Windows готовит отчёт (иногда с частью памяти программы) и отправляет его в Microsoft. Эта настройка отключает отправку. Ошибки по-прежнему записываются на компьютере, их можно посмотреть в «Просмотре событий».
+
+privacy.tweak.feedback.name = Запросы отзывов
+privacy.tweak.feedback.summary = Windows больше не спрашивает ваше мнение.
+privacy.tweak.feedback.help = Убирает всплывающие окна с просьбой оценить Windows и отключает задачи, которые загружают и планируют эти опросы.
+
+# ---------------------------------------------------------------- Конфиденциальность
+privacy.tweak.advertisingId.name = Рекламный идентификатор
+privacy.tweak.advertisingId.summary = Приложения не могут отслеживать вас по рекламному идентификатору.
+privacy.tweak.advertisingId.help = Windows присваивает каждому пользователю уникальный идентификатор, по которому приложения показывают персонализированную рекламу и связывают ваши действия в разных приложениях. Эта настройка его отключает.
+
+privacy.tweak.activityHistory.name = Журнал действий
+privacy.tweak.activityHistory.summary = Не сохраняет и не отправляет то, что вы открываете на компьютере.
+privacy.tweak.activityHistory.help = Windows записывает, какие приложения, файлы и страницы вы открываете, и может синхронизировать это с вашей учётной записью Microsoft. Эта настройка запрещает сохранять и отправлять эти данные.
+
+privacy.tweak.tailoredExperiences.name = Индивидуальные возможности
+privacy.tweak.tailoredExperiences.summary = Ваши диагностические данные не используются для рекламы.
+privacy.tweak.tailoredExperiences.help = Запрещает Microsoft использовать ваши диагностические данные, чтобы показывать в Windows «персонализированные» советы, рекламу и рекомендации.
+
+privacy.tweak.inkingTyping.name = Сбор данных рукописного ввода и набора текста
+privacy.tweak.inkingTyping.summary = Не отправляет образцы того, что вы вводите.
+privacy.tweak.inkingTyping.help = Windows может собирать то, что вы набираете на клавиатуре или пишете пером, чтобы «улучшить» распознавание и личный словарь, а также отправлять отчёты об ошибках распознавания рукописного ввода. Эта настройка это запрещает. Проверка орфографии и подсказки клавиатуры продолжают работать.
+
+privacy.tweak.languageList.name = Список языков для сайтов
+privacy.tweak.languageList.summary = Сайты не видят ваш список языков.
+privacy.tweak.languageList.help = Не даёт сайтам читать список языков, заданный в Windows: по этим данным ваш компьютер тоже можно опознать (цифровой отпечаток браузера).
+
+privacy.tweak.appDiagnostics.name = Диагностика других приложений
+privacy.tweak.appDiagnostics.summary = Приложения не могут читать чужие диагностические данные.
+privacy.tweak.appDiagnostics.help = Запрещает приложениям из Microsoft Store доступ к диагностическим сведениям других установленных приложений.
+
+privacy.tweak.appLaunchTracking.name = Отслеживание запуска приложений
+privacy.tweak.appLaunchTracking.summary = Windows перестаёт запоминать, какими программами вы пользуетесь.
+privacy.tweak.appLaunchTracking.help = Windows запоминает каждую запущенную программу, чтобы упорядочивать меню «Пуск» и результаты поиска. Эта настройка отключает такое отслеживание.
+privacy.tweak.appLaunchTracking.warning = Список «Часто используемые» в меню «Пуск» станет пустым.
+
+privacy.tweak.onlineSpeech.name = Распознавание голоса в сети
+privacy.tweak.onlineSpeech.summary = Ваш голос не отправляется на серверы Microsoft.
+privacy.tweak.onlineSpeech.help = Распознавание голоса в сети отправляет ваш голос в облако Microsoft для расшифровки. Эта настройка отключает его, а также блокирует персонализацию ввода.
+privacy.tweak.onlineSpeech.warning = Голосовой ввод (Win + H) перестанет работать.
+
+privacy.tweak.location.name = Служба определения местоположения
+privacy.tweak.location.summary = Ни одно приложение не сможет узнать, где вы находитесь.
+privacy.tweak.location.help = Полностью отключает определение местоположения для Windows и всех приложений.
+privacy.tweak.location.warning = Перестанут работать «Карты», автоматическая погода, «Поиск устройства» и автоматическая установка часового пояса.
+
+# ---------------------------------------------------------------- Реклама
+privacy.tweak.webSearch.name = Веб-поиск и Bing в меню «Пуск»
+privacy.tweak.webSearch.summary = То, что вы ищете в Windows, не отправляется в Bing.
+privacy.tweak.webSearch.help = По умолчанию каждая буква, которую вы вводите в поиске Windows, отправляется в Bing, чтобы показать результаты из интернета. С этой настройкой поиск идёт только по компьютеру (приложения, файлы и параметры): так быстрее и приватнее. Также отключается Cortana.
+
+privacy.tweak.suggestionsAds.name = Реклама и автоматическая установка приложений
+privacy.tweak.suggestionsAds.summary = Без рекомендаций, рекламы и продвигаемых приложений.
+privacy.tweak.suggestionsAds.help = Убирает «рекомендации» из меню «Пуск» и «Параметров», советы и рекламу на экране блокировки, рекламу OneDrive в проводнике и экраны «Получите ещё больше от Windows», а также не даёт Windows самой устанавливать продвигаемые приложения.
+
+# ---------------------------------------------------------------- ИИ
+privacy.tweak.copilotRecall.name = Copilot, Recall и «Click to Do»
+privacy.tweak.copilotRecall.summary = Отключает Copilot и снимки Recall.
+privacy.tweak.copilotRecall.help = Отключает Windows Copilot и его кнопку на панели задач и не даёт Recall регулярно сохранять снимки экрана для анализа с помощью ИИ. Также отключает «Click to Do».
+privacy.tweak.copilotRecall.warning = Если вы пользуетесь Copilot в Windows, не отмечайте этот пункт.
+
+# ---------------------------------------------------------------- Приложения
+privacy.tweak.office.name = Телеметрия Microsoft Office
+privacy.tweak.office.summary = Office 2016 – 365 перестаёт отправлять данные об использовании.
+privacy.tweak.office.help = Через политику отключает отправку данных об использовании и диагностических данных из Word, Excel, PowerPoint, Outlook и других приложений Office 2016, 2019, 2021 и Microsoft 365, а также их задачи телеметрии. Если Office не установлен, ничего не меняется.
+
+privacy.tweak.nvidia.name = Телеметрия NVIDIA
+privacy.tweak.nvidia.summary = Только если есть видеокарта NVIDIA.
+privacy.tweak.nvidia.help = Драйвер NVIDIA устанавливает задачи и службу, которые отправляют данные об использовании. Эта настройка отключает их, не влияя на производительность и обновления драйвера. Если видеокарты NVIDIA нет, настройка пропускается.
+
+privacy.tweak.devTools.name = .NET, PowerShell 7 и Visual Studio
+privacy.tweak.devTools.summary = Официальный отказ от телеметрии для разработчиков.
+privacy.tweak.devTools.help = Задаёт официальные переменные среды DOTNET_CLI_TELEMETRY_OPTOUT и POWERSHELL_TELEMETRY_OPTOUT и политику, которая отключает программу улучшения качества Visual Studio. Если вы не пользуетесь этими инструментами, ничего не меняется.
+
+privacy.tweak.edge.name = Телеметрия Microsoft Edge
+privacy.tweak.edge.summary = Edge перестаёт отправлять диагностику и журнал.
+privacy.tweak.edge.help = Через политику отключает диагностические данные Edge, отправку журнала браузера для персонализации рекламы и запросы отзывов.
+privacy.tweak.edge.warning = Edge будет показывать «Вашим браузером управляет ваша организация» — при применении политик это нормально.
+
+privacy.tweak.deliveryOptimization.name = Раздача обновлений другим компьютерам
+privacy.tweak.deliveryOptimization.summary = Ваше подключение не используется, чтобы отправлять обновления другим.
+privacy.tweak.deliveryOptimization.help = Оптимизация доставки использует ваше подключение, чтобы отправлять части обновлений другим компьютерам (P2P). С этой настройкой Windows скачивает обновления только с серверов Microsoft и не расходует вашу пропускную способность на других.
+
+# ---------------------------------------------------------------- модуль настроек (все каталоги)
+tweak.area.privacy.phrase = Конфиденциальность
+tweak.area.privacy.label = Конфиденциальность
+tweak.area.performance.phrase = Производительность
+tweak.area.performance.label = Производительность
+tweak.area.windows.phrase = Windows
+tweak.area.windows.label = Windows
+
+tweak.log.applying.one = {1}: применяется {0} настройка ({2} {3})
+tweak.log.applying.few = {1}: применяются {0} настройки ({2} {3})
+tweak.log.applying.many = {1}: применяется {0} настроек ({2} {3})
+tweak.log.editionNote = Выпуск {0}: Windows не позволяет полностью отключить обязательные диагностические данные, поэтому они сводятся к минимуму, а служба и задачи, которые их отправляют, блокируются.
+tweak.progress.restorePoint = Создание точки восстановления системы…
+tweak.restorePoint.name = TURBiX — перед применением настроек ({0})
+tweak.session.label.one = {1}: {0} настройка
+tweak.session.label.few = {1}: {0} настройки
+tweak.session.label.many = {1}: {0} настроек
+tweak.log.notApplicable = {0}: на этом компьютере не требуется.
+tweak.log.withErrors = {0}: {1}, с ошибками: {2}.
+tweak.log.alreadyApplied = {0}: уже применено.
+tweak.log.changed = {0}: {1}.
+tweak.log.backupSaved = Резервная копия сохранена: {0}
+tweak.log.done = Готово: {0}, {1}.
+tweak.log.doneRestart = Готово: {0}, {1}. Перезагрузите компьютер, чтобы всё вступило в силу.
+tweak.changes.one = {0} изменение
+tweak.changes.few = {0} изменения
+tweak.changes.many = {0} изменений
+tweak.errors.one = {0} ошибка
+tweak.errors.few = {0} ошибки
+tweak.errors.many = {0} ошибок
+tweak.progress.done = Настройки применены
+tweak.log.serviceNotStopped = Не удалось остановить {0} сейчас; служба будет отключена после перезагрузки.
+tweak.log.noPowerPlan = На этом компьютере нет такой схемы электропитания; остаётся текущая.
+tweak.action.service = служба {0}
+tweak.action.powerPlan = схема электропитания
+tweak.action.task = задача {0}
+
+# ---------------------------------------------------------------- строки (настройки, очистка, резервные копии)
+tweak.help.footer = Изменений: {0} · Можно отменить в разделе «Восстановление».
+tweak.state.checking = Проверка
+tweak.group.count.one = {0} настройка
+tweak.group.count.few = {0} настройки
+tweak.group.count.many = {0} настроек
+tweak.cleanupDone = Готово
+tweak.backup.dateFormat = dddd, d MMMM yyyy, HH:mm
+tweak.backup.details.one = Сохранено {0} значение · {1}
+tweak.backup.details.few = Сохранено {0} значения · {1}
+tweak.backup.details.many = Сохранено {0} значений · {1}

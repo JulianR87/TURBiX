@@ -1,0 +1,24 @@
+# Installations- und Deinstallationsprogramm. Deutsch.
+
+setup.title = TURBiX installieren
+setup.text = TURBiX wird in diesen Ordner kopiert und erscheint im Startmenü und in der App-Liste von Windows, wo Sie es jederzeit deinstallieren können.
+setup.folder = INSTALLATIONSORDNER
+setup.desktop = Verknüpfung auf dem Desktop erstellen
+setup.replace = Version {0} ist bereits installiert. Sie wird durch {1} ersetzt; Ihre Einstellungen und Sicherungen bleiben erhalten.
+setup.reinstall = Version {0} ist bereits installiert. Sie wird erneut installiert; Ihre Einstellungen und Sicherungen bleiben erhalten.
+setup.install = Installieren
+setup.done.title = TURBiX ist installiert
+setup.done.text = Sie finden es im Startmenü. Zum Entfernen öffnen Sie in Windows Einstellungen › Apps.
+setup.open = TURBiX öffnen
+setup.retry = Erneut versuchen
+setup.running.title = TURBiX ist geöffnet
+setup.running.text = Es muss geschlossen werden, um fortzufahren: Klicken Sie mit der rechten Maustaste auf das Symbol neben der Uhr und wählen Sie „TURBiX beenden“. Klicken Sie danach auf „Erneut versuchen“.
+setup.error.title = TURBiX konnte nicht installiert werden
+setup.error.text = Windows hat den Abschluss der Installation nicht zugelassen.\n\n{0}
+uninstall.confirm.title = TURBiX deinstallieren?
+uninstall.confirm.text = Das Programm, seine Verknüpfungen und seine Einstellungen werden entfernt.\n\nDie Änderungen, die TURBiX an Windows vorgenommen hat, werden beim Deinstallieren nicht rückgängig gemacht: Wenn Sie das möchten, brechen Sie ab und verwenden Sie zuerst den Bereich „Wiederherstellen“.\n\nSicherungen und Aktivitätsprotokoll bleiben in {0} erhalten.
+uninstall.confirm.button = Deinstallieren
+uninstall.done.title = TURBiX wurde deinstalliert
+uninstall.done.text = Sicherungen und Aktivitätsprotokoll liegen weiterhin in {0}. Sie können diesen Ordner löschen, wenn Sie sie nicht mehr brauchen.
+uninstall.done.leftover = {0} konnte nicht gelöscht werden. Sie können die Datei von Hand löschen.
+uninstall.error.title = TURBiX konnte nicht deinstalliert werden

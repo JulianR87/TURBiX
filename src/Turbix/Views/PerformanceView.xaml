@@ -1,0 +1,380 @@
+<UserControl x:Class="Turbix.Views.PerformanceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:Turbix.Controls"
+             xmlns:v="clr-namespace:Turbix.Views"
+             xmlns:l="clr-namespace:Turbix.Localization">
+  <UserControl.Resources>
+    <!-- Fila de un programa de inicio -->
+    <DataTemplate x:Key="StartupRow">
+      <Border Style="{StaticResource RowCard}" Cursor="Arrow">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <Border Style="{StaticResource IconTile}" Background="{DynamicResource Surface2}" Margin="0,0,14,0">
+            <Grid>
+              <TextBlock Style="{StaticResource Icon}" Text="&#xE71D;" HorizontalAlignment="Center" Foreground="{DynamicResource TextMuted}"
+                         Visibility="{Binding HasIcon, Converter={StaticResource BoolToVis}, ConverterParameter=invert}"/>
+              <Image Source="{Binding Icon}" Width="22" Height="22" RenderOptions.BitmapScalingMode="HighQuality"
+                     Visibility="{Binding HasIcon, Converter={StaticResource BoolToVis}}"/>
+            </Grid>
+          </Border>
+          <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Text="{Binding Name}" FontSize="14" FontWeight="SemiBold" TextTrimming="CharacterEllipsis"/>
+              <Border Style="{StaticResource Chip}" Background="{DynamicResource SuccessSoft}" Margin="10,0,0,0" Padding="6,1"
+                      Visibility="{Binding IsProtected, Converter={StaticResource BoolToVis}}">
+                <TextBlock Text="{l:T common.security}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource Success}"/>
+              </Border>
+            </StackPanel>
+            <TextBlock Text="{Binding Detail}" Style="{StaticResource Muted}" FontSize="12.5" Margin="0,2,0,0"
+                       TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
+          </StackPanel>
+          <TextBlock Grid.Column="2" Text="{Binding StateText}" FontSize="12" Margin="16,0,12,0" VerticalAlignment="Center" MinWidth="76" TextAlignment="Right">
+            <TextBlock.Style>
+              <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{DynamicResource TextDim}"/>
+                <Style.Triggers>
+                  <DataTrigger Binding="{Binding IsEnabled}" Value="True">
+                    <Setter Property="Foreground" Value="{DynamicResource TextMuted}"/>
+                  </DataTrigger>
+                </Style.Triggers>
+              </Style>
+            </TextBlock.Style>
+          </TextBlock>
+          <ToggleButton Grid.Column="3" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding IsEnabled, Mode=TwoWay}"
+                        IsEnabled="{Binding CanToggle}" Margin="0,0,14,0"/>
+          <c:HelpTip Grid.Column="4" Text="{Binding Help}" Title="{Binding Name}"/>
+        </Grid>
+      </Border>
+    </DataTemplate>
+
+    <!-- Fila de un ajuste para juegos (igual que en Privacidad) -->
+    <DataTemplate x:Key="TweakRow">
+      <Border Style="{StaticResource RowCard}">
+        <Border.InputBindings>
+          <MouseBinding Gesture="LeftClick" Command="{Binding ToggleCommand}"/>
+        </Border.InputBindings>
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <CheckBox IsChecked="{Binding IsSelected}" VerticalAlignment="Center" Margin="0,0,16,0"/>
+          <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Text="{Binding Name}" FontSize="14" FontWeight="SemiBold"/>
+              <Border Style="{StaticResource Chip}" Background="{DynamicResource WarningSoft}" Margin="10,0,0,0" Padding="6,1"
+                      Visibility="{Binding IsAdvanced, Converter={StaticResource BoolToVis}}">
+                <TextBlock Text="{l:T common.advanced}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource Warning}"/>
+              </Border>
+            </StackPanel>
+            <TextBlock Text="{Binding Summary}" Style="{StaticResource Muted}" FontSize="12.5" Margin="0,2,0,0"/>
+            <TextBlock Margin="0,4,0,0" FontSize="12" Foreground="{DynamicResource Warning}" TextWrapping="Wrap"
+                       Visibility="{Binding HasWarning, Converter={StaticResource BoolToVis}}">
+              <Run FontFamily="{StaticResource IconFont}" Text="&#xE7BA;"/><Run Text="  "/><Run Text="{Binding Warning, Mode=OneWay}"/>
+            </TextBlock>
+          </StackPanel>
+          <Border Grid.Column="2" Style="{StaticResource StateChip}" Margin="16,0,14,0" MinWidth="92">
+            <TextBlock Text="{Binding StateText}" Style="{StaticResource StateChipText}" HorizontalAlignment="Center"/>
+          </Border>
+          <c:HelpTip Grid.Column="3" Text="{Binding Help}" Title="{Binding Name}"/>
+        </Grid>
+      </Border>
+    </DataTemplate>
+  </UserControl.Resources>
+
+  <Grid Margin="40,8,40,0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <StackPanel>
+      <TextBlock Text="{l:T nav.performance}" Style="{StaticResource H1}"/>
+      <TextBlock Style="{StaticResource Muted}" Margin="0,4,0,16"
+                 TextWrapping="Wrap" Text="{l:T perf.subtitle}"/>
+    </StackPanel>
+
+    <!-- Pestañas -->
+    <Border Grid.Row="1" Background="{DynamicResource Surface2}" BorderBrush="{DynamicResource Stroke}" BorderThickness="1"
+            CornerRadius="10" Padding="3" HorizontalAlignment="Left" Margin="0,0,0,16">
+      <StackPanel Orientation="Horizontal">
+        <RadioButton x:Name="TabStartupButton" Style="{StaticResource SegmentItem}" GroupName="PerfTab" Height="34" FontSize="13"
+                     MinWidth="150" Padding="18,0" Tag="&#xE7E8;" Content="{l:T startup.tab}" IsChecked="True" Checked="OnTab"/>
+        <RadioButton x:Name="TabProcessesButton" Style="{StaticResource SegmentItem}" GroupName="PerfTab" Height="34" FontSize="13"
+                     MinWidth="130" Padding="18,0" Tag="&#xE9D9;" Content="{l:T perf.tab.processes}" Checked="OnTab"/>
+        <RadioButton x:Name="TabMemoryButton" Style="{StaticResource SegmentItem}" GroupName="PerfTab" Height="34" FontSize="13"
+                     MinWidth="140" Padding="18,0" Tag="&#xE964;" Content="{l:T memory.tab}" Checked="OnTab"/>
+        <RadioButton x:Name="TabGamingButton" Style="{StaticResource SegmentItem}" GroupName="PerfTab" Height="34" FontSize="13"
+                     MinWidth="130" Padding="18,0" Tag="&#xE7FC;" Content="{l:T gaming.tab}" Checked="OnTab"/>
+      </StackPanel>
+    </Border>
+
+    <!-- ============================================================ Procesos -->
+    <v:ProcessesPanel x:Name="TabProcesses" Grid.Row="2" DataContext="{Binding Processes}" Visibility="Collapsed" Margin="0,0,0,16"/>
+
+    <!-- ============================================================ Inicio de Windows -->
+    <Grid x:Name="TabStartup" Grid.Row="2">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <DockPanel Margin="2,0,0,12">
+        <Button DockPanel.Dock="Right" Style="{StaticResource PillButton}" Command="{Binding RefreshStartupCommand}" Margin="0">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Icon}" Text="&#xE72C;" FontSize="12"/>
+            <TextBlock Text="{l:T common.refresh}" Margin="8,0,0,0"/>
+          </StackPanel>
+        </Button>
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Text="{Binding StartupSummary}" Foreground="{DynamicResource TextMuted}" FontSize="13" VerticalAlignment="Center"/>
+          <c:HelpTip Margin="10,0,0,0" Text="{l:T startup.help}"/>
+        </StackPanel>
+      </DockPanel>
+
+      <!-- Turbix mismo: abrirlo al iniciar Windows (tarea programada, ver Core/SelfStartup.cs) -->
+      <Border Grid.Row="1" Style="{StaticResource RowCard}" Cursor="Arrow" Margin="0,0,10,14">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <Border Style="{StaticResource IconTile}" Background="{DynamicResource AccentSoft}" Margin="0,0,14,0">
+            <TextBlock Style="{StaticResource Icon}" Text="&#xE7E8;" HorizontalAlignment="Center" Foreground="{DynamicResource AccentText}"/>
+          </Border>
+          <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBlock Text="{l:T startup.self.title}" FontSize="14" FontWeight="SemiBold" TextWrapping="Wrap"/>
+            <TextBlock Text="{l:T startup.self.detail}" Style="{StaticResource Muted}" FontSize="12.5" Margin="0,2,0,0"/>
+          </StackPanel>
+          <TextBlock Grid.Column="2" FontSize="12" Margin="16,0,12,0" VerticalAlignment="Center" MinWidth="76" TextAlignment="Right">
+            <TextBlock.Style>
+              <Style TargetType="TextBlock">
+                <Setter Property="Text" Value="{l:T common.state.disabled}"/>
+                <Setter Property="Foreground" Value="{DynamicResource TextDim}"/>
+                <Style.Triggers>
+                  <DataTrigger Binding="{Binding StartWithWindows}" Value="True">
+                    <Setter Property="Text" Value="{l:T common.state.enabled}"/>
+                    <Setter Property="Foreground" Value="{DynamicResource TextMuted}"/>
+                  </DataTrigger>
+                </Style.Triggers>
+              </Style>
+            </TextBlock.Style>
+          </TextBlock>
+          <ToggleButton Grid.Column="3" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding StartWithWindows, Mode=TwoWay}"
+                        Margin="0,0,14,0" VerticalAlignment="Center"/>
+          <c:HelpTip Grid.Column="4" Title="{l:T startup.self.title}" Text="{l:T startup.self.help}"/>
+        </Grid>
+      </Border>
+
+      <Border Grid.Row="2" Style="{StaticResource Card}" VerticalAlignment="Top" Padding="28"
+              Visibility="{Binding HasStartupItems, Converter={StaticResource BoolToVis}, ConverterParameter=invert}">
+        <StackPanel HorizontalAlignment="Center">
+          <TextBlock Style="{StaticResource Icon}" Text="&#xE7E8;" FontSize="28" Foreground="{DynamicResource TextDim}" HorizontalAlignment="Center"/>
+          <TextBlock Text="{Binding StartupSummary}" Style="{StaticResource Muted}" TextAlignment="Center" Margin="0,12,0,0"/>
+        </StackPanel>
+      </Border>
+
+      <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Focusable="False" Padding="0,0,10,0" Margin="0,0,-10,0">
+        <ItemsControl ItemsSource="{Binding StartupItems}" ItemTemplate="{StaticResource StartupRow}" Focusable="False" Margin="0,0,0,20"/>
+      </ScrollViewer>
+    </Grid>
+
+    <!-- ============================================================ Memoria RAM -->
+    <ScrollViewer x:Name="TabMemory" Grid.Row="2" Visibility="Collapsed" VerticalScrollBarVisibility="Auto" Focusable="False"
+                  Padding="0,0,10,0" Margin="0,0,-10,0">
+      <StackPanel Margin="0,0,0,24">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="16"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+
+          <!-- Uso y limpieza manual -->
+          <Border Style="{StaticResource Card}">
+            <StackPanel>
+              <DockPanel>
+                <c:HelpTip DockPanel.Dock="Right" Text="{l:T memory.usage.help}"/>
+                <TextBlock Text="{l:T memory.usage.title}" Style="{StaticResource H2}" VerticalAlignment="Center"/>
+              </DockPanel>
+              <Grid Margin="0,18,0,0">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Width="92" Height="92">
+                  <c:RingProgress Value="{Binding RamPercent}" Thickness="9" TrackBrush="{DynamicResource TrackBg}" Fill="{DynamicResource ProgressFill}"/>
+                  <TextBlock Text="{Binding RamPercentText}" FontFamily="{StaticResource DisplayFont}" FontSize="20" FontWeight="SemiBold"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <StackPanel Grid.Column="1" Margin="18,0,0,0" VerticalAlignment="Center">
+                  <TextBlock Text="{Binding RamText}" FontSize="14.5" FontWeight="SemiBold" TextWrapping="Wrap"/>
+                  <TextBlock Text="{Binding RamAvailableText}" Style="{StaticResource Muted}" Margin="0,2,0,0"/>
+                </StackPanel>
+              </Grid>
+              <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <Button Style="{StaticResource PrimaryButton}" Command="{Binding CleanMemoryCommand}">
+                  <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource Icon}" Text="&#xEA99;" FontSize="14"/>
+                    <TextBlock Text="{l:T memory.clean.button}" Margin="10,0,0,0"/>
+                  </StackPanel>
+                </Button>
+                <c:HelpTip Margin="12,0,0,0" Text="{l:T memory.clean.help}"/>
+              </StackPanel>
+              <TextBlock Text="{Binding MemoryLastText}" Style="{StaticResource Muted}" FontSize="12.5" Margin="0,12,0,0"/>
+            </StackPanel>
+          </Border>
+
+          <!-- Limpieza automática -->
+          <Border Grid.Column="2" Style="{StaticResource Card}">
+            <StackPanel>
+              <DockPanel>
+                <c:HelpTip DockPanel.Dock="Right" Text="{l:T memory.auto.help}"/>
+                <TextBlock Text="{l:T memory.auto.title}" Style="{StaticResource H2}" VerticalAlignment="Center"/>
+              </DockPanel>
+              <CheckBox IsChecked="{Binding AutoRamEnabled}" Content="{l:T memory.auto.enable}" Margin="0,18,0,0"/>
+
+              <StackPanel Margin="0,16,0,0" IsEnabled="{Binding AutoRamEnabled}">
+                <StackPanel Orientation="Horizontal">
+                  <TextBlock Text="{l:T memory.auto.interval}" Style="{StaticResource Caption}" VerticalAlignment="Center"/>
+                  <c:HelpTip Width="18" Height="18" Margin="8,0,0,0" Text="{l:T memory.auto.interval.help}"/>
+                </StackPanel>
+                <Border Background="{DynamicResource Surface2}" BorderBrush="{DynamicResource Stroke}" BorderThickness="1"
+                        CornerRadius="9" Padding="2" Margin="0,8,0,0">
+                  <UniformGrid x:Name="IntervalOptions" Columns="5">
+                    <RadioButton Style="{StaticResource SegmentItem}" GroupName="RamInterval" CommandParameter="5" Content="{l:T memory.interval.m5}" Checked="OnInterval"/>
+                    <RadioButton Style="{StaticResource SegmentItem}" GroupName="RamInterval" CommandParameter="10" Content="{l:T memory.interval.m10}" Checked="OnInterval"/>
+                    <RadioButton Style="{StaticResource SegmentItem}" GroupName="RamInterval" CommandParameter="15" Content="{l:T memory.interval.m15}" Checked="OnInterval"/>
+                    <RadioButton Style="{StaticResource SegmentItem}" GroupName="RamInterval" CommandParameter="30" Content="{l:T memory.interval.m30}" Checked="OnInterval"/>
+                    <RadioButton Style="{StaticResource SegmentItem}" GroupName="RamInterval" CommandParameter="60" Content="{l:T memory.interval.h1}" Checked="OnInterval"/>
+                  </UniformGrid>
+                </Border>
+                <StackPanel Orientation="Horizontal" Margin="0,14,0,0">
+                  <CheckBox IsChecked="{Binding AutoRamOnlyHigh}" Content="{l:T memory.auto.onlyHigh}"/>
+                  <c:HelpTip Width="18" Height="18" Margin="10,0,0,0" Text="{l:T memory.auto.onlyHigh.help}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                  <CheckBox IsChecked="{Binding AutoRamNotify}" Content="{l:T memory.auto.notify}"/>
+                  <c:HelpTip Width="18" Height="18" Margin="10,0,0,0" Text="{l:T memory.auto.notify.help}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                  <CheckBox IsChecked="{Binding StartWithWindows}" Content="{l:T startup.self.title}"/>
+                  <c:HelpTip Width="18" Height="18" Margin="10,0,0,0" Text="{l:T startup.self.help}"/>
+                </StackPanel>
+              </StackPanel>
+              <TextBlock Text="{Binding AutoRamStatus}" Style="{StaticResource Muted}" FontSize="12.5" Margin="0,14,0,0"/>
+            </StackPanel>
+          </Border>
+        </Grid>
+
+        <!-- Quién usa la memoria -->
+        <Border Style="{StaticResource Card}" Margin="0,16,0,0">
+          <StackPanel>
+            <DockPanel Margin="0,0,0,14">
+              <c:HelpTip DockPanel.Dock="Right" Text="{l:T memory.top.help}"/>
+              <TextBlock Text="{l:T memory.top.title}" Style="{StaticResource H2}" VerticalAlignment="Center"/>
+            </DockPanel>
+            <ItemsControl ItemsSource="{Binding TopProcesses}" Focusable="False">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                  <Grid Margin="0,0,0,12">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="260"/>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="90"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding Name}" FontSize="13" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                    <ProgressBar Grid.Column="1" Value="{Binding Percent, Mode=OneWay}" Maximum="100" Height="6" VerticalAlignment="Center" Margin="12,0"/>
+                    <TextBlock Grid.Column="2" Text="{Binding SizeText}" FontSize="13" FontWeight="SemiBold" TextAlignment="Right" VerticalAlignment="Center"/>
+                  </Grid>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+          </StackPanel>
+        </Border>
+      </StackPanel>
+    </ScrollViewer>
+
+    <!-- ============================================================ Juegos -->
+    <Grid x:Name="TabGaming" Grid.Row="2" Visibility="Collapsed">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+
+      <Border Background="{DynamicResource NoteBg}" BorderBrush="{DynamicResource NoteStroke}" BorderThickness="1" CornerRadius="10"
+              Padding="14,11" Margin="0,0,0,14">
+        <DockPanel>
+          <TextBlock Style="{StaticResource Icon}" Text="&#xE946;" Foreground="{DynamicResource AccentText}" VerticalAlignment="Top" Margin="0,1,12,0"/>
+          <TextBlock Style="{StaticResource Muted}" Foreground="{DynamicResource NoteText}" FontSize="12.5"
+                     TextWrapping="Wrap" Text="{l:T gaming.note}"/>
+        </DockPanel>
+      </Border>
+
+      <DockPanel Grid.Row="1" Margin="0,0,0,12">
+        <Button DockPanel.Dock="Right" Style="{StaticResource PillButton}" Command="{Binding RefreshGamingCommand}" Margin="0">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Icon}" Text="&#xE72C;" FontSize="12"/>
+            <TextBlock Text="{l:T common.refreshState}" Margin="8,0,0,0"/>
+          </StackPanel>
+        </Button>
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Text="{l:T common.quickSelect}" Foreground="{DynamicResource TextDim}" VerticalAlignment="Center" Margin="0,0,12,0" FontSize="12.5"/>
+          <Button Style="{StaticResource PillButton}" Content="{l:T common.recommended}" Command="{Binding SelectGamingPresetCommand}" CommandParameter="recommended"/>
+          <Button Style="{StaticResource PillButton}" Content="{l:T common.maximum}" Command="{Binding SelectGamingPresetCommand}" CommandParameter="max"/>
+          <Button Style="{StaticResource PillButton}" Content="{l:T common.none}" Command="{Binding SelectGamingPresetCommand}" CommandParameter="none"/>
+          <c:HelpTip Margin="4,0,0,0" Text="{l:T gaming.presets.help}"/>
+        </StackPanel>
+      </DockPanel>
+
+      <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Focusable="False" Padding="0,0,10,0" Margin="0,0,-10,0">
+        <ItemsControl ItemsSource="{Binding GamingGroups}" Focusable="False">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Margin="0,0,0,14">
+                <StackPanel Orientation="Horizontal" Margin="2,4,0,10">
+                  <TextBlock Style="{StaticResource Icon}" Text="{Binding Glyph}" FontSize="13" Foreground="{DynamicResource AccentText}"/>
+                  <TextBlock Text="{Binding Name, Converter={StaticResource Upper}}" Style="{StaticResource Caption}" FontSize="11.5"
+                             Foreground="{DynamicResource TextMuted}" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                  <TextBlock Text="{Binding CountText}" Style="{StaticResource Caption}" FontWeight="Normal" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                  <c:HelpTip Text="{Binding Help}" Width="18" Height="18" Margin="10,0,0,0"/>
+                </StackPanel>
+                <ItemsControl ItemsSource="{Binding Items}" ItemTemplate="{StaticResource TweakRow}" Focusable="False"/>
+              </StackPanel>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </ScrollViewer>
+
+      <Border Grid.Row="3" BorderBrush="{DynamicResource Stroke}" BorderThickness="0,1,0,0" Padding="0,16,0,20" Margin="0,4,0,0">
+        <DockPanel>
+          <Button DockPanel.Dock="Right" Style="{StaticResource PrimaryButton}" Command="{Binding ApplyGamingCommand}">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Style="{StaticResource Icon}" Text="&#xE7FC;" FontSize="14"/>
+              <TextBlock Text="{Binding GamingApplyButtonText}" Margin="10,0,0,0"/>
+            </StackPanel>
+          </Button>
+          <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <CheckBox IsChecked="{Binding CreateRestorePoint}" Content="{l:T gaming.restorePoint}"/>
+            <c:HelpTip Margin="10,0,0,0" Text="{l:T gaming.restorePoint.help}"/>
+          </StackPanel>
+        </DockPanel>
+      </Border>
+    </Grid>
+  </Grid>
+</UserControl>

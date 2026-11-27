@@ -1,0 +1,193 @@
+# Leistung › Windows-Autostart, Arbeitsspeicher und Spiele (der Tab Prozesse steht in processes.*.txt)
+
+perf.subtitle = Legen Sie fest, was mit Windows startet, geben Sie Arbeitsspeicher frei und machen Sie den PC bereit fürs Spielen.
+
+# ---------------------------------------------------------------- Windows-Autostart
+startup.tab = Autostart
+startup.help = Programme, die sich bei der Anmeldung von selbst öffnen. Jedes davon verlängert den Start und belegt die ganze Zeit Arbeitsspeicher, auch wenn Sie es nicht nutzen.\n\nSchalten Sie mit dem Schalter die aus, die Sie nicht gleich nach dem Start brauchen (Spiele-Launcher, Updater, Chat-Programme). Es wird nichts deinstalliert: Die Programme funktionieren weiter, wenn Sie sie selbst öffnen. Die Änderung wird sofort gespeichert und gilt ab der nächsten Anmeldung.\n\nEs ist dieselbe Einstellung wie „Autostart-Apps“ im Task-Manager. Dienste und geplante Aufgaben werden nicht aufgeführt.
+startup.loading = Programme werden gesucht…
+startup.readError = Die Liste der Autostart-Programme konnte nicht gelesen werden.
+startup.summary.none = Kein Programm startet mit Windows.
+startup.summary.total.one = {0} Programm
+startup.summary.total.other = {0} Programme
+startup.summary.enabled.one = {0} startet mit Windows
+startup.summary.enabled.other = {0} starten mit Windows
+startup.summary.disabled.one = {0} deaktiviert
+startup.summary.disabled.other = {0} deaktiviert
+startup.help.storeApp = App aus dem Microsoft Store, die sich bei der Anmeldung von selbst öffnen kann.\n\nPaket: {0}
+startup.help.program = Öffnet sich bei jeder Anmeldung an Windows von selbst.\n\nBefehl: {0}
+startup.help.source = Eingetragen in: {0}.
+startup.help.protected = Gehört zur Windows-Sicherheit, deshalb lässt TURBiX es nicht deaktivieren.
+startup.help.canDisable = Wenn Sie es deaktivieren, bleibt das Programm installiert und funktioniert wie gewohnt, wenn Sie es selbst öffnen; es startet nur nicht mehr von allein. Sie können es hier oder im Task-Manager wieder aktivieren.
+startup.toggleError.title = Änderung nicht möglich
+startup.toggleError.text = Windows hat die Änderung von „{0}“ nicht zugelassen.\n\n{1}
+startup.log.enabled = Windows-Autostart: „{0}“ aktiviert.
+startup.log.disabled = Windows-Autostart: „{0}“ deaktiviert.
+startup.log.toggleError = „{0}“ konnte nicht geändert werden: {1}
+startup.log.readError = Die Autostart-Liste konnte nicht gelesen werden: {0}
+startup.log.readPartError = Windows-Autostart: {0}
+startup.source.runUser = Registrierung · nur Ihr Konto
+startup.source.runAll = Registrierung · alle Benutzer
+startup.source.run32 = Registrierung · alle Benutzer (32 Bit)
+startup.source.folderUser = Autostart-Ordner · nur Ihr Konto
+startup.source.folderAll = Autostart-Ordner · alle Benutzer
+startup.source.store = Microsoft Store-App
+startup.storeApp.description = App aus dem Microsoft Store
+startup.error.protected = Das ist eine Sicherheitskomponente von Windows und muss aktiviert bleiben.
+startup.error.openKey = Die Autostart-Einstellungen konnten nicht geöffnet werden.
+
+# ---------------------------------------------------------------- Arbeitsspeicher
+memory.tab = Arbeitsspeicher
+memory.usage.title = Speichernutzung
+memory.usage.help = So viel Arbeitsspeicher (RAM) belegen Windows und Ihre Programme gerade. Ab etwa 85–90 % weicht Windows auf die Festplatte aus, und alles wird langsamer, vor allem Spiele.
+memory.available = {0} verfügbar
+memory.clean.button = Speicher freigeben
+memory.clean.help = Gibt sofort Arbeitsspeicher frei, ohne ein Programm zu schließen:\n\n1. Jedes Programm gibt den Speicher zurück, den es reserviert hat, aber gerade nicht nutzt.\n2. Der „Standby“-Speicher wird geleert (Cache bereits geschlossener Dateien). Windows gibt ihn manchmal nur zögerlich frei, was in Spielen zu Rucklern führen kann.\n\nEs geht nichts verloren: Was ein Programm braucht, lädt es selbst wieder. Deshalb steigt die Nutzung mit der Zeit wieder an, und ein Programm reagiert beim Zurückwechseln vielleicht einen Moment langsamer. Sinnvoll ist das direkt vor dem Start eines Spiels oder wenn der Speicher fast voll ist; einen PC mit reichlich freiem RAM macht es nicht schneller.
+memory.last.never = In dieser Sitzung wurde noch kein Speicher freigegeben.
+memory.last.freed = Zuletzt um {0}: {1} freigegeben.
+memory.last.nothing = Zuletzt um {0}: Es gab keinen Speicher freizugeben.
+memory.last.noAdmin = Freigabe nicht möglich: TURBiX braucht Administratorrechte.
+memory.last.error = Der Speicher konnte nicht freigegeben werden: {0}
+memory.log.noAdmin = Arbeitsspeicher: Windows hat die Freigabe nicht zugelassen (Administratorrechte fehlen).
+memory.log.freedAuto = Arbeitsspeicher (automatisch): {0} freigegeben.
+memory.log.freedManual = Arbeitsspeicher (manuell): {0} freigegeben.
+memory.log.error = Arbeitsspeicher: {0}
+memory.auto.title = Automatische Freigabe
+memory.auto.help = TURBiX wiederholt die Freigabe von Arbeitsspeicher in regelmäßigen Abständen, ohne dass Sie auf die Schaltfläche klicken müssen.\n\nDas funktioniert, solange TURBiX geöffnet ist; Sie können es beim Spielen oder Arbeiten minimiert lassen. Damit Sie es nicht jedes Mal öffnen müssen, schalten Sie „TURBiX beim Windows-Start öffnen“ ein. Ihre Auswahl bleibt gespeichert.
+memory.auto.enable = Speicher automatisch freigeben
+memory.auto.interval = WIE OFT
+memory.auto.interval.help = Die Zeit zwischen zwei Freigaben. Zum Spielen sind 10 bis 30 Minuten meist gut. Sehr kurze Abstände helfen nicht: Die Programme müssen ihren Speicher dann immer wieder neu laden.
+memory.interval.m5 = 5 Min.
+memory.interval.m10 = 10 Min.
+memory.interval.m15 = 15 Min.
+memory.interval.m30 = 30 Min.
+memory.interval.h1 = 1 Std.
+memory.auto.onlyHigh = Nur bei mehr als 80 % Nutzung
+memory.auto.onlyHigh.help = Empfohlen. Ist zum geplanten Zeitpunkt genug Speicher frei, tut TURBiX nichts und wartet auf die nächste Runde. So greift es nur ein, wenn es wirklich nötig ist.
+memory.auto.off = Deaktiviert.
+memory.auto.next = Nächste Freigabe um {0}.
+memory.auto.skipped = Um {0} lag die Nutzung bei {1}, eine Freigabe war nicht nötig. Nächste Prüfung um {2}.
+memory.auto.log.enabled.one = Automatische Speicherfreigabe aktiviert: alle {0} Minute.
+memory.auto.log.enabled.other = Automatische Speicherfreigabe aktiviert: alle {0} Minuten.
+memory.auto.log.disabled = Automatische Speicherfreigabe deaktiviert.
+memory.top.title = Was den Speicher belegt
+memory.top.help = Die Programme, die gerade am meisten Speicher belegen, mit allen ihren Prozessen zusammengerechnet (ein Browser startet einen pro Tab). Wird alle paar Sekunden aktualisiert.\n\nWenn der Speicher voll ist, hilft es mehr, das erste Programm der Liste zu schließen, als jede Freigabe. Der Wert ist ungefähr: Einen Teil des Speichers teilen sich mehrere Programme.
+
+# ---------------------------------------------------------------- Spiele
+gaming.tab = Spiele
+gaming.note = Diese Einstellungen beseitigen echte Bremsen in Windows (Hintergrundaufzeichnung, Energiesparen, Hintergrundprogramme) und sorgen für gleichmäßigere FPS. Wunder bewirken sie nicht: Am meisten bringen ein aktueller Grafiktreiber und die Grafikeinstellungen im jeweiligen Spiel. „Tricks“, die etwas kaputt machen, etwa das Abschalten der Xbox-Dienste oder der Sicherheit, sind in TURBiX nicht enthalten.
+gaming.presets.help = Empfohlen: sichere Einstellungen für jeden PC, ob Desktop oder Laptop.\n\nMaximal: zusätzlich die ERWEITERTEN Einstellungen, gedacht für Gaming-PCs am Stromnetz. Sie verbrauchen mehr Energie oder verändern, wie Windows aussieht und sich anfühlt. Lesen Sie die gelben Hinweise.
+gaming.restorePoint = Vor dem Anwenden einen Wiederherstellungspunkt erstellen
+gaming.restorePoint.help = Erstellt vor dem Anwenden einen Windows-Wiederherstellungspunkt, zusätzlich zur Sicherung, die TURBiX immer anlegt und mit der Sie die Änderungen unter Wiederherstellen rückgängig machen können.
+gaming.apply.button.one = {0} Einstellung anwenden
+gaming.apply.button.other = {0} Einstellungen anwenden
+gaming.confirm.title = Spiele-Einstellungen anwenden
+gaming.confirm.text.one = {0} Leistungseinstellung für Spiele wird angewendet.
+gaming.confirm.text.other = {0} Leistungseinstellungen für Spiele werden angewendet.
+gaming.confirm.backup = TURBiX sichert jeden Wert, den es ändert, damit Sie die Änderung unter Wiederherstellen rückgängig machen können.
+gaming.confirm.warnings = Bitte beachten:
+gaming.confirm.button = Einstellungen anwenden
+gaming.applying = Spiele-Einstellungen werden angewendet
+gaming.result.nothing = Alle ausgewählten Einstellungen waren bereits angewendet. Es musste nichts geändert werden.
+gaming.result.changed.one = {0} Änderung vorgenommen.
+gaming.result.changed.other = {0} Änderungen vorgenommen.
+gaming.result.errors.one = {0} davon konnte nicht angewendet werden; Details im Aktivitätsprotokoll.
+gaming.result.errors.other = {0} davon konnten nicht angewendet werden; Details im Aktivitätsprotokoll.
+gaming.result.restart = Starten Sie den PC neu, damit alle Änderungen wirksam werden.
+gaming.result.title = Einstellungen angewendet
+gaming.result.titleWarnings = Einstellungen mit Warnungen angewendet
+gaming.power.setError = Windows hat das Ändern des Energiesparplans nicht zugelassen (Fehler {0}).
+
+gaming.cat.game = Spielfunktionen von Windows
+gaming.cat.game.help = Funktionen, die Windows für Spiele mitbringt: Manche helfen (Spielmodus), andere kosten beim Spielen Leistung (Hintergrundaufzeichnung).
+gaming.cat.input = Tastatur und Maus
+gaming.cat.input.help = Verhalten von Tastatur und Maus, das beim Spielen stört.
+gaming.cat.power = Grafik und Energie
+gaming.cat.power.help = Wie Windows die Leistung von Prozessor und Grafikkarte verteilt.
+gaming.cat.background = Hintergrund
+gaming.cat.background.help = Programme und Effekte, die Prozessor und Speicher belegen, auch wenn Sie sie gerade nicht nutzen.
+
+gaming.gameMode.name = Spielmodus aktiviert
+gaming.gameMode.summary = Windows gibt dem Spiel Vorrang und stellt eigene aufwendige Aufgaben zurück.
+gaming.gameMode.help = Im Spielmodus gibt Windows dem Spiel Vorrang bei Prozessor und Grafik und installiert während des Spielens keine Treiber und zeigt keine Neustart-Hinweise von Windows Update an. Meist ist er schon aktiviert; diese Einstellung stellt das sicher.
+
+gaming.gameDvr.name = Hintergrundaufzeichnung (Game DVR)
+gaming.gameDvr.summary = Zeichnet das Spiel nicht mehr ständig „für alle Fälle“ auf.
+gaming.gameDvr.help = Windows kann ständig die letzten Sekunden Ihres Spiels aufzeichnen, damit Sie einen Clip speichern können. Diese Aufzeichnung beansprucht dauernd Grafikkarte und Festplatte und ist eine bekannte Ursache für FPS-Einbrüche und Ruckler, vor allem auf schwächeren PCs. Diese Einstellung schaltet sie ab.
+gaming.gameDvr.warning = Mit der Xbox Game Bar (Win+Alt+G) können Sie dann keine Clips oder Screenshots mehr aufnehmen. Aufnahmeprogramme von NVIDIA, AMD, OBS oder Steam sind nicht betroffen.
+
+gaming.gameBarPopups.name = Hinweise der Xbox Game Bar
+gaming.gameBarPopups.summary = Keine Einblendungen mehr, und die Controller-Taste öffnet sie nicht mehr.
+gaming.gameBarPopups.help = Verhindert, dass die Xbox Game Bar beim Spielstart Tipps zeigt und sich über das Spiel legt, wenn Sie die Xbox-Taste am Controller drücken. Die Game Bar bleibt installiert und lässt sich weiter mit Win+G öffnen.
+
+gaming.stickyKeys.name = Tastenkombinationen für Barrierefreiheit
+gaming.stickyKeys.summary = Fünfmal Umschalttaste wirft Sie nicht mehr aus dem Spiel.
+gaming.stickyKeys.help = Deaktiviert die Tastenkombinationen für die Einrastfunktion (fünfmal Umschalttaste), die Anschlagverzögerung (rechte Umschalttaste 8 Sekunden halten) und die Statusanzeige (Num-Taste 5 Sekunden halten). In Spielen lösen sie versehentlich aus und minimieren das Spiel. Die Funktionen selbst bleiben unter Einstellungen › Barrierefreiheit verfügbar.
+gaming.stickyKeys.warning = Wenn Sie die Einrastfunktion, die Anschlagverzögerung oder die Statusanzeige nutzen, wenden Sie diese Einstellung nicht an. Wirkt nach dem Abmelden.
+
+gaming.mouseAccel.name = Mausbeschleunigung
+gaming.mouseAccel.summary = Der Zeiger legt immer dieselbe Strecke zurück, egal ob Sie die Maus schnell oder langsam bewegen.
+gaming.mouseAccel.help = Deaktiviert „Zeigerbeschleunigung verbessern“. Mit dieser Option fährt der Zeiger umso weiter, je schneller Sie die Maus bewegen. Das erschwert in Shootern das Zielen aus dem Gefühl heraus. Ohne sie ist die Bewegung 1:1 und vorhersehbar.
+gaming.mouseAccel.warning = Die Maus fühlt sich auch auf dem Desktop anders an. Wirkt nach dem Abmelden oder Neustart.
+
+gaming.mmcss.name = Multimedia-Priorität für Spiele
+gaming.mmcss.summary = Reserviert beim Spielen weniger Prozessorzeit für Hintergrundaufgaben.
+gaming.mmcss.help = Standardmäßig reserviert Windows 20 % des Prozessors für Hintergrundaufgaben, solange Multimedia läuft. Diese Einstellung senkt das auf 10 % und erhöht die Prozessor-, Grafik- und Datenträgerpriorität des Profils „Games“. Der Gewinn ist klein, hilft aber auf Prozessoren mit wenigen Kernen für gleichmäßigere FPS.
+
+gaming.hags.name = Hardwarebeschleunigte GPU-Planung
+gaming.hags.summary = Die Grafikkarte verwaltet ihren Speicher selbst (geringere Latenz).
+gaming.hags.help = Aktiviert die „Hardwarebeschleunigte GPU-Planung“ (HAGS). Sie senkt auf modernen Karten die Prozessorlast und die Latenz und ist Voraussetzung für die Frame-Generierung von DLSS 3 und FSR 3. Erfordert Windows 10 Version 2004 oder neuer und eine NVIDIA GTX 1000 / AMD RX 5000 oder neuer mit aktuellen Treibern.
+gaming.hags.warning = Neustart erforderlich. Auf älteren Grafikkarten oder mit alten Treibern kann es zu Rucklern kommen; machen Sie die Einstellung dann rückgängig.
+
+gaming.powerPlan.name = Energiesparplan „Höchstleistung“
+gaming.powerPlan.summary = Der Prozessor taktet nicht herunter, um Energie zu sparen.
+gaming.powerPlan.help = Aktiviert den Windows-Energiesparplan „Höchstleistung“. Der Prozessor bleibt auf hohem Takt und „parkt“ keine Kerne, was Mikroruckler verhindert, wenn das Spiel plötzlich mehr Leistung braucht. Hat Ihr PC diesen Plan nicht (bei vielen modernen Laptops der Fall), wird die Einstellung als „Nicht relevant“ angezeigt.
+gaming.powerPlan.warning = Verbraucht mehr Strom und wird wärmer. Auf Laptops verkürzt es die Akkulaufzeit: am besten nur am Netzteil nutzen.
+
+gaming.powerThrottling.name = Energiedrosselung von Programmen
+gaming.powerThrottling.summary = Windows bremst Hintergrundprogramme nicht mehr, um Akku zu sparen.
+gaming.powerThrottling.help = Windows verlangsamt Programme, die es als „im Hintergrund“ einstuft, um Energie zu sparen. Manchmal trifft das beim Spielen auch Launcher, Voice-Chat oder Aufnahmeprogramme. Diese Einstellung schaltet die Drosselung ab.
+gaming.powerThrottling.warning = Auf Laptops wird mehr Akku verbraucht.
+
+gaming.edgeBackground.name = Microsoft Edge im Hintergrund
+gaming.edgeBackground.summary = Edge bleibt nach dem Schließen nicht mehr im Speicher.
+gaming.edgeBackground.help = Deaktiviert den „Startboost“ von Edge (der Edge beim Einschalten des PCs vorlädt) und verhindert, dass Erweiterungen nach dem Schließen weiterlaufen. Gibt Speicher und Prozesse frei, auch wenn Sie Edge gar nicht als Browser verwenden.
+gaming.edgeBackground.warning = Edge zeigt in den Einstellungen „Von Ihrer Organisation verwaltet“ an; das ist bei Richtlinien normal.
+
+gaming.backgroundApps.name = Store-Apps im Hintergrund
+gaming.backgroundApps.summary = Apps aus dem Microsoft Store arbeiten nicht mehr, wenn sie geschlossen sind.
+gaming.backgroundApps.help = Verhindert, dass Apps aus dem Microsoft Store (Mail, Fotos, Wetter usw.) im Hintergrund laufen, um sich zu aktualisieren oder Benachrichtigungen zu senden. Spart Prozessorleistung und Speicher, vor allem unter Windows 10.
+gaming.backgroundApps.warning = Store-Apps melden dann keine Neuigkeiten (neue E-Mails, Nachrichten), solange sie geschlossen sind.
+
+gaming.widgets.name = Widgets und „Neuigkeiten und interessante Themen“
+gaming.widgets.summary = Entfernt den Nachrichtenbereich und seine Prozesse aus der Taskleiste.
+gaming.widgets.help = Deaktiviert die Widgets von Windows 11 und „Neuigkeiten und interessante Themen“ von Windows 10. Dieser Bereich hält ständig mehrere Browserprozesse offen, um Wetter und Nachrichten anzuzeigen.
+gaming.widgets.warning = Die Widgets-/Wetter-Schaltfläche verschwindet aus der Taskleiste.
+
+gaming.visualEffects.name = Transparenz und Animationen
+gaming.visualEffects.summary = Entfernt visuelle Effekte, die auf dem Desktop die Grafikkarte beanspruchen.
+gaming.visualEffects.help = Deaktiviert Transparenzeffekte sowie die Animationen von Fenstern und Taskleiste. Das macht sich vor allem auf PCs mit integrierter Grafik oder wenig Speicher bemerkbar: Der Desktop reagiert schneller, und dem Spiel bleibt mehr Grafikleistung.
+gaming.visualEffects.warning = Windows sieht dann schlichter aus und hat keine Animationen. Manches wirkt erst nach dem Abmelden.
+
+# Hinweis nach dem Freigeben von Arbeitsspeicher
+memory.toast.freed.title = {0} Arbeitsspeicher freigegeben
+memory.toast.freed.text = Jetzt sind {0} verfügbar.
+memory.toast.freedAuto.text = Automatische Freigabe um {0}. Jetzt sind {1} verfügbar.
+memory.toast.nothing.title = Nichts freizugeben
+memory.toast.nothing.text = Der Arbeitsspeicher war schon frei. {0} sind verfügbar.
+memory.toast.failed.title = Arbeitsspeicher konnte nicht freigegeben werden
+memory.toast.noAdmin.text = TURBiX benötigt dafür Administratorrechte.
+memory.auto.notify = Bei jeder Freigabe benachrichtigen
+memory.auto.notify.help = Zeigt eine Windows-Benachrichtigung, wie viel Arbeitsspeicher bei jeder automatischen Freigabe frei wurde.\n\nWenn Sie im Vollbild spielen oder „Nicht stören“ aktiv ist, legt Windows sie im Benachrichtigungscenter ab, statt sie anzuzeigen. Wurde nichts freigegeben, gibt es keine Benachrichtigung.
+
+# Abrir TURBiX al iniciar Windows
+startup.self.title = TURBiX beim Windows-Start öffnen
+startup.self.detail = Es wartet neben der Uhr, damit die automatische Freigabe von Arbeitsspeicher läuft, ohne dass Sie daran denken müssen.
+startup.self.help = TURBiX öffnet sich bei jeder Windows-Anmeldung von selbst. Ist das Symbol neben der Uhr eingeschaltet (Einstellungen), wartet es dort, ohne das Fenster zu öffnen; sonst startet es minimiert in der Taskleiste. Das ist vor allem dafür da, dass die automatische Freigabe von Arbeitsspeicher immer aktiv ist.\n\nBeim Start wendet es keine Einstellungen an und bereinigt nichts von sich aus: Es tut nur, was Sie eingeschaltet haben.\n\nWeil TURBiX Administratorrechte braucht, lässt Windows es nicht über die normale Autostart-Liste starten. Deshalb wird in der Aufgabenplanung eine Aufgabe namens „TURBiX“ angelegt, die es ohne Rückfrage öffnet. Wenn Sie die Option ausschalten, wird die Aufgabe gelöscht.\n\nWenn Sie TURBiX in einen anderen Ordner verschieben, schalten Sie sie erneut ein.
+startup.self.taskDescription = Öffnet TURBiX bei der Anmeldung. Wird in TURBiX angelegt und gelöscht (Einstellungen).
+startup.self.log.on = TURBiX öffnet sich beim Windows-Start (Aufgabe „TURBiX“ in der Aufgabenplanung).
+startup.self.log.off = TURBiX öffnet sich nicht mehr beim Windows-Start.
+startup.self.log.started = TURBiX wurde beim Windows-Start geöffnet.
+startup.self.log.error = Der Start von TURBiX mit Windows konnte nicht geändert werden: {0}
+startup.self.error.title = Autostart konnte nicht geändert werden
+startup.self.error.text = Windows hat das Anlegen oder Löschen der Aufgabe, die TURBiX bei der Anmeldung öffnet, nicht zugelassen.\n\n{0}

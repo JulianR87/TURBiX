@@ -1,0 +1,167 @@
+# Privacy (tab and tweak catalog) + tweak engine (tweak.*), shared by every catalog.
+
+# ---------------------------------------------------------------- tab
+privacy.title = Privacy and telemetry
+privacy.subtitle = Choose which data Windows stops sending. Before anything is changed, TURBiX saves a backup so you can undo it.
+privacy.preset.help = Recommended: safe tweaks for any PC, with no visible side effects.\n\nMaximum: also adds the ADVANCED tweaks, which block more data but can turn off a feature (voice typing, location, Copilot…). Read their yellow warnings before applying them.
+privacy.restorePoint = Create a restore point before applying
+privacy.restorePoint.help = Creates a Windows restore point before the changes are applied. It's a second safety net on top of the backup TURBiX always saves. System Protection has to be turned on; if it isn't, TURBiX lets you know and carries on.
+
+# ---------------------------------------------------------------- categories
+privacy.cat.telemetry = Windows telemetry
+privacy.cat.telemetry.help = Usage and diagnostic data that Windows sends to Microsoft automatically.
+privacy.cat.privacy = Privacy
+privacy.cat.privacy.help = Personal information that Windows and apps collect about you and what you do.
+privacy.cat.ads = Ads and suggestions
+privacy.cat.ads.help = Ads, suggestions and promoted apps built into Windows.
+privacy.cat.ai = Artificial intelligence
+privacy.cat.ai.help = Windows 11 AI features that analyze your activity.
+privacy.cat.apps = Apps
+privacy.cat.apps.help = Telemetry from Microsoft programs and from very common third-party ones.
+
+# ---------------------------------------------------------------- Telemetry
+privacy.tweak.diagnosticData.name = Minimum diagnostic data
+privacy.tweak.diagnosticData.summary = Cuts what Windows sends to Microsoft down to the minimum.
+privacy.tweak.diagnosticData.help = Sets the lowest diagnostic data level through policy, hides the device name in reports and limits the upload of logs and memory dumps.\n\nOn Windows Home and Pro the lowest level allowed is “Required”, which is why this tweak goes together with turning off the telemetry service and tasks.
+
+privacy.tweak.telemetryServices.name = Telemetry service (DiagTrack)
+privacy.tweak.telemetryServices.summary = Stops the service that sends diagnostic data.
+privacy.tweak.telemetryServices.help = Turns off “Connected User Experiences and Telemetry” (DiagTrack), the service that collects and uploads diagnostic data, and the WAP Push message routing service (dmwappushservice) that goes with it. Windows works normally without them.
+privacy.tweak.telemetryServices.warning = On work PCs managed with Intune/MDM, dmwappushservice may be needed.
+
+privacy.tweak.telemetryTasks.name = Data collection scheduled tasks
+privacy.tweak.telemetryTasks.summary = Turns off 10 tasks that collect data in the background.
+privacy.tweak.telemetryTasks.help = Windows runs scheduled tasks that take an inventory of your PC and your programs and send the results: Compatibility Appraiser, Customer Experience Improvement Program (CEIP), device census, SQM and the disk diagnostic data collector. Turning them off also saves some disk and CPU use in the background.
+
+privacy.tweak.ceip.name = Improvement program (CEIP) and inventory
+privacy.tweak.ceip.summary = Stops taking stock of your installed programs and reporting it.
+privacy.tweak.ceip.help = Turns off the Customer Experience Improvement Program, the application inventory collector, application compatibility telemetry (AIT) and Steps Recorder (an old tool hardly anyone uses anymore).
+
+privacy.tweak.errorReporting.name = Windows Error Reporting
+privacy.tweak.errorReporting.summary = Doesn't send crash reports to Microsoft.
+privacy.tweak.errorReporting.help = When a program closes unexpectedly, Windows prepares a report (sometimes with part of the program's memory) and sends it to Microsoft. This tweak turns that off. Errors are still logged on the PC in Event Viewer.
+
+privacy.tweak.feedback.name = Feedback requests
+privacy.tweak.feedback.summary = Windows stops asking for your opinion.
+privacy.tweak.feedback.help = Removes the pop-ups asking you to rate Windows and turns off the tasks that download and schedule those surveys.
+
+# ---------------------------------------------------------------- Privacy
+privacy.tweak.advertisingId.name = Advertising ID
+privacy.tweak.advertisingId.summary = Apps can't track you with an advertising ID.
+privacy.tweak.advertisingId.help = Windows gives each user a unique ID that apps use to show personalized ads and to link your activity across apps. This tweak turns it off.
+
+privacy.tweak.activityHistory.name = Activity history
+privacy.tweak.activityHistory.summary = Doesn't store or upload what you open on the PC.
+privacy.tweak.activityHistory.help = Windows records which apps, files and pages you open and can sync that with your Microsoft account. This tweak stops it from being stored and uploaded.
+
+privacy.tweak.tailoredExperiences.name = Tailored experiences
+privacy.tweak.tailoredExperiences.summary = Your diagnostic data isn't used for ads.
+privacy.tweak.tailoredExperiences.help = Stops Microsoft from using your diagnostic data to show you “personalized” tips, ads and recommendations in Windows.
+
+privacy.tweak.inkingTyping.name = Inking and typing data collection
+privacy.tweak.inkingTyping.summary = Doesn't send samples of what you type.
+privacy.tweak.inkingTyping.help = Windows can collect what you type on the keyboard or write with a pen to “improve” recognition and your personal dictionary, and send handwriting error reports. This tweak prevents that. Spell check and keyboard suggestions keep working.
+
+privacy.tweak.languageList.name = Language list for websites
+privacy.tweak.languageList.summary = Websites can't see your language list.
+privacy.tweak.languageList.help = Stops websites from reading the language list set in Windows, a detail that is also used to recognize your PC (browser fingerprinting).
+
+privacy.tweak.appDiagnostics.name = Other apps' diagnostics
+privacy.tweak.appDiagnostics.summary = Apps can't read diagnostic data from other apps.
+privacy.tweak.appDiagnostics.help = Stops Microsoft Store apps from accessing diagnostic information about the other apps you have installed.
+
+privacy.tweak.appLaunchTracking.name = Tracking of opened apps
+privacy.tweak.appLaunchTracking.summary = Windows stops recording which programs you use.
+privacy.tweak.appLaunchTracking.help = Windows notes every program you open to sort the Start menu and search results. This tweak turns that tracking off.
+privacy.tweak.appLaunchTracking.warning = The “Most used” list in the Start menu will be empty.
+
+privacy.tweak.onlineSpeech.name = Online speech recognition
+privacy.tweak.onlineSpeech.summary = Your voice isn't sent to Microsoft's servers.
+privacy.tweak.onlineSpeech.help = Online speech recognition sends your voice to Microsoft's cloud to transcribe it. This tweak turns it off and also blocks input personalization.
+privacy.tweak.onlineSpeech.warning = Voice typing (Win + H) will stop working.
+
+privacy.tweak.location.name = Location service
+privacy.tweak.location.summary = No app can find out your location.
+privacy.tweak.location.help = Turns off location completely for Windows and every app.
+privacy.tweak.location.warning = Maps, automatic weather, “Find my device” and automatic time zone stop working.
+
+# ---------------------------------------------------------------- Ads
+privacy.tweak.webSearch.name = Web search and Bing in the Start menu
+privacy.tweak.webSearch.summary = What you search for in Windows isn't sent to Bing.
+privacy.tweak.webSearch.help = By default, every letter you type in Windows search is sent to Bing to show web results. With this tweak, search stays on the PC (your apps, files and settings), which is faster and more private. It also turns off Cortana.
+
+privacy.tweak.suggestionsAds.name = Ads and automatic app installs
+privacy.tweak.suggestionsAds.summary = No suggestions, ads or promoted apps.
+privacy.tweak.suggestionsAds.help = Removes the “suggestions” in the Start menu and Settings, the tips and ads on the lock screen, OneDrive ads in File Explorer and the “Get even more out of Windows” screens, and stops Windows from installing promoted apps on its own.
+
+# ---------------------------------------------------------------- AI
+privacy.tweak.copilotRecall.name = Copilot, Recall and “Click to Do”
+privacy.tweak.copilotRecall.summary = Turns off Copilot and Recall snapshots.
+privacy.tweak.copilotRecall.help = Turns off Windows Copilot and its taskbar button, and stops Recall from saving regular snapshots of your screen to analyze with AI. It also turns off “Click to Do”.
+privacy.tweak.copilotRecall.warning = If you use Copilot in Windows, leave this unchecked.
+
+# ---------------------------------------------------------------- Apps
+privacy.tweak.office.name = Microsoft Office telemetry
+privacy.tweak.office.summary = Office 2016 – 365 stops sending usage data.
+privacy.tweak.office.help = Turns off, through policy, the usage and diagnostic data sent by Word, Excel, PowerPoint, Outlook and the other apps in Office 2016, 2019, 2021 and Microsoft 365, along with their telemetry tasks. If Office isn't installed, it has no effect.
+
+privacy.tweak.nvidia.name = NVIDIA telemetry
+privacy.tweak.nvidia.summary = Only if there's an NVIDIA graphics card.
+privacy.tweak.nvidia.help = The NVIDIA driver installs tasks and a service that send usage data. This tweak turns them off without affecting performance or driver updates. If the PC has no NVIDIA card, it's skipped.
+
+privacy.tweak.devTools.name = .NET, PowerShell 7 and Visual Studio
+privacy.tweak.devTools.summary = Official telemetry opt-out for developers.
+privacy.tweak.devTools.help = Sets the official environment variables DOTNET_CLI_TELEMETRY_OPTOUT and POWERSHELL_TELEMETRY_OPTOUT, and the policy that turns off the Visual Studio Experience Improvement Program. If you don't use these tools, it has no effect.
+
+privacy.tweak.edge.name = Microsoft Edge telemetry
+privacy.tweak.edge.summary = Edge stops sending diagnostics and history.
+privacy.tweak.edge.help = Turns off, through policy, Edge diagnostic data, sending your browsing history to personalize ads, and feedback requests.
+privacy.tweak.edge.warning = Edge will show “Your browser is managed by your organization”. That's normal when policies are applied.
+
+privacy.tweak.deliveryOptimization.name = Sharing updates with other PCs
+privacy.tweak.deliveryOptimization.summary = Your connection isn't used to send updates to others.
+privacy.tweak.deliveryOptimization.help = Delivery Optimization uses your connection to send parts of updates to other PCs (P2P). With this tweak, Windows downloads only from Microsoft's servers and doesn't share your bandwidth.
+
+# ---------------------------------------------------------------- tweak engine (all catalogs)
+# Tweak group: "phrase" goes inside a sentence ("privacy tweaks"); "label" is the backup title.
+tweak.area.privacy.phrase = privacy
+tweak.area.privacy.label = Privacy
+tweak.area.performance.phrase = performance
+tweak.area.performance.label = Performance
+tweak.area.windows.phrase = Windows
+tweak.area.windows.label = Windows
+
+tweak.log.applying.one = Applying {0} {1} tweak on {2} {3}
+tweak.log.applying.other = Applying {0} {1} tweaks on {2} {3}
+tweak.log.editionNote = {0} edition: Windows doesn't allow required diagnostic data to be turned off completely, so it's cut to the minimum and the service and tasks that send it are blocked.
+tweak.progress.restorePoint = Creating a system restore point…
+tweak.restorePoint.name = TURBiX - before applying {0} tweaks
+tweak.session.label.one = {1}: {0} tweak
+tweak.session.label.other = {1}: {0} tweaks
+tweak.log.notApplicable = {0}: doesn't apply to this PC.
+tweak.log.withErrors = {0}: {1}, {2} failed.
+tweak.log.alreadyApplied = {0}: already applied.
+tweak.log.changed = {0}: {1}.
+tweak.log.backupSaved = Backup saved to {0}
+tweak.log.done = Done: {0}, {1}.
+tweak.log.doneRestart = Done: {0}, {1}. Restart the PC for everything to take effect.
+tweak.changes.one = {0} change
+tweak.changes.other = {0} changes
+tweak.errors.one = {0} error
+tweak.errors.other = {0} errors
+tweak.progress.done = Tweaks applied
+tweak.log.serviceNotStopped = {0} couldn't be stopped right now; it will be disabled after a restart.
+tweak.log.noPowerPlan = This PC doesn't have that power plan, so the current one is kept.
+tweak.action.service = service {0}
+tweak.action.powerPlan = power plan
+tweak.action.task = task {0}
+
+# ---------------------------------------------------------------- rows (tweaks, cleanup, backups)
+tweak.help.footer = Changes: {0} · Can be undone from Restore.
+tweak.state.checking = Checking
+tweak.group.count.one = {0} tweak
+tweak.group.count.other = {0} tweaks
+tweak.cleanupDone = Done
+tweak.backup.dateFormat = dddd, MMMM d, yyyy, h:mm tt
+tweak.backup.details.one = {0} value saved · {1}
+tweak.backup.details.other = {0} values saved · {1}

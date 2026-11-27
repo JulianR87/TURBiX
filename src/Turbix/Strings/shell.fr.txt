@@ -1,0 +1,180 @@
+# Fenêtre principale, flux confidentialité/nettoyage/optimisation/restauration, Restaurer, À propos, Nouveautés,
+# boîtes de dialogue, thème et textes du noyau. Français.
+
+# --- Fenêtre
+shell.minimize = Réduire
+shell.maximize = Agrandir
+shell.restoreDown = Niveau inférieur
+shell.help = Aide
+shell.status.help = Mode administrateur : TURBiX dispose des autorisations que Windows exige pour modifier les paramètres du système et supprimer les fichiers temporaires. S’il affiche « Sans droits d’administrateur », fermez TURBiX et rouvrez-le en acceptant l’avertissement de Windows.\n\nN’utilise pas Internet : TURBiX ne se connecte à aucun serveur. Il n’envoie aucune donnée, n’a ni télémétrie ni publicité et ne télécharge rien. Cela n’a rien à voir avec votre connexion : votre accès à Internet fonctionne normalement.\n\nEn dessous, la version installée. Ses modifications sont dans « Nouveautés ».
+shell.busy.dontClose = Ne fermez pas TURBiX et n’éteignez pas l’ordinateur avant la fin de la tâche.
+shell.busyClose.title = Une tâche est en cours
+shell.busyClose.text = TURBiX est en train de travailler. Le fermer maintenant pourrait laisser l’ordinateur à mi-chemin (par exemple avec des services Windows arrêtés).\n\nAttendez la fin : la fenêtre pourra être fermée dès que ce sera terminé.
+
+# --- Apparence
+theme.caption = APPARENCE
+theme.system = Système
+theme.light = Clair
+theme.dark = Sombre
+theme.log.changed = Thème : {0}.
+theme.log.light = clair
+theme.log.dark = sombre
+theme.log.system = celui du système
+theme.log.saveFailed = Impossible d’enregistrer le thème choisi : {0}
+
+# --- État général et accueil
+main.admin.on = Mode administrateur
+main.admin.off = Sans droits d’administrateur
+main.greeting.hello = Bonjour
+main.greeting.morning = Bonjour, {0}
+main.greeting.afternoon = Bon après-midi, {0}
+main.greeting.evening = Bonsoir, {0}
+main.log.started = TURBiX {0} démarré.
+main.log.system = Système : {0} {1}
+main.editionNote = Sous Windows {0}, le niveau minimal de données de diagnostic autorisé par Microsoft est « Obligatoire ». TURBiX le ramène à ce minimum et bloque en plus le service et les tâches qui envoient ces données.
+main.ram = {0} utilisés sur {1}
+main.disk = libres sur {0} · {1} utilisés sur {2}
+main.busy.preparing = Préparation…
+main.error.title = Un problème est survenu
+main.warnings = À noter :
+main.restartNeeded = Redémarrez l’ordinateur pour que toutes les modifications prennent effet.
+main.restorePointNote = Windows n’a pas pu créer le point de restauration (la Protection du système est désactivée ou Windows ne l’a pas permis). La sauvegarde de TURBiX, elle, a bien été enregistrée.
+
+# --- Confidentialité
+main.checking = Vérification…
+main.privacy.level.excellent = Excellente
+main.privacy.level.good = Bonne
+main.privacy.level.fair = À améliorer
+main.privacy.level.low = Faible
+main.privacy.summary.one = {1} protection active sur {0}
+main.privacy.summary.other = {1} protections actives sur {0}
+main.privacy.applyButton.one = Appliquer {0} réglage
+main.privacy.applyButton.other = Appliquer {0} réglages
+main.apply.confirm.title = Appliquer les réglages de confidentialité
+main.apply.confirm.button = Appliquer les réglages
+main.apply.confirm.text.one = {0} réglage de confidentialité va être appliqué.\n\nTURBiX sauvegarde chaque valeur qu’il modifie, pour que vous puissiez revenir en arrière depuis « Restaurer ».
+main.apply.confirm.text.other = {0} réglages de confidentialité vont être appliqués.\n\nTURBiX sauvegarde chaque valeur qu’il modifie, pour que vous puissiez revenir en arrière depuis « Restaurer ».
+main.apply.confirm.advanced.one = Cela comprend {0} réglage avancé qui peut désactiver une fonction de Windows. Lisez les avertissements en jaune.
+main.apply.confirm.advanced.other = Cela comprend {0} réglages avancés qui peuvent désactiver certaines fonctions de Windows. Lisez les avertissements en jaune.
+main.apply.busy = Application des réglages de confidentialité
+main.apply.nothing = Tous les réglages sélectionnés étaient déjà appliqués. Rien n’a dû être modifié.
+main.apply.changed.one = {0} modification effectuée.
+main.apply.changed.other = {0} modifications effectuées.
+main.apply.changedErrors.one = {0} modification effectuée ({1} avec erreurs, voir le Journal d’activité).
+main.apply.changedErrors.other = {0} modifications effectuées ({1} avec erreurs, voir le Journal d’activité).
+main.apply.done.title = Réglages appliqués
+main.apply.doneWarn.title = Réglages appliqués avec des avertissements
+
+# --- Nettoyage
+main.cleanup.notAnalyzed = Pas encore analysé
+main.cleanup.analyzedAt = Analysé à {0}
+main.cleanup.cleanedAt = Nettoyé à {0}
+main.cleanup.button.one = Nettoyer {0} catégorie
+main.cleanup.button.other = Nettoyer {0} catégories
+main.cleanup.busyAnalyze = Analyse de l’ordinateur
+main.cleanup.busyClean = Nettoyage des fichiers
+main.cleanup.confirm.title = Nettoyer les fichiers
+main.cleanup.confirm.button = Nettoyer maintenant
+main.cleanup.confirm.text.one = {0} catégorie va être nettoyée.
+main.cleanup.confirm.text.other = {0} catégories vont être nettoyées.
+main.cleanup.freed = {0} libérés.
+main.cleanup.skipped = Ignorés parce qu’ils étaient ouverts : {0}. Fermez-les et relancez le nettoyage pour les inclure.
+main.cleanup.inUse = Certains fichiers étaient en cours d’utilisation et ont été conservés ; c’est normal.
+main.cleanup.done.title = Nettoyage terminé
+
+# --- Optimisation rapide
+main.quick.confirm.title = Optimisation rapide
+main.quick.confirm.button = Optimiser maintenant
+main.quick.confirm.tweaks.one = TURBiX va appliquer {0} réglage de confidentialité recommandé.
+main.quick.confirm.tweaks.other = TURBiX va appliquer les {0} réglages de confidentialité recommandés.
+main.quick.confirm.clean.one = Il va aussi nettoyer {0} catégorie de fichiers temporaires et de cache.
+main.quick.confirm.clean.other = Il va aussi nettoyer {0} catégories de fichiers temporaires et de cache.
+main.quick.confirm.safe = Ces options conviennent à n’importe quel ordinateur : Windows Update, Defender et vos fichiers personnels ne sont pas touchés. Les réglages peuvent être annulés depuis « Restaurer » ; les fichiers supprimés ne sont que des fichiers temporaires et du cache, et ils ne sont pas récupérables.
+main.quick.busy = Optimisation de votre ordinateur
+main.quick.summary.privacy.one = Confidentialité : {0} modification appliquée.
+main.quick.summary.privacy.other = Confidentialité : {0} modifications appliquées.
+main.quick.summary.privacyErrors.one = Confidentialité : {0} modification appliquée ({1} avec erreurs, voir le Journal d’activité).
+main.quick.summary.privacyErrors.other = Confidentialité : {0} modifications appliquées ({1} avec erreurs, voir le Journal d’activité).
+main.quick.summary.freed = Espace libéré : {0}.
+main.quick.summary.skipped = Ignorés parce qu’ils étaient ouverts : {0}.
+main.quick.done.title = Ordinateur optimisé
+main.quick.doneWarn.title = Ordinateur optimisé, avec des avertissements
+
+# --- Annuler les modifications
+main.revert.confirm.title = Annuler les modifications
+main.revert.confirm.text.one = {0} valeur d’origine enregistrée le {1} va être restaurée.\n\nLes réglages de cette session reviendront à leur état d’avant.
+main.revert.confirm.text.other = Les {0} valeurs d’origine enregistrées le {1} vont être restaurées.\n\nLes réglages de cette session reviendront à leur état d’avant.
+main.revert.busy = Annulation des modifications
+main.revert.done.title = Modifications annulées
+main.revert.done.text = Les valeurs d’origine ont été restaurées. Redémarrez l’ordinateur pour terminer.
+main.revert.partial.title = Annulation incomplète
+main.revert.partial.text.one = Valeurs restaurées : {0}. En échec : {1} (le détail est dans le Journal d’activité).\n\nLa sauvegarde est toujours là : vous pouvez cliquer de nouveau sur « Annuler » pour réessayer.
+main.revert.partial.text.other = Valeurs restaurées : {0}. En échec : {1} (le détail est dans le Journal d’activité).\n\nLa sauvegarde est toujours là : vous pouvez cliquer de nouveau sur « Annuler » pour réessayer.
+
+# --- Page Restaurer
+restore.subtitle = Chaque fois que vous appliquez des réglages, TURBiX enregistre les valeurs d’origine. D’ici, vous pouvez remettre l’ordinateur exactement comme il était.
+restore.openFolder = Ouvrir le dossier
+restore.backups.title = Sauvegardes de TURBiX
+restore.backups.text = Annule une session de réglages précise.
+restore.backups.help = Fichiers JSON contenant la valeur d’origine de chaque modification (registre, services et tâches). Ils sont enregistrés dans C:\ProgramData\TURBiX\Backups et permettent d’annuler session par session.
+restore.system.title = Restauration du système
+restore.system.text = Revient à un point de restauration de Windows.
+restore.system.help = Ouvre l’outil de Windows pour revenir à un point de restauration, comme celui que TURBiX crée avant d’appliquer des réglages. Il annule les modifications du système, les pilotes et les programmes installés après ce point (vos documents ne sont pas touchés).
+restore.history = HISTORIQUE DES MODIFICATIONS
+restore.empty.title = Aucune modification enregistrée pour l’instant
+restore.empty.text = Quand vous appliquerez des réglages de confidentialité, ils apparaîtront ici pour que vous puissiez les annuler.
+restore.reverted = ANNULÉ
+restore.revert = Annuler
+
+# --- Sauvegardes (noyau)
+backup.describe.service = service {0}
+backup.describe.powerPlan = mode de gestion de l’alimentation
+backup.describe.regKey = clé {0}
+backup.describe.task = tâche {0}
+backup.log.untrusted = Sauvegarde ignorée, car elle n’a pas été créée par un administrateur : {0}
+backup.log.damaged = Sauvegarde endommagée, illisible : {0}
+backup.log.reverting.one = Annulation de {0} modification de « {1} »
+backup.log.reverting.other = Annulation de {0} modifications de « {1} »
+backup.progress.restoring = Restauration : {0}
+backup.log.restoreFailed = Impossible de restaurer {0} : {1}
+backup.log.revertDone.one = Annulation terminée : {0} élément restauré. Redémarrez l’ordinateur pour la finaliser.
+backup.log.revertDone.other = Annulation terminée : {0} éléments restaurés. Redémarrez l’ordinateur pour la finaliser.
+backup.log.revertPartial.one = Annulation incomplète : {0} élément restauré et {1} en erreur. Vous pouvez réessayer.
+backup.log.revertPartial.other = Annulation incomplète : {0} éléments restaurés et {1} en erreur. Vous pouvez réessayer.
+
+# --- Noyau
+core.restorePoint.creating = Création d’un point de restauration du système…
+core.restorePoint.created = Point de restauration créé.
+core.restorePoint.failedCode = Impossible de créer le point de restauration (code {0}). La Protection du système est probablement désactivée sur cet ordinateur.
+core.restorePoint.noReason = Windows n’a pas indiqué la raison (0x{0}). La Protection du système est probablement désactivée sur cet ordinateur.
+core.restorePoint.failed = Impossible de créer le point de restauration : {0}
+core.restorePoint.continuing = On continue quand même : TURBiX garde sa propre sauvegarde de chaque modification.
+core.registry.badRoot = Racine du registre non valide : {0}
+core.registry.createKeyFailed = Impossible de créer la clé {0}
+core.tasks.readFailed = Impossible de lire les tâches de {0} : {1}
+core.settings.saveFailed = Impossible d’enregistrer la préférence « {0} » : {1}
+
+# --- À propos
+about.subtitle = Confidentialité et nettoyage pour Windows 10 et 11
+about.facts = Open source · Licence MIT · Sans installation · N’utilise pas Internet
+about.principles = Nos principes
+about.principle.security = Nous ne désactivons jamais Windows Update, Microsoft Defender, SmartScreen ni le pare-feu, et nous ne modifions jamais le fichier hosts.
+about.principle.revert = Chaque modification est sauvegardée avant d’être appliquée et peut être annulée depuis « Restaurer ».
+about.principle.noInternet = TURBiX ne se connecte pas à Internet et ne collecte aucune donnée. Un outil de confidentialité ne doit pas vous espionner.
+about.principle.personal = Vos documents, photos, mots de passe, cookies et historique ne sont jamais supprimés.
+about.principle.honest = Chaque option explique ce qu’elle fait avec son bouton « ? ». Pas de tours de passe-passe ni de fausses promesses du genre « PC 300 % plus rapide ».
+about.data.title = Où TURBiX enregistre ses données
+about.data.backups = SAUVEGARDES
+about.data.logs = JOURNAUX D’ACTIVITÉ
+about.data.requirements = CONFIGURATION REQUISE
+about.data.requirementsText = Windows 10 (1607 ou ultérieur) ou 11, 32 ou 64 bits. Utilise .NET Framework 4.6.2+, déjà inclus dans Windows : il n’y a rien à installer.
+about.data.openBackups = Sauvegardes
+about.data.openLogs = Journaux
+about.disclaimer = TURBiX est fourni « tel quel », sans garantie. Microsoft, Windows, Edge, Office et Copilot sont des marques de Microsoft Corporation ; TURBiX n’est pas affilié à Microsoft.
+
+# --- Nouveautés
+whatsnew.subtitle = Les changements importants de chaque version. Vous utilisez la {0}.
+whatsnew.help = Toutes les versions de TURBiX, de la plus récente à la plus ancienne, avec leurs changements importants en quelques mots. Celle marquée « Installée » est celle que vous utilisez.
+whatsnew.installed = INSTALLÉE
+
+shell.notify.error = Impossible d’afficher la notification Windows : {0}

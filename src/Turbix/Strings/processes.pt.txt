@@ -1,0 +1,37 @@
+# Desempenho › Processos
+
+perf.tab.processes = Processos
+proc.help = A mesma lista do Gerenciador de Tarefas, só que agrupada: cada programa mostra embaixo os processos que abriu (um navegador, por exemplo, abre um por guia). Clique na seta para expandir. Recolhida, a linha soma o consumo do grupo inteiro.\n\nOs itens “Host de Serviço” são serviços do Windows; aparece o nome do serviço que roda em cada um.\n\n“Threads” é o número de threads de cada processo, o mesmo dado que aparece no Gerenciador de Tarefas.\n\nO X fecha um processo na hora, como “Finalizar tarefa”. Os processos que o Windows precisa para funcionar ficam bloqueados.
+proc.search = Buscar processo, PID ou serviço
+proc.loading = Lendo os processos…
+proc.noMatches = Nenhum processo corresponde à busca.
+proc.expandAll = Expandir tudo
+proc.collapseAll = Recolher tudo
+proc.col.name = Nome
+proc.col.cpu = CPU
+proc.col.memory = Memória
+proc.col.threads = Threads
+proc.count.processes.one = {0} processo
+proc.count.processes.other = {0} processos
+proc.count.threads.one = {0} thread
+proc.count.threads.other = {0} threads
+proc.count.handles.one = {0} identificador
+proc.count.handles.other = {0} identificadores
+proc.usage.cpu = CPU em {0}
+proc.usage.memory = Memória: {0} de {1}
+proc.pid = PID {0}
+proc.serviceHost = Host de Serviço: {0}
+proc.serviceHostMore.one = Host de Serviço: {1} e mais {0}
+proc.serviceHostMore.other = Host de Serviço: {1} e mais {0}
+proc.end = Finalizar tarefa
+proc.critical = O Windows precisa dele para funcionar, então o TURBiX não o fecha.
+proc.end.title = Finalizar “{0}”?
+proc.end.text = Ele fecha na hora. Se for um programa com algo não salvo, isso se perde.
+proc.end.textGroup.one = {0} processo fecha na hora. Se for um programa com algo não salvo, isso se perde.
+proc.end.textGroup.other = {0} processos fecham na hora: o principal e os que ele abriu. Se for um programa com algo não salvo, isso se perde.
+proc.end.confirm = Finalizar
+proc.end.failed.title = Não foi possível finalizar
+proc.end.failed.text = O Windows não deixou fechar “{0}”: {1}\n\nAlguns processos só podem ser fechados como administrador ou pertencem a outro usuário.
+proc.log.ended = Processo finalizado: {0} (PID {1}).
+proc.log.failed = Não foi possível finalizar {0} (PID {1}): {2}
+proc.log.readError = Não foi possível ler a lista de processos: {0}

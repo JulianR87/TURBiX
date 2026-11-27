@@ -1,0 +1,173 @@
+# Privacidad (pestaña y catálogo de ajustes) + motor de ajustes (tweak.*), compartido por todos los catálogos.
+# Formato: clave = texto. \n = salto de línea,   = espacio duro. Ver Localization\L.cs.
+
+# ---------------------------------------------------------------- pestaña
+privacy.title = Privacidad y telemetría
+privacy.subtitle = Elige qué datos deja de enviar Windows. Antes de cambiar nada se guarda una copia de seguridad para que puedas revertirlo.
+privacy.preset.help = Recomendado: ajustes seguros para cualquier equipo, sin efectos secundarios visibles.\n\nMáximo: añade los ajustes AVANZADOS, que bloquean más datos pero pueden desactivar alguna función (dictado por voz, ubicación, Copilot…). Lee sus avisos en amarillo antes de aplicarlos.
+privacy.restorePoint = Crear punto de restauración antes de aplicar
+privacy.restorePoint.help = Crea un punto de restauración de Windows antes de aplicar los cambios. Es una segunda red de seguridad, además de la copia que TURBiX guarda siempre. Requiere que la «Protección del sistema» esté activada; si no lo está, TURBiX lo avisará y seguirá adelante.
+
+# ---------------------------------------------------------------- categorías
+privacy.cat.telemetry = Telemetría de Windows
+privacy.cat.telemetry.help = Datos de uso y diagnóstico que Windows envía a Microsoft de forma automática.
+privacy.cat.privacy = Privacidad
+privacy.cat.privacy.help = Información personal que Windows y las aplicaciones recopilan sobre ti y tu actividad.
+privacy.cat.ads = Anuncios y sugerencias
+privacy.cat.ads.help = Publicidad, sugerencias y aplicaciones promocionadas integradas en Windows.
+privacy.cat.ai = Inteligencia artificial
+privacy.cat.ai.help = Funciones de inteligencia artificial de Windows 11 que analizan tu actividad.
+privacy.cat.apps = Aplicaciones
+privacy.cat.apps.help = Telemetría de programas de Microsoft y de terceros muy comunes.
+
+# ---------------------------------------------------------------- Telemetría
+privacy.tweak.diagnosticData.name = Datos de diagnóstico al mínimo
+privacy.tweak.diagnosticData.summary = Reduce al mínimo lo que Windows envía a Microsoft.
+privacy.tweak.diagnosticData.help = Configura por directiva el nivel más bajo de datos de diagnóstico, oculta el nombre del equipo en los informes y limita el envío de registros y volcados de memoria.\n\nEn Windows Home y Pro el mínimo permitido es «Obligatorio»: por eso este ajuste se combina con desactivar el servicio y las tareas de telemetría.
+
+privacy.tweak.telemetryServices.name = Servicio de telemetría (DiagTrack)
+privacy.tweak.telemetryServices.summary = Detiene el servicio que envía los datos de diagnóstico.
+privacy.tweak.telemetryServices.help = Desactiva «Experiencias del usuario y telemetría asociadas» (DiagTrack), el servicio que recopila y sube los datos de diagnóstico, y el servicio de mensajes WAP Push (dmwappushservice) que lo acompaña. Windows funciona con normalidad sin ellos.
+privacy.tweak.telemetryServices.warning = En equipos de empresa administrados con Intune/MDM, dmwappushservice puede ser necesario.
+
+privacy.tweak.telemetryTasks.name = Tareas programadas de recopilación
+privacy.tweak.telemetryTasks.summary = Desactiva 10 tareas que recopilan datos en segundo plano.
+privacy.tweak.telemetryTasks.help = Windows ejecuta tareas programadas que inventarían tu equipo y tus programas y envían el resultado: Evaluador de compatibilidad, Programa de mejora de la experiencia (CEIP), censo del dispositivo, SQM y el recopilador de diagnóstico de disco. Desactivarlas también ahorra uso de disco y CPU en segundo plano.
+
+privacy.tweak.ceip.name = Programa de mejora (CEIP) e inventario
+privacy.tweak.ceip.summary = Deja de inventariar y reportar tus programas instalados.
+privacy.tweak.ceip.help = Desactiva el Programa para la mejora de la experiencia del cliente, el recopilador de inventario de aplicaciones, la telemetría de compatibilidad (AIT) y la Grabación de acciones de usuario (una herramienta antigua que ya casi nadie usa).
+
+privacy.tweak.errorReporting.name = Informe de errores de Windows
+privacy.tweak.errorReporting.summary = No envía a Microsoft los informes de bloqueos.
+privacy.tweak.errorReporting.help = Cuando un programa se cierra inesperadamente, Windows prepara un informe (a veces con parte de la memoria del programa) y lo envía a Microsoft. Este ajuste lo desactiva. Los errores se siguen registrando localmente en el Visor de eventos.
+
+privacy.tweak.feedback.name = Solicitudes de comentarios
+privacy.tweak.feedback.summary = Windows deja de pedirte tu opinión.
+privacy.tweak.feedback.help = Elimina las ventanas emergentes que piden valorar Windows y desactiva las tareas que descargan y programan esas encuestas.
+
+# ---------------------------------------------------------------- Privacidad
+privacy.tweak.advertisingId.name = Identificador de publicidad
+privacy.tweak.advertisingId.summary = Las apps no pueden seguirte con un ID publicitario.
+privacy.tweak.advertisingId.help = Windows asigna a cada usuario un identificador único que las aplicaciones usan para mostrar anuncios personalizados y relacionar tu actividad entre apps. Este ajuste lo desactiva.
+
+privacy.tweak.activityHistory.name = Historial de actividad
+privacy.tweak.activityHistory.summary = No guarda ni sube lo que abres en el equipo.
+privacy.tweak.activityHistory.help = Windows registra qué aplicaciones, archivos y páginas abres y puede sincronizarlo con tu cuenta de Microsoft. Este ajuste impide guardarlo y subirlo.
+
+privacy.tweak.tailoredExperiences.name = Experiencias personalizadas
+privacy.tweak.tailoredExperiences.summary = Tus datos de diagnóstico no se usan para anuncios.
+privacy.tweak.tailoredExperiences.help = Impide que Microsoft use tus datos de diagnóstico para mostrarte consejos, anuncios y recomendaciones «personalizadas» dentro de Windows.
+
+privacy.tweak.inkingTyping.name = Recopilación de escritura y tecleo
+privacy.tweak.inkingTyping.summary = No envía muestras de lo que escribes.
+privacy.tweak.inkingTyping.help = Windows puede recopilar lo que escribes con el teclado o el lápiz para «mejorar» el reconocimiento y el diccionario personal, y enviar informes de errores de escritura a mano. Este ajuste lo impide. El corrector y las sugerencias del teclado siguen funcionando.
+
+privacy.tweak.languageList.name = Lista de idiomas para sitios web
+privacy.tweak.languageList.summary = Las webs no ven tu lista de idiomas.
+privacy.tweak.languageList.help = Evita que los sitios web lean la lista de idiomas configurada en Windows, un dato que también se usa para identificar tu equipo (huella digital del navegador).
+
+privacy.tweak.appDiagnostics.name = Diagnósticos de otras aplicaciones
+privacy.tweak.appDiagnostics.summary = Las apps no pueden leer datos de diagnóstico ajenos.
+privacy.tweak.appDiagnostics.help = Impide que las aplicaciones de la Microsoft Store accedan a la información de diagnóstico de otras aplicaciones que tienes instaladas.
+
+privacy.tweak.appLaunchTracking.name = Seguimiento de aplicaciones abiertas
+privacy.tweak.appLaunchTracking.summary = Windows deja de registrar qué programas usas.
+privacy.tweak.appLaunchTracking.help = Windows anota cada programa que abres para ordenar el menú Inicio y la búsqueda. Este ajuste desactiva ese registro.
+privacy.tweak.appLaunchTracking.warning = La lista «Más usadas» del menú Inicio quedará vacía.
+
+privacy.tweak.onlineSpeech.name = Reconocimiento de voz en línea
+privacy.tweak.onlineSpeech.summary = Tu voz no se envía a los servidores de Microsoft.
+privacy.tweak.onlineSpeech.help = El reconocimiento de voz en línea envía tu voz a la nube de Microsoft para transcribirla. Este ajuste lo desactiva y también bloquea la personalización de entrada.
+privacy.tweak.onlineSpeech.warning = El dictado por voz (Win + H) dejará de funcionar.
+
+privacy.tweak.location.name = Servicio de ubicación
+privacy.tweak.location.summary = Ninguna aplicación puede conocer tu ubicación.
+privacy.tweak.location.help = Desactiva por completo la ubicación del sistema para Windows y todas las aplicaciones.
+privacy.tweak.location.warning = Dejan de funcionar Mapas, el clima automático, «Buscar mi dispositivo» y la zona horaria automática.
+
+# ---------------------------------------------------------------- Anuncios
+privacy.tweak.webSearch.name = Búsqueda web y Bing en el menú Inicio
+privacy.tweak.webSearch.summary = Lo que buscas en Windows no se envía a Bing.
+privacy.tweak.webSearch.help = Por defecto, cada letra que escribes en la búsqueda de Windows se envía a Bing para mostrar resultados web. Con este ajuste la búsqueda es solo local (tus aplicaciones, archivos y configuración), más rápida y privada. También desactiva Cortana.
+
+privacy.tweak.suggestionsAds.name = Anuncios e instalación automática de apps
+privacy.tweak.suggestionsAds.summary = Sin sugerencias, publicidad ni apps promocionadas.
+privacy.tweak.suggestionsAds.help = Quita las «sugerencias» del menú Inicio y de Configuración, los consejos y anuncios de la pantalla de bloqueo, la publicidad de OneDrive en el Explorador, las pantallas de «Saca más partido a Windows» y evita que Windows instale por su cuenta apps promocionadas.
+
+# ---------------------------------------------------------------- IA
+privacy.tweak.copilotRecall.name = Copilot, Recall y «Click to Do»
+privacy.tweak.copilotRecall.summary = Desactiva Copilot y las capturas de Recall.
+privacy.tweak.copilotRecall.help = Desactiva Windows Copilot y su botón en la barra de tareas, e impide que Recall guarde capturas periódicas de tu pantalla para analizarlas con IA. También desactiva «Click to Do».
+privacy.tweak.copilotRecall.warning = Si usas Copilot de Windows, deja esta opción sin marcar.
+
+# ---------------------------------------------------------------- Aplicaciones
+privacy.tweak.office.name = Telemetría de Microsoft Office
+privacy.tweak.office.summary = Office 2016 – 365 deja de enviar datos de uso.
+privacy.tweak.office.help = Desactiva por directiva el envío de datos de uso y diagnóstico de Word, Excel, PowerPoint, Outlook y demás aplicaciones de Office 2016, 2019, 2021 y Microsoft 365, y sus tareas de telemetría. Si Office no está instalado no tiene ningún efecto.
+
+privacy.tweak.nvidia.name = Telemetría de NVIDIA
+privacy.tweak.nvidia.summary = Solo si hay una tarjeta gráfica NVIDIA.
+privacy.tweak.nvidia.help = El controlador de NVIDIA instala tareas y un servicio que envían datos de uso. Este ajuste los desactiva sin afectar al rendimiento ni a las actualizaciones del controlador. Si el equipo no tiene NVIDIA, se omite.
+
+privacy.tweak.devTools.name = .NET, PowerShell 7 y Visual Studio
+privacy.tweak.devTools.summary = Exclusión oficial de telemetría para desarrolladores.
+privacy.tweak.devTools.help = Define las variables de entorno oficiales DOTNET_CLI_TELEMETRY_OPTOUT y POWERSHELL_TELEMETRY_OPTOUT, y la directiva que desactiva el programa de experiencia de Visual Studio. Si no usas estas herramientas no tiene ningún efecto.
+
+privacy.tweak.edge.name = Telemetría de Microsoft Edge
+privacy.tweak.edge.summary = Edge deja de enviar diagnósticos e historial.
+privacy.tweak.edge.help = Desactiva por directiva los datos de diagnóstico de Edge, el envío del historial de navegación para personalizar anuncios y las solicitudes de comentarios.
+privacy.tweak.edge.warning = Edge mostrará «Tu organización administra el explorador»: es normal al aplicar directivas.
+
+privacy.tweak.deliveryOptimization.name = Compartir actualizaciones con otros PCs
+privacy.tweak.deliveryOptimization.summary = Tu conexión no se usa para enviar actualizaciones a otros.
+privacy.tweak.deliveryOptimization.help = La Optimización de distribución usa tu conexión para enviar partes de actualizaciones a otros equipos (P2P). Con este ajuste Windows descarga solo desde los servidores de Microsoft y no comparte tu ancho de banda.
+
+# ---------------------------------------------------------------- motor de ajustes (todos los catálogos)
+# Grupo de ajustes: «phrase» va dentro de una frase («ajustes de privacidad»); «label» es el título de la copia.
+tweak.area.privacy.phrase = de privacidad
+tweak.area.privacy.label = Privacidad
+tweak.area.performance.phrase = de rendimiento
+tweak.area.performance.label = Rendimiento
+tweak.area.windows.phrase = de Windows
+tweak.area.windows.label = Windows
+
+# {0} = cantidad, {1} = grupo («de privacidad»), {2} {3} = Windows y versión
+tweak.log.applying.one = Aplicando {0} ajuste {1} en {2} {3}
+tweak.log.applying.other = Aplicando {0} ajustes {1} en {2} {3}
+tweak.log.editionNote = Edición {0}: Windows no permite apagar al 100 % los datos obligatorios; se reducen al mínimo y se bloquean el servicio y las tareas que los envían.
+tweak.progress.restorePoint = Creando punto de restauración del sistema…
+tweak.restorePoint.name = TURBiX - antes de aplicar ajustes {0}
+# {0} = cantidad, {1} = grupo («Privacidad»)
+tweak.session.label.one = {1}: {0} ajuste
+tweak.session.label.other = {1}: {0} ajustes
+tweak.log.notApplicable = {0}: no aplica en este equipo.
+# {0} = ajuste, {1} = «3 cambios», {2} = cantidad de errores
+tweak.log.withErrors = {0}: {1}, {2} con errores.
+tweak.log.alreadyApplied = {0}: ya estaba aplicado.
+tweak.log.changed = {0}: {1}.
+tweak.log.backupSaved = Copia de seguridad guardada en {0}
+# {0} = «3 cambios», {1} = «0 errores»
+tweak.log.done = Terminado: {0}, {1}.
+tweak.log.doneRestart = Terminado: {0}, {1}. Reinicia el equipo para que todo surta efecto.
+tweak.changes.one = {0} cambio
+tweak.changes.other = {0} cambios
+tweak.errors.one = {0} error
+tweak.errors.other = {0} errores
+tweak.progress.done = Ajustes aplicados
+tweak.log.serviceNotStopped = {0} no se pudo detener ahora; quedará desactivado al reiniciar.
+tweak.log.noPowerPlan = Este equipo no tiene ese plan de energía; se deja el actual.
+tweak.action.service = servicio {0}
+tweak.action.powerPlan = plan de energía
+tweak.action.task = tarea {0}
+
+# ---------------------------------------------------------------- filas (ajustes, limpieza, copias)
+tweak.help.footer = Cambios: {0} · Reversible desde «Restaurar».
+tweak.state.checking = Comprobando
+tweak.group.count.one = {0} ajuste
+tweak.group.count.other = {0} ajustes
+tweak.cleanupDone = Hecho
+# Formato de fecha de .NET para la lista de copias de seguridad
+tweak.backup.dateFormat = dddd d 'de' MMMM yyyy, HH:mm
+tweak.backup.details.one = {0} valor guardado · {1}
+tweak.backup.details.other = {0} valores guardados · {1}

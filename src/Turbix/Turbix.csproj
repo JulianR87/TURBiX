@@ -1,0 +1,80 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Turbix se compila para .NET Framework 4.6.2, que viene incluido en todas las
+    versiones de Windows 10 (1607 o superior) y Windows 11. Resultado: un único
+    Turbix.exe que funciona sin instalar nada.
+  -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net462</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <RootNamespace>Turbix</RootNamespace>
+    <AssemblyName>Turbix</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\Turbix.ico</ApplicationIcon>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateResourceUsePreserializedResources>false</GenerateResourceUsePreserializedResources>
+    <DebugType>embedded</DebugType>
+    <SatelliteResourceLanguages>es</SatelliteResourceLanguages>
+
+    <Version>1.1.9</Version>
+    <Product>TURBiX</Product>
+    <Title>TURBiX</Title>
+    <Description>TURBiX - Privacy and cleanup for Windows 10 and 11</Description>
+    <Company>TURBiX</Company>
+    <Copyright>Copyright © 2026 TURBiX contributors. MIT License.</Copyright>
+    <NeutralLanguage>es</NeutralLanguage>
+  </PropertyGroup>
+
+  <!-- Compilación de vista previa (sin elevación) usada solo para capturas automáticas. -->
+  <PropertyGroup Condition="'$(TurbixPreview)' == 'true'">
+    <ApplicationManifest>app.preview.manifest</ApplicationManifest>
+    <DefineConstants>$(DefineConstants);PREVIEW</DefineConstants>
+  </PropertyGroup>
+
+  <!-- Autoprueba para máquinas virtuales (opción selftest). Nunca va en el exe que se publica. -->
+  <PropertyGroup Condition="'$(TurbixSelfTest)' == 'true'">
+    <DefineConstants>$(DefineConstants);SELFTEST</DefineConstants>
+  </PropertyGroup>
+
+  <!--
+    Instalador (dist\Turbix-Setup.exe): el mismo programa, que lleva dentro el Turbix.exe ya compilado y al
+    abrirse solo muestra la ventana de instalación (Views\SetupWindow, Core\Installer.cs). Lo genera build.cmd
+    después de compilar el exe normal. Usa carpetas de salida propias para no pisar la compilación normal.
+  -->
+  <PropertyGroup Condition="'$(TurbixSetup)' == 'true'">
+    <DefineConstants>$(DefineConstants);SETUP</DefineConstants>
+    <OutputPath>bin\Setup\</OutputPath>
+    <IntermediateOutputPath>obj\Setup\</IntermediateOutputPath>
+    <AssemblyTitle>TURBiX Setup</AssemblyTitle>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TurbixSetup)' == 'true'">
+    <EmbeddedResource Include="bin\Release\Turbix.exe" LogicalName="Turbix.Payload.exe" Link="Payload\Turbix.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Turbix.ico" />
+    <!-- El historial de cambios del repositorio se muestra en la sección «Novedades». -->
+    <EmbeddedResource Include="..\..\CHANGELOG.md" LogicalName="Turbix.CHANGELOG.md" Link="CHANGELOG.md" />
+    <!-- Textos de la interfaz por idioma: Strings\<área>.<idioma>.txt (ver Localization\L.cs). -->
+    <EmbeddedResource Include="Strings\*.txt" LogicalName="Turbix.Strings.%(Filename).txt" WithCulture="false" />
+    <!-- «Novedades» traducido. El español es el CHANGELOG.md de la raíz. -->
+    <EmbeddedResource Include="Changelog\*.md" LogicalName="Turbix.Changelog.%(Filename).md" WithCulture="false" />
+  </ItemGroup>
+
+</Project>
+

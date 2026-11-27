@@ -1,0 +1,72 @@
+<UserControl x:Class="Turbix.Views.AboutView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:Turbix.Controls"
+             xmlns:l="clr-namespace:Turbix.Localization">
+  <UserControl.Resources>
+    <Style x:Key="Principle" TargetType="TextBlock" BasedOn="{StaticResource Muted}">
+      <Setter Property="Foreground" Value="{DynamicResource TextBody}"/>
+      <Setter Property="Margin" Value="0,0,0,10"/>
+    </Style>
+  </UserControl.Resources>
+  <ScrollViewer VerticalScrollBarVisibility="Auto" Focusable="False">
+    <StackPanel Margin="40,8,40,32" MaxWidth="900" HorizontalAlignment="Left">
+      <Border CornerRadius="16" Background="{DynamicResource HeroGradient}" BorderBrush="{DynamicResource HeroBorder}" BorderThickness="1" Padding="28">
+        <StackPanel Orientation="Horizontal">
+          <ContentControl Template="{StaticResource LogoMark}" Width="84" Height="84"/>
+          <StackPanel Margin="22,0,0,0" VerticalAlignment="Center">
+            <TextBlock FontFamily="{StaticResource DisplayFont}" FontSize="30" FontWeight="Bold">
+              <Run Text="TURBiX"/><Run Text=" "/><Run Text="{Binding Version, Mode=OneWay}" FontSize="15" FontWeight="Normal" Foreground="{DynamicResource TextMuted}"/>
+            </TextBlock>
+            <TextBlock Text="{l:T about.subtitle}" Foreground="{DynamicResource HeroText}" FontSize="14.5" TextWrapping="Wrap" Margin="0,2,0,10"/>
+            <TextBlock FontSize="12.5" Foreground="{DynamicResource HeroTextDim}" TextWrapping="Wrap" Text="{l:T about.facts}"/>
+          </StackPanel>
+        </StackPanel>
+      </Border>
+
+      <Grid Margin="0,16,0,0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="16"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Style="{StaticResource Card}">
+          <StackPanel>
+            <TextBlock Text="{l:T about.principles}" Style="{StaticResource H2}" Margin="0,0,0,14"/>
+            <DockPanel><TextBlock Style="{StaticResource Icon}" Text="&#xE73E;" FontSize="13" Foreground="{DynamicResource Success}" VerticalAlignment="Top" Margin="0,3,12,0"/>
+              <TextBlock Style="{StaticResource Principle}" Text="{l:T about.principle.security}"/></DockPanel>
+            <DockPanel><TextBlock Style="{StaticResource Icon}" Text="&#xE73E;" FontSize="13" Foreground="{DynamicResource Success}" VerticalAlignment="Top" Margin="0,3,12,0"/>
+              <TextBlock Style="{StaticResource Principle}" Text="{l:T about.principle.revert}"/></DockPanel>
+            <DockPanel><TextBlock Style="{StaticResource Icon}" Text="&#xE73E;" FontSize="13" Foreground="{DynamicResource Success}" VerticalAlignment="Top" Margin="0,3,12,0"/>
+              <TextBlock Style="{StaticResource Principle}" Text="{l:T about.principle.noInternet}"/></DockPanel>
+            <DockPanel><TextBlock Style="{StaticResource Icon}" Text="&#xE73E;" FontSize="13" Foreground="{DynamicResource Success}" VerticalAlignment="Top" Margin="0,3,12,0"/>
+              <TextBlock Style="{StaticResource Principle}" Text="{l:T about.principle.personal}"/></DockPanel>
+            <DockPanel><TextBlock Style="{StaticResource Icon}" Text="&#xE73E;" FontSize="13" Foreground="{DynamicResource Success}" VerticalAlignment="Top" Margin="0,3,12,0"/>
+              <TextBlock Style="{StaticResource Principle}" Margin="0" Text="{l:T about.principle.honest}"/></DockPanel>
+          </StackPanel>
+        </Border>
+
+        <Border Grid.Column="2" Style="{StaticResource Card}">
+          <StackPanel>
+            <TextBlock Text="{l:T about.data.title}" Style="{StaticResource H2}" Margin="0,0,0,14"/>
+            <TextBlock Text="{l:T about.data.backups}" Style="{StaticResource Caption}"/>
+            <TextBlock x:Name="BackupsPath" FontFamily="{StaticResource MonoFont}" FontSize="12.5" Foreground="{DynamicResource TextBody}" Margin="0,4,0,14"/>
+            <TextBlock Text="{l:T about.data.logs}" Style="{StaticResource Caption}"/>
+            <TextBlock x:Name="LogsPath" FontFamily="{StaticResource MonoFont}" FontSize="12.5" Foreground="{DynamicResource TextBody}" Margin="0,4,0,14"/>
+            <TextBlock Text="{l:T about.data.requirements}" Style="{StaticResource Caption}"/>
+            <TextBlock Style="{StaticResource Muted}" Foreground="{DynamicResource TextBody}" Margin="0,4,0,0"
+                       Text="{l:T about.data.requirementsText}"/>
+            <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
+              <Button Content="{l:T about.data.openBackups}" Command="{Binding OpenBackupsCommand}" Padding="14,6" FontSize="12.5" Margin="0,0,8,0"/>
+              <Button Content="{l:T about.data.openLogs}" Command="{Binding OpenLogsCommand}" Padding="14,6" FontSize="12.5"/>
+            </StackPanel>
+          </StackPanel>
+        </Border>
+      </Grid>
+
+      <TextBlock Style="{StaticResource Muted}" FontSize="12" Foreground="{DynamicResource TextDim}" Margin="2,18,0,0"
+                 Text="{l:T about.disclaimer}"/>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

@@ -1,0 +1,79 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- Paleta clara (fondo hueso cálido). Mismas claves que Colors.Dark.xaml.
+       El lima se reserva para rellenos con tinta encima; para texto e iconos sobre fondo
+       claro se usa un verde oliva (AccentText) que sí tiene contraste suficiente. -->
+
+  <!-- Base -->
+  <SolidColorBrush x:Key="Bg" Color="#F6F5F1"/>
+  <SolidColorBrush x:Key="SidebarBg" Color="#EFEEE8"/>
+  <SolidColorBrush x:Key="Surface" Color="#FFFFFF"/>
+  <SolidColorBrush x:Key="SurfaceHover" Color="#FBFBF7"/>
+  <SolidColorBrush x:Key="Surface2" Color="#F1F0EA"/>
+  <SolidColorBrush x:Key="Stroke" Color="#E4E2DA"/>
+  <SolidColorBrush x:Key="StrokeStrong" Color="#D3D1C7"/>
+  <SolidColorBrush x:Key="Text" Color="#16181D"/>
+  <SolidColorBrush x:Key="TextBody" Color="#353A44"/>
+  <SolidColorBrush x:Key="TextMuted" Color="#5A606B"/>
+  <SolidColorBrush x:Key="TextDim" Color="#878C95"/>
+  <SolidColorBrush x:Key="Overlay" Color="#D9F6F5F1"/>
+
+  <!-- Marca -->
+  <SolidColorBrush x:Key="Accent" Color="#C8F031"/>
+  <SolidColorBrush x:Key="AccentHover" Color="#BBE321"/>
+  <SolidColorBrush x:Key="AccentSoft" Color="#EEF6D2"/>
+  <SolidColorBrush x:Key="AccentInk" Color="#12140F"/>
+  <SolidColorBrush x:Key="AccentText" Color="#4F6B00"/>
+  <SolidColorBrush x:Key="AccentTextHover" Color="#3A5000"/>
+  <SolidColorBrush x:Key="BrandGradient" Color="#C8F031"/>
+  <SolidColorBrush x:Key="BrandGradientH" Color="#C8F031"/>
+  <SolidColorBrush x:Key="ProgressFill" Color="#7FA300"/>
+  <SolidColorBrush x:Key="TrackBg" Color="#E6E4DC"/>
+  <SolidColorBrush x:Key="SpinnerTrack" Color="#E4EFC0"/>
+  <SolidColorBrush x:Key="Watermark" Color="#4F6B00"/>
+
+  <!-- Bloques destacados y avisos -->
+  <SolidColorBrush x:Key="HeroGradient" Color="#F3F8E3"/>
+  <SolidColorBrush x:Key="HeroBorder" Color="#DCE8B5"/>
+  <SolidColorBrush x:Key="HeroText" Color="#4A5040"/>
+  <SolidColorBrush x:Key="HeroTextDim" Color="#6B715F"/>
+  <SolidColorBrush x:Key="HeroChipBg" Color="#E4EFC0"/>
+  <SolidColorBrush x:Key="HeroChipText" Color="#3F5700"/>
+  <SolidColorBrush x:Key="NoteBg" Color="#F3F8E3"/>
+  <SolidColorBrush x:Key="NoteStroke" Color="#DCE8B5"/>
+  <SolidColorBrush x:Key="NoteText" Color="#3F4636"/>
+
+  <!-- Estados -->
+  <SolidColorBrush x:Key="Success" Color="#0F7F57"/>
+  <SolidColorBrush x:Key="SuccessSoft" Color="#DDF4EA"/>
+  <SolidColorBrush x:Key="Warning" Color="#9A5800"/>
+  <SolidColorBrush x:Key="WarningSoft" Color="#FCEFD5"/>
+  <SolidColorBrush x:Key="Danger" Color="#C62828"/>
+  <SolidColorBrush x:Key="DangerSoft" Color="#FBE3E3"/>
+  <SolidColorBrush x:Key="ChipNeutral" Color="#EEEDE7"/>
+
+  <!-- Controles -->
+  <SolidColorBrush x:Key="ButtonHoverBg" Color="#E9E8E1"/>
+  <SolidColorBrush x:Key="ButtonHoverStroke" Color="#C5C3B8"/>
+  <SolidColorBrush x:Key="ButtonPressedBg" Color="#E2E1D9"/>
+  <SolidColorBrush x:Key="ChromeHover" Color="#E6E5DE"/>
+  <SolidColorBrush x:Key="NavHover" Color="#E7E6DF"/>
+  <SolidColorBrush x:Key="NavChecked" Color="#E6EFCB"/>
+  <SolidColorBrush x:Key="NavCheckedText" Color="#16181D"/>
+  <SolidColorBrush x:Key="NavIndicator" Color="#4F6B00"/>
+  <SolidColorBrush x:Key="CheckStroke" Color="#B9B7AC"/>
+  <SolidColorBrush x:Key="CheckFill" Color="#16181D"/>
+  <SolidColorBrush x:Key="CheckMark" Color="#C8F031"/>
+  <SolidColorBrush x:Key="HelpBg" Color="#F1F0EA"/>
+  <SolidColorBrush x:Key="HelpStroke" Color="#D3D1C7"/>
+  <SolidColorBrush x:Key="HelpText" Color="#6B717B"/>
+  <SolidColorBrush x:Key="HelpHoverText" Color="#16181D"/>
+  <SolidColorBrush x:Key="TooltipBg" Color="#FFFFFF"/>
+  <SolidColorBrush x:Key="TooltipStroke" Color="#D3D1C7"/>
+  <SolidColorBrush x:Key="TooltipText" Color="#2B3039"/>
+  <SolidColorBrush x:Key="ThumbBg" Color="#D3D1C7"/>
+  <SolidColorBrush x:Key="ThumbHover" Color="#BDBBB0"/>
+  <SolidColorBrush x:Key="ThumbDrag" Color="#A6A49A"/>
+  <SolidColorBrush x:Key="LogBg" Color="#FBFBF8"/>
+  <SolidColorBrush x:Key="LogText" Color="#2B3039"/>
+</ResourceDictionary>

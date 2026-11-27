@@ -1,0 +1,267 @@
+# Problemlösung: Registerkarten Reparieren, Windows-Registrierung und Windows-Einstellungen. Deutsch.
+
+tools.subtitle = Reparaturen für die häufigsten Windows-Probleme und Einstellungen gegen die typischen Windows-Ärgernisse.
+tools.tab.repair = Reparieren
+tools.tab.registry = Windows-Registrierung
+tools.tab.windows = Windows-Einstellungen
+
+# Diagnose (Zusammenfassung auf der Startseite)
+tools.diag.checking = PC wird überprüft…
+tools.diag.issues.one = {0} Punkt zum Verbessern
+tools.diag.issues.other = {0} Punkte zum Verbessern
+tools.diag.notes.one = {0} Vorschlag
+tools.diag.notes.other = {0} Vorschläge
+tools.diag.none = Keine Probleme gefunden
+tools.diag.failed = Die Überprüfung konnte nicht abgeschlossen werden.
+tools.diag.log.error = Diagnose: {0}
+
+# ------------------------------------------------------------------ Reparieren
+tools.repair.note = Das sind die Reparaturen, die der Microsoft-Support empfiehlt, mit den Bordmitteln von Windows. Verwenden Sie sie, wenn Sie das beschriebene Problem haben; „vorsichtshalber“ müssen sie nicht laufen. Alles, was sie tun, wird im Aktivitätsprotokoll festgehalten.
+tools.repair.run = Ausführen
+tools.repair.takes = Dauer: {0}
+tools.repair.helpDuration = Ungefähre Dauer: {0}.
+tools.repair.confirm = Ungefähre Dauer: {0}. Nach dem Start lässt sich der Vorgang nicht abbrechen.
+tools.repair.failed = Konnte nicht abgeschlossen werden
+tools.repair.log = {0}: {1}
+
+repair.duration.range = {0}–{1} Min.
+repair.duration.underMinute = unter 1 Min.
+repair.duration.seconds = wenige Sekunden
+repair.progress.percent = {0}… {1} %
+repair.progress.done = Fertig
+
+repair.sfc.name = Windows-Dateien reparieren
+repair.sfc.summary = Sucht beschädigte Systemdateien und stellt sie wieder her (SFC).
+repair.sfc.help = Startet die Systemdatei-Überprüfung von Windows (sfc /scannow). Sie prüft alle geschützten Windows-Dateien und ersetzt beschädigte oder veränderte Dateien durch eine intakte Kopie.\n\nWann sinnvoll: seltsame Fehler, Windows-Apps, die nicht starten, Bluescreens oder unerwartete Abstürze.
+repair.sfc.log = Reparatur der Windows-Dateien (sfc /scannow)
+repair.sfc.status = Windows-Dateien werden geprüft
+repair.sfc.ok = Windows hat keine beschädigten Dateien gefunden oder alle repariert. Details stehen im Aktivitätsprotokoll.
+repair.sfc.warn = Die Prüfung wurde mit Warnungen beendet (Code {0}). Wenn gemeldet wird, dass einige Dateien nicht repariert werden konnten, führen Sie „Windows-Abbild reparieren“ aus und wiederholen Sie danach diese Reparatur.
+
+repair.dism.name = Windows-Abbild reparieren
+repair.dism.summary = Repariert den Speicher, aus dem SFC die intakten Dateien holt (DISM).
+repair.dism.help = Führt DISM /Online /Cleanup-Image /RestoreHealth aus. Repariert die interne Windows-Kopie, die Updates und SFC verwenden.\n\nWann sinnvoll: wenn „Windows-Dateien reparieren“ etwas nicht reparieren konnte oder Windows Update Fehler meldet. Danach sollten Sie die Dateireparatur noch einmal ausführen.
+repair.dism.warning = Windows lädt fehlende Dateien eventuell über Windows Update herunter (das macht Windows, nicht TURBiX).
+repair.dism.log = Reparatur des Windows-Abbilds (DISM RestoreHealth)
+repair.dism.status = Windows-Abbild wird repariert
+repair.dism.ok = Das Windows-Abbild ist in Ordnung. Sie können jetzt „Windows-Dateien reparieren“ ausführen.
+repair.dism.fail = DISM wurde mit Code {0} beendet. Sehen Sie im Aktivitätsprotokoll nach; wenn Quelldateien fehlen, prüfen Sie, ob Windows eine Internetverbindung hat, und versuchen Sie es erneut.
+
+repair.chkdsk.name = Datenträger prüfen
+repair.chkdsk.summary = Sucht Fehler auf dem Systemlaufwerk, ohne etwas zu ändern.
+repair.chkdsk.help = Führt chkdsk /scan auf dem Windows-Laufwerk aus. Das ist eine Onlineprüfung: Es wird nichts neu gestartet oder geändert, nur gemeldet, ob das Dateisystem Fehler hat.\n\nWann sinnvoll: Dateien, die beschädigt werden, der PC hängt beim Kopieren, oder Windows meldet Datenträgerfehler.
+repair.chkdsk.log = Prüfung von Laufwerk {0} (chkdsk /scan)
+repair.chkdsk.status = Laufwerk {0} wird geprüft
+repair.chkdsk.ok = Auf dem Datenträger wurden keine Fehler gefunden.
+repair.chkdsk.fail = Die Prüfung hat etwas gefunden (Code {0}). Sehen Sie im Aktivitätsprotokoll nach: Wenn eine Reparatur nötig ist, öffnen Sie eine Eingabeaufforderung als Administrator und führen Sie „chkdsk {1} /f“ aus; das wird beim nächsten Neustart erledigt.
+
+repair.network.name = Netzwerk zurücksetzen
+repair.network.summary = Hilft bei „Verbunden, kein Internet“ und Seiten, die nicht laden.
+repair.network.help = Setzt die Netzwerkkomponenten von Windows (Winsock und TCP/IP) zurück und leert den DNS-Cache. Die übliche Reparatur, wenn WLAN oder Kabel als verbunden angezeigt werden, aber kein Internet da ist, oder wenn einzelne Seiten nicht aufgehen.
+repair.network.warning = Wenn Sie eine feste IP-Adresse oder DNS-Server von Hand eingetragen haben, müssen Sie sie neu eingeben. Manche VPNs verlangen, ihren Adapter neu zu installieren. Ein Neustart ist nötig.
+repair.network.log = Netzwerk wird zurückgesetzt
+repair.network.winsock = Winsock wird zurückgesetzt…
+repair.network.tcpip = TCP/IP wird zurückgesetzt…
+repair.network.dns = DNS-Cache wird geleert…
+repair.network.done = Netzwerk zurückgesetzt
+repair.network.ok = Das Netzwerk wurde zurückgesetzt. Starten Sie den PC neu, um die Reparatur abzuschließen.
+repair.network.fail = Winsock konnte nicht zurückgesetzt werden (Code {0}/{1}). Sehen Sie im Aktivitätsprotokoll nach.
+
+repair.spooler.name = Druckwarteschlange freimachen
+repair.spooler.summary = Löscht hängende Druckaufträge, wenn der Drucker nicht druckt.
+repair.spooler.help = Beendet den Dienst Druckwarteschlange, löscht die hängengebliebenen Dokumente und startet ihn wieder. Die übliche Lösung, wenn ein Dokument bei „Wird gedruckt“ oder „Wird gelöscht“ stehen bleibt und alle anderen blockiert.
+repair.spooler.warning = Alle Dokumente, die noch auf den Druck warten, werden abgebrochen.
+repair.spooler.log = Druckwarteschlange wird geleert
+repair.spooler.stopping = Druckwarteschlange wird beendet…
+repair.spooler.stopFailed = Der Dienst Druckwarteschlange konnte nicht beendet werden. Schließen Sie Programme, die gerade drucken, und versuchen Sie es erneut.
+repair.spooler.deleting = Hängende Dokumente werden gelöscht…
+repair.spooler.starting = Druckwarteschlange wird gestartet…
+repair.spooler.startFailed = Der Dienst Druckwarteschlange konnte nicht gestartet werden: {0}
+repair.spooler.logDone.one = Druckwarteschlange: {0} Datei gelöscht.
+repair.spooler.logDone.other = Druckwarteschlange: {0} Dateien gelöscht.
+repair.spooler.empty = Die Warteschlange war schon leer. Der Dienst Druckwarteschlange wurde neu gestartet.
+repair.spooler.deleted.one = {0} Datei wurde aus der Warteschlange gelöscht und der Dienst Druckwarteschlange neu gestartet.
+repair.spooler.deleted.other = {0} Dateien wurden aus der Warteschlange gelöscht und der Dienst Druckwarteschlange neu gestartet.
+
+repair.explorer.name = Windows-Explorer neu starten
+repair.explorer.summary = Hilft, wenn Taskleiste, Startmenü oder Desktop hängen.
+repair.explorer.help = Beendet den Windows-Explorer (Taskleiste, Startmenü, Desktop und Ordner) und startet ihn wieder, ohne den PC neu zu starten. Ihre Programme bleiben geöffnet.
+repair.explorer.warning = Geöffnete Ordnerfenster werden geschlossen.
+repair.explorer.log = Neustart des Windows-Explorers
+repair.explorer.closing = Explorer wird beendet…
+repair.explorer.waiting = Warten, bis er wieder startet…
+repair.explorer.logDone = Windows-Explorer neu gestartet.
+repair.explorer.done = Der Windows-Explorer wurde neu gestartet.
+
+# ------------------------------------------------------------------ Windows-Registrierung
+regfix.note = TURBiX sucht Einträge in der Registrierung, die auf nicht mehr vorhandene Programme oder Dateien verweisen: defekte Autostart-Einträge, „Geisterprogramme“ in der Deinstallationsliste und Reste gelöschter Programme. Das Entfernen dieser Reste vermeidet Fehlermeldungen, macht den PC aber nicht schneller – das schafft kein Registry-Cleaner. Markiert wird nur, was sich überprüfen lässt, und alles wird vor dem Löschen gesichert.
+regfix.scan = Nach Problemen suchen
+regfix.help = Was geprüft wird:\n\n• Defekter Autostart: Programme, die Windows beim Start öffnen will, die es aber nicht mehr gibt.\n• Geisterprogramm: wird als installiert angezeigt, aber Dateien und Deinstallationsprogramm fehlen.\n• Programmpfad und gemeinsame DLL: Verweise auf gelöschte Dateien.\n• Namens-Cache: Namen von Programmen, die nicht mehr da sind.\n\nWas NICHT angetastet wird: COM-Klassen, Dateizuordnungen, Dienste und alles, was sich nicht überprüfen lässt. Auch nichts auf Wechsel- oder Netzlaufwerken, denn die sind vielleicht nur nicht verbunden.
+regfix.footer = Jeder Eintrag wird vor dem Löschen gesichert und lässt sich unter „Wiederherstellen“ zurückholen.
+
+regfix.cat.startup = Defekter Autostart
+regfix.cat.uninstall = Geisterprogramm
+regfix.cat.appPath = Programmpfad
+regfix.cat.sharedDll = Gemeinsame DLL
+regfix.cat.muiCache = Namens-Cache
+
+regfix.detail.missing = Fehlt: {0}
+regfix.detail.missingFolder = Ordner fehlt: {0}
+regfix.help.startup = Windows versucht, dieses Programm bei jeder Anmeldung zu öffnen, aber die Datei gibt es nicht mehr (meist, weil es deinstalliert wurde). Das kann beim Start eine Fehlermeldung auslösen.
+regfix.help.uninstall = Es steht in der Liste der installierten Programme, aber seine Dateien und das Deinstallationsprogramm gibt es nicht mehr. Deshalb lässt es sich in Windows nicht deinstallieren und bleibt als „Geist“ in der Liste.
+regfix.help.appPath = Windows findet über diesen Eintrag das Programm, wenn Sie seinen Namen bei „Ausführen“ eingeben. Das Programm ist weg, der Eintrag ist also nutzlos.
+regfix.help.sharedDll = Zähler für eine Datei, die mehrere Programme gemeinsam nutzen. Die Datei gibt es nicht mehr, der Zähler ist also überflüssig.
+regfix.help.muiCache = Windows merkt sich den Namen jedes Programms, das je geöffnet wurde, auch wenn es später gelöscht wurde oder nur ein heruntergeladenes Setup war. Das ist nur ein Cache: Das Entfernen dieser Einträge wirkt sich auf nichts aus, das Behalten auch nicht.
+regfix.muiCache.name.one = Name von {0} Programm, das es nicht mehr gibt
+regfix.muiCache.name.other = Namen von {0} Programmen, die es nicht mehr gibt
+
+regfix.progress.startup = Autostart-Programme…
+regfix.progress.installed = Installierte Programme…
+regfix.progress.appPaths = Programmpfade…
+regfix.progress.sharedDlls = Gemeinsame DLLs…
+regfix.progress.muiCache = Cache der Programmnamen…
+regfix.progress.scanDone = Prüfung abgeschlossen
+regfix.progress.fixDone = Registrierung repariert
+
+regfix.session.one = Registrierung: {0} Eintrag
+regfix.session.other = Registrierung: {0} Einträge
+regfix.log.scan = Defekte Einträge in der Windows-Registrierung werden gesucht
+regfix.log.found.one = Registrierung: {0} defekter Eintrag gefunden.
+regfix.log.found.other = Registrierung: {0} defekte Einträge gefunden.
+regfix.log.fixing.one = {0} Registrierungseintrag wird repariert
+regfix.log.fixing.other = {0} Registrierungseinträge werden repariert
+regfix.log.fixFailed = „{0}“ konnte nicht repariert werden: {1}
+regfix.log.backupSaved = Sicherung gespeichert unter {0}
+regfix.log.fixed.one = Registrierung: {0} Eintrag repariert, {1} mit Fehlern.
+regfix.log.fixed.other = Registrierung: {0} Einträge repariert, {1} mit Fehlern.
+regfix.log.error = Registrierung: {0}
+regfix.error.exportFailed = Der Schlüssel konnte nicht gesichert werden und wurde deshalb nicht gelöscht.
+regfix.error.backupMissing = Sicherungsdatei fehlt: {0}
+regfix.error.importFailed = Windows konnte {0} nicht importieren
+
+# ------------------------------------------------------------------ Windows-Einstellungen
+wintweak.presets.help = Empfohlen: Änderungen, über die sich fast jeder freut und die keine Funktion entfernen.\n\nAlle: nimmt auch die OPTIONALEN dazu, die Geschmackssache sind oder nur auf manchen PCs sinnvoll. Lesen Sie die Erklärung zu jeder Einstellung, bevor Sie sie anwenden.
+wintweak.restorePoint = Vor dem Anwenden einen Wiederherstellungspunkt erstellen
+wintweak.restorePoint.help = Erstellt vor den Änderungen einen Windows-Wiederherstellungspunkt – zusätzlich zur Sicherung, die TURBiX immer anlegt und mit der Sie unter „Wiederherstellen“ alles rückgängig machen können.
+
+wintweak.apply.button.one = {0} Einstellung anwenden
+wintweak.apply.button.other = {0} Einstellungen anwenden
+wintweak.apply.confirm.one = {0} Windows-Einstellung wird angewendet.\n\nTURBiX sichert jeden geänderten Wert, damit Sie die Änderung unter „Wiederherstellen“ rückgängig machen können.
+wintweak.apply.confirm.other = {0} Windows-Einstellungen werden angewendet.\n\nTURBiX sichert jeden geänderten Wert, damit Sie die Änderungen unter „Wiederherstellen“ rückgängig machen können.
+wintweak.apply.warnings = Bitte beachten:
+wintweak.apply.title = Windows-Einstellungen anwenden
+wintweak.apply.confirmButton = Anwenden
+wintweak.apply.busy = Windows-Einstellungen werden angewendet
+wintweak.apply.error = Etwas ist schiefgelaufen
+wintweak.result.nothing = Alle ausgewählten Einstellungen waren schon angewendet. Es musste nichts geändert werden.
+wintweak.result.changed.one = {0} Änderung vorgenommen.
+wintweak.result.changed.other = {0} Änderungen vorgenommen.
+wintweak.result.changedErrors.one = {0} Änderung vorgenommen ({1} mit Fehlern, siehe Aktivitätsprotokoll).
+wintweak.result.changedErrors.other = {0} Änderungen vorgenommen ({1} mit Fehlern, siehe Aktivitätsprotokoll).
+wintweak.result.restart = Melden Sie sich ab oder starten Sie den PC neu, damit alle Änderungen wirksam werden.
+wintweak.result.title = Einstellungen angewendet
+wintweak.result.titleWarnings = Einstellungen mit Warnungen angewendet
+
+wintweak.cat.interface = Windows-Ärgernisse
+wintweak.cat.interface.help = Dinge an der Windows-Oberfläche, die viele lieber anders hätten.
+wintweak.cat.boot = Start und Datenträger
+wintweak.cat.boot.help = Windows-Verhalten, das den Start und die Datenträgernutzung betrifft, vor allem auf PCs mit Festplatte oder wenig freiem Speicher.
+wintweak.cat.taskbar = Taskleiste und Start
+wintweak.cat.taskbar.help = Schaltflächen und Vorschläge in Taskleiste und Startmenü, die viele nicht nutzen.
+wintweak.cat.services = Optionale Dienste
+wintweak.cat.services.help = Windows-Dienste für Funktionen, die kaum jemand nutzt. Sie werden deaktiviert (nicht gelöscht) und lassen sich unter „Wiederherstellen“ wieder aktivieren.\n\nTURBiX lässt Dienste weg, deren Deaktivierung etwas Wichtiges kaputt machen würde: Windows Update, Sicherheit, Netzwerk, Audio, Bluetooth, Xbox oder SysMain auf einer SSD.
+
+wintweak.fileExtensions.name = Dateinamenerweiterungen anzeigen
+wintweak.fileExtensions.summary = Sie sehen „foto.jpg“ oder „rechnung.pdf.exe“ mit vollem Namen.
+wintweak.fileExtensions.help = Windows blendet die Dateinamenerweiterungen (.jpg, .pdf, .exe) standardmäßig aus. Wenn sie sichtbar sind, wissen Sie, was eine Datei wirklich ist – eine einfache Sicherheitsmaßnahme: Ein Virus, getarnt als „rechnung.pdf.exe“, sieht dann nicht mehr wie ein PDF aus.
+wintweak.searchHighlights.name = Suchhighlights
+wintweak.searchHighlights.summary = Entfernt Bilder und Nachrichten aus dem Suchfeld.
+wintweak.searchHighlights.help = Schaltet die Suchhighlights aus: das täglich wechselnde Symbol im Suchfeld der Taskleiste und die Nachrichten- und Gedenktag-Vorschläge, die beim Öffnen erscheinen.
+wintweak.startAccountNotifications.name = Kontohinweise im Startmenü
+wintweak.startAccountNotifications.summary = Entfernt Hinweise wie „Auf OneDrive sichern“ oder „Einrichtung abschließen“.
+wintweak.startAccountNotifications.help = Schaltet die Benachrichtigungen zum Microsoft-Konto im Startmenü aus (OneDrive-Sicherung, Microsoft 365, Einrichtung abschließen).
+wintweak.taskbarEndTask.name = „Task beenden“ in der Taskleiste
+wintweak.taskbarEndTask.summary = Ein hängendes Programm per Rechtsklick auf sein Symbol schließen.
+wintweak.taskbarEndTask.help = Fügt „Task beenden“ zum Rechtsklickmenü eines Programms in der Taskleiste hinzu. So schließen Sie ein Programm, das nicht reagiert, ohne den Task-Manager zu öffnen. Setzt Windows 11 23H2 oder neuer voraus.
+wintweak.classicContextMenu.name = Klassisches Kontextmenü
+wintweak.classicContextMenu.summary = Der Rechtsklick zeigt alle Optionen, ohne „Weitere Optionen anzeigen“.
+wintweak.classicContextMenu.help = Windows 11 zeigt beim Rechtsklick ein gekürztes Menü und versteckt den Rest hinter „Weitere Optionen anzeigen“. Diese Einstellung holt das vollständige Menü von Windows 10 zurück, mit allen Optionen auf einen Blick.
+wintweak.classicContextMenu.warning = Wirkt nach dem Abmelden oder nach einem Neustart des Windows-Explorers (Registerkarte „Reparieren“).
+wintweak.explorerThisPc.name = Explorer öffnet „Dieser PC“
+wintweak.explorerThisPc.summary = Beim Öffnen eines Ordners sehen Sie Ihre Laufwerke statt „Start“.
+wintweak.explorerThisPc.help = Der Datei-Explorer öffnet direkt „Dieser PC“ (Laufwerke und Hauptordner) statt der Startseite mit zuletzt verwendeten Dateien.
+
+wintweak.storageSense.name = Speicheroptimierung einschalten
+wintweak.storageSense.summary = Windows löscht temporäre Dateien selbst, wenn der Platz knapp wird.
+wintweak.storageSense.help = Schaltet die Speicheroptimierung von Windows ein. Sie löscht automatisch temporäre Dateien und alte Elemente im Papierkorb, wenn auf dem Laufwerk der Platz knapp wird. So läuft der Datenträger nicht unbemerkt voll.
+wintweak.fastStartup.name = Schnellstart ausschalten
+wintweak.fastStartup.summary = „Herunterfahren“ fährt Windows wieder richtig herunter.
+wintweak.fastStartup.help = Mit Schnellstart versetzt Windows beim Herunterfahren den Systemkern eigentlich in den Ruhezustand, um schneller zu starten. Deshalb lassen sich manche Fehler nicht durch „Aus- und wieder Einschalten“ beheben, Treiber hängen sich auf und Dual-Boot macht Probleme. Ohne Schnellstart ist jedes Einschalten ein sauberer Neustart.
+wintweak.fastStartup.warning = Auf PCs mit Festplatte dauert der Start ein paar Sekunden länger. Mit SSD merkt man es kaum.
+wintweak.sysmainHdd.name = SysMain auf Festplatten
+wintweak.sysmainHdd.summary = Stoppt das Vorladen von Programmen, das die Festplatte auf 100 % hält.
+wintweak.sysmainHdd.help = SysMain (früher Superfetch) lädt die Programme, die Sie am häufigsten nutzen, vorab in den Arbeitsspeicher. Auf einer SSD hilft das und sollte eingeschaltet bleiben. Auf einer Festplatte (HDD) mit wenig Arbeitsspeicher kann es die Festplatte nach dem Einschalten minutenlang auf 100 % halten. TURBiX bietet diese Einstellung nur an, wenn Windows auf einer HDD installiert ist; auf einer SSD steht sie auf „Nicht relevant“.
+wintweak.sysmainHdd.warning = Programme brauchen beim ersten Öffnen eventuell etwas länger.
+wintweak.hibernation.name = Ruhezustand ausschalten
+wintweak.hibernation.summary = Gibt mehrere GB auf dem Laufwerk frei (die Datei hiberfil.sys).
+wintweak.hibernation.help = Windows reserviert auf dem Laufwerk eine Datei, die einem großen Teil Ihres Arbeitsspeichers entspricht (hiberfil.sys), um in den Ruhezustand wechseln zu können. Wenn Sie „Ruhezustand“ nie verwenden, gibt das Ausschalten diesen Platz nach einem Neustart frei: meist zwischen 3 und 13 GB.\n\nDamit wird auch der Schnellstart ausgeschaltet, der auf dem Ruhezustand aufbaut.
+wintweak.hibernation.warning = Die Option „Ruhezustand“ verschwindet. Auf Laptops schaltet sich der PC bei leerem Akku aus, statt in den Ruhezustand zu wechseln.
+
+wintweak.edgeShortcut.name = Edge-Verknüpfung nach jedem Update
+wintweak.edgeShortcut.summary = Edge legt sein Symbol nicht mehr erneut auf den Desktop.
+wintweak.edgeShortcut.help = Bei jedem Update kann Microsoft Edge seine Desktopverknüpfung wieder anlegen, auch wenn Sie sie gelöscht haben. Diese offizielle Edge-Richtlinie verhindert das. Sonst wird an Edge nichts deinstalliert oder geändert.
+wintweak.meetNow.name = Schaltfläche „Jetzt besprechen“
+wintweak.meetNow.summary = Entfernt das Skype-Videoanruf-Symbol aus der Taskleiste.
+wintweak.meetNow.help = Windows 10 hat neben der Uhr eine Schaltfläche für Skype-Besprechungen eingefügt. Skype gibt es nicht mehr, die Schaltfläche ist also nutzlos.
+wintweak.teamsChat.name = Schaltfläche „Chat“ von Teams
+wintweak.teamsChat.summary = Entfernt das Symbol von Teams (privat) aus der Taskleiste.
+wintweak.teamsChat.help = Frühe Versionen von Windows 11 hatten in der Taskleiste eine Chat-Schaltfläche für Microsoft Teams (privat). Diese Einstellung entfernt sie.
+wintweak.cortana.name = Cortana-Schaltfläche
+wintweak.cortana.summary = Entfernt die Cortana-Schaltfläche aus der Taskleiste.
+wintweak.cortana.help = Microsoft hat Cortana eingestellt, unter Windows 10 kann die Schaltfläche aber noch in der Taskleiste sein.
+wintweak.taskView.name = Schaltfläche „Taskansicht“
+wintweak.taskView.summary = Entfernt die Schaltfläche für virtuelle Desktops aus der Taskleiste.
+wintweak.taskView.help = Entfernt die Schaltfläche „Taskansicht“ aus der Taskleiste. Die Funktion bleibt über Win+Tab erreichbar.
+wintweak.searchIcon.name = Suche als Symbol
+wintweak.searchIcon.summary = Ersetzt das Suchfeld in der Taskleiste durch ein kleines Symbol.
+wintweak.searchIcon.help = Das Suchfeld nimmt in der Taskleiste viel Platz weg. Mit dieser Einstellung bleibt nur die Lupe; Sie können auch suchen, indem Sie die Windows-Taste drücken und lostippen.
+wintweak.taskbarLeft.name = Taskleiste linksbündig
+wintweak.taskbarLeft.summary = Die Start-Schaltfläche kommt wieder in die Ecke, wie bei Windows 10.
+wintweak.taskbarLeft.help = Windows 11 zentriert die Symbole der Taskleiste. Diese Einstellung richtet sie links aus.
+wintweak.recentFiles.name = Zuletzt verwendete Dateien in Start und Explorer
+wintweak.recentFiles.summary = Zeigt die zuletzt geöffneten Dateien nicht mehr an.
+wintweak.recentFiles.help = Windows zeigt im Startmenü, im Schnellzugriff und in den Sprunglisten der Programme die Dateien an, die Sie zuletzt geöffnet haben. Das ist praktisch, aber jeder, der Ihren PC benutzt, sieht sie. Diese Einstellung hört auf, sie zu erfassen und anzuzeigen.
+wintweak.recentFiles.warning = Die Listen zuletzt verwendeter Dateien der Programme (Rechtsklick in der Taskleiste) bleiben leer.
+wintweak.hiddenFiles.name = Ausgeblendete Dateien anzeigen
+wintweak.hiddenFiles.summary = Der Explorer zeigt ausgeblendete Ordner und Dateien.
+wintweak.hiddenFiles.help = Zeigt Dateien und Ordner an, die als ausgeblendet markiert sind (zum Beispiel AppData). Nützlich, um Konfigurationsdateien zu finden oder zu sehen, was Platz belegt. Geschützte Systemdateien bleiben ausgeblendet.
+
+wintweak.svc.fax.name = Fax
+wintweak.svc.fax.summary = Faxe per Modem senden und empfangen.
+wintweak.svc.fax.help = Ermöglicht das Senden und Empfangen von Faxen über ein am PC angeschlossenes Faxmodem. Fast kein aktueller PC hat eins.
+wintweak.svc.retailDemo.name = Demomodus für den Einzelhandel
+wintweak.svc.retailDemo.summary = Nur für Ausstellungsgeräte im Geschäft.
+wintweak.svc.retailDemo.help = Dienst für den Demomodus von PCs, die im Geschäft ausgestellt sind. Auf einem privaten PC tut er nichts.
+wintweak.svc.maps.name = Offlinekarten
+wintweak.svc.maps.summary = Lädt Karten zur Nutzung ohne Internet herunter und aktualisiert sie.
+wintweak.svc.maps.help = Verwaltet heruntergeladene Karten für die App „Karten“. Wenn Sie keine Offlinekarten heruntergeladen haben, wird er nicht gebraucht.
+wintweak.svc.maps.warning = In der App „Karten“ heruntergeladene Karten werden nicht mehr automatisch aktualisiert.
+wintweak.svc.wmp.name = Windows Media Player-Netzwerkfreigabe
+wintweak.svc.wmp.summary = Gibt Musik und Videos für andere PCs im Netzwerk frei.
+wintweak.svc.wmp.help = Gibt die Bibliothek des alten Windows Media Player für andere Geräte im Heimnetzwerk frei.
+wintweak.svc.insider.name = Windows-Insider-Programm
+wintweak.svc.insider.summary = Nur nötig, um Vorabversionen von Windows zu erhalten.
+wintweak.svc.insider.help = Verwaltet die Teilnahme am Windows-Insider-Programm (Vorabversionen von Windows).
+wintweak.svc.insider.warning = Wenn Sie am Windows-Insider-Programm teilnehmen, schalten Sie diesen Dienst nicht aus.
+wintweak.svc.pca.name = Programmkompatibilitäts-Assistent
+wintweak.svc.pca.summary = Beobachtet alte Programme, um Korrekturen vorzuschlagen.
+wintweak.svc.pca.help = Erkennt bekannte Probleme mit alten Programmen und bietet an, sie im Kompatibilitätsmodus auszuführen. Er prüft jedes Programm, das Sie öffnen.
+wintweak.svc.pca.warning = Wenn Sie sehr alte Programme verwenden, bietet Windows keine automatischen Kompatibilitätseinstellungen mehr an.
+wintweak.svc.spooler.name = Druckwarteschlange
+wintweak.svc.spooler.summary = Nur wenn Sie keinen Drucker haben.
+wintweak.svc.spooler.help = Der Dienst, der das Drucken verwaltet. Wenn Sie keinen Drucker haben und auch keinen verwenden werden, kann er aus. Er war außerdem das Einfallstor für mehrere bekannte Sicherheitslücken („PrintNightmare“).
+wintweak.svc.spooler.warning = Drucken ist nicht mehr möglich, auch nicht mit „Microsoft Print to PDF“, bis Sie es unter „Wiederherstellen“ rückgängig machen.
+wintweak.svc.search.name = Windows Search-Indizierung
+wintweak.svc.search.summary = Beendet das Indizieren von Dateien im Hintergrund.
+wintweak.svc.search.help = Windows Search liest Ihre Dateien im Hintergrund, damit die Suche sofort Ergebnisse liefert. Auf PCs mit Festplatte kann das eine hohe Datenträgerauslastung verursachen. Ohne den Dienst funktioniert die Suche weiter, ist aber langsamer.
+wintweak.svc.search.warning = Die Dateisuche und die Suche in Outlook werden deutlich langsamer.

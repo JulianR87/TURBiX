@@ -1,0 +1,37 @@
+# Performance › Processes
+
+perf.tab.processes = Processes
+proc.help = The same list Task Manager shows, but grouped: each program keeps the processes it started underneath it (a browser, for example, starts one per tab). Click the arrow to expand them. When collapsed, the row adds up the whole group.\n\n"Service Host" entries are Windows services; the name of the service running in each one is shown.\n\n"Threads" is the number of threads each process is running, the same figure Task Manager shows.\n\nThe X closes a process right away, like "End task". Processes Windows needs to keep running are locked.
+proc.search = Search by process, PID or service
+proc.loading = Reading processes…
+proc.noMatches = No process matches your search.
+proc.expandAll = Expand all
+proc.collapseAll = Collapse all
+proc.col.name = Name
+proc.col.cpu = CPU
+proc.col.memory = Memory
+proc.col.threads = Threads
+proc.count.processes.one = {0} process
+proc.count.processes.other = {0} processes
+proc.count.threads.one = {0} thread
+proc.count.threads.other = {0} threads
+proc.count.handles.one = {0} handle
+proc.count.handles.other = {0} handles
+proc.usage.cpu = CPU at {0}
+proc.usage.memory = Memory: {0} of {1}
+proc.pid = PID {0}
+proc.serviceHost = Service Host: {0}
+proc.serviceHostMore.one = Service Host: {1} and {0} more
+proc.serviceHostMore.other = Service Host: {1} and {0} more
+proc.end = End task
+proc.critical = Windows needs this to run, so TURBiX won't close it.
+proc.end.title = End “{0}”?
+proc.end.text = It closes immediately. If it's a program with unsaved work, that work is lost.
+proc.end.textGroup.one = {0} process closes immediately. If it's a program with unsaved work, that work is lost.
+proc.end.textGroup.other = {0} processes close immediately: the main one and the ones it started. If it's a program with unsaved work, that work is lost.
+proc.end.confirm = End task
+proc.end.failed.title = Couldn't end the task
+proc.end.failed.text = Windows didn't let TURBiX close “{0}”: {1}\n\nSome processes can only be closed as an administrator, or belong to another user.
+proc.log.ended = Ended process: {0} (PID {1}).
+proc.log.failed = Couldn't end {0} (PID {1}): {2}
+proc.log.readError = Couldn't read the process list: {0}

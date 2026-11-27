@@ -1,0 +1,91 @@
+<UserControl x:Class="Turbix.Views.LogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:Turbix.Controls"
+             xmlns:l="clr-namespace:Turbix.Localization">
+  <Grid Margin="40,8,40,24">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <StackPanel>
+      <TextBlock Text="{l:T log.title}" Style="{StaticResource H1}"/>
+      <TextBlock Style="{StaticResource Muted}" Margin="0,4,0,18"
+                 Text="{l:T log.subtitle}" TextWrapping="Wrap"/>
+    </StackPanel>
+
+    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,12">
+      <Button Command="{Binding CopyLogCommand}" Padding="14,7" FontSize="12.5" Margin="0,0,8,0">
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Style="{StaticResource Icon}" Text="&#xE8C8;" FontSize="12"/>
+          <TextBlock Text="{l:T log.copy}" Margin="8,0,0,0"/>
+        </StackPanel>
+      </Button>
+      <Button Command="{Binding OpenLogsCommand}" Padding="14,7" FontSize="12.5" Margin="0,0,8,0">
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Style="{StaticResource Icon}" Text="&#xE838;" FontSize="12"/>
+          <TextBlock Text="{l:T log.openFolder}" Margin="8,0,0,0"/>
+        </StackPanel>
+      </Button>
+      <Button Command="{Binding ClearLogCommand}" Padding="14,7" FontSize="12.5">
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Style="{StaticResource Icon}" Text="&#xE74D;" FontSize="12"/>
+          <TextBlock Text="{l:T log.clearView}" Margin="8,0,0,0"/>
+        </StackPanel>
+      </Button>
+      <c:HelpTip Margin="12,0,0,0" Text="{l:T log.help}"/>
+    </StackPanel>
+
+    <Border Grid.Row="2" Background="{DynamicResource LogBg}" BorderBrush="{DynamicResource Stroke}" BorderThickness="1" CornerRadius="12" Padding="4">
+      <ListBox x:Name="List" ItemsSource="{Binding LogLines}" Background="Transparent" BorderThickness="0"
+               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+               VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling">
+        <ListBox.ItemContainerStyle>
+          <Style TargetType="ListBoxItem">
+            <Setter Property="Template">
+              <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                  <ContentPresenter Margin="12,3"/>
+                </ControlTemplate>
+              </Setter.Value>
+            </Setter>
+          </Style>
+        </ListBox.ItemContainerStyle>
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <Grid>
+              <!-- Separador de día -->
+              <TextBlock Text="{Binding DayText}" FontSize="11.5" FontWeight="SemiBold" Foreground="{DynamicResource AccentText}" Margin="0,10,0,4"
+                         Visibility="{Binding IsDayHeader, Converter={StaticResource BoolToVis}}"/>
+              <Grid Visibility="{Binding IsDayHeader, Converter={StaticResource BoolToVis}, ConverterParameter=invert}">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="70"/>
+                  <ColumnDefinition Width="Auto" MinWidth="58"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding TimeText}" FontFamily="{StaticResource MonoFont}" FontSize="12" Foreground="{DynamicResource TextDim}"/>
+                <TextBlock Grid.Column="1" Text="{Binding LevelText}" FontFamily="{StaticResource MonoFont}" FontSize="12" FontWeight="Bold" Margin="0,0,10,0">
+                  <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                      <Setter Property="Foreground" Value="{DynamicResource TextMuted}"/>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding LevelKey}" Value="success"><Setter Property="Foreground" Value="{DynamicResource Success}"/></DataTrigger>
+                        <DataTrigger Binding="{Binding LevelKey}" Value="warning"><Setter Property="Foreground" Value="{DynamicResource Warning}"/></DataTrigger>
+                        <DataTrigger Binding="{Binding LevelKey}" Value="error"><Setter Property="Foreground" Value="{DynamicResource Danger}"/></DataTrigger>
+                        <DataTrigger Binding="{Binding LevelKey}" Value="step"><Setter Property="Foreground" Value="{DynamicResource AccentText}"/></DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Grid.Column="2" Text="{Binding Message}" FontFamily="{StaticResource MonoFont}" FontSize="12"
+                           Foreground="{DynamicResource LogText}" TextWrapping="Wrap"/>
+              </Grid>
+            </Grid>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+    </Border>
+  </Grid>
+</UserControl>

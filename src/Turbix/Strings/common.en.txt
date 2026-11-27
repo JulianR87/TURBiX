@@ -1,0 +1,68 @@
+# Shared UI strings. English (also the fallback for any missing text).
+
+app.tagline = Privacy and cleanup
+app.alreadyOpen.title = TURBiX is already open
+app.alreadyOpen.text = There's already a TURBiX window running.
+app.unhandled = Unhandled error: {0}
+app.unexpected.log = Unexpected error: {0}
+app.unexpected.title = Something went wrong
+app.unexpected.text = {0}\n\nThe details were saved to the activity log.
+changelog.readError = Couldn't read the change history: {0}
+
+nav.section.menu = MENU
+nav.section.system = SYSTEM
+nav.home = Home
+nav.privacy = Privacy
+nav.cleanup = Cleanup
+nav.performance = Performance
+nav.apps = Apps
+nav.health = Health
+nav.tools = Fixes
+nav.restore = Restore
+nav.log = Activity log
+nav.changelog = What's new
+nav.about = About TURBiX
+
+common.refresh = Refresh
+common.refreshState = Refresh status
+common.quickSelect = Quick select
+common.recommended = Recommended
+common.maximum = Maximum
+common.all = All
+common.none = None
+common.optional = OPTIONAL
+common.advanced = ADVANCED
+common.security = SECURITY
+common.continue = Continue
+common.cancel = Cancel
+common.ok = Got it
+common.open = Open
+common.close = Close
+common.noInternet = Doesn't use the internet
+common.noData = No data
+common.state.applied = Applied
+common.state.notApplied = Not applied
+common.state.partial = Partial
+common.state.notApplicable = Doesn't apply
+common.state.enabled = On
+common.state.disabled = Off
+
+unit.b = B
+unit.kb = KB
+unit.mb = MB
+unit.gb = GB
+unit.percent = {0}%
+
+log.title = Activity log
+log.subtitle = Everything TURBiX does is written down here and in a text file, including earlier sessions, so you always know what changed and when.
+log.copy = Copy
+log.openFolder = Open logs folder
+log.clearView = Clear view
+log.help = Logs are saved day by day in C:\ProgramData\TURBiX\Logs, and earlier days are loaded when TURBiX starts. "Clear view" only empties this screen; the files stay.\n\nIf something doesn't work the way you expected, copy the log and attach it when you report the problem.
+log.today = Today
+log.yesterday = Yesterday
+log.level.info = INFO
+log.level.success = OK
+log.level.warning = WARN
+log.level.error = ERROR
+log.level.step = STEP

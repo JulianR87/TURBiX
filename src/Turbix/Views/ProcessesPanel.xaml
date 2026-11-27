@@ -1,0 +1,229 @@
+<UserControl x:Class="Turbix.Views.ProcessesPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:Turbix.Controls"
+             xmlns:l="clr-namespace:Turbix.Localization">
+  <UserControl.Resources>
+    <!-- Cabecera de columna que ordena al pulsarla -->
+    <Style x:Key="HeaderButton" TargetType="Button">
+      <Setter Property="Foreground" Value="{DynamicResource TextDim}"/>
+      <Setter Property="FontSize" Value="11.5"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="FocusVisualStyle" Value="{StaticResource FocusRing}"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Border Background="Transparent" Padding="0,6">
+              <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center"/>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource Text}"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- Botón pequeño de icono (desplegar y finalizar) -->
+
+    <!-- Columnas: nombre | CPU | memoria | subprocesos | finalizar -->
+    <GridLength x:Key="ColCpu">84</GridLength>
+    <GridLength x:Key="ColMem">104</GridLength>
+    <GridLength x:Key="ColThreads">108</GridLength>
+    <GridLength x:Key="ColEnd">40</GridLength>
+  </UserControl.Resources>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <!-- Resumen y búsqueda -->
+    <DockPanel Margin="2,0,0,10">
+      <c:HelpTip DockPanel.Dock="Right" Margin="10,0,0,0" VerticalAlignment="Center" Text="{l:T proc.help}" Title="{l:T perf.tab.processes}"/>
+      <TextBox DockPanel.Dock="Right" Style="{StaticResource SearchBox}" Width="250" Height="34" VerticalAlignment="Center"
+               Tag="{l:T proc.search}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged, Delay=150}"/>
+      <StackPanel VerticalAlignment="Center" Margin="0,0,12,0">
+        <TextBlock Text="{Binding CountsText}" Foreground="{DynamicResource TextMuted}" FontSize="13" TextTrimming="CharacterEllipsis"/>
+        <TextBlock Foreground="{DynamicResource TextDim}" FontSize="12" Margin="0,2,0,0" TextTrimming="CharacterEllipsis">
+          <Run Text="{Binding CpuUsageText, Mode=OneWay}"/><Run Text="  ·  "/><Run Text="{Binding MemoryUsageText, Mode=OneWay}"/>
+        </TextBlock>
+      </StackPanel>
+    </DockPanel>
+
+    <!-- Cabeceras -->
+    <Border Grid.Row="1" BorderBrush="{DynamicResource Stroke}" BorderThickness="0,0,0,1" Padding="10,0,20,0">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="{StaticResource ColCpu}"/>
+          <ColumnDefinition Width="{StaticResource ColMem}"/>
+          <ColumnDefinition Width="{StaticResource ColThreads}"/>
+          <ColumnDefinition Width="{StaticResource ColEnd}"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal">
+          <Button Style="{StaticResource HeaderButton}" Command="{Binding SortCommand}" CommandParameter="name">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Text="{l:T proc.col.name}"/>
+              <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="6,0,0,0" Text="{Binding ArrowName}"/>
+            </StackPanel>
+          </Button>
+          <Button Style="{StaticResource LinkButton}" FontSize="11.5" FontWeight="Normal" Margin="16,0,0,0" Command="{Binding ExpandAllCommand}" Content="{l:T proc.expandAll}"/>
+          <Button Style="{StaticResource LinkButton}" FontSize="11.5" FontWeight="Normal" Margin="12,0,0,0" Command="{Binding CollapseAllCommand}" Content="{l:T proc.collapseAll}"/>
+        </StackPanel>
+        <Button Grid.Column="1" Style="{StaticResource HeaderButton}" HorizontalContentAlignment="Right" Command="{Binding SortCommand}" CommandParameter="cpu">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="0,0,6,0" Text="{Binding ArrowCpu}"/>
+            <TextBlock Text="{l:T proc.col.cpu}"/>
+          </StackPanel>
+        </Button>
+        <Button Grid.Column="2" Style="{StaticResource HeaderButton}" HorizontalContentAlignment="Right" Command="{Binding SortCommand}" CommandParameter="memory">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="0,0,6,0" Text="{Binding ArrowMemory}"/>
+            <TextBlock Text="{l:T proc.col.memory}"/>
+          </StackPanel>
+        </Button>
+        <Button Grid.Column="3" Style="{StaticResource HeaderButton}" HorizontalContentAlignment="Right" Command="{Binding SortCommand}" CommandParameter="threads">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="0,0,6,0" Text="{Binding ArrowThreads}"/>
+            <TextBlock Text="{l:T proc.col.threads}"/>
+          </StackPanel>
+        </Button>
+      </Grid>
+    </Border>
+
+    <!-- Lista -->
+    <ListBox x:Name="List" Grid.Row="2" ItemsSource="{Binding Rows}" Padding="0,4,0,0" Margin="0,0,-10,0"
+             ScrollViewer.HorizontalScrollBarVisibility="Disabled" VirtualizingPanel.ScrollUnit="Pixel"
+             VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling">
+      <ListBox.ItemContainerStyle>
+        <Style TargetType="ListBoxItem">
+          <Setter Property="Focusable" Value="False"/>
+          <Setter Property="Margin" Value="0,0,10,0"/>
+          <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="ListBoxItem">
+                <Border x:Name="Bd" Background="Transparent" CornerRadius="7" Padding="10,0" Height="38">
+                  <ContentPresenter VerticalAlignment="Center"/>
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="Bd" Property="Background" Value="{DynamicResource SurfaceHover}"/>
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </ListBox.ItemContainerStyle>
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="{StaticResource ColCpu}"/>
+              <ColumnDefinition Width="{StaticResource ColMem}"/>
+              <ColumnDefinition Width="{StaticResource ColThreads}"/>
+              <ColumnDefinition Width="{StaticResource ColEnd}"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Margin="{Binding Indent}">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="28"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+              <Button Style="{StaticResource RowIconButton}" Command="{Binding ToggleCommand}" HorizontalAlignment="Left"
+                      Visibility="{Binding HasChildren, Converter={StaticResource BoolToVis}}">
+                <TextBlock FontSize="10">
+                  <TextBlock.Style>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource Icon}">
+                      <Setter Property="Text" Value="&#xE76C;"/>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding EffectiveExpanded}" Value="True">
+                          <Setter Property="Text" Value="&#xE70D;"/>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </TextBlock.Style>
+                </TextBlock>
+              </Button>
+              <Grid Grid.Column="1" Width="18" Height="18" Margin="0,0,10,0">
+                <TextBlock Style="{StaticResource Icon}" Text="&#xE7EF;" FontSize="14" Foreground="{DynamicResource TextDim}"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Visibility="{Binding HasIcon, Converter={StaticResource BoolToVis}, ConverterParameter=invert}"/>
+                <Image Source="{Binding Icon}" Width="18" Height="18" RenderOptions.BitmapScalingMode="HighQuality"
+                       Visibility="{Binding HasIcon, Converter={StaticResource BoolToVis}}"/>
+              </Grid>
+              <!-- Un solo texto: si falta espacio se recorta primero la descripción y al final el nombre, siempre con «…». -->
+              <TextBlock Grid.Column="2" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" ToolTip="{Binding Title}"><Run
+                  Text="{Binding Title, Mode=OneWay}" FontSize="13" FontWeight="SemiBold"/><Run
+                  Text="{Binding CountText, Mode=OneWay}" FontSize="12.5" Foreground="{DynamicResource TextMuted}"/><Run
+                  Text="&#x2003;" FontSize="12"/><Run
+                  Text="{Binding Subtitle, Mode=OneWay}" FontSize="12" Foreground="{DynamicResource TextDim}"/></TextBlock>
+            </Grid>
+
+            <TextBlock Grid.Column="1" Text="{Binding CpuText}" FontSize="12.5" HorizontalAlignment="Right" VerticalAlignment="Center">
+              <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                  <Setter Property="Foreground" Value="{DynamicResource TextBody}"/>
+                  <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsHot}" Value="True">
+                      <Setter Property="Foreground" Value="{DynamicResource Warning}"/>
+                      <Setter Property="FontWeight" Value="SemiBold"/>
+                    </DataTrigger>
+                  </Style.Triggers>
+                </Style>
+              </TextBlock.Style>
+            </TextBlock>
+            <TextBlock Grid.Column="2" Text="{Binding MemoryText}" FontSize="12.5" Foreground="{DynamicResource TextBody}"
+                       HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="3" Text="{Binding ThreadsText}" FontSize="12.5" Foreground="{DynamicResource TextMuted}"
+                       HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Button Grid.Column="4" HorizontalAlignment="Right" Command="{Binding EndCommand}" ToolTip="{Binding EndTooltip}"
+                    ToolTipService.ShowOnDisabled="True">
+              <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource RowIconButton}">
+                  <Setter Property="Visibility" Value="Hidden"/>
+                  <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=ListBoxItem}}" Value="True">
+                      <Setter Property="Visibility" Value="Visible"/>
+                    </DataTrigger>
+                    <Trigger Property="IsKeyboardFocused" Value="True">
+                      <Setter Property="Visibility" Value="Visible"/>
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                      <Setter Property="Opacity" Value="0.35"/>
+                    </Trigger>
+                  </Style.Triggers>
+                </Style>
+              </Button.Style>
+              <TextBlock FontSize="11">
+                <TextBlock.Style>
+                  <Style TargetType="TextBlock" BasedOn="{StaticResource Icon}">
+                    <Setter Property="Text" Value="&#xE711;"/>
+                    <Style.Triggers>
+                      <DataTrigger Binding="{Binding CanEnd}" Value="False">
+                        <Setter Property="Text" Value="&#xE72E;"/>
+                      </DataTrigger>
+                    </Style.Triggers>
+                  </Style>
+                </TextBlock.Style>
+              </TextBlock>
+            </Button>
+          </Grid>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+
+    <TextBlock Grid.Row="2" Text="{Binding EmptyText}" Foreground="{DynamicResource TextDim}" FontSize="13"
+               HorizontalAlignment="Center" Margin="0,40,0,0"
+               Visibility="{Binding IsEmpty, Converter={StaticResource BoolToVis}}"/>
+  </Grid>
+</UserControl>
