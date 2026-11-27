@@ -1,0 +1,19 @@
+{
+    "version": "1.1.10",
+    "description": "Privacy, cleanup and performance for Windows 10 and 11. Every change can be undone. Doesn't use the Internet.",
+    "homepage": "https://github.com/JulianR87/TURBiX",
+    "license": "MIT",
+    "url": "https://github.com/JulianR87/TURBiX/releases/download/v1.1.10/TURBiX.exe",
+    "hash": "40027beda6ffd33753a28a305c91db736b2fcbcba8563454d278c1520a89b5fb",
+    "bin": "TURBiX.exe",
+    "shortcuts": [
+        [
+            "TURBiX.exe",
+            "TURBiX"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/JulianR87/TURBiX/releases/download/v$version/TURBiX.exe"
+    }
+}
