@@ -4,6 +4,11 @@ Ce fichier s’affiche dans TURBiX, sur la page « Nouveautés ». Chaque vers
 avec les changements utiles résumés en quelques mots. Chaque version commence par
 `## X.Y.Z` (sans date) et chaque changement est une puce `- **Titre.** Courte description.`
 
+## 1.1.10
+
+- **Installation silencieuse.** `TURBiX-Setup.exe --silent` installe sans afficher de fenêtre et `--uninstall --silent` désinstalle sans poser de question. Pratique pour équiper plusieurs PC et pour les gestionnaires de paquets.
+- **Corrections après des tests sous Windows 10 et 11.** Ouvrir la fenêtre alors que TURBiX fonctionnait déjà à côté de l’horloge affichait un message « Erreur inattendue » ; ce n’est plus le cas. Sur les petits écrans, la fenêtre ne dépasse plus par le haut. Les notifications de Windows affichent désormais le nom TURBiX.
+
 ## 1.1.9
 
 - **Nouveau nom : TURBiX.** Le programme, le programme d’installation, les raccourcis et la documentation s’écrivent désormais TURBiX. Les fichiers s’appellent maintenant `TURBiX.exe` et `TURBiX-Setup.exe` ; vos paramètres et vos sauvegardes restent où ils étaient.

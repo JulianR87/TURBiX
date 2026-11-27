@@ -1,0 +1,23 @@
+name: Translation fix
+description: A text that is wrong, unnatural or too long in your language.
+labels: [documentation]
+body:
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      options: [Español, English, Português (Brasil), Français, Deutsch, Русский, A new language]
+    validations:
+      required: true
+  - type: textarea
+    id: text
+    attributes:
+      label: Current text and where it appears
+    validations:
+      required: true
+  - type: textarea
+    id: better
+    attributes:
+      label: How it should read
+    validations:
+      required: true

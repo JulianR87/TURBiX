@@ -673,24 +673,26 @@
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="ContentControl">
+          <!-- La animación arranca cuando se carga el propio dibujo (no el control): si la ventana se creó oculta
+               junto al reloj, el control se «carga» antes de tener plantilla y un disparador ahí no encuentra a quién girar. -->
           <Grid RenderTransformOrigin="0.5,0.5">
             <Grid.RenderTransform>
-              <RotateTransform x:Name="Rot" Angle="0"/>
+              <RotateTransform Angle="0"/>
             </Grid.RenderTransform>
+            <Grid.Triggers>
+              <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard>
+                  <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
+                                     From="0" To="360" Duration="0:0:0.9" RepeatBehavior="Forever"/>
+                  </Storyboard>
+                </BeginStoryboard>
+              </EventTrigger>
+            </Grid.Triggers>
             <Ellipse Stroke="{DynamicResource SpinnerTrack}" StrokeThickness="3"/>
             <Path Stroke="{DynamicResource ProgressFill}" StrokeThickness="3" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
                   Data="M 11,1.5 A 9.5,9.5 0 0 1 20.5,11" Stretch="None"/>
           </Grid>
-          <ControlTemplate.Triggers>
-            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-              <BeginStoryboard>
-                <Storyboard>
-                  <DoubleAnimation Storyboard.TargetName="Rot" Storyboard.TargetProperty="Angle"
-                                   From="0" To="360" Duration="0:0:0.9" RepeatBehavior="Forever"/>
-                </Storyboard>
-              </BeginStoryboard>
-            </EventTrigger>
-          </ControlTemplate.Triggers>
         </ControlTemplate>
       </Setter.Value>
     </Setter>

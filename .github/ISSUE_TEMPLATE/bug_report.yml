@@ -1,0 +1,31 @@
+name: Bug report
+description: Something doesn't work as it should. English or Spanish.
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: TURBiX version
+      description: Shown at the bottom of the sidebar, for example 1.1.10. Say also if it's the installer or the portable file.
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      description: For example Windows 11 23H2 Home, 64-bit.
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Activity log
+      description: Open the "Activity log" page, select "Copy" and paste it here. It contains no personal data beyond what TURBiX did.
+      render: text

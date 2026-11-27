@@ -28,6 +28,10 @@ namespace Turbix
         {
             InitializeComponent();
             DataContext = _vm;
+            // En pantallas chicas (1024x768, portátiles con escala alta) la ventana no debe salirse por arriba.
+            var work = SystemParameters.WorkArea;
+            if (Height > work.Height) Height = Math.Max(MinHeight, work.Height);
+            if (Width > work.Width) Width = Math.Max(MinWidth, work.Width);
             _vm.NavigateRequested += Navigate;
             // Mientras hay una tarea en curso no se puede tocar nada por debajo, tampoco con el teclado.
             _vm.PropertyChanged += (s, e) =>

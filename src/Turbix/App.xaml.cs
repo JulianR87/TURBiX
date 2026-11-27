@@ -44,11 +44,21 @@ namespace Turbix
 
             // Instalador y desinstalador (ver Core/Installer.cs). No abren la ventana principal.
             // La primera ventana que se crea no debe cerrar el programa al cerrarse (son diálogos).
+            // «--silent»: sin ventanas ni preguntas (administradores de paquetes, instalaciones desatendidas).
+            // Códigos de salida: 0 = bien, 1 = error, 2 = TURBiX está abierto y hay que cerrarlo antes.
+            bool silent = e.Args.Any(a => Installer.IsSilentArg(a));
 #if SETUP
             if (Installer.HasPayload)
             {
                 ShutdownMode = ShutdownMode.OnExplicitShutdown;
                 Logger.FileEnabled = false;
+                if (silent)
+                {
+                    if (Installer.IsTurbixRunning()) { Shutdown(2); return; }
+                    bool desktop = !e.Args.Any(a => string.Equals(a, "--no-desktop", StringComparison.OrdinalIgnoreCase));
+                    Shutdown(Installer.Install(desktop) == null ? 0 : 1);
+                    return;
+                }
                 ThemeManager.Initialize(persist: false);
                 var setup = new SetupWindow();
                 MainWindow = setup;
@@ -67,6 +77,7 @@ namespace Turbix
                 int at = Array.FindIndex(e.Args, a => string.Equals(a, Installer.CleanupArg, StringComparison.OrdinalIgnoreCase));
                 if (at >= 0 && at + 2 < e.Args.Length) int.TryParse(e.Args[at + 2], out pid);
                 string leftover = Installer.RunCleanup(cleanupDir, pid);
+                if (silent) { Shutdown(leftover == null ? 0 : 1); return; }
                 string done = L.F("uninstall.done.text", AppPaths.Root);
                 if (leftover != null) done += "\n\n" + L.F("uninstall.done.leftover", leftover);
                 Dialogs.Show(L.T("uninstall.done.title"), done, leftover == null ? DialogKind.Success : DialogKind.Warning);
@@ -77,6 +88,12 @@ namespace Turbix
             {
                 ShutdownMode = ShutdownMode.OnExplicitShutdown;
                 Logger.FileEnabled = false;
+                if (silent)
+                {
+                    if (Installer.IsTurbixRunning()) { Shutdown(2); return; }
+                    Shutdown(Installer.Uninstall(true) == null ? 0 : 1);
+                    return;
+                }
                 ThemeManager.Initialize(persist: false);
                 RunUninstall();
                 Shutdown();
@@ -152,6 +169,9 @@ namespace Turbix
             if (!atLogon)
             {
                 main.Show();
+#if SELFTEST
+                if (e.Args.Contains("--selftest-tray")) Testing.TrayTest.Run(main, GetArg(e.Args, "--out"));
+#endif
                 return;
             }
 
@@ -294,7 +314,7 @@ namespace Turbix
             while (Installer.IsTurbixRunning())
                 if (!Dialogs.Confirm(L.T("setup.running.title"), L.T("setup.running.text"), L.T("setup.retry"))) return;
 
-            string error = Installer.Uninstall();
+            string error = Installer.Uninstall(false);
             if (error != null)
             {
                 Dialogs.Show(L.T("uninstall.error.title"), error, DialogKind.Error);

@@ -15,6 +15,15 @@
 
 # TURBiX
 
+<p align="center">
+  <a href="https://github.com/JulianR87/TURBiX/releases/latest"><img src="https://img.shields.io/github/v/release/JulianR87/TURBiX?color=C8F031&labelColor=12140F" alt="release"></a>
+  <a href="https://github.com/JulianR87/TURBiX/releases"><img src="https://img.shields.io/github/downloads/JulianR87/TURBiX/total?color=C8F031&labelColor=12140F" alt="downloads"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/JulianR87/TURBiX?color=C8F031&labelColor=12140F" alt="license"></a>
+  <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-C8F031?labelColor=12140F" alt="Windows 10 | 11">
+</p>
+
+<p align="center"><b><a href="https://github.com/JulianR87/TURBiX/releases/latest">Descargar la última versión</a></b></p>
+
 TURBiX es un programa gratuito y de código abierto para **Windows 10 y Windows 11** que hace cuatro cosas:
 
 - **Desactiva la telemetría** y la recopilación de datos de Windows y de los programas más comunes.
@@ -23,6 +32,15 @@ TURBiX es un programa gratuito y de código abierto para **Windows 10 y Windows 
 - **Limpia archivos temporales, cachés y restos** que ocupan espacio sin motivo.
 
 Es un único `TURBiX.exe`. Se puede usar sin instalar (también hay un instalador para quien lo prefiera) y no hay que descargar nada más: usa .NET Framework 4.6.2, que ya viene incluido en Windows 10 (1607 o posterior) y en Windows 11. Funciona en equipos de 32 y 64 bits y no usa Internet.
+
+<p align="center">
+  <img src="assets/screenshots/privacy.es.png" alt="TURBiX: Privacidad" width="49%">
+  <img src="assets/screenshots/cleanup.es.png" alt="TURBiX: Limpieza" width="49%">
+</p>
+<p align="center">
+  <img src="assets/screenshots/performance.es.png" alt="TURBiX: Rendimiento" width="49%">
+  <img src="assets/screenshots/fixes.es.png" alt="TURBiX: Soluciones" width="49%">
+</p>
 
 ## Contenido
 
@@ -181,6 +199,8 @@ La carpeta de `ProgramData` solo la pueden modificar los administradores. TURBiX
 | `--lang es\|en\|pt\|fr\|de\|ru` | Abre TURBiX en ese idioma, sin cambiar la preferencia guardada. |
 | `--startup` | Arranca junto al reloj, sin mostrar la ventana. Es lo que usa la tarea de inicio. |
 | `--uninstall` | Desinstala la copia instalada. Es lo que llama Windows desde Configuración › Aplicaciones. |
+| `TURBiX-Setup.exe --silent` | Instala sin mostrar ninguna ventana (para gestores de paquetes e instalaciones desatendidas). Con `--no-desktop` no crea el acceso directo del escritorio. |
+| `--uninstall --silent` | Desinstala sin preguntar. |
 
 ## Preguntas frecuentes
 

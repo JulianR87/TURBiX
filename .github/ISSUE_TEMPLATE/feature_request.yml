@@ -1,0 +1,15 @@
+name: Suggestion
+description: A new setting, a cleanup category or an improvement. English or Spanish.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like TURBiX to do?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it useful?
+      description: If it's a Windows setting, a link to Microsoft's documentation helps a lot. TURBiX only adds settings with a real, documented effect that can be undone.

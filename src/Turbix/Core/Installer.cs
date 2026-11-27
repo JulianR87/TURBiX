@@ -28,6 +28,15 @@ namespace Turbix.Core
     {
         public const string UninstallArg = "--uninstall";
         public const string CleanupArg = "--uninstall-cleanup";
+        public const string SilentArg = "--silent";
+
+        /// <summary>«--silent» y las formas habituales de otros instaladores (/S, /silent, /quiet, /verysilent).</summary>
+        public static bool IsSilentArg(string arg)
+        {
+            if (string.IsNullOrEmpty(arg)) return false;
+            string a = arg.Trim().ToLowerInvariant();
+            return a == SilentArg || a == "/s" || a == "/silent" || a == "/quiet" || a == "/verysilent" || a == "-s";
+        }
         public const string InstanceMutex = @"Global\Turbix.SingleInstance";
 
         private const string PayloadResource = "Turbix.Payload.exe";
@@ -134,6 +143,7 @@ namespace Turbix.Core
                 key.SetValue("DisplayIcon", InstalledExe + ",0");
                 key.SetValue("InstallLocation", InstallDir);
                 key.SetValue("UninstallString", "\"" + InstalledExe + "\" " + UninstallArg);
+                key.SetValue("QuietUninstallString", "\"" + InstalledExe + "\" " + UninstallArg + " " + SilentArg);
                 key.SetValue("InstallDate", DateTime.Now.ToString("yyyyMMdd"));
                 key.SetValue("EstimatedSize", (int)Math.Min(int.MaxValue, sizeKb), RegistryValueKind.DWord);
                 key.SetValue("NoModify", 1, RegistryValueKind.DWord);
@@ -148,7 +158,7 @@ namespace Turbix.Core
         /// El exe se borra después, desde una copia temporal (ver <see cref="RunCleanup"/>).
         /// Devuelve null si salió bien, o el mensaje de error.
         /// </summary>
-        public static string Uninstall()
+        public static string Uninstall(bool silent)
         {
             try
             {
@@ -172,7 +182,7 @@ namespace Turbix.Core
                 string copy = Path.Combine(AppPaths.Root, "uninstall-" + Guid.NewGuid().ToString("N") + ".exe");
                 File.Copy(CurrentExe, copy, true);
                 Process.Start(new ProcessStartInfo(copy,
-                    CleanupArg + " \"" + InstallDir + "\" " + Process.GetCurrentProcess().Id)
+                    CleanupArg + " \"" + InstallDir + "\" " + Process.GetCurrentProcess().Id + (silent ? " " + SilentArg : ""))
                 {
                     UseShellExecute = false,
                     WorkingDirectory = AppPaths.Root,

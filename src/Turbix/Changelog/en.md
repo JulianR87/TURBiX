@@ -4,6 +4,11 @@ This file is shown inside TURBiX, on the “What's new” page. Each version has
 with the changes that matter, kept short. Each version starts with
 `## X.Y.Z` (no date) and each change is a bullet `- **Title.** Short description.`
 
+## 1.1.10
+
+- **Silent install.** `TURBiX-Setup.exe --silent` installs without showing any window and `--uninstall --silent` uninstalls without asking. Useful for setting up several PCs and for package managers.
+- **Fixes after testing on Windows 10 and 11.** Opening the window while TURBiX was already running next to the clock showed an “Unexpected error” message; it no longer does. On small screens the window no longer goes off the top. Windows notifications now show the name TURBiX.
+
 ## 1.1.9
 
 - **New name: TURBiX.** The program, the installer, the shortcuts and the documentation are now written TURBiX. The files are now called `TURBiX.exe` and `TURBiX-Setup.exe`; your settings and backups stay where they were.

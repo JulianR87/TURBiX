@@ -15,6 +15,15 @@
 
 # TURBiX
 
+<p align="center">
+  <a href="https://github.com/JulianR87/TURBiX/releases/latest"><img src="https://img.shields.io/github/v/release/JulianR87/TURBiX?color=C8F031&labelColor=12140F" alt="release"></a>
+  <a href="https://github.com/JulianR87/TURBiX/releases"><img src="https://img.shields.io/github/downloads/JulianR87/TURBiX/total?color=C8F031&labelColor=12140F" alt="downloads"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/JulianR87/TURBiX?color=C8F031&labelColor=12140F" alt="license"></a>
+  <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-C8F031?labelColor=12140F" alt="Windows 10 | 11">
+</p>
+
+<p align="center"><b><a href="https://github.com/JulianR87/TURBiX/releases/latest">Скачать последнюю версию</a></b></p>
+
 TURBiX — бесплатная программа с открытым исходным кодом для **Windows 10 и Windows 11**. Она делает четыре вещи:
 
 - **Отключает телеметрию** и сбор данных в Windows и в самых распространённых программах.
@@ -23,6 +32,15 @@ TURBiX — бесплатная программа с открытым исхо�
 - **Удаляет временные файлы, кэш и остатки**, которые зря занимают место.
 
 Это один файл `TURBiX.exe`. Им можно пользоваться без установки (для тех, кому так удобнее, есть и установщик), и больше ничего скачивать не нужно: программа работает на .NET Framework 4.6.2, который уже входит в Windows 10 (1607 и новее) и Windows 11. TURBiX работает на 32- и 64-разрядных системах и не использует Интернет.
+
+<p align="center">
+  <img src="assets/screenshots/privacy.ru.png" alt="TURBiX: Конфиденциальность" width="49%">
+  <img src="assets/screenshots/cleanup.ru.png" alt="TURBiX: Очистка" width="49%">
+</p>
+<p align="center">
+  <img src="assets/screenshots/performance.ru.png" alt="TURBiX: Производительность" width="49%">
+  <img src="assets/screenshots/fixes.ru.png" alt="TURBiX: Исправления" width="49%">
+</p>
 
 ## Содержание
 
@@ -181,6 +199,8 @@ TURBiX сам выбирает язык Windows: **испанский, англ�
 | `--lang es\|en\|pt\|fr\|de\|ru` | Открывает TURBiX на этом языке, не меняя сохранённую настройку. |
 | `--startup` | Запускает TURBiX рядом с часами, не показывая окно. Этот параметр использует задание автозапуска. |
 | `--uninstall` | Удаляет установленную копию. Этот параметр вызывает Windows из раздела Параметры › Приложения. |
+| `TURBiX-Setup.exe --silent` | Устанавливает без окон (для менеджеров пакетов и автоматической установки). С `--no-desktop` ярлык на рабочем столе не создаётся. |
+| `--uninstall --silent` | Удаляет без вопросов. |
 
 ## Частые вопросы
 

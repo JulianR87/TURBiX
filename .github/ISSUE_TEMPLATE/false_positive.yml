@@ -1,0 +1,18 @@
+name: Antivirus false positive
+description: An antivirus flags TURBiX. Tell us which one so we can report it to the vendor.
+labels: [help wanted]
+body:
+  - type: input
+    id: av
+    attributes:
+      label: Antivirus and detection name
+      description: For example "VBA32 - Trojan.MSIL.InfoStealer.gen.B".
+    validations:
+      required: true
+  - type: input
+    id: file
+    attributes:
+      label: File and version
+      description: TURBiX.exe or TURBiX-Setup.exe, and the version. A VirusTotal link is welcome.
+    validations:
+      required: true

@@ -130,6 +130,13 @@ namespace Turbix.Views
 
         // ------------------------------------------------------------------ menú
 
+#if SELFTEST
+        /// <summary>Solo en la compilación de autoprueba: abrir y cerrar el menú sin ratón.</summary>
+        public static void ShowMenuForTest() => ShowMenu();
+
+        public static void CloseMenuForTest() { if (_menu != null) _menu.IsOpen = false; }
+#endif
+
         /// <summary>Solo para las capturas de documentación (--render): dibuja el menú en un PNG.</summary>
         public static async System.Threading.Tasks.Task RenderMenuAsync(string path)
         {

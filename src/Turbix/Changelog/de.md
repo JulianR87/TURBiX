@@ -4,6 +4,11 @@ Diese Datei wird in TURBiX auf der Seite „Neuigkeiten“ angezeigt. Jede Versi
 mit den wichtigen Änderungen in Kurzform. Jede Version beginnt mit
 `## X.Y.Z` (ohne Datum) und jede Änderung ist ein Punkt `- **Titel.** Kurze Beschreibung.`
 
+## 1.1.10
+
+- **Stille Installation.** `TURBiX-Setup.exe --silent` installiert, ohne ein Fenster anzuzeigen, und `--uninstall --silent` deinstalliert ohne Rückfrage. Praktisch für mehrere PCs und für Paketmanager.
+- **Korrekturen nach Tests unter Windows 10 und 11.** Beim Öffnen des Fensters, während TURBiX bereits neben der Uhr lief, erschien die Meldung „Unerwarteter Fehler“; das passiert nicht mehr. Auf kleinen Bildschirmen ragt das Fenster nicht mehr oben hinaus. Windows-Benachrichtigungen zeigen jetzt den Namen TURBiX.
+
 ## 1.1.9
 
 - **Neuer Name: TURBiX.** Programm, Installationsprogramm, Verknüpfungen und Dokumentation schreiben sich jetzt TURBiX. Die Dateien heißen nun `TURBiX.exe` und `TURBiX-Setup.exe`; Ihre Einstellungen und Sicherungen bleiben, wo sie waren.
