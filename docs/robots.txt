@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://julianr87.github.io/TURBiX/sitemap.xml

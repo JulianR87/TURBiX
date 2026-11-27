@@ -1,7 +1,7 @@
 # Rendimiento › Procesos
 
 perf.tab.processes = Procesos
-proc.help = Lo mismo que muestra el Administrador de tareas, pero agrupado: cada programa lleva debajo los procesos que abrió (un navegador, por ejemplo, abre uno por pestaña). Pulsa la flecha para desplegarlos. Plegado, la fila suma el consumo de todo el grupo.\n\nLos «Host de servicio» son servicios de Windows; se muestra cuál corre en cada uno.\n\n«Subprocesos» son los hilos de trabajo de cada proceso; es el mismo dato que ves en el Administrador de tareas.\n\nCon la X se cierra un proceso al instante, como «Finalizar tarea». Los procesos que Windows necesita para funcionar están bloqueados.
+proc.help = Lo mismo que muestra el Administrador de tareas, pero agrupado: cada programa lleva debajo los procesos que abrió (un navegador, por ejemplo, abre uno por pestaña). Pulsa la flecha para desplegarlos. Plegado, la fila suma el consumo de todo el grupo.\n\nLos «Host de servicio» son servicios de Windows, se muestra cuál corre en cada uno.\n\n«Subprocesos» son los hilos de trabajo de cada proceso, es el mismo dato que ves en el Administrador de tareas.\n\nCon la X se cierra un proceso al instante, como «Finalizar tarea». Los procesos que Windows necesita para funcionar están bloqueados.
 proc.search = Buscar proceso, PID o servicio
 proc.loading = Leyendo procesos…
 proc.noMatches = Ningún proceso coincide con la búsqueda.

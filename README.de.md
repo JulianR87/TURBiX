@@ -65,7 +65,7 @@ TURBiX ist eine einzige `TURBiX.exe`. Sie läuft ohne Installation (wer möchte,
 
 - **Alles lässt sich rückgängig machen.** Bevor TURBiX etwas ändert, speichert es den vorherigen Zustand. Im Bereich **Wiederherstellen** setzen Sie jede Sitzung mit Änderungen auf diesen Zustand zurück.
 - **Jede Option wird erklärt.** Neben jeder steht eine Schaltfläche **?**, die in wenigen Zeilen sagt, was die Option tut und wie sie sich auswirkt.
-- **Erst prüfen, dann ändern.** Bereinigung, Diagnose, Zustand und Registrierung werden zuerst nur untersucht, ohne etwas zu ändern; was angewendet wird, entscheiden Sie.
+- **Erst prüfen, dann ändern.** Bereinigung, Diagnose, Zustand und Registrierung werden zuerst nur untersucht, ohne etwas zu ändern, was angewendet wird, entscheiden Sie.
 - **Ehrlich.** TURBiX verspricht keine Wunder: Liegt es an einer alten Festplatte oder an zu wenig Arbeitsspeicher, sagt es das. „Tricks“, die etwas kaputt machen, sind nicht dabei.
 - **Nutzt kein Internet.** TURBiX lädt nichts herunter, sendet keine Daten und kennt weder Konten noch Werbung.
 - **Die Sicherheit bleibt unberührt.** Windows Update, Microsoft Defender, SmartScreen und die Firewall bleiben, wie sie sind.
@@ -91,13 +91,13 @@ Temporäre Dateien der Benutzer und von Windows · Windows Update-Downloads · C
 
 Optional: Shadercache · Miniaturansichten · Treiberinstallationen · Papierkorb · zuletzt verwendete Elemente · Prefetch · Ereignisprotokolle · WinSxS-Bereinigung mit DISM · vorherige Windows-Installation (Windows.old und Reste von Updates, über die Datenträgerbereinigung von Windows).
 
-Zuerst wird **analysiert** (nur lesend) und angezeigt, wie viel jede Kategorie belegt; danach entscheiden Sie, was bereinigt wird.
+Zuerst wird **analysiert** (nur lesend) und angezeigt, wie viel jede Kategorie belegt, danach entscheiden Sie, was bereinigt wird.
 
 ### Leistung
 
 - **Autostart.** Listet die Programme auf, die sich bei der Anmeldung von selbst öffnen (Registrierung, Autostart-Ordner und Apps aus dem Microsoft Store), und schaltet sie per Schalter ein oder aus. Dahinter steckt derselbe Mechanismus wie im Task-Manager: Deinstalliert wird nichts.
 - **Prozesse.** Alle laufenden Prozesse wie im Task-Manager, mit Prozessor, Arbeitsspeicher und Threads. Die Prozesse, die ein Programm startet, lassen sich darunter aufklappen, jeder „Diensthost“ zeigt, welchen Dienst er ausführt, und ein Task lässt sich beenden (Prozesse, die Windows braucht, sind gesperrt).
-- **Arbeitsspeicher.** Auslastung in Echtzeit, die Programme mit dem größten Verbrauch, eine Schaltfläche zum Freigeben von Speicher (verkleinert die Arbeitssätze und leert die Standbyliste) und eine automatische Freigabe alle 5, 10, 15, 30 oder 60 Minuten, solange TURBiX geöffnet ist, auch wenn es nur neben der Uhr läuft. Eine Windows-Benachrichtigung meldet, wie viel Speicher freigegeben wurde. Speicher freizugeben hilft, wenn er fast voll ist; einen PC, der genug davon hat, macht es nicht schneller.
+- **Arbeitsspeicher.** Auslastung in Echtzeit, die Programme mit dem größten Verbrauch, eine Schaltfläche zum Freigeben von Speicher (verkleinert die Arbeitssätze und leert die Standbyliste) und eine automatische Freigabe alle 5, 10, 15, 30 oder 60 Minuten, solange TURBiX geöffnet ist, auch wenn es nur neben der Uhr läuft. Eine Windows-Benachrichtigung meldet, wie viel Speicher freigegeben wurde. Speicher freizugeben hilft, wenn er fast voll ist, einen PC, der genug davon hat, macht es nicht schneller.
 - **Spiele.** 13 Einstellungen: Spielmodus, Hintergrundaufzeichnung (Game DVR), Hinweise der Game Bar, Tastenkombinationen für Barrierefreiheit, Mausbeschleunigung\*, Multimedia-Priorität, hardwarebeschleunigte GPU-Planung\*, Energiesparplan „Höchstleistung“\*, Energiedrosselung\*, Edge im Hintergrund, Store-Apps im Hintergrund\*, Widgets\* und visuelle Effekte\*.
 
 Bewusst nicht dabei sind „Tricks“, die etwas kaputt machen oder nichts bewirken: die Xbox-Dienste, SysMain oder die Auslagerungsdatei abschalten, Änderungen mit `bcdedit` und alles, was die Sicherheit schwächt.
@@ -114,9 +114,9 @@ Der Zustand jeder Komponente, so wie sie ihn an Windows meldet: Laufwerke (S.M.A
 
 ### Problemlösung
 
-- **Diagnose** (auf der Startseite). Prüft die häufigsten Ursachen für einen langsamen PC: Festplatte (HDD) oder Laufwerk mit Fehlern, wenig Speicherplatz, wenig Arbeitsspeicher, zu viele Programme im Autostart, Tage ohne Neustart, ausstehender Neustart und Energiesparplan. Es wird nur gelesen; zu jedem Punkt steht, was zu tun ist.
+- **Diagnose** (auf der Startseite). Prüft die häufigsten Ursachen für einen langsamen PC: Festplatte (HDD) oder Laufwerk mit Fehlern, wenig Speicherplatz, wenig Arbeitsspeicher, zu viele Programme im Autostart, Tage ohne Neustart, ausstehender Neustart und Energiesparplan. Es wird nur gelesen, zu jedem Punkt steht, was zu tun ist.
 - **Reparieren.** Die Standardreparaturen von Windows per Schaltfläche: SFC, DISM RestoreHealth, Datenträgerprüfung (`chkdsk /scan`), Netzwerk zurücksetzen, Druckwarteschlange freimachen und Explorer neu starten.
-- **Windows-Registrierung.** Sucht Einträge, die auf nicht mehr vorhandene Dateien zeigen (defekte Autostart-Einträge, Phantomprogramme in der Deinstallationsliste, Pfade und Bibliotheken gelöschter Programme, Namenscache), und entfernt sie; vorher wird eine Sicherung angelegt, die sich wiederherstellen lässt. Markiert wird nur, was sich nachprüfen lässt; COM-Klassen und Dateizuordnungen bleiben unberührt.
+- **Windows-Registrierung.** Sucht Einträge, die auf nicht mehr vorhandene Dateien zeigen (defekte Autostart-Einträge, Phantomprogramme in der Deinstallationsliste, Pfade und Bibliotheken gelöschter Programme, Namenscache), und entfernt sie, vorher wird eine Sicherung angelegt, die sich wiederherstellen lässt. Markiert wird nur, was sich nachprüfen lässt, COM-Klassen und Dateizuordnungen bleiben unberührt.
 - **Windows-Einstellungen.** Dateinamenerweiterungen anzeigen, Suchhighlights, Kontohinweise im Startmenü, „Task beenden“ in der Taskleiste, klassisches Kontextmenü\*, Explorer öffnet „Dieser PC“\*, Speicheroptimierung, Schnellstart\*, Ruhezustand\* und SysMain auf Festplatten\* (wird nur angeboten, wenn Windows auf einer HDD liegt). Taskleiste und Start: Edge-Verknüpfung nach Updates, die Schaltflächen „Jetzt besprechen“, „Chat“ und Cortana, Taskansicht\*, Suche als Symbol\*, Taskleiste linksbündig\*, zuletzt verwendete Dateien\* und ausgeblendete Dateien\*. Optionale Dienste: Fax, Demomodus für den Einzelhandel, Offlinekarten, Windows Media Player-Netzwerkfreigabe, Windows-Insider-Programm\*, Programmkompatibilitäts-Assistent\*, Druckwarteschlange\* und Suchindizierung\*.
 
 
@@ -125,9 +125,9 @@ Der Zustand jeder Komponente, so wie sie ihn an Windows meldet: Laufwerke (S.M.A
 Auf der Seite **Einstellungen** steht alles, was sich an TURBiX selbst einstellen lässt:
 
 - **Darstellung und Sprache.** Helles oder dunkles Design oder dasselbe wie Windows. Die Sprache richtet sich nach Windows, lässt sich aber von Hand ändern.
-- **TURBiX beim Windows-Start öffnen.** TURBiX bleibt neben der Uhr, ohne das Fenster zu öffnen, damit die automatische Freigabe von Arbeitsspeicher immer aktiv ist. Weil TURBiX Administratorrechte braucht, legt es dafür in der Aufgabenplanung eine Aufgabe namens „TURBiX“ an; sie wird gelöscht, wenn Sie die Option ausschalten.
+- **TURBiX beim Windows-Start öffnen.** TURBiX bleibt neben der Uhr, ohne das Fenster zu öffnen, damit die automatische Freigabe von Arbeitsspeicher immer aktiv ist. Weil TURBiX Administratorrechte braucht, legt es dafür in der Aufgabenplanung eine Aufgabe namens „TURBiX“ an, sie wird gelöscht, wenn Sie die Option ausschalten.
 - **Symbol neben der Uhr.** Ein Doppelklick öffnet das Fenster. Per Rechtsklick: TURBiX öffnen, Arbeitsspeicher freigeben, temporäre Dateien bereinigen, Einstellungen öffnen oder beenden. Die Aktionen aus dem Menü melden ihr Ergebnis mit einer Windows-Benachrichtigung.
-- **Beim Schließen des Fensters weiterlaufen.** Das X blendet das Fenster aus, und TURBiX bleibt neben der Uhr. Zum vollständigen Schließen dient „TURBiX beenden“; davor wird nachgefragt (das lässt sich abschalten).
+- **Beim Schließen des Fensters weiterlaufen.** Das X blendet das Fenster aus, und TURBiX bleibt neben der Uhr. Zum vollständigen Schließen dient „TURBiX beenden“, davor wird nachgefragt (das lässt sich abschalten).
 - **Automatische Freigabe von Arbeitsspeicher.** Wie oft, ob nur bei einer Auslastung über 80 % und ob jedes Mal eine Benachrichtigung erscheint.
 - **Daten.** Den Datenordner öffnen und alle Optionen auf den Auslieferungszustand zurücksetzen.
 
@@ -176,7 +176,7 @@ Die Deinstallation von TURBiX macht die Änderungen an Windows nicht rückgängi
 
 ## Sprachen
 
-TURBiX erscheint von selbst in der Sprache von Windows: **Spanisch, Englisch, Portugiesisch (Brasilien), Französisch, Deutsch und Russisch**. Bei jeder anderen Sprache erscheint es auf Englisch. Unter **Einstellungen** können Sie eine andere wählen; die Änderung wirkt beim nächsten Start von TURBiX.
+TURBiX erscheint von selbst in der Sprache von Windows: **Spanisch, Englisch, Portugiesisch (Brasilien), Französisch, Deutsch und Russisch**. Bei jeder anderen Sprache erscheint es auf Englisch. Unter **Einstellungen** können Sie eine andere wählen, die Änderung wirkt beim nächsten Start von TURBiX.
 
 Die Texte liegen in einfachen Textdateien (`src/Turbix/Strings/<Bereich>.<Sprache>.txt`), eine pro Sprache. Die Anleitung zum Korrigieren oder Hinzufügen einer Übersetzung steht in [`tools/TRANSLATING.de.md`](tools/TRANSLATING.de.md).
 
@@ -227,7 +227,7 @@ Laden Sie die neue Version herunter. Mit dem Installationsprogramm installieren 
 
 ## Bekannte Einschränkungen
 
-- Eine lange Aufgabe lässt sich nicht mittendrin abbrechen; solange sie läuft, lässt sich TURBiX nicht schließen.
+- Eine lange Aufgabe lässt sich nicht mittendrin abbrechen, solange sie läuft, lässt sich TURBiX nicht schließen.
 - Rückgängig gemacht wird die ganze Sitzung, nicht eine einzelne Einstellung.
 - Wird TURBiX mit einem anderen Administratorkonto als Ihrem geöffnet, gelten die Einstellungen pro Benutzer für dieses Konto. Die Diagnose weist darauf hin.
 - „Autostart“ listet keine geplanten Aufgaben auf, die bei der Anmeldung ausgeführt werden.
@@ -263,7 +263,7 @@ tools/           Prüfskript für die Texte und Übersetzungsanleitung
 assets/brand/    Logo und Banner
 ```
 
-Um eine Einstellung hinzuzufügen, bearbeiten Sie `Tweaks/TweakCatalog.cs` (Datenschutz), `GamingCatalog.cs` oder `WindowsCatalog.cs`. Jede Einstellung ist eine Liste von Aktionen für Registrierung, Dienste oder Aufgaben; um Sicherung und Rücknahme kümmert sich die Engine. Um eine Bereinigungskategorie hinzuzufügen, bearbeiten Sie `Cleanup/CleanupCatalog.cs`. Jeder sichtbare Text gehört nach `Strings`, in allen sechs Sprachen; `python tools/check_strings.py` prüft, dass keiner fehlt.
+Um eine Einstellung hinzuzufügen, bearbeiten Sie `Tweaks/TweakCatalog.cs` (Datenschutz), `GamingCatalog.cs` oder `WindowsCatalog.cs`. Jede Einstellung ist eine Liste von Aktionen für Registrierung, Dienste oder Aufgaben, um Sicherung und Rücknahme kümmert sich die Engine. Um eine Bereinigungskategorie hinzuzufügen, bearbeiten Sie `Cleanup/CleanupCatalog.cs`. Jeder sichtbare Text gehört nach `Strings`, in allen sechs Sprachen, `python tools/check_strings.py` prüft, dass keiner fehlt.
 
 ## Marke
 
@@ -288,7 +288,7 @@ Wenn TURBiX Ihnen Zeit gespart oder einen lahmen PC wieder flott gemacht hat, k�
 | **Ethereum (ETH)** | BEP20 (BNB Smart Chain) | `0xC1162610b1A6b8532f4233Db598F624D8EF4d2C4` |
 | **Tether (USDT)** | BEP20 (BNB Smart Chain) | `0xC1162610b1A6b8532f4233Db598F624D8EF4d2C4` |
 
-> **Wichtig: Prüfen Sie vor dem Senden das Netzwerk.** BTC nur über das Bitcoin-Netzwerk; ETH und USDT nur über das BEP20-Netzwerk. Eine Überweisung über ein anderes Netzwerk geht verloren und lässt sich nicht zurückholen.
+> **Wichtig: Prüfen Sie vor dem Senden das Netzwerk.** BTC nur über das Bitcoin-Netzwerk, ETH und USDT nur über das BEP20-Netzwerk. Eine Überweisung über ein anderes Netzwerk geht verloren und lässt sich nicht zurückholen.
 
 Danke, dass Sie helfen, TURBiX frei zu halten.
 

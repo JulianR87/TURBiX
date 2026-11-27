@@ -16,7 +16,7 @@ tools.diag.failed = The check couldn't be completed.
 tools.diag.log.error = Diagnostics: {0}
 
 # ------------------------------------------------------------------ Repair
-tools.repair.note = These are the repairs Microsoft support recommends, using the tools built into Windows. Use them when you have the problem they describe; there's no need to run them “just in case”. Everything they do is written to the Activity log.
+tools.repair.note = These are the repairs Microsoft support recommends, using the tools built into Windows. Use them when you have the problem they describe, there's no need to run them “just in case”. Everything they do is written to the Activity log.
 tools.repair.run = Run
 tools.repair.takes = Takes {0}
 tools.repair.helpDuration = Takes about {0}.
@@ -53,7 +53,7 @@ repair.chkdsk.help = Runs chkdsk /scan on the Windows drive. It's an online scan
 repair.chkdsk.log = Checking drive {0} (chkdsk /scan)
 repair.chkdsk.status = Scanning drive {0}
 repair.chkdsk.ok = No errors were found on the disk.
-repair.chkdsk.fail = The scan found something to look at (code {0}). See the Activity log. If it asks for a repair, open a command prompt as administrator and run “chkdsk {1} /f”; it will run at the next restart.
+repair.chkdsk.fail = The scan found something to look at (code {0}). See the Activity log. If it asks for a repair, open a command prompt as administrator and run “chkdsk {1} /f”, it will run at the next restart.
 
 repair.network.name = Reset the network
 repair.network.summary = Fixes “connected, no internet” and pages that won't load.
@@ -94,7 +94,7 @@ repair.explorer.logDone = Windows Explorer restarted.
 repair.explorer.done = Windows Explorer was restarted.
 
 # ------------------------------------------------------------------ Windows Registry
-regfix.note = TURBiX looks for registry entries that point to programs or files that no longer exist: broken startup items, “ghost” programs in the uninstall list and leftovers from deleted programs. Removing them stops error messages, but it won't make your PC any faster; no registry cleaner does. Only entries that can be verified are flagged, and everything is backed up before it's deleted.
+regfix.note = TURBiX looks for registry entries that point to programs or files that no longer exist: broken startup items, “ghost” programs in the uninstall list and leftovers from deleted programs. Removing them stops error messages, but it won't make your PC any faster, no registry cleaner does. Only entries that can be verified are flagged, and everything is backed up before it's deleted.
 regfix.scan = Find problems
 regfix.help = What gets checked:\n\n• Broken startup: programs Windows tries to open at startup that no longer exist.\n• Ghost program: listed as installed, but its files and uninstaller are gone.\n• App path and Shared DLL: references to deleted files.\n• Name cache: names of programs that are no longer there.\n\nWhat is NOT touched: COM classes, file associations, services or anything that can't be verified. Nor anything on removable or network drives, since they may simply be disconnected.
 regfix.footer = Each entry is backed up before it's deleted. You can get it back from Restore.
@@ -200,7 +200,7 @@ wintweak.fastStartup.help = With Fast startup, shutting down doesn't fully turn 
 wintweak.fastStartup.warning = On PCs with a hard drive, startup will take a few seconds longer. With an SSD you'll hardly notice.
 wintweak.sysmainHdd.name = SysMain on hard drives
 wintweak.sysmainHdd.summary = Stops the program preloading that keeps the disk at 100%.
-wintweak.sysmainHdd.help = SysMain (formerly Superfetch) preloads the programs you use most into memory. On an SSD it helps and should stay on. On a hard drive (HDD) with little memory it can keep the disk at 100% for minutes after you turn the PC on. TURBiX only offers this setting when Windows is installed on an HDD; on an SSD it shows “Doesn't apply”.
+wintweak.sysmainHdd.help = SysMain (formerly Superfetch) preloads the programs you use most into memory. On an SSD it helps and should stay on. On a hard drive (HDD) with little memory it can keep the disk at 100% for minutes after you turn the PC on. TURBiX only offers this setting when Windows is installed on an HDD, on an SSD it shows “Doesn't apply”.
 wintweak.sysmainHdd.warning = Programs may take a little longer to open the first time.
 wintweak.hibernation.name = Turn off hibernation
 wintweak.hibernation.summary = Frees several GB of disk space (the hiberfil.sys file).
@@ -224,7 +224,7 @@ wintweak.taskView.summary = Removes the virtual desktops button from the taskbar
 wintweak.taskView.help = Removes the Task View button from the taskbar. The feature is still there with Win+Tab.
 wintweak.searchIcon.name = Search as an icon
 wintweak.searchIcon.summary = Replaces the taskbar search box with a small icon.
-wintweak.searchIcon.help = The search box takes up a lot of room on the taskbar. With this setting only the magnifier stays; you can also search by pressing the Windows key and typing.
+wintweak.searchIcon.help = The search box takes up a lot of room on the taskbar. With this setting only the magnifier stays, you can also search by pressing the Windows key and typing.
 wintweak.taskbarLeft.name = Taskbar aligned left
 wintweak.taskbarLeft.summary = The Start button goes back to the corner, like in Windows 10.
 wintweak.taskbarLeft.help = Windows 11 centers the taskbar icons. This setting aligns them to the left.

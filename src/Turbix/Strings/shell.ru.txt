@@ -99,7 +99,7 @@ main.quick.confirm.tweaks.many = TURBiX применит {0} рекоменду�
 main.quick.confirm.clean.one = Также будет очищена {0} категория временных файлов и кэша.
 main.quick.confirm.clean.few = Также будут очищены {0} категории временных файлов и кэша.
 main.quick.confirm.clean.many = Также будет очищено {0} категорий временных файлов и кэша.
-main.quick.confirm.safe = Эти действия безопасны для любого компьютера: Центр обновления Windows, Microsoft Defender и ваши личные файлы не затрагиваются. Настройки можно отменить в разделе «Восстановление»; удаляются только временные файлы и кэш, и восстановить их нельзя.
+main.quick.confirm.safe = Эти действия безопасны для любого компьютера: Центр обновления Windows, Microsoft Defender и ваши личные файлы не затрагиваются. Настройки можно отменить в разделе «Восстановление», удаляются только временные файлы и кэш, и восстановить их нельзя.
 main.quick.busy = Оптимизация компьютера
 main.quick.summary.privacy.one = Конфиденциальность: применено {0} изменение.
 main.quick.summary.privacy.few = Конфиденциальность: применено {0} изменения.
@@ -187,7 +187,7 @@ about.data.requirements = ТРЕБОВАНИЯ
 about.data.requirementsText = Windows 10 (1607 или новее) или 11, 32- или 64-разрядная. Использует .NET Framework 4.6.2+, который уже входит в Windows: ничего устанавливать не нужно.
 about.data.openBackups = Копии
 about.data.openLogs = Журналы
-about.disclaimer = TURBiX предоставляется «как есть», без гарантий. Microsoft, Windows, Edge, Office и Copilot — товарные знаки корпорации Microsoft; TURBiX не связан с Microsoft.
+about.disclaimer = TURBiX предоставляется «как есть», без гарантий. Microsoft, Windows, Edge, Office и Copilot — товарные знаки корпорации Microsoft, TURBiX не связан с Microsoft.
 
 # --- Что нового
 whatsnew.subtitle = Важные изменения в каждой версии. У вас установлена {0}.

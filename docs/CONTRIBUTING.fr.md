@@ -14,7 +14,7 @@ Merci de vouloir aider. TURBiX est un projet public et gratuit, entretenu sur du
 
 ## Compiler
 
-Il vous faut le [SDK .NET](https://dotnet.microsoft.com/download) (6 ou version ultérieure). Lancez `build.cmd` ; vous obtenez `dist\TURBiX.exe` et `dist\TURBiX-Setup.exe`.
+Il vous faut le [SDK .NET](https://dotnet.microsoft.com/download) (6 ou version ultérieure). Lancez `build.cmd`, vous obtenez `dist\TURBiX.exe` et `dist\TURBiX-Setup.exe`.
 
 ## Règles pour le code
 

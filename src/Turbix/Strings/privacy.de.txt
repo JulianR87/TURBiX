@@ -5,7 +5,7 @@ privacy.title = Datenschutz und Telemetrie
 privacy.subtitle = Legen Sie fest, welche Daten Windows nicht mehr sendet. Bevor etwas geändert wird, legt TURBiX eine Sicherung an, damit Sie alles rückgängig machen können.
 privacy.preset.help = Empfohlen: sichere Einstellungen für jeden PC, ohne sichtbare Nebenwirkungen.\n\nMaximal: nimmt auch die als ERWEITERT markierten Einstellungen hinzu. Sie blockieren mehr Daten, können aber eine Funktion abschalten (Spracheingabe, Standort, Copilot…). Lesen Sie die gelben Hinweise, bevor Sie sie anwenden.
 privacy.restorePoint = Vor dem Anwenden einen Wiederherstellungspunkt erstellen
-privacy.restorePoint.help = Erstellt einen Windows-Wiederherstellungspunkt, bevor die Änderungen angewendet werden. Das ist ein zweites Sicherheitsnetz zusätzlich zur Sicherung, die TURBiX immer anlegt. Dafür muss der Computerschutz aktiviert sein; ist er es nicht, weist TURBiX darauf hin und macht weiter.
+privacy.restorePoint.help = Erstellt einen Windows-Wiederherstellungspunkt, bevor die Änderungen angewendet werden. Das ist ein zweites Sicherheitsnetz zusätzlich zur Sicherung, die TURBiX immer anlegt. Dafür muss der Computerschutz aktiviert sein, ist er es nicht, weist TURBiX darauf hin und macht weiter.
 
 # ---------------------------------------------------------------- Kategorien
 privacy.cat.telemetry = Windows-Telemetrie
@@ -149,8 +149,8 @@ tweak.changes.other = {0} Änderungen
 tweak.errors.one = {0} Fehler
 tweak.errors.other = {0} Fehler
 tweak.progress.done = Einstellungen angewendet
-tweak.log.serviceNotStopped = {0} konnte gerade nicht beendet werden; der Dienst ist nach dem Neustart deaktiviert.
-tweak.log.noPowerPlan = Dieser PC hat diesen Energiesparplan nicht; der aktuelle bleibt aktiv.
+tweak.log.serviceNotStopped = {0} konnte gerade nicht beendet werden, der Dienst ist nach dem Neustart deaktiviert.
+tweak.log.noPowerPlan = Dieser PC hat diesen Energiesparplan nicht, der aktuelle bleibt aktiv.
 tweak.action.service = Dienst {0}
 tweak.action.powerPlan = Energiesparplan
 tweak.action.task = Aufgabe {0}

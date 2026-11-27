@@ -5,7 +5,7 @@ privacy.title = Privacy and telemetry
 privacy.subtitle = Choose which data Windows stops sending. Before anything is changed, TURBiX saves a backup so you can undo it.
 privacy.preset.help = Recommended: safe tweaks for any PC, with no visible side effects.\n\nMaximum: also adds the ADVANCED tweaks, which block more data but can turn off a feature (voice typing, location, Copilot…). Read their yellow warnings before applying them.
 privacy.restorePoint = Create a restore point before applying
-privacy.restorePoint.help = Creates a Windows restore point before the changes are applied. It's a second safety net on top of the backup TURBiX always saves. System Protection has to be turned on; if it isn't, TURBiX lets you know and carries on.
+privacy.restorePoint.help = Creates a Windows restore point before the changes are applied. It's a second safety net on top of the backup TURBiX always saves. System Protection has to be turned on, if it isn't, TURBiX lets you know and carries on.
 
 # ---------------------------------------------------------------- categories
 privacy.cat.telemetry = Windows telemetry
@@ -150,7 +150,7 @@ tweak.changes.other = {0} changes
 tweak.errors.one = {0} error
 tweak.errors.other = {0} errors
 tweak.progress.done = Tweaks applied
-tweak.log.serviceNotStopped = {0} couldn't be stopped right now; it will be disabled after a restart.
+tweak.log.serviceNotStopped = {0} couldn't be stopped right now, it will be disabled after a restart.
 tweak.log.noPowerPlan = This PC doesn't have that power plan, so the current one is kept.
 tweak.action.service = service {0}
 tweak.action.powerPlan = power plan

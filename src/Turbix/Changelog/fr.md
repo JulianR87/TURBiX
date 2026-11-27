@@ -4,14 +4,19 @@ Ce fichier s’affiche dans TURBiX, sur la page « Nouveautés ». Chaque vers
 avec les changements utiles résumés en quelques mots. Chaque version commence par
 `## X.Y.Z` (sans date) et chaque changement est une puce `- **Titre.** Courte description.`
 
+## 1.2.0
+
+- **Nouveau site du projet.** TURBiX a maintenant sa propre page, en six langues : https://julianr87.github.io/TURBiX/
+- **Textes plus propres.** La ponctuation des aides, avertissements et messages du programme a été revue dans les six langues.
+
 ## 1.1.10
 
 - **Installation silencieuse.** `TURBiX-Setup.exe --silent` installe sans afficher de fenêtre et `--uninstall --silent` désinstalle sans poser de question. Pratique pour équiper plusieurs PC et pour les gestionnaires de paquets.
-- **Corrections après des tests sous Windows 10 et 11.** Ouvrir la fenêtre alors que TURBiX fonctionnait déjà à côté de l’horloge affichait un message « Erreur inattendue » ; ce n’est plus le cas. Sur les petits écrans, la fenêtre ne dépasse plus par le haut. Les notifications de Windows affichent désormais le nom TURBiX.
+- **Corrections après des tests sous Windows 10 et 11.** Ouvrir la fenêtre alors que TURBiX fonctionnait déjà à côté de l’horloge affichait un message « Erreur inattendue », ce n’est plus le cas. Sur les petits écrans, la fenêtre ne dépasse plus par le haut. Les notifications de Windows affichent désormais le nom TURBiX.
 
 ## 1.1.9
 
-- **Nouveau nom : TURBiX.** Le programme, le programme d’installation, les raccourcis et la documentation s’écrivent désormais TURBiX. Les fichiers s’appellent maintenant `TURBiX.exe` et `TURBiX-Setup.exe` ; vos paramètres et vos sauvegardes restent où ils étaient.
+- **Nouveau nom : TURBiX.** Le programme, le programme d’installation, les raccourcis et la documentation s’écrivent désormais TURBiX. Les fichiers s’appellent maintenant `TURBiX.exe` et `TURBiX-Setup.exe`, vos paramètres et vos sauvegardes restent où ils étaient.
 
 ## 1.1.8
 
@@ -25,7 +30,7 @@ avec les changements utiles résumés en quelques mots. Chaque version commence 
 ## 1.1.6
 
 - **Nouvelle page Paramètres.** Dans la barre latérale, « Apparence » devient « Paramètres ». On y trouve le thème, la langue (que vous pouvez maintenant choisir), le démarrage avec Windows, le nettoyage automatique de la mémoire, le dossier de données et un bouton pour tout remettre comme à l’origine.
-- **Icône à côté de l’horloge.** Tant que TURBiX est ouvert, son icône s’affiche dans la zone de notification. Un double-clic ouvre la fenêtre ; le clic droit permet de libérer la mémoire vive, de nettoyer les fichiers temporaires ou de quitter. Vous pouvez la masquer dans les Paramètres.
+- **Icône à côté de l’horloge.** Tant que TURBiX est ouvert, son icône s’affiche dans la zone de notification. Un double-clic ouvre la fenêtre, le clic droit permet de libérer la mémoire vive, de nettoyer les fichiers temporaires ou de quitter. Vous pouvez la masquer dans les Paramètres.
 - **Le X ne ferme plus TURBiX.** Fermer la fenêtre la masque et TURBiX continue à fonctionner à côté de l’horloge (modifiable dans les Paramètres). Pour le fermer complètement, choisissez « Quitter TURBiX » dans le menu de l’icône, qui demande confirmation. Au démarrage de Windows, TURBiX se place désormais directement à côté de l’horloge, sans ouvrir la fenêtre.
 
 ## 1.1.5
@@ -35,7 +40,7 @@ avec les changements utiles résumés en quelques mots. Chaque version commence 
 
 ## 1.1.4
 
-- **Message après la libération de la mémoire.** Quand vous nettoyez la RAM, un message indique la quantité libérée et ce qui reste disponible. Si le nettoyage automatique se lance pendant que TURBiX est réduit, il arrive sous forme de notification Windows ; vous pouvez le désactiver dans « Nettoyage automatique ».
+- **Message après la libération de la mémoire.** Quand vous nettoyez la RAM, un message indique la quantité libérée et ce qui reste disponible. Si le nettoyage automatique se lance pendant que TURBiX est réduit, il arrive sous forme de notification Windows, vous pouvez le désactiver dans « Nettoyage automatique ».
 
 ## 1.1.3
 
@@ -55,7 +60,7 @@ avec les changements utiles résumés en quelques mots. Chaque version commence 
 
 ## 1.1.0
 
-- **Nouvelle section Applications.** Supprime en un clic les applications que Windows installe de lui-même (Candy Crush, le Solitaire avec publicités, Clipchamp, Actualités, TikTok et autres promotions). Seules des applications connues, qu’on peut retirer sans rien casser, sont proposées ; jamais le Store, Xbox ni des éléments de Windows. Si l’une d’elles vous manque, vous pouvez la réinstaller gratuitement depuis le Microsoft Store.
+- **Nouvelle section Applications.** Supprime en un clic les applications que Windows installe de lui-même (Candy Crush, le Solitaire avec publicités, Clipchamp, Actualités, TikTok et autres promotions). Seules des applications connues, qu’on peut retirer sans rien casser, sont proposées, jamais le Store, Xbox ni des éléments de Windows. Si l’une d’elles vous manque, vous pouvez la réinstaller gratuitement depuis le Microsoft Store.
 - **Désinstaller des programmes.** La liste des programmes installés, avec leur taille, une recherche et un bouton qui ouvre le programme de désinstallation officiel de chacun.
 - **Plus de réglages Windows.** Barre des tâches et menu Démarrer (boutons Conférence maintenant, Conversation, Cortana et Affichage des tâches, recherche en icône, barre alignée à gauche, fichiers récents, raccourci Edge qui revient après chaque mise à jour), services facultatifs que presque personne n’utilise (Télécopie, mode démo en magasin, cartes hors connexion, spouleur d’impression, indexation…) et désactivation de la mise en veille prolongée, qui libère plusieurs Go. Tout s’annule depuis « Restaurer ».
 - **Des sauvegardes qui ne s’écrasent plus.** Si deux groupes de réglages étaient appliqués dans la même seconde (par exemple performances et réglages Windows), la sauvegarde du premier était perdue et on ne pouvait plus l’annuler depuis « Restaurer ». Désormais, chaque session a son propre fichier.

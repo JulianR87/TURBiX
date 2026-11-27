@@ -65,7 +65,7 @@ C’est un seul fichier, `TURBiX.exe`. Il s’utilise sans installation (il exis
 
 - **Tout peut être annulé.** Avant de modifier quoi que ce soit, TURBiX enregistre l’état d’origine. La section **Restaurer** remet chaque session de modifications comme elle était avant.
 - **Chaque option est expliquée.** Toutes ont un bouton **?** qui dit en quelques lignes ce qu’elle fait et quel effet elle a.
-- **D’abord regarder, ensuite agir.** Le nettoyage, le diagnostic, la santé et le Registre sont analysés sans rien modifier ; c’est vous qui décidez quoi appliquer.
+- **D’abord regarder, ensuite agir.** Le nettoyage, le diagnostic, la santé et le Registre sont analysés sans rien modifier, c’est vous qui décidez quoi appliquer.
 - **Honnête.** Pas de promesses miracles : si le problème vient d’un vieux disque ou d’un manque de mémoire, TURBiX le dit. Il ne contient pas non plus d’« astuces » qui cassent des choses.
 - **N’utilise pas Internet.** Il ne télécharge rien, n’envoie aucune donnée, n’a ni comptes ni publicité.
 - **Ne touche pas à la sécurité.** Windows Update, Microsoft Defender, SmartScreen et le pare-feu restent tels quels.
@@ -91,13 +91,13 @@ Fichiers temporaires des utilisateurs et de Windows · téléchargements de Wind
 
 Facultatifs : cache des shaders · miniatures · installateurs de pilotes · Corbeille · éléments récents · Prefetch · journaux d’événements · nettoyage de WinSxS avec DISM · installation précédente de Windows (Windows.old et restes de mises à jour, avec le Nettoyage de disque de Windows).
 
-TURBiX commence par **analyser** (lecture seule) et affiche la place occupée par chaque catégorie ; vous décidez ensuite quoi nettoyer.
+TURBiX commence par **analyser** (lecture seule) et affiche la place occupée par chaque catégorie, vous décidez ensuite quoi nettoyer.
 
 ### Performances
 
 - **Démarrage de Windows.** Affiche les programmes qui s’ouvrent tout seuls à l’ouverture de session (Registre, dossier Démarrage et applications du Microsoft Store) et permet de les activer ou de les désactiver avec un interrupteur. C’est le même mécanisme que celui du Gestionnaire des tâches : rien n’est désinstallé.
 - **Processus.** Tous les processus ouverts, comme dans le Gestionnaire des tâches, avec processeur, mémoire et threads. Les processus lancés par chaque programme se déplient en dessous de lui, chaque « Hôte de service » indique quel service il exécute, et vous pouvez arrêter une tâche (les processus dont Windows a besoin sont verrouillés).
-- **Mémoire vive.** Utilisation en direct, programmes qui en occupent le plus, bouton pour libérer la mémoire (il réduit les plages de travail et vide la mémoire en attente) et nettoyage automatique toutes les 5, 10, 15, 30 ou 60 minutes tant que TURBiX est ouvert, même s’il n’est qu’à côté de l’horloge. Une notification Windows indique la quantité de mémoire libérée. Libérer la mémoire aide quand elle est presque pleine ; cela n’accélère pas un PC qui en a largement assez.
+- **Mémoire vive.** Utilisation en direct, programmes qui en occupent le plus, bouton pour libérer la mémoire (il réduit les plages de travail et vide la mémoire en attente) et nettoyage automatique toutes les 5, 10, 15, 30 ou 60 minutes tant que TURBiX est ouvert, même s’il n’est qu’à côté de l’horloge. Une notification Windows indique la quantité de mémoire libérée. Libérer la mémoire aide quand elle est presque pleine, cela n’accélère pas un PC qui en a largement assez.
 - **Jeux.** 13 réglages : Mode Jeu, enregistrement en arrière-plan (Game DVR), notifications de la Game Bar, raccourcis d’accessibilité, accélération de la souris\*, priorité multimédia, planification du GPU à accélération matérielle\*, mode « Performances élevées »\*, limitation de l’alimentation\*, Edge en arrière-plan, applications du Store en arrière-plan\*, widgets\* et effets visuels\*.
 
 Sont laissées de côté, volontairement, les « astuces » qui cassent des choses ou ne servent à rien : arrêter les services Xbox, SysMain ou le fichier d’échange, les modifications de `bcdedit` et tout ce qui affaiblit la sécurité.
@@ -114,9 +114,9 @@ L’état de chaque composant d’après ce qu’il signale à Windows : disques
 
 ### Dépannage
 
-- **Diagnostic** (sur l’écran d’accueil). Vérifie les causes les plus fréquentes d’un PC lent : disque mécanique ou défaillant, peu d’espace, peu de mémoire, trop de programmes au démarrage, jours sans redémarrage, redémarrage en attente et mode de gestion de l’alimentation. Il se contente de lire ; chaque point explique quoi faire.
+- **Diagnostic** (sur l’écran d’accueil). Vérifie les causes les plus fréquentes d’un PC lent : disque mécanique ou défaillant, peu d’espace, peu de mémoire, trop de programmes au démarrage, jours sans redémarrage, redémarrage en attente et mode de gestion de l’alimentation. Il se contente de lire, chaque point explique quoi faire.
 - **Réparer.** Les réparations standard de Windows en un bouton : SFC, DISM RestoreHealth, vérification du disque (`chkdsk /scan`), réinitialisation du réseau, déblocage de la file d’attente d’impression et redémarrage de l’Explorateur.
-- **Registre Windows.** Recherche les entrées qui pointent vers des fichiers qui n’existent plus (démarrages cassés, programmes fantômes dans la liste de désinstallation, chemins et bibliothèques de programmes supprimés, cache de noms) et les supprime après en avoir enregistré une copie restaurable. Seul ce qui peut être vérifié est signalé ; les classes COM et les associations de fichiers ne sont pas touchées.
+- **Registre Windows.** Recherche les entrées qui pointent vers des fichiers qui n’existent plus (démarrages cassés, programmes fantômes dans la liste de désinstallation, chemins et bibliothèques de programmes supprimés, cache de noms) et les supprime après en avoir enregistré une copie restaurable. Seul ce qui peut être vérifié est signalé, les classes COM et les associations de fichiers ne sont pas touchées.
 - **Paramètres Windows.** Extensions de fichiers visibles, points forts de la recherche, notifications du compte dans Démarrer, « Fin de tâche » dans la barre des tâches, menu contextuel classique\*, Explorateur sur « Ce PC »\*, Assistant Stockage, démarrage rapide\*, mise en veille prolongée\* et SysMain sur disque mécanique\* (proposé uniquement si Windows est sur un HDD). Barre des tâches et Démarrer : raccourci Edge après une mise à jour, boutons Conversation instantanée, Conversation et Cortana, Affichage des tâches\*, recherche en icône\*, barre des tâches à gauche\*, fichiers récents\* et fichiers cachés\*. Services facultatifs : Télécopie, mode démonstration en magasin, cartes téléchargées, partage du Lecteur Windows Media, Windows Insider\*, Assistant Compatibilité des programmes\*, spouleur d’impression\* et indexation de la recherche\*.
 
 
@@ -176,7 +176,7 @@ Désinstaller TURBiX n’annule pas les modifications qu’il a appliquées à W
 
 ## Langues
 
-TURBiX s’affiche de lui-même dans la langue de Windows : **espagnol, anglais, portugais (Brésil), français, allemand et russe**. Avec toute autre langue, il s’affiche en anglais. Vous pouvez en choisir une autre dans **Paramètres** ; le changement est visible à la prochaine ouverture de TURBiX.
+TURBiX s’affiche de lui-même dans la langue de Windows : **espagnol, anglais, portugais (Brésil), français, allemand et russe**. Avec toute autre langue, il s’affiche en anglais. Vous pouvez en choisir une autre dans **Paramètres**, le changement est visible à la prochaine ouverture de TURBiX.
 
 Les textes se trouvent dans de simples fichiers texte (`src/Turbix/Strings/<área>.<idioma>.txt`), un par langue. Le guide pour corriger ou ajouter une traduction est dans [`tools/TRANSLATING.fr.md`](tools/TRANSLATING.fr.md).
 
@@ -227,7 +227,7 @@ Téléchargez la nouvelle version. Avec le programme d’installation, installez
 
 ## Limites connues
 
-- Une tâche longue ne peut pas être annulée en cours de route ; tant qu’il travaille, TURBiX ne se laisse pas fermer.
+- Une tâche longue ne peut pas être annulée en cours de route, tant qu’il travaille, TURBiX ne se laisse pas fermer.
 - L’annulation porte sur la session entière, pas sur un réglage isolé.
 - Si TURBiX est ouvert avec un compte d’administrateur différent du vôtre, les réglages propres à l’utilisateur s’appliquent à ce compte. Le diagnostic le signale.
 - « Démarrage de Windows » n’affiche pas les tâches planifiées qui s’exécutent à l’ouverture de session.
@@ -263,7 +263,7 @@ tools/           Vérificateur de textes et guide de traduction
 assets/brand/    Logo et bannière
 ```
 
-Pour ajouter un réglage, modifiez `Tweaks/TweakCatalog.cs` (confidentialité), `GamingCatalog.cs` ou `WindowsCatalog.cs`. Chaque réglage est une liste d’actions sur le Registre, un service ou une tâche, et le moteur se charge de la sauvegarde et de l’annulation. Pour ajouter une catégorie de nettoyage, modifiez `Cleanup/CleanupCatalog.cs`. Tout texte visible va dans `Strings`, dans les six langues ; `python tools/check_strings.py` vérifie qu’il n’en manque aucun.
+Pour ajouter un réglage, modifiez `Tweaks/TweakCatalog.cs` (confidentialité), `GamingCatalog.cs` ou `WindowsCatalog.cs`. Chaque réglage est une liste d’actions sur le Registre, un service ou une tâche, et le moteur se charge de la sauvegarde et de l’annulation. Pour ajouter une catégorie de nettoyage, modifiez `Cleanup/CleanupCatalog.cs`. Tout texte visible va dans `Strings`, dans les six langues, `python tools/check_strings.py` vérifie qu’il n’en manque aucun.
 
 ## Marque
 
@@ -288,7 +288,7 @@ Si TURBiX vous a fait gagner du temps ou a redonné vie à un PC qui ramait, vou
 | **Ethereum (ETH)** | BEP20 (BNB Smart Chain) | `0xC1162610b1A6b8532f4233Db598F624D8EF4d2C4` |
 | **Tether (USDT)** | BEP20 (BNB Smart Chain) | `0xC1162610b1A6b8532f4233Db598F624D8EF4d2C4` |
 
-> **Important : vérifiez le réseau avant d’envoyer.** BTC uniquement par le réseau Bitcoin ; ETH et USDT uniquement par le réseau BEP20. Un envoi par un autre réseau est perdu et ne peut pas être récupéré.
+> **Important : vérifiez le réseau avant d’envoyer.** BTC uniquement par le réseau Bitcoin, ETH et USDT uniquement par le réseau BEP20. Un envoi par un autre réseau est perdu et ne peut pas être récupéré.
 
 Merci d’aider TURBiX à rester libre.
 

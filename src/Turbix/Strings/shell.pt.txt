@@ -9,7 +9,7 @@ shell.help = Ajuda
 shell.status.help = Modo administrador: o TURBiX tem as permissões que o Windows exige para alterar as configurações do sistema e excluir arquivos temporários. Se aparecer “Sem permissões”, feche o TURBiX e abra de novo, aceitando o aviso do Windows.\n\nNão usa a internet: o TURBiX não se conecta a nenhum servidor. Não envia dados, não tem telemetria nem anúncios e não baixa nada. Isso não tem a ver com a sua conexão: a sua internet continua funcionando normalmente.\n\nEmbaixo, a versão instalada. As mudanças dela estão em “Novidades”.
 shell.busy.dontClose = Não feche o TURBiX nem desligue o computador até a tarefa terminar.
 shell.busyClose.title = Há uma tarefa em andamento
-shell.busyClose.text = O TURBiX está trabalhando, e fechá-lo agora pode deixar o computador pela metade (por exemplo, com serviços do Windows parados).\n\nEspere terminar; a janela poderá ser fechada assim que acabar.
+shell.busyClose.text = O TURBiX está trabalhando, e fechá-lo agora pode deixar o computador pela metade (por exemplo, com serviços do Windows parados).\n\nEspere terminar, a janela poderá ser fechada assim que acabar.
 
 # --- Aparência
 theme.caption = APARÊNCIA
@@ -79,7 +79,7 @@ main.cleanup.confirm.text.one = Será limpa {0} categoria.
 main.cleanup.confirm.text.other = Serão limpas {0} categorias.
 main.cleanup.freed = {0} liberados.
 main.cleanup.skipped = Ignorados porque estavam abertos: {0}. Feche-os e limpe de novo para incluí-los.
-main.cleanup.inUse = Alguns arquivos estavam em uso e foram mantidos; é normal.
+main.cleanup.inUse = Alguns arquivos estavam em uso e foram mantidos, é normal.
 main.cleanup.done.title = Limpeza concluída
 
 # --- Otimização rápida
@@ -89,7 +89,7 @@ main.quick.confirm.tweaks.one = O TURBiX vai aplicar {0} ajuste de privacidade r
 main.quick.confirm.tweaks.other = O TURBiX vai aplicar os {0} ajustes de privacidade recomendados.
 main.quick.confirm.clean.one = Também vai limpar {0} categoria de arquivos temporários e cache.
 main.quick.confirm.clean.other = Também vai limpar {0} categorias de arquivos temporários e cache.
-main.quick.confirm.safe = São opções seguras para qualquer computador: o Windows Update, o Defender e os seus arquivos pessoais não são tocados. Os ajustes podem ser desfeitos em “Restaurar”; os arquivos excluídos são temporários e cache, e não podem ser recuperados.
+main.quick.confirm.safe = São opções seguras para qualquer computador: o Windows Update, o Defender e os seus arquivos pessoais não são tocados. Os ajustes podem ser desfeitos em “Restaurar”, os arquivos excluídos são temporários e cache, e não podem ser recuperados.
 main.quick.busy = Otimizando o seu computador
 main.quick.summary.privacy.one = Privacidade: {0} alteração aplicada.
 main.quick.summary.privacy.other = Privacidade: {0} alterações aplicadas.
@@ -170,7 +170,7 @@ about.data.requirements = REQUISITOS
 about.data.requirementsText = Windows 10 (1607 ou posterior) ou 11, 32 ou 64 bits. Usa o .NET Framework 4.6.2+, que já vem com o Windows: não é preciso instalar nada.
 about.data.openBackups = Backups
 about.data.openLogs = Registros
-about.disclaimer = O TURBiX é oferecido “como está”, sem garantias. Microsoft, Windows, Edge, Office e Copilot são marcas da Microsoft Corporation; o TURBiX não é afiliado à Microsoft.
+about.disclaimer = O TURBiX é oferecido “como está”, sem garantias. Microsoft, Windows, Edge, Office e Copilot são marcas da Microsoft Corporation, o TURBiX não é afiliado à Microsoft.
 
 # --- Novidades
 whatsnew.subtitle = As mudanças importantes de cada versão. Você está usando a {0}.

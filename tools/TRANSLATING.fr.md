@@ -21,7 +21,7 @@ using Turbix.Localization;
 
 L.T("apps.title")                         // texte
 L.F("apps.removed", name)                 // avec des valeurs {0}, {1}…
-L.P("apps.count", n)                      // pluriel : {0} est n déjà mis en forme ; {1}… sont des extras : L.P("k", n, extra)
+L.P("apps.count", n)                      // pluriel : {0} est n déjà mis en forme, {1}… sont des extras : L.P("k", n, extra)
 ```
 
 ```xml
@@ -29,11 +29,11 @@ xmlns:l="clr-namespace:Turbix.Localization"
 <TextBlock Text="{l:T apps.title}"/>       <!-- aussi Content, Tag, ToolTip, HelpTip.Text… -->
 ```
 
-- Pluriels : `clé.one` et `clé.other` ; en russe `clé.one`, `clé.few`, `clé.many` (1 файл, 2 файла, 5 файлов ;
+- Pluriels : `clé.one` et `clé.other`, en russe `clé.one`, `clé.few`, `clé.many` (1 файл, 2 файла, 5 файлов ,
   21 → one, 22 → few, 11–14 → many). En français et en portugais, `one` vaut pour 0 et 1. Jamais « fichier(s) ».
 - Ne construisez pas de phrases en collant des morceaux (« Suppression de  » + n + «  applications ») : une seule clé
   avec des espaces réservés. L’ordre des mots change d’une langue à l’autre.
-- Dates et nombres avec `L.Culture` ; tailles avec `FileCleaner.FormatSize` (qui traduit déjà les unités).
+- Dates et nombres avec `L.Culture`, tailles avec `FileCleaner.FormatSize` (qui traduit déjà les unités).
 - Les `Id`, les `Tag` de logique, les `CommandParameter`, les chemins du Registre, les noms de services et de fichiers **ne se traduisent pas**.
 - Les messages d’erreur fournis par Windows (`ex.Message`) arrivent déjà dans la langue du système : on les insère avec `{0}`.
 - L’autotest (`Testing/SelfTest.cs`) ne se traduit pas : aucun utilisateur ne le voit.
@@ -47,15 +47,15 @@ xmlns:l="clr-namespace:Turbix.Localization"
 - Forme d’adresse : `es` tú · `en` you · `pt` você · `fr` vous · `de` Sie · `ru` вы (minuscule).
 - Guillemets : `es` «…» · `en` “…” · `pt` “…” · `fr` « … » (avec ` ` à l’intérieur) · `de` „…“ · `ru` «…».
 - Utilisez les noms **officiels de Windows dans cette langue** (ceux de Windows lui-même) : Administrador de tareas / Task
-  Manager / Gerenciador de Tarefas / Gestionnaire des tâches / Task-Manager / Диспетчер задач ; Configuración / Settings /
-  Configurações / Paramètres / Einstellungen / Параметры ; Hibernar / Hibernate / Hibernar / Mettre en veille prolongée /
-  Ruhezustand / Гибернация ; Explorador de archivos / File Explorer / Explorador de Arquivos / Explorateur de fichiers /
+  Manager / Gerenciador de Tarefas / Gestionnaire des tâches / Task-Manager / Диспетчер задач · Configuración / Settings /
+  Configurações / Paramètres / Einstellungen / Параметры · Hibernar / Hibernate / Hibernar / Mettre en veille prolongée /
+  Ruhezustand / Гибернация · Explorador de archivos / File Explorer / Explorador de Arquivos / Explorateur de fichiers /
   Datei-Explorer / Проводник. Même chose pour les noms des applications du Microsoft Store (Noticias / News / Notícias /
   Actualités / Nachrichten / Новости…). De même pour les marques et les noms propres (TURBiX, Microsoft Store, Edge, OneDrive, Xbox).
 - Les sections de TURBiX se nomment comme dans `common` (`nav.*`) : si le texte espagnol dit «desde Restaurar», en anglais c’est
   “from Restore”, en allemand „unter Wiederherstellen“, etc.
-- Règles de contenu valables dans toutes les langues : « N’utilise pas Internet », jamais rien qui évoque « hors connexion/offline » ;
-  libérer de la RAM ou nettoyer le Registre **n’accélère pas** un PC qui en a largement assez ; « Bon » dans Santé signifie « aucun signe de
+- Règles de contenu valables dans toutes les langues : « N’utilise pas Internet », jamais rien qui évoque « hors connexion/offline » ,
+  libérer de la RAM ou nettoyer le Registre **n’accélère pas** un PC qui en a largement assez, « Bon » dans Santé signifie « aucun signe de
   défaillance », pas une garantie.
 - Les aides « ? » restent brèves.
 - L’allemand et le russe sont environ 30 % plus longs : en XAML, pas de largeurs fixes pour le texte (`Width` sur les boutons, les onglets ou

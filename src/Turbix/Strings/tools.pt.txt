@@ -16,7 +16,7 @@ tools.diag.failed = Não foi possível concluir a verificação.
 tools.diag.log.error = Diagnóstico: {0}
 
 # ------------------------------------------------------------------ Reparar
-tools.repair.note = São os reparos que o suporte da Microsoft recomenda, feitos com as ferramentas do próprio Windows. Use quando tiver o problema descrito; não precisa rodar “por via das dúvidas”. Tudo o que eles fazem fica anotado no Registro de atividades.
+tools.repair.note = São os reparos que o suporte da Microsoft recomenda, feitos com as ferramentas do próprio Windows. Use quando tiver o problema descrito, não precisa rodar “por via das dúvidas”. Tudo o que eles fazem fica anotado no Registro de atividades.
 tools.repair.run = Executar
 tools.repair.takes = Leva {0}
 tools.repair.helpDuration = Duração aproximada: {0}.
@@ -45,7 +45,7 @@ repair.dism.warning = O Windows pode baixar os arquivos que faltarem pelo Window
 repair.dism.log = Reparo da imagem do Windows (DISM RestoreHealth)
 repair.dism.status = Reparando a imagem do Windows
 repair.dism.ok = A imagem do Windows está em bom estado. Agora você pode rodar “Reparar arquivos do Windows”.
-repair.dism.fail = O DISM terminou com o código {0}. Veja o Registro de atividades; se faltarem arquivos de origem, confira se o Windows tem acesso à internet e tente de novo.
+repair.dism.fail = O DISM terminou com o código {0}. Veja o Registro de atividades, se faltarem arquivos de origem, confira se o Windows tem acesso à internet e tente de novo.
 
 repair.chkdsk.name = Verificar o disco
 repair.chkdsk.summary = Procura erros no disco do sistema, sem alterar nada.
@@ -200,7 +200,7 @@ wintweak.fastStartup.help = Com a Inicialização Rápida, ao desligar, o Window
 wintweak.fastStartup.warning = Em computadores com HD a inicialização vai levar alguns segundos a mais. Com SSD quase não se nota.
 wintweak.sysmainHdd.name = SysMain em HDs
 wintweak.sysmainHdd.summary = Para o pré-carregamento de programas que deixa o disco em 100%.
-wintweak.sysmainHdd.help = O SysMain (antigo Superfetch) pré-carrega na memória os programas que você mais usa. Em um SSD ele ajuda e deve continuar ativo. Em um HD com pouca memória ele pode deixar o disco em 100% por minutos depois de ligar. O TURBiX só oferece este ajuste se o Windows estiver instalado em um HD; em um SSD ele aparece como “Não se aplica”.
+wintweak.sysmainHdd.help = O SysMain (antigo Superfetch) pré-carrega na memória os programas que você mais usa. Em um SSD ele ajuda e deve continuar ativo. Em um HD com pouca memória ele pode deixar o disco em 100% por minutos depois de ligar. O TURBiX só oferece este ajuste se o Windows estiver instalado em um HD, em um SSD ele aparece como “Não se aplica”.
 wintweak.sysmainHdd.warning = Os programas podem demorar um pouco mais para abrir na primeira vez.
 wintweak.hibernation.name = Desativar a hibernação
 wintweak.hibernation.summary = Libera vários GB do disco (o arquivo hiberfil.sys).
@@ -224,7 +224,7 @@ wintweak.taskView.summary = Tira o botão de áreas de trabalho virtuais da barr
 wintweak.taskView.help = Tira o botão Visão de Tarefas da barra de tarefas. O recurso continua disponível com Win+Tab.
 wintweak.searchIcon.name = Pesquisa como ícone
 wintweak.searchIcon.summary = Troca a caixa de pesquisa da barra por um ícone pequeno.
-wintweak.searchIcon.help = A caixa de pesquisa ocupa muito espaço na barra de tarefas. Com este ajuste fica só a lupa; você também pode pesquisar apertando a tecla Windows e digitando.
+wintweak.searchIcon.help = A caixa de pesquisa ocupa muito espaço na barra de tarefas. Com este ajuste fica só a lupa, você também pode pesquisar apertando a tecla Windows e digitando.
 wintweak.taskbarLeft.name = Barra de tarefas à esquerda
 wintweak.taskbarLeft.summary = O botão Iniciar volta para o canto, como no Windows 10.
 wintweak.taskbarLeft.help = O Windows 11 centraliza os ícones da barra de tarefas. Este ajuste os alinha à esquerda.

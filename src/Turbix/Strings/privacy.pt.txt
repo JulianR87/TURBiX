@@ -5,7 +5,7 @@ privacy.title = Privacidade e telemetria
 privacy.subtitle = Escolha quais dados o Windows deixa de enviar. Antes de mudar qualquer coisa, o TURBiX salva um backup para você poder desfazer.
 privacy.preset.help = Recomendado: ajustes seguros para qualquer PC, sem efeitos colaterais visíveis.\n\nMáximo: inclui também os ajustes AVANÇADOS, que bloqueiam mais dados mas podem desativar algum recurso (digitação por voz, localização, Copilot…). Leia os avisos em amarelo antes de aplicá-los.
 privacy.restorePoint = Criar ponto de restauração antes de aplicar
-privacy.restorePoint.help = Cria um ponto de restauração do Windows antes de aplicar as alterações. É uma segunda rede de segurança, além do backup que o TURBiX sempre salva. A Proteção do Sistema precisa estar ativada; se não estiver, o TURBiX avisa e continua.
+privacy.restorePoint.help = Cria um ponto de restauração do Windows antes de aplicar as alterações. É uma segunda rede de segurança, além do backup que o TURBiX sempre salva. A Proteção do Sistema precisa estar ativada, se não estiver, o TURBiX avisa e continua.
 
 # ---------------------------------------------------------------- categorias
 privacy.cat.telemetry = Telemetria do Windows
@@ -132,7 +132,7 @@ tweak.area.windows.label = Windows
 
 tweak.log.applying.one = Aplicando {0} ajuste {1} no {2} {3}
 tweak.log.applying.other = Aplicando {0} ajustes {1} no {2} {3}
-tweak.log.editionNote = Edição {0}: o Windows não permite desligar 100% dos dados obrigatórios; eles são reduzidos ao mínimo e o serviço e as tarefas que os enviam são bloqueados.
+tweak.log.editionNote = Edição {0}: o Windows não permite desligar 100% dos dados obrigatórios, eles são reduzidos ao mínimo e o serviço e as tarefas que os enviam são bloqueados.
 tweak.progress.restorePoint = Criando ponto de restauração do sistema…
 tweak.restorePoint.name = TURBiX - antes de aplicar ajustes {0}
 tweak.session.label.one = {1}: {0} ajuste
@@ -149,8 +149,8 @@ tweak.changes.other = {0} alterações
 tweak.errors.one = {0} erro
 tweak.errors.other = {0} erros
 tweak.progress.done = Ajustes aplicados
-tweak.log.serviceNotStopped = Não foi possível parar {0} agora; ele ficará desativado após reiniciar.
-tweak.log.noPowerPlan = Este PC não tem esse plano de energia; o atual é mantido.
+tweak.log.serviceNotStopped = Não foi possível parar {0} agora, ele ficará desativado após reiniciar.
+tweak.log.noPowerPlan = Este PC não tem esse plano de energia, o atual é mantido.
 tweak.action.service = serviço {0}
 tweak.action.powerPlan = plano de energia
 tweak.action.task = tarefa {0}

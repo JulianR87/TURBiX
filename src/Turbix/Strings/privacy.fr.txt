@@ -5,7 +5,7 @@ privacy.title = Confidentialité et télémétrie
 privacy.subtitle = Choisissez les données que Windows cesse d’envoyer. Avant toute modification, TURBiX enregistre une sauvegarde pour que vous puissiez revenir en arrière.
 privacy.preset.help = Recommandé : des réglages sûrs pour n’importe quel PC, sans effet secondaire visible.\n\nMaximum : ajoute les réglages AVANCÉS, qui bloquent davantage de données mais peuvent désactiver une fonction (saisie vocale, localisation, Copilot…). Lisez leurs avertissements en jaune avant de les appliquer.
 privacy.restorePoint = Créer un point de restauration avant d’appliquer
-privacy.restorePoint.help = Crée un point de restauration Windows avant d’appliquer les modifications. C’est un second filet de sécurité, en plus de la sauvegarde que TURBiX enregistre toujours. La Protection du système doit être activée ; si elle ne l’est pas, TURBiX vous prévient et continue.
+privacy.restorePoint.help = Crée un point de restauration Windows avant d’appliquer les modifications. C’est un second filet de sécurité, en plus de la sauvegarde que TURBiX enregistre toujours. La Protection du système doit être activée, si elle ne l’est pas, TURBiX vous prévient et continue.
 
 # ---------------------------------------------------------------- catégories
 privacy.cat.telemetry = Télémétrie de Windows
@@ -132,7 +132,7 @@ tweak.area.windows.label = Windows
 
 tweak.log.applying.one = Application de {0} réglage {1} sur {2} {3}
 tweak.log.applying.other = Application de {0} réglages {1} sur {2} {3}
-tweak.log.editionNote = Édition {0} : Windows ne permet pas de couper entièrement les données obligatoires ; elles sont réduites au minimum, et le service et les tâches qui les envoient sont bloqués.
+tweak.log.editionNote = Édition {0} : Windows ne permet pas de couper entièrement les données obligatoires, elles sont réduites au minimum, et le service et les tâches qui les envoient sont bloqués.
 tweak.progress.restorePoint = Création d’un point de restauration du système…
 tweak.restorePoint.name = TURBiX - avant d’appliquer les réglages {0}
 tweak.session.label.one = {1} : {0} réglage
@@ -149,8 +149,8 @@ tweak.changes.other = {0} modifications
 tweak.errors.one = {0} erreur
 tweak.errors.other = {0} erreurs
 tweak.progress.done = Réglages appliqués
-tweak.log.serviceNotStopped = Impossible d’arrêter {0} pour l’instant ; il sera désactivé au redémarrage.
-tweak.log.noPowerPlan = Ce PC n’a pas ce mode de gestion de l’alimentation ; le mode actuel est conservé.
+tweak.log.serviceNotStopped = Impossible d’arrêter {0} pour l’instant, il sera désactivé au redémarrage.
+tweak.log.noPowerPlan = Ce PC n’a pas ce mode de gestion de l’alimentation, le mode actuel est conservé.
 tweak.action.service = service {0}
 tweak.action.powerPlan = mode de gestion de l’alimentation
 tweak.action.task = tâche {0}

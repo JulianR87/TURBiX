@@ -79,7 +79,7 @@ main.cleanup.confirm.text.one = {0} catégorie va être nettoyée.
 main.cleanup.confirm.text.other = {0} catégories vont être nettoyées.
 main.cleanup.freed = {0} libérés.
 main.cleanup.skipped = Ignorés parce qu’ils étaient ouverts : {0}. Fermez-les et relancez le nettoyage pour les inclure.
-main.cleanup.inUse = Certains fichiers étaient en cours d’utilisation et ont été conservés ; c’est normal.
+main.cleanup.inUse = Certains fichiers étaient en cours d’utilisation et ont été conservés, c’est normal.
 main.cleanup.done.title = Nettoyage terminé
 
 # --- Optimisation rapide
@@ -89,7 +89,7 @@ main.quick.confirm.tweaks.one = TURBiX va appliquer {0} réglage de confidential
 main.quick.confirm.tweaks.other = TURBiX va appliquer les {0} réglages de confidentialité recommandés.
 main.quick.confirm.clean.one = Il va aussi nettoyer {0} catégorie de fichiers temporaires et de cache.
 main.quick.confirm.clean.other = Il va aussi nettoyer {0} catégories de fichiers temporaires et de cache.
-main.quick.confirm.safe = Ces options conviennent à n’importe quel ordinateur : Windows Update, Defender et vos fichiers personnels ne sont pas touchés. Les réglages peuvent être annulés depuis « Restaurer » ; les fichiers supprimés ne sont que des fichiers temporaires et du cache, et ils ne sont pas récupérables.
+main.quick.confirm.safe = Ces options conviennent à n’importe quel ordinateur : Windows Update, Defender et vos fichiers personnels ne sont pas touchés. Les réglages peuvent être annulés depuis « Restaurer », les fichiers supprimés ne sont que des fichiers temporaires et du cache, et ils ne sont pas récupérables.
 main.quick.busy = Optimisation de votre ordinateur
 main.quick.summary.privacy.one = Confidentialité : {0} modification appliquée.
 main.quick.summary.privacy.other = Confidentialité : {0} modifications appliquées.
@@ -170,7 +170,7 @@ about.data.requirements = CONFIGURATION REQUISE
 about.data.requirementsText = Windows 10 (1607 ou ultérieur) ou 11, 32 ou 64 bits. Utilise .NET Framework 4.6.2+, déjà inclus dans Windows : il n’y a rien à installer.
 about.data.openBackups = Sauvegardes
 about.data.openLogs = Journaux
-about.disclaimer = TURBiX est fourni « tel quel », sans garantie. Microsoft, Windows, Edge, Office et Copilot sont des marques de Microsoft Corporation ; TURBiX n’est pas affilié à Microsoft.
+about.disclaimer = TURBiX est fourni « tel quel », sans garantie. Microsoft, Windows, Edge, Office et Copilot sont des marques de Microsoft Corporation, TURBiX n’est pas affilié à Microsoft.
 
 # --- Nouveautés
 whatsnew.subtitle = Les changements importants de chaque version. Vous utilisez la {0}.

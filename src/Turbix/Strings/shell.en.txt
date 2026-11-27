@@ -9,7 +9,7 @@ shell.help = Help
 shell.status.help = Administrator mode: TURBiX has the permissions Windows requires to change system settings and delete temporary files. If it says “No admin rights”, close TURBiX and open it again, accepting the Windows prompt.\n\nDoesn't use the internet: TURBiX doesn't connect to any server. It sends no data, has no telemetry or ads, and downloads nothing. This has nothing to do with your connection: your internet keeps working as usual.\n\nBelow that is the installed version. Its changes are listed under “What's new”.
 shell.busy.dontClose = Don't close TURBiX or turn off the PC until the task is finished.
 shell.busyClose.title = A task is still running
-shell.busyClose.text = TURBiX is working, and closing it now could leave the PC halfway through (for example, with Windows services stopped).\n\nPlease wait until it's done; you can close the window as soon as it finishes.
+shell.busyClose.text = TURBiX is working, and closing it now could leave the PC halfway through (for example, with Windows services stopped).\n\nPlease wait until it's done, you can close the window as soon as it finishes.
 
 # --- Appearance
 theme.caption = APPEARANCE
@@ -89,7 +89,7 @@ main.quick.confirm.tweaks.one = TURBiX will apply {0} recommended privacy settin
 main.quick.confirm.tweaks.other = TURBiX will apply the {0} recommended privacy settings.
 main.quick.confirm.clean.one = It will also clean {0} category of temporary files and cache.
 main.quick.confirm.clean.other = It will also clean {0} categories of temporary files and cache.
-main.quick.confirm.safe = These options are safe for any PC: Windows Update, Defender and your personal files aren't touched. The settings can be undone from Restore; the deleted files are only temporary files and cache, and they can't be recovered.
+main.quick.confirm.safe = These options are safe for any PC: Windows Update, Defender and your personal files aren't touched. The settings can be undone from Restore, the deleted files are only temporary files and cache, and they can't be recovered.
 main.quick.busy = Optimizing your PC
 main.quick.summary.privacy.one = Privacy: {0} change applied.
 main.quick.summary.privacy.other = Privacy: {0} changes applied.
@@ -170,7 +170,7 @@ about.data.requirements = REQUIREMENTS
 about.data.requirementsText = Windows 10 (1607 or later) or 11, 32 or 64-bit. It uses .NET Framework 4.6.2+, which already comes with Windows: there's nothing to install.
 about.data.openBackups = Backups
 about.data.openLogs = Logs
-about.disclaimer = TURBiX is provided “as is”, without warranty. Microsoft, Windows, Edge, Office and Copilot are trademarks of Microsoft Corporation; TURBiX isn't affiliated with Microsoft.
+about.disclaimer = TURBiX is provided “as is”, without warranty. Microsoft, Windows, Edge, Office and Copilot are trademarks of Microsoft Corporation, TURBiX isn't affiliated with Microsoft.
 
 # --- What's new
 whatsnew.subtitle = The important changes in each version. You're using {0}.

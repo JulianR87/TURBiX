@@ -4,14 +4,19 @@ Este arquivo aparece dentro do TURBiX, na seção “Novidades”. Cada versão 
 com as mudanças que importam, em poucas palavras. Cada versão começa com
 `## X.Y.Z` (sem data) e cada mudança é um item `- **Título.** Descrição curta.`
 
+## 1.2.0
+
+- **Novo site do projeto.** O TURBiX agora tem uma página própria, em seis idiomas: https://julianr87.github.io/TURBiX/
+- **Textos mais limpos.** A pontuação das ajudas, avisos e mensagens do programa foi revisada nos seis idiomas.
+
 ## 1.1.10
 
 - **Instalação silenciosa.** `TURBiX-Setup.exe --silent` instala sem mostrar janelas e `--uninstall --silent` desinstala sem perguntar. Serve para instalar em vários computadores e para gerenciadores de pacotes.
-- **Correções após testes no Windows 10 e 11.** Ao abrir a janela com o TURBiX já funcionando ao lado do relógio, aparecia um aviso de “Erro inesperado”; isso não acontece mais. Em telas pequenas a janela não sai mais pela parte de cima. As notificações do Windows agora mostram o nome TURBiX.
+- **Correções após testes no Windows 10 e 11.** Ao abrir a janela com o TURBiX já funcionando ao lado do relógio, aparecia um aviso de “Erro inesperado”, isso não acontece mais. Em telas pequenas a janela não sai mais pela parte de cima. As notificações do Windows agora mostram o nome TURBiX.
 
 ## 1.1.9
 
-- **Novo nome: TURBiX.** O programa, o instalador, os atalhos e a documentação agora são escritos TURBiX. Os arquivos passam a se chamar `TURBiX.exe` e `TURBiX-Setup.exe`; seus ajustes e cópias de segurança continuam onde estavam.
+- **Novo nome: TURBiX.** O programa, o instalador, os atalhos e a documentação agora são escritos TURBiX. Os arquivos passam a se chamar `TURBiX.exe` e `TURBiX-Setup.exe`, seus ajustes e cópias de segurança continuam onde estavam.
 
 ## 1.1.8
 
@@ -25,7 +30,7 @@ com as mudanças que importam, em poucas palavras. Cada versão começa com
 ## 1.1.6
 
 - **Nova página Ajustes.** Na barra lateral, “Aparência” virou “Ajustes”. Lá ficam o tema, o idioma (agora dá para escolher), a inicialização com o Windows, a liberação automática de memória, a pasta de dados e um botão para voltar tudo ao padrão.
-- **Ícone ao lado do relógio.** Enquanto o TURBiX está aberto, o ícone dele aparece na área de notificação. Clique duas vezes para abrir a janela; com o botão direito dá para liberar memória RAM, limpar os arquivos temporários ou sair. Dá para escondê-lo nos Ajustes.
+- **Ícone ao lado do relógio.** Enquanto o TURBiX está aberto, o ícone dele aparece na área de notificação. Clique duas vezes para abrir a janela, com o botão direito dá para liberar memória RAM, limpar os arquivos temporários ou sair. Dá para escondê-lo nos Ajustes.
 - **O X não fecha mais o TURBiX.** Fechar a janela só a esconde, e o TURBiX continua funcionando ao lado do relógio (dá para mudar nos Ajustes). Para fechá-lo de vez, use “Sair do TURBiX” no menu do ícone, que pede confirmação. Ao iniciar o Windows, o TURBiX agora fica direto ao lado do relógio, sem abrir a janela.
 
 ## 1.1.5
@@ -35,7 +40,7 @@ com as mudanças que importam, em poucas palavras. Cada versão começa com
 
 ## 1.1.4
 
-- **Aviso ao liberar memória.** Ao limpar a memória RAM, aparece um aviso com quanto foi liberado e quanto ficou disponível. Se a limpeza automática rodar com o TURBiX minimizado, ele chega como notificação do Windows; dá para desligar em “Liberação automática”.
+- **Aviso ao liberar memória.** Ao limpar a memória RAM, aparece um aviso com quanto foi liberado e quanto ficou disponível. Se a limpeza automática rodar com o TURBiX minimizado, ele chega como notificação do Windows, dá para desligar em “Liberação automática”.
 
 ## 1.1.3
 
@@ -55,7 +60,7 @@ com as mudanças que importam, em poucas palavras. Cada versão começa com
 
 ## 1.1.0
 
-- **Nova seção Aplicativos.** Remove com um clique os aplicativos que o Windows instala por conta própria (Candy Crush, Paciência com anúncios, Clipchamp, Notícias, TikTok e outras promoções). Só aparecem aplicativos conhecidos que podem ser removidos sem quebrar nada; nunca a Loja, o Xbox ou partes do Windows. Se sentir falta de algum, você pode reinstalá-lo de graça pela Microsoft Store.
+- **Nova seção Aplicativos.** Remove com um clique os aplicativos que o Windows instala por conta própria (Candy Crush, Paciência com anúncios, Clipchamp, Notícias, TikTok e outras promoções). Só aparecem aplicativos conhecidos que podem ser removidos sem quebrar nada, nunca a Loja, o Xbox ou partes do Windows. Se sentir falta de algum, você pode reinstalá-lo de graça pela Microsoft Store.
 - **Desinstalar programas.** A lista de programas instalados, com o tamanho de cada um, uma busca e um botão que abre o desinstalador oficial do programa.
 - **Mais ajustes do Windows.** Barra de tarefas e Iniciar (botões Reunir Agora, Chat, Cortana e Visão de Tarefas, pesquisa como ícone, barra à esquerda, arquivos recentes, o atalho do Edge que volta a cada atualização), serviços opcionais que quase ninguém usa (Fax, modo de demonstração de loja, mapas offline, spooler de impressão, indexação…) e desativar a hibernação, que libera vários GB. Tudo pode ser desfeito em “Restaurar”.
 - **Backups que não se sobrescrevem.** Se dois grupos de ajustes fossem aplicados no mesmo segundo (por exemplo, desempenho e ajustes do Windows), o backup do primeiro se perdia e não dava para desfazê-lo em “Restaurar”. Agora cada sessão tem seu próprio arquivo.

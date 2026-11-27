@@ -16,7 +16,7 @@ tools.diag.failed = Die Überprüfung konnte nicht abgeschlossen werden.
 tools.diag.log.error = Diagnose: {0}
 
 # ------------------------------------------------------------------ Reparieren
-tools.repair.note = Das sind die Reparaturen, die der Microsoft-Support empfiehlt, mit den Bordmitteln von Windows. Verwenden Sie sie, wenn Sie das beschriebene Problem haben; „vorsichtshalber“ müssen sie nicht laufen. Alles, was sie tun, wird im Aktivitätsprotokoll festgehalten.
+tools.repair.note = Das sind die Reparaturen, die der Microsoft-Support empfiehlt, mit den Bordmitteln von Windows. Verwenden Sie sie, wenn Sie das beschriebene Problem haben, „vorsichtshalber“ müssen sie nicht laufen. Alles, was sie tun, wird im Aktivitätsprotokoll festgehalten.
 tools.repair.run = Ausführen
 tools.repair.takes = Dauer: {0}
 tools.repair.helpDuration = Ungefähre Dauer: {0}.
@@ -45,7 +45,7 @@ repair.dism.warning = Windows lädt fehlende Dateien eventuell über Windows Upd
 repair.dism.log = Reparatur des Windows-Abbilds (DISM RestoreHealth)
 repair.dism.status = Windows-Abbild wird repariert
 repair.dism.ok = Das Windows-Abbild ist in Ordnung. Sie können jetzt „Windows-Dateien reparieren“ ausführen.
-repair.dism.fail = DISM wurde mit Code {0} beendet. Sehen Sie im Aktivitätsprotokoll nach; wenn Quelldateien fehlen, prüfen Sie, ob Windows eine Internetverbindung hat, und versuchen Sie es erneut.
+repair.dism.fail = DISM wurde mit Code {0} beendet. Sehen Sie im Aktivitätsprotokoll nach, wenn Quelldateien fehlen, prüfen Sie, ob Windows eine Internetverbindung hat, und versuchen Sie es erneut.
 
 repair.chkdsk.name = Datenträger prüfen
 repair.chkdsk.summary = Sucht Fehler auf dem Systemlaufwerk, ohne etwas zu ändern.
@@ -53,7 +53,7 @@ repair.chkdsk.help = Führt chkdsk /scan auf dem Windows-Laufwerk aus. Das ist e
 repair.chkdsk.log = Prüfung von Laufwerk {0} (chkdsk /scan)
 repair.chkdsk.status = Laufwerk {0} wird geprüft
 repair.chkdsk.ok = Auf dem Datenträger wurden keine Fehler gefunden.
-repair.chkdsk.fail = Die Prüfung hat etwas gefunden (Code {0}). Sehen Sie im Aktivitätsprotokoll nach: Wenn eine Reparatur nötig ist, öffnen Sie eine Eingabeaufforderung als Administrator und führen Sie „chkdsk {1} /f“ aus; das wird beim nächsten Neustart erledigt.
+repair.chkdsk.fail = Die Prüfung hat etwas gefunden (Code {0}). Sehen Sie im Aktivitätsprotokoll nach: Wenn eine Reparatur nötig ist, öffnen Sie eine Eingabeaufforderung als Administrator und führen Sie „chkdsk {1} /f“ aus, das wird beim nächsten Neustart erledigt.
 
 repair.network.name = Netzwerk zurücksetzen
 repair.network.summary = Hilft bei „Verbunden, kein Internet“ und Seiten, die nicht laden.
@@ -200,7 +200,7 @@ wintweak.fastStartup.help = Mit Schnellstart versetzt Windows beim Herunterfahre
 wintweak.fastStartup.warning = Auf PCs mit Festplatte dauert der Start ein paar Sekunden länger. Mit SSD merkt man es kaum.
 wintweak.sysmainHdd.name = SysMain auf Festplatten
 wintweak.sysmainHdd.summary = Stoppt das Vorladen von Programmen, das die Festplatte auf 100 % hält.
-wintweak.sysmainHdd.help = SysMain (früher Superfetch) lädt die Programme, die Sie am häufigsten nutzen, vorab in den Arbeitsspeicher. Auf einer SSD hilft das und sollte eingeschaltet bleiben. Auf einer Festplatte (HDD) mit wenig Arbeitsspeicher kann es die Festplatte nach dem Einschalten minutenlang auf 100 % halten. TURBiX bietet diese Einstellung nur an, wenn Windows auf einer HDD installiert ist; auf einer SSD steht sie auf „Nicht relevant“.
+wintweak.sysmainHdd.help = SysMain (früher Superfetch) lädt die Programme, die Sie am häufigsten nutzen, vorab in den Arbeitsspeicher. Auf einer SSD hilft das und sollte eingeschaltet bleiben. Auf einer Festplatte (HDD) mit wenig Arbeitsspeicher kann es die Festplatte nach dem Einschalten minutenlang auf 100 % halten. TURBiX bietet diese Einstellung nur an, wenn Windows auf einer HDD installiert ist, auf einer SSD steht sie auf „Nicht relevant“.
 wintweak.sysmainHdd.warning = Programme brauchen beim ersten Öffnen eventuell etwas länger.
 wintweak.hibernation.name = Ruhezustand ausschalten
 wintweak.hibernation.summary = Gibt mehrere GB auf dem Laufwerk frei (die Datei hiberfil.sys).
@@ -224,7 +224,7 @@ wintweak.taskView.summary = Entfernt die Schaltfläche für virtuelle Desktops a
 wintweak.taskView.help = Entfernt die Schaltfläche „Taskansicht“ aus der Taskleiste. Die Funktion bleibt über Win+Tab erreichbar.
 wintweak.searchIcon.name = Suche als Symbol
 wintweak.searchIcon.summary = Ersetzt das Suchfeld in der Taskleiste durch ein kleines Symbol.
-wintweak.searchIcon.help = Das Suchfeld nimmt in der Taskleiste viel Platz weg. Mit dieser Einstellung bleibt nur die Lupe; Sie können auch suchen, indem Sie die Windows-Taste drücken und lostippen.
+wintweak.searchIcon.help = Das Suchfeld nimmt in der Taskleiste viel Platz weg. Mit dieser Einstellung bleibt nur die Lupe, Sie können auch suchen, indem Sie die Windows-Taste drücken und lostippen.
 wintweak.taskbarLeft.name = Taskleiste linksbündig
 wintweak.taskbarLeft.summary = Die Start-Schaltfläche kommt wieder in die Ecke, wie bei Windows 10.
 wintweak.taskbarLeft.help = Windows 11 zentriert die Symbole der Taskleiste. Diese Einstellung richtet sie links aus.

@@ -71,7 +71,7 @@ cleanup.item.dns.help = Windows remembers the IP address of every website you vi
 
 cleanup.item.shaderCache.name = GPU shader cache
 cleanup.item.shaderCache.summary = DirectX, NVIDIA, AMD and Intel.
-cleanup.item.shaderCache.help = Precompiled shaders from games and 3D programs. Deleting them helps after updating your graphics driver or when a game shows graphics glitches; they're created again automatically.
+cleanup.item.shaderCache.help = Precompiled shaders from games and 3D programs. Deleting them helps after updating your graphics driver or when a game shows graphics glitches, they're created again automatically.
 cleanup.item.shaderCache.warning = Games will recompile their shaders, so the first sessions may stutter.
 
 cleanup.item.thumbnails.name = Thumbnail and icon cache
@@ -95,7 +95,7 @@ cleanup.item.recentItems.warning = Items pinned to taskbar jump lists are also r
 
 cleanup.item.prefetch.name = Prefetch
 cleanup.item.prefetch.summary = Data that helps programs open faster.
-cleanup.item.prefetch.help = Windows records how programs load so it can open them faster next time. Deleting it does NOT speed up your PC (that's a common myth); it only makes sense for troubleshooting.
+cleanup.item.prefetch.help = Windows records how programs load so it can open them faster next time. Deleting it does NOT speed up your PC (that's a common myth), it only makes sense for troubleshooting.
 cleanup.item.prefetch.warning = Programs may take longer to open for a few days.
 
 cleanup.item.eventLogs.name = Event Viewer logs
@@ -127,7 +127,7 @@ cleanup.log.cleaning.other = Cleaning {0} categories
 cleanup.log.cleaningAggressive.one = Cleaning {0} category (aggressive mode)
 cleanup.log.cleaningAggressive.other = Cleaning {0} categories (aggressive mode)
 cleanup.log.appOpen = {0} is open: close it to clear its cache (skipped).
-cleanup.log.appOpenEdge = {0} is open: close it to clear its cache (skipped). Edge often keeps running in the background; the “Microsoft Edge in the background” setting under Performance › Games prevents that.
+cleanup.log.appOpenEdge = {0} is open: close it to clear its cache (skipped). Edge often keeps running in the background, the “Microsoft Edge in the background” setting under Performance › Games prevents that.
 cleanup.log.error = Error: {0}
 cleanup.log.freed = Freed: {0}
 cleanup.log.freedSkipped.one = Freed: {1} ({0} file in use skipped)
@@ -138,8 +138,8 @@ cleanup.log.dnsFailed = Couldn't clear the DNS cache.
 cleanup.log.noOldWindows = No previous Windows installation or update leftovers found.
 cleanup.log.noCleanmgr = This edition of Windows doesn't include Disk Cleanup.
 cleanup.log.cleanmgrRunning = Running Windows Disk Cleanup (this can take several minutes)...
-cleanup.log.cleanmgrStillRunning = Disk Cleanup is still working; TURBiX carries on without waiting for it.
-cleanup.log.serviceSlow = The {0} service is taking a while to stop; some files may still be in use.
+cleanup.log.cleanmgrStillRunning = Disk Cleanup is still working, TURBiX carries on without waiting for it.
+cleanup.log.serviceSlow = The {0} service is taking a while to stop, some files may still be in use.
 cleanup.log.eventLogsCleared.one = Cleared {1} of {0} log.
 cleanup.log.eventLogsCleared.other = Cleared {1} of {0} logs.
 cleanup.log.dismRunning = Running DISM /StartComponentCleanup (don't close TURBiX)...

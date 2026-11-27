@@ -4,14 +4,19 @@ Diese Datei wird in TURBiX auf der Seite „Neuigkeiten“ angezeigt. Jede Versi
 mit den wichtigen Änderungen in Kurzform. Jede Version beginnt mit
 `## X.Y.Z` (ohne Datum) und jede Änderung ist ein Punkt `- **Titel.** Kurze Beschreibung.`
 
+## 1.2.0
+
+- **Neue Projektwebsite.** TURBiX hat jetzt eine eigene Seite, in sechs Sprachen: https://julianr87.github.io/TURBiX/
+- **Sauberere Texte.** Die Zeichensetzung in Hilfetexten, Warnungen und Meldungen wurde in allen sechs Sprachen überarbeitet.
+
 ## 1.1.10
 
 - **Stille Installation.** `TURBiX-Setup.exe --silent` installiert, ohne ein Fenster anzuzeigen, und `--uninstall --silent` deinstalliert ohne Rückfrage. Praktisch für mehrere PCs und für Paketmanager.
-- **Korrekturen nach Tests unter Windows 10 und 11.** Beim Öffnen des Fensters, während TURBiX bereits neben der Uhr lief, erschien die Meldung „Unerwarteter Fehler“; das passiert nicht mehr. Auf kleinen Bildschirmen ragt das Fenster nicht mehr oben hinaus. Windows-Benachrichtigungen zeigen jetzt den Namen TURBiX.
+- **Korrekturen nach Tests unter Windows 10 und 11.** Beim Öffnen des Fensters, während TURBiX bereits neben der Uhr lief, erschien die Meldung „Unerwarteter Fehler“, das passiert nicht mehr. Auf kleinen Bildschirmen ragt das Fenster nicht mehr oben hinaus. Windows-Benachrichtigungen zeigen jetzt den Namen TURBiX.
 
 ## 1.1.9
 
-- **Neuer Name: TURBiX.** Programm, Installationsprogramm, Verknüpfungen und Dokumentation schreiben sich jetzt TURBiX. Die Dateien heißen nun `TURBiX.exe` und `TURBiX-Setup.exe`; Ihre Einstellungen und Sicherungen bleiben, wo sie waren.
+- **Neuer Name: TURBiX.** Programm, Installationsprogramm, Verknüpfungen und Dokumentation schreiben sich jetzt TURBiX. Die Dateien heißen nun `TURBiX.exe` und `TURBiX-Setup.exe`, Ihre Einstellungen und Sicherungen bleiben, wo sie waren.
 
 ## 1.1.8
 
@@ -25,7 +30,7 @@ mit den wichtigen Änderungen in Kurzform. Jede Version beginnt mit
 ## 1.1.6
 
 - **Neue Seite „Einstellungen“.** In der Seitenleiste heißt „Darstellung“ jetzt „Einstellungen“. Dort finden Sie Design, Sprache (jetzt auch selbst wählbar), den Start mit Windows, die automatische Freigabe von Arbeitsspeicher, den Datenordner und eine Schaltfläche, die alles auf den Auslieferungszustand zurücksetzt.
-- **Symbol neben der Uhr.** Solange TURBiX geöffnet ist, erscheint sein Symbol im Infobereich. Doppelklick öffnet das Fenster; per Rechtsklick können Sie Arbeitsspeicher freigeben, temporäre Dateien bereinigen oder TURBiX beenden. Das Symbol lässt sich in den Einstellungen ausblenden.
+- **Symbol neben der Uhr.** Solange TURBiX geöffnet ist, erscheint sein Symbol im Infobereich. Doppelklick öffnet das Fenster, per Rechtsklick können Sie Arbeitsspeicher freigeben, temporäre Dateien bereinigen oder TURBiX beenden. Das Symbol lässt sich in den Einstellungen ausblenden.
 - **Das X beendet TURBiX nicht mehr.** Beim Schließen wird das Fenster nur ausgeblendet, und TURBiX läuft neben der Uhr weiter (in den Einstellungen änderbar). Zum vollständigen Schließen gibt es „TURBiX beenden“ im Menü des Symbols, mit Rückfrage. Beim Windows-Start bleibt TURBiX jetzt direkt neben der Uhr, ohne das Fenster zu öffnen.
 
 ## 1.1.5
@@ -35,7 +40,7 @@ mit den wichtigen Änderungen in Kurzform. Jede Version beginnt mit
 
 ## 1.1.4
 
-- **Hinweis nach dem Freigeben.** Wenn Sie Arbeitsspeicher freigeben, zeigt ein Hinweis, wie viel frei wurde und wie viel jetzt verfügbar ist. Läuft die automatische Freigabe, während TURBiX minimiert ist, kommt er als Windows-Benachrichtigung; abschalten lässt er sich unter „Automatische Freigabe“.
+- **Hinweis nach dem Freigeben.** Wenn Sie Arbeitsspeicher freigeben, zeigt ein Hinweis, wie viel frei wurde und wie viel jetzt verfügbar ist. Läuft die automatische Freigabe, während TURBiX minimiert ist, kommt er als Windows-Benachrichtigung, abschalten lässt er sich unter „Automatische Freigabe“.
 
 ## 1.1.3
 
@@ -55,7 +60,7 @@ mit den wichtigen Änderungen in Kurzform. Jede Version beginnt mit
 
 ## 1.1.0
 
-- **Neuer Bereich Apps.** Entfernt mit einem Klick die Apps, die Windows von selbst installiert (Candy Crush, Solitaire mit Werbung, Clipchamp, Nachrichten, TikTok und andere Werbe-Apps). Angezeigt werden nur bekannte Apps, die sich gefahrlos entfernen lassen; nie der Store, Xbox oder Teile von Windows. Wenn Ihnen eine fehlt, können Sie sie kostenlos aus dem Microsoft Store neu installieren.
+- **Neuer Bereich Apps.** Entfernt mit einem Klick die Apps, die Windows von selbst installiert (Candy Crush, Solitaire mit Werbung, Clipchamp, Nachrichten, TikTok und andere Werbe-Apps). Angezeigt werden nur bekannte Apps, die sich gefahrlos entfernen lassen, nie der Store, Xbox oder Teile von Windows. Wenn Ihnen eine fehlt, können Sie sie kostenlos aus dem Microsoft Store neu installieren.
 - **Programme deinstallieren.** Die Liste der installierten Programme mit Größe, Suchfeld und einer Schaltfläche, die das offizielle Deinstallationsprogramm des jeweiligen Programms öffnet.
 - **Mehr Windows-Einstellungen.** Taskleiste und Startmenü (Schaltflächen „Jetzt besprechen“, Chat, Cortana und „Aktive Anwendungen“, Suche als Symbol, Taskleiste links, zuletzt verwendete Dateien, die Edge-Verknüpfung, die nach jedem Update wiederkommt), optionale Dienste, die kaum jemand nutzt (Fax, Einzelhandelsdemo, Offlinekarten, Druckwarteschlange, Indizierung…) und das Abschalten des Ruhezustands, was mehrere GB frei macht. Alles lässt sich unter „Wiederherstellen“ rückgängig machen.
 - **Sicherungen überschreiben sich nicht mehr.** Wurden zwei Gruppen von Einstellungen in derselben Sekunde angewendet (zum Beispiel Leistung und Windows-Einstellungen), ging die Sicherung der ersten verloren und ließ sich unter „Wiederherstellen“ nicht mehr rückgängig machen. Jetzt hat jede Sitzung ihre eigene Datei.

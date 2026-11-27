@@ -71,7 +71,7 @@ cleanup.item.dns.help = Windows recuerda la dirección IP de cada web que visita
 
 cleanup.item.shaderCache.name = Caché de shaders de la GPU
 cleanup.item.shaderCache.summary = DirectX, NVIDIA, AMD e Intel.
-cleanup.item.shaderCache.help = Shaders ya compilados de juegos y programas 3D. Borrarlos es útil tras actualizar el controlador de vídeo o si un juego muestra errores gráficos; el sistema los vuelve a crear.
+cleanup.item.shaderCache.help = Shaders ya compilados de juegos y programas 3D. Borrarlos es útil tras actualizar el controlador de vídeo o si un juego muestra errores gráficos, el sistema los vuelve a crear.
 cleanup.item.shaderCache.warning = Los juegos recompilarán shaders: las primeras partidas pueden ir a tirones.
 
 cleanup.item.thumbnails.name = Caché de miniaturas e iconos
@@ -95,7 +95,7 @@ cleanup.item.recentItems.warning = También se quitan los elementos anclados en 
 
 cleanup.item.prefetch.name = Prefetch
 cleanup.item.prefetch.summary = Datos para abrir programas más rápido.
-cleanup.item.prefetch.help = Windows guarda cómo se cargan los programas para abrirlos más rápido la próxima vez. Borrarlo NO acelera el equipo (es un mito común); solo tiene sentido para solucionar problemas.
+cleanup.item.prefetch.help = Windows guarda cómo se cargan los programas para abrirlos más rápido la próxima vez. Borrarlo NO acelera el equipo (es un mito común), solo tiene sentido para solucionar problemas.
 cleanup.item.prefetch.warning = Los programas pueden tardar más en abrir durante unos días.
 
 cleanup.item.eventLogs.name = Registros del Visor de eventos
@@ -138,8 +138,8 @@ cleanup.log.dnsFailed = No se pudo vaciar la caché DNS.
 cleanup.log.noOldWindows = No hay instalación anterior de Windows ni restos de actualizaciones.
 cleanup.log.noCleanmgr = Este Windows no incluye el Liberador de espacio en disco.
 cleanup.log.cleanmgrRunning = Ejecutando el Liberador de espacio en disco de Windows (puede tardar varios minutos)...
-cleanup.log.cleanmgrStillRunning = El Liberador de espacio en disco sigue trabajando; TURBiX continúa sin esperarlo.
-cleanup.log.serviceSlow = El servicio {0} tarda en detenerse; algunos archivos pueden quedar en uso.
+cleanup.log.cleanmgrStillRunning = El Liberador de espacio en disco sigue trabajando, TURBiX continúa sin esperarlo.
+cleanup.log.serviceSlow = El servicio {0} tarda en detenerse, algunos archivos pueden quedar en uso.
 cleanup.log.eventLogsCleared.one = {1} de {0} registro vaciado.
 cleanup.log.eventLogsCleared.other = {1} de {0} registros vaciados.
 cleanup.log.dismRunning = Ejecutando DISM /StartComponentCleanup (no cierres TURBiX)...

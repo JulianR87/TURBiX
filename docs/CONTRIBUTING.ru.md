@@ -14,7 +14,7 @@
 
 ## Сборка
 
-Нужен [.NET SDK](https://dotnet.microsoft.com/download) (6 или новее). Запустите `build.cmd`; получатся `dist\TURBiX.exe` и `dist\TURBiX-Setup.exe`.
+Нужен [.NET SDK](https://dotnet.microsoft.com/download) (6 или новее). Запустите `build.cmd`, получатся `dist\TURBiX.exe` и `dist\TURBiX-Setup.exe`.
 
 ## Правила для кода
 

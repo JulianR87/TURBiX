@@ -1,7 +1,7 @@
 # Leistung › Prozesse
 
 perf.tab.processes = Prozesse
-proc.help = Dieselbe Liste wie im Task-Manager, nur gruppiert: Unter jedem Programm stehen die Prozesse, die es gestartet hat (ein Browser startet zum Beispiel einen pro Tab). Mit dem Pfeil klappen Sie sie auf. Zugeklappt zeigt die Zeile die Summe der ganzen Gruppe.\n\nDie Einträge „Diensthost“ sind Windows-Dienste; angezeigt wird, welcher Dienst darin läuft.\n\n„Threads“ ist die Zahl der Threads je Prozess, derselbe Wert wie im Task-Manager.\n\nMit dem X wird ein Prozess sofort beendet, wie mit „Task beenden“. Prozesse, die Windows zum Laufen braucht, sind gesperrt.
+proc.help = Dieselbe Liste wie im Task-Manager, nur gruppiert: Unter jedem Programm stehen die Prozesse, die es gestartet hat (ein Browser startet zum Beispiel einen pro Tab). Mit dem Pfeil klappen Sie sie auf. Zugeklappt zeigt die Zeile die Summe der ganzen Gruppe.\n\nDie Einträge „Diensthost“ sind Windows-Dienste, angezeigt wird, welcher Dienst darin läuft.\n\n„Threads“ ist die Zahl der Threads je Prozess, derselbe Wert wie im Task-Manager.\n\nMit dem X wird ein Prozess sofort beendet, wie mit „Task beenden“. Prozesse, die Windows zum Laufen braucht, sind gesperrt.
 proc.search = Prozess, PID oder Dienst suchen
 proc.loading = Prozesse werden gelesen …
 proc.noMatches = Kein Prozess passt zur Suche.

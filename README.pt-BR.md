@@ -65,7 +65,7 @@ O TURBiX é um programa gratuito e de código aberto para **Windows 10 e Windows
 
 - **Tudo pode ser desfeito.** Antes de mudar qualquer coisa, o TURBiX guarda como estava. A seção **Restaurar** devolve cada sessão de mudanças ao estado anterior.
 - **Cada opção é explicada.** Todas têm um botão **?** que conta em poucas linhas o que ela faz e qual é o efeito.
-- **Primeiro olha, depois mexe.** A limpeza, o diagnóstico, a saúde e o Registro são analisados sem alterar nada; você decide o que aplicar.
+- **Primeiro olha, depois mexe.** A limpeza, o diagnóstico, a saúde e o Registro são analisados sem alterar nada, você decide o que aplicar.
 - **Honesto.** Não promete milagre: se o problema é um disco velho ou pouca memória, ele avisa. Também não traz “truques” que quebram coisas.
 - **Não usa a Internet.** Não baixa nada, não envia dados, não tem contas nem propaganda.
 - **Não mexe na segurança.** O Windows Update, o Microsoft Defender, o SmartScreen e o firewall ficam como estão.
@@ -91,13 +91,13 @@ Temporários do usuário e do Windows · downloads do Windows Update · cache da
 
 Opcionais: cache de shaders · miniaturas · instaladores de drivers · Lixeira · itens recentes · Prefetch · logs de eventos · limpeza do WinSxS com o DISM · instalação anterior do Windows (Windows.old e restos de atualizações, com a Limpeza de Disco do Windows).
 
-Primeiro ele **analisa** (somente leitura) e mostra quanto cada categoria ocupa; depois você decide o que limpar.
+Primeiro ele **analisa** (somente leitura) e mostra quanto cada categoria ocupa, depois você decide o que limpar.
 
 ### Desempenho
 
 - **Inicialização do Windows.** Lista os programas que abrem sozinhos quando você entra no Windows (Registro, pasta Inicializar e aplicativos da Microsoft Store) e permite ativar ou desativar cada um com um botão. Usa o mesmo mecanismo do Gerenciador de Tarefas: não desinstala nada.
 - **Processos.** Todos os processos abertos, como no Gerenciador de Tarefas, com processador, memória e threads. Os processos que cada programa abre aparecem embaixo dele, cada “Host de Serviço” diz qual serviço executa e dá para finalizar uma tarefa (os processos de que o Windows precisa ficam bloqueados).
-- **Memória RAM.** Uso em tempo real, programas que mais ocupam, botão para liberar memória (reduz os conjuntos de trabalho e esvazia a lista em espera) e liberação automática a cada 5, 10, 15, 30 ou 60 minutos enquanto o TURBiX estiver aberto, mesmo que só ao lado do relógio. Ele avisa com uma notificação do Windows quanta memória liberou. Liberar memória ajuda quando ela está quase cheia; não acelera um computador que tem memória de sobra.
+- **Memória RAM.** Uso em tempo real, programas que mais ocupam, botão para liberar memória (reduz os conjuntos de trabalho e esvazia a lista em espera) e liberação automática a cada 5, 10, 15, 30 ou 60 minutos enquanto o TURBiX estiver aberto, mesmo que só ao lado do relógio. Ele avisa com uma notificação do Windows quanta memória liberou. Liberar memória ajuda quando ela está quase cheia, não acelera um computador que tem memória de sobra.
 - **Jogos.** 13 ajustes: Modo de Jogo, gravação em segundo plano (Game DVR), avisos da Xbox Game Bar, atalhos de acessibilidade, aceleração do mouse\*, prioridade multimídia, agendamento de GPU acelerado por hardware\*, plano “Alto desempenho”\*, limitação de energia\*, Edge em segundo plano, apps da Store em segundo plano\*, widgets\* e efeitos visuais\*.
 
 Ficam de fora, de propósito, os “truques” que quebram coisas ou não servem para nada: desligar os serviços do Xbox, o SysMain ou o arquivo de paginação, mudanças com `bcdedit` e qualquer coisa que enfraqueça a segurança.
@@ -114,9 +114,9 @@ Estado de cada componente, de acordo com o que ele informa ao Windows: discos (S
 
 ### Soluções
 
-- **Diagnóstico** (na tela inicial). Verifica as causas mais comuns de um PC lento: disco mecânico ou com falhas, pouco espaço, pouca memória, programas demais na inicialização, dias sem reiniciar, reinicialização pendente e plano de energia. Só lê; cada ponto explica o que fazer.
+- **Diagnóstico** (na tela inicial). Verifica as causas mais comuns de um PC lento: disco mecânico ou com falhas, pouco espaço, pouca memória, programas demais na inicialização, dias sem reiniciar, reinicialização pendente e plano de energia. Só lê, cada ponto explica o que fazer.
 - **Reparar.** Os reparos padrão do Windows em um clique: SFC, DISM RestoreHealth, verificação de disco (`chkdsk /scan`), redefinir a rede, destravar a fila de impressão e reiniciar o Windows Explorer.
-- **Registro do Windows.** Procura entradas que apontam para arquivos que não existem mais (inicializações quebradas, programas fantasmas na lista de desinstalação, caminhos e bibliotecas de programas apagados, cache de nomes) e as remove, guardando antes uma cópia que pode ser restaurada. Só marca o que dá para comprovar; não mexe em classes COM nem em associações de arquivos.
+- **Registro do Windows.** Procura entradas que apontam para arquivos que não existem mais (inicializações quebradas, programas fantasmas na lista de desinstalação, caminhos e bibliotecas de programas apagados, cache de nomes) e as remove, guardando antes uma cópia que pode ser restaurada. Só marca o que dá para comprovar, não mexe em classes COM nem em associações de arquivos.
 - **Ajustes do Windows.** Extensões de arquivo visíveis, destaques da pesquisa, avisos da conta no menu Iniciar, “Finalizar tarefa” na barra de tarefas, menu de contexto clássico\*, Explorador em “Este Computador”\*, Sensor de Armazenamento, Inicialização Rápida\*, hibernação\* e SysMain em discos mecânicos\* (só é oferecido se o Windows estiver em um HD). Barra de tarefas e Iniciar: atalho do Edge depois de atualizar, botões Reunir agora, Chat e Cortana, Visão de Tarefas\*, pesquisa como ícone\*, barra à esquerda\*, arquivos recentes\* e arquivos ocultos\*. Serviços opcionais: Fax, modo de demonstração para lojas, mapas offline, compartilhamento do Windows Media Player, Windows Insider\*, Assistente de Compatibilidade de Programas\*, Spooler de Impressão\* e indexação de pesquisa\*.
 
 
@@ -126,7 +126,7 @@ A página **Ajustes** reúne tudo o que dá para configurar no próprio TURBiX:
 
 - **Aparência e idioma.** Tema claro, escuro ou igual ao do Windows. O idioma segue o do Windows, mas você pode escolher outro.
 - **Abrir o TURBiX ao iniciar o Windows.** Ele fica ao lado do relógio, sem abrir a janela, para que a liberação automática de memória esteja sempre ativa. Como o TURBiX precisa de permissões de administrador, ele usa uma tarefa do Agendador de Tarefas chamada “TURBiX”, que é apagada quando você desativa a opção.
-- **Ícone ao lado do relógio.** Fica na área de notificação; dois cliques abrem a janela. Com o botão direito: abrir o TURBiX, liberar memória RAM, limpar arquivos temporários, abrir os Ajustes ou sair. As ações do menu avisam o resultado com uma notificação do Windows.
+- **Ícone ao lado do relógio.** Fica na área de notificação, dois cliques abrem a janela. Com o botão direito: abrir o TURBiX, liberar memória RAM, limpar arquivos temporários, abrir os Ajustes ou sair. As ações do menu avisam o resultado com uma notificação do Windows.
 - **Continuar funcionando ao fechar a janela.** O X esconde a janela e o TURBiX fica ao lado do relógio. Para fechá-lo de vez, use “Sair do TURBiX”, que pede confirmação (dá para desativar).
 - **Liberação automática de memória.** De quanto em quanto tempo, só se o uso passar de 80 % e se ele avisa a cada vez.
 - **Dados.** Abrir a pasta de dados e voltar todas as opções ao padrão.
@@ -162,7 +162,7 @@ Se o TURBiX já estiver aberto e você abri-lo de novo, aparece a janela que já
 Há duas formas de usar, as duas na seção [Releases](../../releases):
 
 - **Instalador (`TURBiX-Setup.exe`).** Copia o TURBiX para `Arquivos de Programas`, cria o atalho no menu Iniciar (e na área de trabalho, se você quiser) e o adiciona à lista de aplicativos do Windows, por onde ele é desinstalado como qualquer outro programa.
-- **Portátil (`TURBiX.exe`).** Um único arquivo que roda em qualquer pasta, sem instalar nada.
+- **Portable (`TURBiX.exe`).** A versão que não precisa de instalação: um único arquivo que você executa de qualquer pasta ou de um pendrive.
 
 Nos dois casos, o Windows vai pedir permissões de administrador, porque elas são necessárias para mudar as configurações do sistema. Depois, comece pela **Otimização rápida** ou veja cada seção.
 
@@ -176,7 +176,7 @@ Desinstalar o TURBiX não desfaz as mudanças que ele aplicou no Windows: se qui
 
 ## Idiomas
 
-O TURBiX aparece sozinho no idioma do Windows: **espanhol, inglês, português (Brasil), francês, alemão e russo**. Com qualquer outro idioma, ele aparece em inglês. Em **Ajustes** dá para escolher outro; a mudança aparece quando você abre o TURBiX de novo.
+O TURBiX aparece sozinho no idioma do Windows: **espanhol, inglês, português (Brasil), francês, alemão e russo**. Com qualquer outro idioma, ele aparece em inglês. Em **Ajustes** dá para escolher outro, a mudança aparece quando você abre o TURBiX de novo.
 
 Os textos ficam em arquivos de texto simples (`src/Turbix/Strings/<área>.<idioma>.txt`), um por idioma. O guia para corrigir ou adicionar uma tradução está em [`tools/TRANSLATING.pt-BR.md`](tools/TRANSLATING.pt-BR.md).
 
@@ -223,11 +223,11 @@ Não. Os ajustes continuam aplicados mesmo que você feche o TURBiX. Ele só pre
 Nenhum. O TURBiX não tem código de rede: nem estatísticas, nem atualizações automáticas, nem contas.
 
 **Como eu atualizo?**
-Baixe a versão nova. Com o instalador, instale por cima: ele mantém os ajustes e as cópias de segurança. Com a portátil, substitua o arquivo.
+Baixe a versão nova. Com o instalador, instale por cima: ele mantém os ajustes e as cópias de segurança. Com a versão portable, substitua o arquivo.
 
 ## Limitações conhecidas
 
-- Uma tarefa longa não pode ser cancelada no meio; enquanto trabalha, o TURBiX não deixa que você o feche.
+- Uma tarefa longa não pode ser cancelada no meio, enquanto trabalha, o TURBiX não deixa que você o feche.
 - A reversão é da sessão inteira, não de um ajuste isolado.
 - Se o TURBiX for aberto com uma conta de administrador diferente da sua, os ajustes por usuário são aplicados a essa conta. O diagnóstico avisa.
 - A aba “Inicialização” não lista as tarefas agendadas que rodam quando você entra no Windows.
@@ -241,7 +241,7 @@ Você precisa do [SDK do .NET](https://dotnet.microsoft.com/download) (6 ou post
 build.cmd
 ```
 
-Ficam dois arquivos em `dist`: `TURBiX.exe` (portátil) e `TURBiX-Setup.exe` (instalador, que leva dentro o mesmo `TURBiX.exe`). Para compilar só o programa, você também pode usar `dotnet build src\Turbix -c Release`.
+Ficam dois arquivos em `dist`: `TURBiX.exe` (portable) e `TURBiX-Setup.exe` (instalador, que leva dentro o mesmo `TURBiX.exe`). Para compilar só o programa, você também pode usar `dotnet build src\Turbix -c Release`.
 
 O programa é C# com WPF sobre o .NET Framework 4.6.2, sem pacotes externos e sem PowerShell: um único exe sem dependências.
 
@@ -263,7 +263,7 @@ tools/           Verificador de textos e guia de tradução
 assets/brand/    Logotipo e banner
 ```
 
-Para adicionar um ajuste, edite `Tweaks/TweakCatalog.cs` (privacidade), `GamingCatalog.cs` ou `WindowsCatalog.cs`. Cada ajuste é uma lista de ações de Registro, serviço ou tarefa, e o motor cuida da cópia e da reversão. Para adicionar uma categoria de limpeza, edite `Cleanup/CleanupCatalog.cs`. Todo texto visível fica em `Strings`, nos seis idiomas; `python tools/check_strings.py` verifica se não falta nenhum.
+Para adicionar um ajuste, edite `Tweaks/TweakCatalog.cs` (privacidade), `GamingCatalog.cs` ou `WindowsCatalog.cs`. Cada ajuste é uma lista de ações de Registro, serviço ou tarefa, e o motor cuida da cópia e da reversão. Para adicionar uma categoria de limpeza, edite `Cleanup/CleanupCatalog.cs`. Todo texto visível fica em `Strings`, nos seis idiomas, `python tools/check_strings.py` verifica se não falta nenhum.
 
 ## Marca
 
@@ -288,7 +288,7 @@ Se o TURBiX poupou seu tempo ou recuperou um computador que andava lento, você 
 | **Ethereum (ETH)** | BEP20 (BNB Smart Chain) | `0xC1162610b1A6b8532f4233Db598F624D8EF4d2C4` |
 | **Tether (USDT)** | BEP20 (BNB Smart Chain) | `0xC1162610b1A6b8532f4233Db598F624D8EF4d2C4` |
 
-> **Importante: confira a rede antes de enviar.** BTC só pela rede Bitcoin; ETH e USDT só pela rede BEP20. Um envio por outra rede se perde e não pode ser recuperado.
+> **Importante: confira a rede antes de enviar.** BTC só pela rede Bitcoin, ETH e USDT só pela rede BEP20. Um envio por outra rede se perde e não pode ser recuperado.
 
 Obrigado por ajudar o TURBiX a continuar livre.
 

@@ -4,14 +4,19 @@ Este archivo se muestra dentro de TURBiX, en la sección «Novedades». Cada ver
 con los cambios relevantes contados de forma breve. Cada versión empieza con
 `## X.Y.Z` (sin fecha) y cada cambio es una viñeta `- **Título.** Descripción breve.`
 
+## 1.2.0
+
+- **Nueva web del proyecto.** TURBiX ya tiene su propia página, en seis idiomas: https://julianr87.github.io/TURBiX/
+- **Textos más claros.** Se revisó la puntuación de las ayudas, avisos y mensajes del programa en los seis idiomas.
+
 ## 1.1.10
 
 - **Instalación silenciosa.** `TURBiX-Setup.exe --silent` instala sin mostrar ventanas y `--uninstall --silent` desinstala sin preguntar. Sirve para instalar en varios equipos y para gestores de paquetes.
-- **Arreglos tras probar en Windows 10 y 11.** Al abrir la ventana con TURBiX ya funcionando junto al reloj aparecía un aviso de «Error inesperado»; ya no pasa. En pantallas chicas la ventana ya no se sale por arriba. Las notificaciones de Windows ahora muestran el nombre TURBiX.
+- **Arreglos tras probar en Windows 10 y 11.** Al abrir la ventana con TURBiX ya funcionando junto al reloj aparecía un aviso de «Error inesperado», ya no pasa. En pantallas chicas la ventana ya no se sale por arriba. Las notificaciones de Windows ahora muestran el nombre TURBiX.
 
 ## 1.1.9
 
-- **Nuevo nombre: TURBiX.** El programa, el instalador, los accesos directos y la documentación ahora se escriben TURBiX. Los archivos pasan a llamarse `TURBiX.exe` y `TURBiX-Setup.exe`; tus ajustes y copias de seguridad siguen donde estaban.
+- **Nuevo nombre: TURBiX.** El programa, el instalador, los accesos directos y la documentación ahora se escriben TURBiX. Los archivos pasan a llamarse `TURBiX.exe` y `TURBiX-Setup.exe`, tus ajustes y copias de seguridad siguen donde estaban.
 
 ## 1.1.8
 
@@ -25,7 +30,7 @@ con los cambios relevantes contados de forma breve. Cada versión empieza con
 ## 1.1.6
 
 - **Nueva página Ajustes.** En la barra lateral, «Apariencia» pasa a ser «Ajustes». Ahí están el tema, el idioma (ahora se puede elegir a mano), el inicio con Windows, la limpieza automática de memoria, la carpeta de datos y un botón para dejar todo como viene.
-- **Icono junto al reloj.** Mientras TURBiX está abierto, su icono aparece en el área de notificación. Doble clic abre la ventana; con el botón derecho se puede liberar memoria RAM, limpiar los archivos temporales o salir. Se puede ocultar desde Ajustes.
+- **Icono junto al reloj.** Mientras TURBiX está abierto, su icono aparece en el área de notificación. Doble clic abre la ventana, con el botón derecho se puede liberar memoria RAM, limpiar los archivos temporales o salir. Se puede ocultar desde Ajustes.
 - **La X ya no cierra TURBiX.** Cerrar la ventana la esconde y TURBiX sigue funcionando junto al reloj (se puede cambiar en Ajustes). Para cerrarlo del todo está «Salir de TURBiX» en el menú del icono, que pide confirmación. Al iniciar Windows, TURBiX ahora queda directamente junto al reloj, sin abrir la ventana.
 
 ## 1.1.5
@@ -35,7 +40,7 @@ con los cambios relevantes contados de forma breve. Cada versión empieza con
 
 ## 1.1.4
 
-- **Aviso al liberar memoria.** Al limpiar la memoria RAM aparece un aviso con lo que se liberó y cuánta queda disponible. Si la limpieza automática corre con TURBiX minimizado, llega como notificación de Windows; se puede apagar en «Limpieza automática».
+- **Aviso al liberar memoria.** Al limpiar la memoria RAM aparece un aviso con lo que se liberó y cuánta queda disponible. Si la limpieza automática corre con TURBiX minimizado, llega como notificación de Windows, se puede apagar en «Limpieza automática».
 
 ## 1.1.3
 
@@ -49,13 +54,13 @@ con los cambios relevantes contados de forma breve. Cada versión empieza con
 ## 1.1.1
 
 - **TURBiX en tu idioma.** La interfaz aparece sola en el idioma de Windows: español, inglés, portugués, francés, alemán o ruso. Con cualquier otro idioma se muestra en inglés.
-- **Procesos agrupados.** Nueva pestaña en Rendimiento con todos los procesos abiertos, como en el Administrador de tareas, pero con los que abrió cada programa desplegables debajo de él. Muestra procesador, memoria y subprocesos, dice qué servicio corre en cada «Host de servicio» y permite finalizar una tarea; los procesos que Windows necesita están bloqueados.
+- **Procesos agrupados.** Nueva pestaña en Rendimiento con todos los procesos abiertos, como en el Administrador de tareas, pero con los que abrió cada programa desplegables debajo de él. Muestra procesador, memoria y subprocesos, dice qué servicio corre en cada «Host de servicio» y permite finalizar una tarea, los procesos que Windows necesita están bloqueados.
 - **El registro recuerda lo anterior.** El Registro de actividad muestra también lo que TURBiX hizo en sesiones anteriores, separado por día.
 - **Nombres visibles en modo oscuro.** En «Programas instalados» los nombres salían en negro sobre el fondo oscuro.
 
 ## 1.1.0
 
-- **Nueva sección Aplicaciones.** Quita las apps que Windows instala por su cuenta (Candy Crush, Solitario con anuncios, Clipchamp, Noticias, TikTok y otras promociones) con un clic. Solo aparecen apps conocidas que se pueden quitar sin romper nada; nunca la Tienda, Xbox ni partes de Windows. Si echas alguna de menos, se reinstala gratis desde Microsoft Store.
+- **Nueva sección Aplicaciones.** Quita las apps que Windows instala por su cuenta (Candy Crush, Solitario con anuncios, Clipchamp, Noticias, TikTok y otras promociones) con un clic. Solo aparecen apps conocidas que se pueden quitar sin romper nada, nunca la Tienda, Xbox ni partes de Windows. Si echas alguna de menos, se reinstala gratis desde Microsoft Store.
 - **Desinstalar programas.** La lista de programas instalados, con su tamaño, un buscador y un botón que abre el desinstalador oficial de cada uno.
 - **Más ajustes de Windows.** Barra de tareas e Inicio (botones de Reunirse ahora, Chat, Cortana y Vista de tareas, búsqueda como icono, barra a la izquierda, archivos recientes, el acceso directo de Edge que vuelve tras cada actualización), servicios opcionales que casi nadie usa (Fax, modo tienda, mapas sin conexión, cola de impresión, indexación…) y desactivar la hibernación, que libera varios GB. Todo se revierte desde «Restaurar».
 - **Copias de seguridad que no se pisan.** Si se aplicaban dos grupos de ajustes en el mismo segundo (por ejemplo, rendimiento y ajustes de Windows), la copia del primero se perdía y no se podía revertir desde «Restaurar». Ahora cada sesión tiene su propio archivo.
@@ -75,7 +80,7 @@ con los cambios relevantes contados de forma breve. Cada versión empieza con
 
 ## 1.0.8
 
-- **Iconos correctos en Windows 10.** El icono de la memoria RAM no existía en Windows 10 y se veía como un cuadro vacío; ahora se ve bien en todas las versiones.
+- **Iconos correctos en Windows 10.** El icono de la memoria RAM no existía en Windows 10 y se veía como un cuadro vacío, ahora se ve bien en todas las versiones.
 - **Novedades sin fechas.** El historial muestra solo el número de versión.
 
 ## 1.0.7
@@ -89,7 +94,7 @@ con los cambios relevantes contados de forma breve. Cada versión empieza con
 - **Nueva sección Soluciones › Reparar.** Las reparaciones que recomienda el soporte de Microsoft, con un botón: archivos de Windows (SFC), imagen de Windows (DISM), comprobar el disco, restablecer la red, desatascar la impresora y reiniciar el Explorador.
 - **Soluciones › Ajustes de Windows.** Quita molestias de Windows 11: menú contextual clásico, extensiones de archivo visibles, destacados de búsqueda, avisos de cuenta en Inicio, «Finalizar tarea» en la barra de tareas, Inicio rápido y más.
 - **Limpieza más segura.** Ya no se tocan los adjuntos abiertos desde Outlook ni las carpetas ancladas en Acceso rápido, y el limpiador nunca atraviesa enlaces a otras carpetas.
-- **Copias y reversión más fiables.** El valor original se guarda antes de cada cambio; si una reversión falla en parte, TURBiX lo avisa y permite reintentar.
+- **Copias y reversión más fiables.** El valor original se guarda antes de cada cambio, si una reversión falla en parte, TURBiX lo avisa y permite reintentar.
 - **Avisos más claros.** TURBiX informa si no se pudo crear el punto de restauración, y si se abrió con una cuenta de administrador distinta a la tuya.
 - **Uso con teclado.** Se ve dónde está el foco al moverse con Tab y las ayudas «?» se abren con Enter.
 

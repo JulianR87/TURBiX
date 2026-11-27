@@ -65,7 +65,7 @@ It's a single `TURBiX.exe`. You can use it without installing it (there's also a
 
 - **Everything can be undone.** Before it changes anything, TURBiX saves how it was. The **Restore** section puts each session of changes back the way it was.
 - **Every option is explained.** Each one has a **?** button that tells you in a few lines what it does and what effect it has.
-- **Look first, touch later.** Cleanup, the PC checkup, health and the registry are scanned without changing anything; you decide what to apply.
+- **Look first, touch later.** Cleanup, the PC checkup, health and the registry are scanned without changing anything, you decide what to apply.
 - **Honest.** It doesn't promise miracles: if the problem is an old drive or too little memory, it says so. It doesn't include “tricks” that break things, either.
 - **Doesn't use the Internet.** It downloads nothing, sends no data, and has no accounts or ads.
 - **Leaves security alone.** Windows Update, Microsoft Defender, SmartScreen and the firewall stay as they are.
@@ -91,13 +91,13 @@ User and Windows temporary files · Windows Update downloads · Delivery Optimiz
 
 Optional: shader cache · thumbnails · driver installers · Recycle Bin · recent items · Prefetch · event logs · WinSxS cleanup with DISM · previous Windows installation (Windows.old and update leftovers, using Windows Disk Cleanup).
 
-First it **scans** (read-only) and shows how much space each category takes up; then you decide what to clean.
+First it **scans** (read-only) and shows how much space each category takes up, then you decide what to clean.
 
 ### Performance
 
 - **Windows startup.** Lists the programs that open by themselves when you sign in (registry, Startup folder and Microsoft Store apps) and lets you turn them on or off with a switch. It uses the same mechanism as Task Manager: it doesn't uninstall anything.
 - **Processes.** Every running process, as in Task Manager, with processor, memory and threads. The processes each program starts are listed underneath it, every “Service Host” says which service it runs, and you can end a task (the processes Windows needs are locked).
-- **Memory (RAM).** Live usage, the programs using the most, a button to free up memory (it trims working sets and empties the standby list) and automatic cleanup every 5, 10, 15, 30 or 60 minutes while TURBiX is open, even if it's only next to the clock. A Windows notification tells you how much memory was freed. Freeing up memory helps when it's nearly full; it doesn't speed up a PC that has plenty to spare.
+- **Memory (RAM).** Live usage, the programs using the most, a button to free up memory (it trims working sets and empties the standby list) and automatic cleanup every 5, 10, 15, 30 or 60 minutes while TURBiX is open, even if it's only next to the clock. A Windows notification tells you how much memory was freed. Freeing up memory helps when it's nearly full, it doesn't speed up a PC that has plenty to spare.
 - **Gaming.** 13 settings: Game Mode, background recording (Game DVR), Game Bar pop-ups, accessibility shortcuts, mouse acceleration\*, multimedia priority, hardware-accelerated GPU scheduling\*, “High performance” power plan\*, power throttling\*, Edge in the background, Store apps in the background\*, widgets\* and visual effects\*.
 
 Left out on purpose are the “tricks” that break things or do nothing: turning off the Xbox services, SysMain or the page file, `bcdedit` changes and anything that weakens security.
@@ -114,9 +114,9 @@ The state of each component, based on what it reports to Windows: drives (S.M.A.
 
 ### Fixes
 
-- **PC checkup** (on the home screen). Checks the most common causes of a slow PC: a mechanical or failing drive, low free space, low memory, too many startup programs, days without a restart, a pending restart and the power plan. It only reads; each item explains what to do.
+- **PC checkup** (on the home screen). Checks the most common causes of a slow PC: a mechanical or failing drive, low free space, low memory, too many startup programs, days without a restart, a pending restart and the power plan. It only reads, each item explains what to do.
 - **Repair.** The standard Windows repairs at the press of a button: SFC, DISM RestoreHealth, disk check (`chkdsk /scan`), resetting the network, clearing a stuck print queue and restarting File Explorer.
-- **Windows Registry.** Looks for entries that point to files that no longer exist (broken startup entries, ghost programs in the uninstall list, paths and libraries of deleted programs, name cache) and removes them, saving a restorable copy first. It only flags what can be verified; it doesn't touch COM classes or file associations.
+- **Windows Registry.** Looks for entries that point to files that no longer exist (broken startup entries, ghost programs in the uninstall list, paths and libraries of deleted programs, name cache) and removes them, saving a restorable copy first. It only flags what can be verified, it doesn't touch COM classes or file associations.
 - **Windows settings.** Visible file extensions, search highlights, account notifications in Start, “End task” on the taskbar, classic context menu\*, File Explorer opening to “This PC”\*, Storage Sense, Fast startup\*, hibernation\* and SysMain on mechanical drives\* (only offered if Windows is on an HDD). Taskbar and Start: Edge shortcut after updates, the Meet Now, Chat and Cortana buttons, Task View\*, search as an icon\*, taskbar aligned left\*, recent files\* and hidden files\*. Optional services: Fax, retail demo mode, offline maps, Windows Media Player library sharing, Windows Insider\*, Program Compatibility Assistant\*, Print Spooler\* and search indexing\*.
 
 
@@ -176,7 +176,7 @@ Uninstalling TURBiX doesn't undo the changes it made to Windows: if you want to 
 
 ## Languages
 
-TURBiX automatically shows up in the language Windows uses: **Spanish, English, Portuguese (Brazil), French, German and Russian**. With any other language it's shown in English. You can pick a different one in **Settings**; the change shows up the next time you open TURBiX.
+TURBiX automatically shows up in the language Windows uses: **Spanish, English, Portuguese (Brazil), French, German and Russian**. With any other language it's shown in English. You can pick a different one in **Settings**, the change shows up the next time you open TURBiX.
 
 The texts live in plain text files (`src/Turbix/Strings/<area>.<language>.txt`), one per language. The guide for fixing or adding a translation is in [`tools/TRANSLATING.md`](tools/TRANSLATING.md).
 
@@ -227,7 +227,7 @@ Download the new version. With the installer, install over the old one: it keeps
 
 ## Known limitations
 
-- A long task can't be canceled halfway; while it's working, TURBiX won't let itself be closed.
+- A long task can't be canceled halfway, while it's working, TURBiX won't let itself be closed.
 - The whole session is undone, not a single setting.
 - If TURBiX is opened with an administrator account other than yours, per-user settings are applied to that account. The PC checkup warns you about it.
 - “Windows startup” doesn't list scheduled tasks that run at sign-in.
@@ -263,7 +263,7 @@ tools/           String checker and translation guide
 assets/brand/    Logo and banner
 ```
 
-To add a setting, edit `Tweaks/TweakCatalog.cs` (privacy), `GamingCatalog.cs` or `WindowsCatalog.cs`. Each setting is a list of registry, service or task actions, and the engine takes care of the backup and the revert. To add a cleanup category, edit `Cleanup/CleanupCatalog.cs`. All visible text goes in `Strings`, in all six languages; `python tools/check_strings.py` checks that none is missing.
+To add a setting, edit `Tweaks/TweakCatalog.cs` (privacy), `GamingCatalog.cs` or `WindowsCatalog.cs`. Each setting is a list of registry, service or task actions, and the engine takes care of the backup and the revert. To add a cleanup category, edit `Cleanup/CleanupCatalog.cs`. All visible text goes in `Strings`, in all six languages, `python tools/check_strings.py` checks that none is missing.
 
 ## Brand
 
@@ -288,7 +288,7 @@ If TURBiX saved you time or gave you back a PC that was running slow, you can su
 | **Ethereum (ETH)** | BEP20 (BNB Smart Chain) | `0xC1162610b1A6b8532f4233Db598F624D8EF4d2C4` |
 | **Tether (USDT)** | BEP20 (BNB Smart Chain) | `0xC1162610b1A6b8532f4233Db598F624D8EF4d2C4` |
 
-> **Important: check the network before you send.** BTC only over the Bitcoin network; ETH and USDT only over the BEP20 network. Anything sent over another network is lost and can't be recovered.
+> **Important: check the network before you send.** BTC only over the Bitcoin network, ETH and USDT only over the BEP20 network. Anything sent over another network is lost and can't be recovered.
 
 Thank you for helping TURBiX stay free.
 

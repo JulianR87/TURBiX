@@ -1,7 +1,7 @@
 # Desempenho › Processos
 
 perf.tab.processes = Processos
-proc.help = A mesma lista do Gerenciador de Tarefas, só que agrupada: cada programa mostra embaixo os processos que abriu (um navegador, por exemplo, abre um por guia). Clique na seta para expandir. Recolhida, a linha soma o consumo do grupo inteiro.\n\nOs itens “Host de Serviço” são serviços do Windows; aparece o nome do serviço que roda em cada um.\n\n“Threads” é o número de threads de cada processo, o mesmo dado que aparece no Gerenciador de Tarefas.\n\nO X fecha um processo na hora, como “Finalizar tarefa”. Os processos que o Windows precisa para funcionar ficam bloqueados.
+proc.help = A mesma lista do Gerenciador de Tarefas, só que agrupada: cada programa mostra embaixo os processos que abriu (um navegador, por exemplo, abre um por guia). Clique na seta para expandir. Recolhida, a linha soma o consumo do grupo inteiro.\n\nOs itens “Host de Serviço” são serviços do Windows, aparece o nome do serviço que roda em cada um.\n\n“Threads” é o número de threads de cada processo, o mesmo dado que aparece no Gerenciador de Tarefas.\n\nO X fecha um processo na hora, como “Finalizar tarefa”. Os processos que o Windows precisa para funcionar ficam bloqueados.
 proc.search = Buscar processo, PID ou serviço
 proc.loading = Lendo os processos…
 proc.noMatches = Nenhum processo corresponde à busca.

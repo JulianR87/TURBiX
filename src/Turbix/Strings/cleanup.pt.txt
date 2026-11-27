@@ -71,7 +71,7 @@ cleanup.item.dns.help = O Windows lembra o endereço IP de cada site que você v
 
 cleanup.item.shaderCache.name = Cache de shaders da GPU
 cleanup.item.shaderCache.summary = DirectX, NVIDIA, AMD e Intel.
-cleanup.item.shaderCache.help = Shaders já compilados de jogos e programas 3D. Apagá-los ajuda depois de atualizar o driver de vídeo ou quando um jogo mostra falhas gráficas; o sistema cria tudo de novo.
+cleanup.item.shaderCache.help = Shaders já compilados de jogos e programas 3D. Apagá-los ajuda depois de atualizar o driver de vídeo ou quando um jogo mostra falhas gráficas, o sistema cria tudo de novo.
 cleanup.item.shaderCache.warning = Os jogos vão recompilar os shaders: as primeiras partidas podem travar um pouco.
 
 cleanup.item.thumbnails.name = Cache de miniaturas e ícones
@@ -95,7 +95,7 @@ cleanup.item.recentItems.warning = Os itens fixados nas listas da barra de taref
 
 cleanup.item.prefetch.name = Prefetch
 cleanup.item.prefetch.summary = Dados para abrir os programas mais rápido.
-cleanup.item.prefetch.help = O Windows anota como os programas carregam para abri-los mais rápido da próxima vez. Apagar isso NÃO deixa o computador mais rápido (é um mito comum); só faz sentido para resolver problemas.
+cleanup.item.prefetch.help = O Windows anota como os programas carregam para abri-los mais rápido da próxima vez. Apagar isso NÃO deixa o computador mais rápido (é um mito comum), só faz sentido para resolver problemas.
 cleanup.item.prefetch.warning = Os programas podem demorar mais para abrir durante alguns dias.
 
 cleanup.item.eventLogs.name = Logs do Visualizador de Eventos
@@ -127,7 +127,7 @@ cleanup.log.cleaning.other = Limpando {0} categorias
 cleanup.log.cleaningAggressive.one = Limpando {0} categoria (modo agressivo)
 cleanup.log.cleaningAggressive.other = Limpando {0} categorias (modo agressivo)
 cleanup.log.appOpen = {0} está aberto: feche-o para limpar o cache (ignorado).
-cleanup.log.appOpenEdge = {0} está aberto: feche-o para limpar o cache (ignorado). O Edge costuma continuar aberto em segundo plano; o ajuste “Microsoft Edge em segundo plano” em Desempenho › Jogos evita isso.
+cleanup.log.appOpenEdge = {0} está aberto: feche-o para limpar o cache (ignorado). O Edge costuma continuar aberto em segundo plano, o ajuste “Microsoft Edge em segundo plano” em Desempenho › Jogos evita isso.
 cleanup.log.error = Erro: {0}
 cleanup.log.freed = Liberado: {0}
 cleanup.log.freedSkipped.one = Liberado: {1} ({0} arquivo em uso ignorado)
@@ -138,8 +138,8 @@ cleanup.log.dnsFailed = Não foi possível limpar o cache DNS.
 cleanup.log.noOldWindows = Não há instalação anterior do Windows nem restos de atualizações.
 cleanup.log.noCleanmgr = Este Windows não inclui a Limpeza de Disco.
 cleanup.log.cleanmgrRunning = Executando a Limpeza de Disco do Windows (pode levar vários minutos)...
-cleanup.log.cleanmgrStillRunning = A Limpeza de Disco ainda está trabalhando; o TURBiX continua sem esperar.
-cleanup.log.serviceSlow = O serviço {0} está demorando para parar; alguns arquivos podem continuar em uso.
+cleanup.log.cleanmgrStillRunning = A Limpeza de Disco ainda está trabalhando, o TURBiX continua sem esperar.
+cleanup.log.serviceSlow = O serviço {0} está demorando para parar, alguns arquivos podem continuar em uso.
 cleanup.log.eventLogsCleared.one = {1} de {0} log limpo.
 cleanup.log.eventLogsCleared.other = {1} de {0} logs limpos.
 cleanup.log.dismRunning = Executando DISM /StartComponentCleanup (não feche o TURBiX)...

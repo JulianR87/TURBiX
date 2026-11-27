@@ -4,14 +4,19 @@ This file is shown inside TURBiX, on the “What's new” page. Each version has
 with the changes that matter, kept short. Each version starts with
 `## X.Y.Z` (no date) and each change is a bullet `- **Title.** Short description.`
 
+## 1.2.0
+
+- **New project website.** TURBiX now has its own page, in six languages: https://julianr87.github.io/TURBiX/
+- **Cleaner texts.** The punctuation of help texts, warnings and messages was tidied up in all six languages.
+
 ## 1.1.10
 
 - **Silent install.** `TURBiX-Setup.exe --silent` installs without showing any window and `--uninstall --silent` uninstalls without asking. Useful for setting up several PCs and for package managers.
-- **Fixes after testing on Windows 10 and 11.** Opening the window while TURBiX was already running next to the clock showed an “Unexpected error” message; it no longer does. On small screens the window no longer goes off the top. Windows notifications now show the name TURBiX.
+- **Fixes after testing on Windows 10 and 11.** Opening the window while TURBiX was already running next to the clock showed an “Unexpected error” message, it no longer does. On small screens the window no longer goes off the top. Windows notifications now show the name TURBiX.
 
 ## 1.1.9
 
-- **New name: TURBiX.** The program, the installer, the shortcuts and the documentation are now written TURBiX. The files are now called `TURBiX.exe` and `TURBiX-Setup.exe`; your settings and backups stay where they were.
+- **New name: TURBiX.** The program, the installer, the shortcuts and the documentation are now written TURBiX. The files are now called `TURBiX.exe` and `TURBiX-Setup.exe`, your settings and backups stay where they were.
 
 ## 1.1.8
 
@@ -25,7 +30,7 @@ with the changes that matter, kept short. Each version starts with
 ## 1.1.6
 
 - **New Settings page.** In the sidebar, “Appearance” is now “Settings”. It has the theme, the language (which you can now pick yourself), starting with Windows, automatic memory cleanup, the data folder and a button to put everything back to how it came.
-- **Icon next to the clock.** While TURBiX is open, its icon shows in the notification area. Double-click opens the window; right-click lets you free up RAM, clean temporary files or exit. You can hide it in Settings.
+- **Icon next to the clock.** While TURBiX is open, its icon shows in the notification area. Double-click opens the window, right-click lets you free up RAM, clean temporary files or exit. You can hide it in Settings.
 - **The X no longer closes TURBiX.** Closing the window hides it and TURBiX keeps running next to the clock (you can change this in Settings). To close it completely, use “Exit TURBiX” in the icon's menu, which asks you to confirm. At Windows startup, TURBiX now goes straight to the clock without opening the window.
 
 ## 1.1.5
@@ -35,7 +40,7 @@ with the changes that matter, kept short. Each version starts with
 
 ## 1.1.4
 
-- **Notice after freeing memory.** When you clean up RAM, a notice shows how much was freed and how much is now available. If the automatic cleanup runs while TURBiX is minimized, it arrives as a Windows notification; you can turn it off under Automatic cleanup.
+- **Notice after freeing memory.** When you clean up RAM, a notice shows how much was freed and how much is now available. If the automatic cleanup runs while TURBiX is minimized, it arrives as a Windows notification, you can turn it off under Automatic cleanup.
 
 ## 1.1.3
 
@@ -55,7 +60,7 @@ with the changes that matter, kept short. Each version starts with
 
 ## 1.1.0
 
-- **New Apps section.** Removes the apps Windows installs on its own (Candy Crush, Solitaire with ads, Clipchamp, News, TikTok and other promotions) in one click. Only known apps that are safe to remove are listed; never the Store, Xbox or parts of Windows. If you miss one later, you can reinstall it for free from Microsoft Store.
+- **New Apps section.** Removes the apps Windows installs on its own (Candy Crush, Solitaire with ads, Clipchamp, News, TikTok and other promotions) in one click. Only known apps that are safe to remove are listed, never the Store, Xbox or parts of Windows. If you miss one later, you can reinstall it for free from Microsoft Store.
 - **Uninstall programs.** A list of installed programs with their size, a search box and a button that opens each program's own uninstaller.
 - **More Windows tweaks.** Taskbar and Start (the Meet Now, Chat, Cortana and Task View buttons, search as an icon, left-aligned taskbar, recent files, and the Edge shortcut that comes back after every update), optional services almost nobody uses (Fax, retail demo mode, offline maps, print spooler, indexing…) and turning off hibernation, which frees up several GB. You can undo all of it from “Restore”.
 - **Backups no longer overwrite each other.** If two groups of tweaks were applied in the same second (for example, performance and Windows tweaks), the backup of the first one was lost and it couldn't be undone from “Restore”. Now each session gets its own file.

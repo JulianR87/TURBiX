@@ -73,7 +73,7 @@ cleanup.item.dns.help = Windows запоминает IP-адрес каждог�
 
 cleanup.item.shaderCache.name = Кэш шейдеров видеокарты
 cleanup.item.shaderCache.summary = DirectX, NVIDIA, AMD и Intel.
-cleanup.item.shaderCache.help = Уже скомпилированные шейдеры игр и 3D-программ. Удалять их полезно после обновления видеодрайвера или если в игре появились графические артефакты; система создаст их заново.
+cleanup.item.shaderCache.help = Уже скомпилированные шейдеры игр и 3D-программ. Удалять их полезно после обновления видеодрайвера или если в игре появились графические артефакты, система создаст их заново.
 cleanup.item.shaderCache.warning = Игры заново скомпилируют шейдеры: первые запуски могут подтормаживать.
 
 cleanup.item.thumbnails.name = Кэш эскизов и значков
@@ -97,7 +97,7 @@ cleanup.item.recentItems.warning = Также удаляются элемент�
 
 cleanup.item.prefetch.name = Prefetch
 cleanup.item.prefetch.summary = Данные для более быстрого запуска программ.
-cleanup.item.prefetch.help = Windows запоминает, как загружаются программы, чтобы в следующий раз открывать их быстрее. Удаление НЕ ускоряет компьютер (это распространённый миф); оно имеет смысл только при устранении неполадок.
+cleanup.item.prefetch.help = Windows запоминает, как загружаются программы, чтобы в следующий раз открывать их быстрее. Удаление НЕ ускоряет компьютер (это распространённый миф), оно имеет смысл только при устранении неполадок.
 cleanup.item.prefetch.warning = Несколько дней программы могут открываться дольше.
 
 cleanup.item.eventLogs.name = Журналы просмотра событий
@@ -132,7 +132,7 @@ cleanup.log.cleaningAggressive.one = Очистка {0} категории (аг
 cleanup.log.cleaningAggressive.few = Очистка {0} категорий (агрессивный режим)
 cleanup.log.cleaningAggressive.many = Очистка {0} категорий (агрессивный режим)
 cleanup.log.appOpen = {0} открыт: закройте его, чтобы очистить кэш (пропущено).
-cleanup.log.appOpenEdge = {0} открыт: закройте его, чтобы очистить кэш (пропущено). Edge часто продолжает работать в фоне; это отключает параметр «Microsoft Edge в фоновом режиме» в разделе «Производительность › Игры».
+cleanup.log.appOpenEdge = {0} открыт: закройте его, чтобы очистить кэш (пропущено). Edge часто продолжает работать в фоне, это отключает параметр «Microsoft Edge в фоновом режиме» в разделе «Производительность › Игры».
 cleanup.log.error = Ошибка: {0}
 cleanup.log.freed = Освобождено: {0}
 cleanup.log.freedSkipped.one = Освобождено: {1} (пропущено занятых файлов: {0})
@@ -144,8 +144,8 @@ cleanup.log.dnsFailed = Не удалось очистить кэш DNS.
 cleanup.log.noOldWindows = Предыдущей установки Windows и остатков обновлений нет.
 cleanup.log.noCleanmgr = В этой версии Windows нет «Очистки диска».
 cleanup.log.cleanmgrRunning = Запущена «Очистка диска» Windows (это может занять несколько минут)...
-cleanup.log.cleanmgrStillRunning = «Очистка диска» ещё работает; TURBiX продолжает, не дожидаясь её.
-cleanup.log.serviceSlow = Служба {0} долго останавливается; некоторые файлы могут остаться занятыми.
+cleanup.log.cleanmgrStillRunning = «Очистка диска» ещё работает, TURBiX продолжает, не дожидаясь её.
+cleanup.log.serviceSlow = Служба {0} долго останавливается, некоторые файлы могут остаться занятыми.
 cleanup.log.eventLogsCleared.one = Очищено журналов: {1} из {0}.
 cleanup.log.eventLogsCleared.few = Очищено журналов: {1} из {0}.
 cleanup.log.eventLogsCleared.many = Очищено журналов: {1} из {0}.

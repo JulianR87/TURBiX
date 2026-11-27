@@ -14,7 +14,7 @@ Thanks for wanting to help. TURBiX is a free, public project kept going in spare
 
 ## Building
 
-You need the [.NET SDK](https://dotnet.microsoft.com/download) (6 or later). Run `build.cmd`; the result is `dist\TURBiX.exe` and `dist\TURBiX-Setup.exe`.
+You need the [.NET SDK](https://dotnet.microsoft.com/download) (6 or later). Run `build.cmd`, the result is `dist\TURBiX.exe` and `dist\TURBiX-Setup.exe`.
 
 ## Rules for code
 

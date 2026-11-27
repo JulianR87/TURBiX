@@ -1,7 +1,7 @@
 # Performance › Processes
 
 perf.tab.processes = Processes
-proc.help = The same list Task Manager shows, but grouped: each program keeps the processes it started underneath it (a browser, for example, starts one per tab). Click the arrow to expand them. When collapsed, the row adds up the whole group.\n\n"Service Host" entries are Windows services; the name of the service running in each one is shown.\n\n"Threads" is the number of threads each process is running, the same figure Task Manager shows.\n\nThe X closes a process right away, like "End task". Processes Windows needs to keep running are locked.
+proc.help = The same list Task Manager shows, but grouped: each program keeps the processes it started underneath it (a browser, for example, starts one per tab). Click the arrow to expand them. When collapsed, the row adds up the whole group.\n\n"Service Host" entries are Windows services, the name of the service running in each one is shown.\n\n"Threads" is the number of threads each process is running, the same figure Task Manager shows.\n\nThe X closes a process right away, like "End task". Processes Windows needs to keep running are locked.
 proc.search = Search by process, PID or service
 proc.loading = Reading processes…
 proc.noMatches = No process matches your search.

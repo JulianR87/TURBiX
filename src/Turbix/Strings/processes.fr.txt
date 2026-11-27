@@ -1,7 +1,7 @@
 # Performances › Processus
 
 perf.tab.processes = Processus
-proc.help = La même liste que le Gestionnaire des tâches, mais regroupée : chaque programme affiche en dessous les processus qu’il a lancés (un navigateur, par exemple, en lance un par onglet). Cliquez sur la flèche pour les afficher. Repliée, la ligne additionne la consommation de tout le groupe.\n\nLes « Hôte de service » sont des services Windows ; le nom du service qui tourne dans chacun est indiqué.\n\n« Threads » est le nombre de threads de chaque processus, la même valeur que dans le Gestionnaire des tâches.\n\nLe X ferme un processus immédiatement, comme « Fin de tâche ». Les processus dont Windows a besoin pour fonctionner sont verrouillés.
+proc.help = La même liste que le Gestionnaire des tâches, mais regroupée : chaque programme affiche en dessous les processus qu’il a lancés (un navigateur, par exemple, en lance un par onglet). Cliquez sur la flèche pour les afficher. Repliée, la ligne additionne la consommation de tout le groupe.\n\nLes « Hôte de service » sont des services Windows, le nom du service qui tourne dans chacun est indiqué.\n\n« Threads » est le nombre de threads de chaque processus, la même valeur que dans le Gestionnaire des tâches.\n\nLe X ferme un processus immédiatement, comme « Fin de tâche ». Les processus dont Windows a besoin pour fonctionner sont verrouillés.
 proc.search = Processus, PID ou service
 proc.loading = Lecture des processus…
 proc.noMatches = Aucun processus ne correspond à la recherche.

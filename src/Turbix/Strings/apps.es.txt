@@ -5,7 +5,7 @@ apps.tab.store = Apps de Windows
 apps.tab.programs = Programas instalados
 
 # ------------------------------------------------------------ Apps de Windows
-apps.store.note = Windows trae apps de publicidad, juegos de promoción y programas que mucha gente nunca abre. Aquí solo aparecen apps conocidas que se pueden quitar sin romper nada: nunca la Tienda, Xbox, la Calculadora ni partes de Windows. Ocupan espacio y algunas se actualizan o se ejecutan en segundo plano; quitarlas no hace magia con la velocidad, pero deja el equipo más limpio.
+apps.store.note = Windows trae apps de publicidad, juegos de promoción y programas que mucha gente nunca abre. Aquí solo aparecen apps conocidas que se pueden quitar sin romper nada: nunca la Tienda, Xbox, la Calculadora ni partes de Windows. Ocupan espacio y algunas se actualizan o se ejecutan en segundo plano, quitarlas no hace magia con la velocidad, pero deja el equipo más limpio.
 apps.store.presetHelp = Recomendado: publicidad, juegos de promoción y apps retiradas por Microsoft.\n\nTodo: añade las OPCIONALES, que algunas personas sí usan (correo, mapas, el tiempo, Spotify…). Lee la explicación de cada una antes de quitarla.
 apps.store.footer = Se quitan solo para tu usuario. Si echas alguna de menos, se reinstala gratis desde Microsoft Store.
 apps.store.loading = Buscando apps…
@@ -44,7 +44,7 @@ apps.error.unknown = error desconocido
 apps.error.canceled = Windows canceló la operación.
 
 # ------------------------------------------------------------ Programas instalados
-apps.programs.help = La misma lista que «Aplicaciones instaladas» de Configuración. Al pulsar «Desinstalar» se abre el desinstalador oficial de ese programa, como haría Windows: TURBiX no borra archivos por su cuenta.\n\nEl tamaño es el que declara cada instalador; algunos no lo informan o lo informan mal.
+apps.programs.help = La misma lista que «Aplicaciones instaladas» de Configuración. Al pulsar «Desinstalar» se abre el desinstalador oficial de ese programa, como haría Windows: TURBiX no borra archivos por su cuenta.\n\nEl tamaño es el que declara cada instalador, algunos no lo informan o lo informan mal.
 apps.programs.search = Buscar programa o fabricante
 apps.programs.uninstall = Desinstalar
 apps.programs.loading = Buscando programas…
@@ -101,7 +101,7 @@ apps.app.mixedReality.summary = Solo sirve con gafas de realidad virtual de Wind
 apps.app.mixedReality.help = Configura las gafas de realidad mixta de Windows (un producto ya descontinuado). Sin esas gafas no tiene uso.
 apps.app.viewer3d.name = Visor 3D
 apps.app.viewer3d.summary = Visor de modelos 3D.
-apps.app.viewer3d.help = Abre modelos 3D. Casi nadie la usa; se puede reinstalar desde la Tienda si hace falta.
+apps.app.viewer3d.help = Abre modelos 3D. Casi nadie la usa, se puede reinstalar desde la Tienda si hace falta.
 apps.app.print3d.name = Print 3D
 apps.app.print3d.summary = Prepara modelos para impresoras 3D.
 apps.app.print3d.help = Envía modelos a impresoras 3D.

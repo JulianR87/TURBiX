@@ -9,7 +9,7 @@ shell.help = Hilfe
 shell.status.help = Administratormodus: TURBiX hat die Berechtigungen, die Windows verlangt, um Systemeinstellungen zu ändern und temporäre Dateien zu löschen. Steht dort „Keine Administratorrechte“, schließen Sie TURBiX und öffnen Sie es erneut, wobei Sie die Windows-Abfrage bestätigen.\n\nNutzt kein Internet: TURBiX verbindet sich mit keinem Server. Es sendet keine Daten, hat keine Telemetrie und keine Werbung und lädt nichts herunter. Mit Ihrer Verbindung hat das nichts zu tun: Ihr Internet funktioniert ganz normal weiter.\n\nDarunter steht die installierte Version. Ihre Änderungen finden Sie unter „Neuigkeiten“.
 shell.busy.dontClose = Schließen Sie TURBiX nicht und schalten Sie den PC nicht aus, bis die Aufgabe abgeschlossen ist.
 shell.busyClose.title = Eine Aufgabe läuft noch
-shell.busyClose.text = TURBiX arbeitet gerade. Wenn Sie es jetzt schließen, könnte der PC in einem halbfertigen Zustand bleiben (zum Beispiel mit angehaltenen Windows-Diensten).\n\nBitte warten Sie, bis es fertig ist; danach lässt sich das Fenster sofort schließen.
+shell.busyClose.text = TURBiX arbeitet gerade. Wenn Sie es jetzt schließen, könnte der PC in einem halbfertigen Zustand bleiben (zum Beispiel mit angehaltenen Windows-Diensten).\n\nBitte warten Sie, bis es fertig ist, danach lässt sich das Fenster sofort schließen.
 
 # --- Darstellung
 theme.caption = DARSTELLUNG
@@ -89,7 +89,7 @@ main.quick.confirm.tweaks.one = TURBiX wendet {0} empfohlene Datenschutzeinstell
 main.quick.confirm.tweaks.other = TURBiX wendet die {0} empfohlenen Datenschutzeinstellungen an.
 main.quick.confirm.clean.one = Außerdem wird {0} Kategorie mit temporären Dateien und Cache bereinigt.
 main.quick.confirm.clean.other = Außerdem werden {0} Kategorien mit temporären Dateien und Cache bereinigt.
-main.quick.confirm.safe = Diese Optionen sind für jeden PC sicher: Windows Update, Defender und Ihre persönlichen Dateien bleiben unberührt. Die Einstellungen lassen sich unter „Wiederherstellen“ rückgängig machen; die gelöschten Dateien sind nur temporäre Dateien und Cache und lassen sich nicht wiederherstellen.
+main.quick.confirm.safe = Diese Optionen sind für jeden PC sicher: Windows Update, Defender und Ihre persönlichen Dateien bleiben unberührt. Die Einstellungen lassen sich unter „Wiederherstellen“ rückgängig machen, die gelöschten Dateien sind nur temporäre Dateien und Cache und lassen sich nicht wiederherstellen.
 main.quick.busy = Ihr PC wird optimiert
 main.quick.summary.privacy.one = Datenschutz: {0} Änderung angewendet.
 main.quick.summary.privacy.other = Datenschutz: {0} Änderungen angewendet.
@@ -170,7 +170,7 @@ about.data.requirements = VORAUSSETZUNGEN
 about.data.requirementsText = Windows 10 (ab 1607) oder 11, 32 oder 64 Bit. Verwendet .NET Framework 4.6.2+, das bereits in Windows enthalten ist: Sie müssen nichts installieren.
 about.data.openBackups = Sicherungen
 about.data.openLogs = Protokolle
-about.disclaimer = TURBiX wird „wie besehen“ und ohne Gewährleistung bereitgestellt. Microsoft, Windows, Edge, Office und Copilot sind Marken der Microsoft Corporation; TURBiX steht in keiner Verbindung zu Microsoft.
+about.disclaimer = TURBiX wird „wie besehen“ und ohne Gewährleistung bereitgestellt. Microsoft, Windows, Edge, Office und Copilot sind Marken der Microsoft Corporation, TURBiX steht in keiner Verbindung zu Microsoft.
 
 # --- Neuigkeiten
 whatsnew.subtitle = Die wichtigen Änderungen jeder Version. Sie verwenden {0}.
