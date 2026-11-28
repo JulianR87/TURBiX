@@ -4,6 +4,10 @@ Diese Datei wird in TURBiX auf der Seite „Neuigkeiten“ angezeigt. Jede Versi
 mit den wichtigen Änderungen in Kurzform. Jede Version beginnt mit
 `## X.Y.Z` (ohne Datum) und jede Änderung ist ein Punkt `- **Titel.** Kurze Beschreibung.`
 
+## 1.2.5
+
+- **Werte auch für Windows 11.** README und Website zeigen jetzt, was unter Windows 11 mit der vollständigen Optimierung gemessen wurde: Der Speicherverbrauch im Leerlauf sank um 22 %, die Prozesse um 14 % und die Dienste um 7 %. Es bleiben ungefähre Werte aus einer virtuellen Umgebung.
+
 ## 1.2.4
 
 - **Tests und Leistungswerte.** README und Website erklären jetzt, dass jede Version auf sauberen virtuellen Maschinen mit wenig Ressourcen getestet wird, und zeigen, was mit der vollständigen Optimierung gemessen wurde: Der Speicherverbrauch im Leerlauf sank um 31 %. Es sind ungefähre Werte aus einer virtuellen Umgebung.

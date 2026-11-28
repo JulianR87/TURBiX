@@ -4,6 +4,10 @@ Este arquivo aparece dentro do TURBiX, na seção “Novidades”. Cada versão 
 com as mudanças que importam, em poucas palavras. Cada versão começa com
 `## X.Y.Z` (sem data) e cada mudança é um item `- **Título.** Descrição curta.`
 
+## 1.2.5
+
+- **Números do Windows 11 também.** O README e o site agora mostram o que foi medido no Windows 11 com a otimização completa: a memória em repouso caiu 22 %, os processos 14 % e os serviços 7 %. Continuam sendo números aproximados de um ambiente virtual.
+
 ## 1.2.4
 
 - **Testes e números de desempenho.** O README e o site agora explicam que cada versão é testada em máquinas virtuais limpas com poucos recursos, e mostram o que foi medido com a otimização completa: a memória em repouso caiu 31 %. São números aproximados de um ambiente virtual.

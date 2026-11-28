@@ -4,6 +4,10 @@ This file is shown inside TURBiX, on the “What's new” page. Each version has
 with the changes that matter, kept short. Each version starts with
 `## X.Y.Z` (no date) and each change is a bullet `- **Title.** Short description.`
 
+## 1.2.5
+
+- **Figures for Windows 11 too.** The README and the website now show what was measured on Windows 11 with the full optimization: idle memory dropped 22%, processes 14% and services 7%. They are still approximate figures from a virtual environment.
+
 ## 1.2.4
 
 - **Testing and performance figures.** The README and the website now explain that every version is tried on clean virtual machines with few resources, and show what was measured with the full optimization: idle memory dropped 31%. These are approximate figures from a virtual environment.
