@@ -102,6 +102,13 @@ Primeiro ele **analisa** (somente leitura) e mostra quanto cada categoria ocupa,
 
 Ficam de fora, de propósito, os “truques” que quebram coisas ou não servem para nada: desligar os serviços do Xbox, o SysMain ou o arquivo de paginação, mudanças com `bcdedit` e qualquer coisa que enfraqueça a segurança.
 
+### Rede
+
+- **Tráfego.** Quais programas usam a rede e quanto baixam e enviam, ao vivo e no total, agrupados por programa. Cada «Host de serviço» diz qual serviço do Windows é. Conta só tráfego de rede real (o que não sai do próprio computador é ignorado) e precisa de permissões de administrador.
+- **Conexões.** Cada conexão TCP com seu programa, endereço e porta remotos, o serviço (HTTPS, DNS…), se vai para a Internet, a rede local ou este computador, e seu estado. Dá para fechar uma conexão com um clique (só IPv4). O programa pode abrir outra.
+- **Portas abertas.** Quem está escutando, e se só se acessa a partir deste computador ou está aberta à rede. As portas sensíveis (compartilhar arquivos, área de trabalho remota, bancos de dados…) são marcadas para revisão.
+- **Bloqueios.** Bloqueia um programa, um endereço IP ou uma porta com regras do Firewall do Windows, agrupadas em «TURBiX». Aparecem na aba Bloqueios e saem com «Desbloquear». O TURBiX não bloqueia componentes do Windows, a si mesmo, seu roteador nem seus servidores DNS, porque cortaria sua própria conexão. As regras continuam no Firewall mesmo se você desinstalar o TURBiX, então desbloqueie antes. Não usa a Internet: não resolve nomes de computadores.
+
 ### Aplicativos
 
 - **Aplicativos do Windows.** Remove os aplicativos pré-instalados de uma lista conhecida (jogos e aplicativos de propaganda, Paciência, Clipchamp, Notícias, Cortana, Skype…) com o gerenciador de pacotes do Windows, sem PowerShell. Nunca oferece a Loja, o Xbox, a Calculadora, o “Obter Ajuda” nem componentes do sistema. Isso não é desfeito em “Restaurar”: os aplicativos são reinstalados pela Microsoft Store.

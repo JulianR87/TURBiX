@@ -89,6 +89,7 @@ namespace Turbix
             else if (ReferenceEquals(sender, NavPrivacy)) Navigate("privacy");
             else if (ReferenceEquals(sender, NavCleanup)) Navigate("cleanup");
             else if (ReferenceEquals(sender, NavPerformance)) Navigate("performance");
+            else if (ReferenceEquals(sender, NavNetwork)) Navigate("network");
             else if (ReferenceEquals(sender, NavApps)) Navigate("apps");
             else if (ReferenceEquals(sender, NavHealth)) Navigate("health");
             else if (ReferenceEquals(sender, NavTools)) Navigate("tools");
@@ -119,6 +120,7 @@ namespace Turbix
                     case "privacy": view = new PrivacyView(); break;
                     case "cleanup": view = new CleanupView(); break;
                     case "performance": view = new PerformanceView(); break;
+                    case "network": view = new NetworkView(); break;
                     case "apps": view = new AppsView(); break;
                     case "health": view = new HealthView(); break;
                     case "tools": view = new ToolsView(); break;
@@ -144,6 +146,7 @@ namespace Turbix
                 case "privacy": nav = NavPrivacy; break;
                 case "cleanup": nav = NavCleanup; break;
                 case "performance": nav = NavPerformance; break;
+                case "network": nav = NavNetwork; break;
                 case "apps": nav = NavApps; break;
                 case "health": nav = NavHealth; break;
                 case "tools": nav = NavTools; break;
@@ -161,6 +164,7 @@ namespace Turbix
                 if (view is PerformanceView perf) perf.ShowTab(tab);
                 else if (view is ToolsView tools) tools.ShowTab(tab);
                 else if (view is AppsView apps) apps.ShowTab(tab);
+                else if (view is NetworkView network) network.ShowTab(tab);
             }
         }
 
@@ -418,6 +422,7 @@ namespace Turbix
                     SaveRender(Path.Combine(folder, page + ".png"));
                 }
                 await RenderPerformanceTabs(folder, "");
+                await RenderNetworkTabs(folder, "");
 
                 // Las mismas páginas con la paleta clara.
                 ThemeManager.Preview(ThemeMode.Light);
@@ -428,12 +433,26 @@ namespace Turbix
                     SaveRender(Path.Combine(folder, page + "-light.png"));
                 }
                 await RenderPerformanceTabs(folder, "-light");
+                await RenderNetworkTabs(folder, "-light");
             }
             catch (Exception ex)
             {
                 File.WriteAllText(Path.Combine(folder, "error.txt"), ex.ToString());
             }
             Application.Current.Shutdown();
+        }
+
+        private async Task RenderNetworkTabs(string folder, string suffix)
+        {
+            Navigate("network");
+            var view = (NetworkView)_pages["network"];
+            foreach (var tab in new[] { "traffic", "connections", "ports", "blocks" })
+            {
+                view.ShowTab(tab);
+                // Tráfico necesita dos tomas para calcular las velocidades.
+                await Task.Delay(tab == "traffic" ? 4000 : 1800);
+                SaveRender(Path.Combine(folder, "network-" + tab + suffix + ".png"));
+            }
         }
 
         private async Task RenderPerformanceTabs(string folder, string suffix)

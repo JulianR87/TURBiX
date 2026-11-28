@@ -102,6 +102,13 @@ Zuerst wird **analysiert** (nur lesend) und angezeigt, wie viel jede Kategorie b
 
 Bewusst nicht dabei sind „Tricks“, die etwas kaputt machen oder nichts bewirken: die Xbox-Dienste, SysMain oder die Auslagerungsdatei abschalten, Änderungen mit `bcdedit` und alles, was die Sicherheit schwächt.
 
+### Netzwerk
+
+- **Datenverkehr.** Welche Programme das Netzwerk nutzen und wie viel sie herunter- und hochladen, live und insgesamt, nach Programm gruppiert. Jeder „Diensthost“ nennt den Windows-Dienst dahinter. Gezählt wird nur echter Netzwerkverkehr (Verkehr, der den PC nicht verlässt, wird ignoriert) und es sind Administratorrechte nötig.
+- **Verbindungen.** Jede TCP-Verbindung mit Programm, Remoteadresse und -port, dem Dienst (HTTPS, DNS …), dem Ziel (Internet, lokales Netzwerk oder dieser PC) und dem Zustand. Eine Verbindung lässt sich mit einem Klick schließen (nur IPv4). Das Programm kann eine neue öffnen.
+- **Offene Ports.** Wer lauscht, und ob der Port nur von diesem PC aus oder aus dem Netzwerk erreichbar ist. Heikle Ports (Dateifreigabe, Remotedesktop, Datenbanken …) sind zur Prüfung markiert.
+- **Sperren.** Sperrt ein Programm, eine IP-Adresse oder einen Port mit Regeln der Windows-Firewall, gruppiert unter „TURBiX“. Sie erscheinen im Tab Sperren und werden mit „Entsperren“ entfernt. TURBiX sperrt weder Windows-Komponenten noch sich selbst, Ihren Router oder Ihre DNS-Server, weil das Ihre eigene Verbindung kappen würde. Die Regeln bleiben in der Firewall, auch wenn Sie TURBiX deinstallieren, entsperren Sie also vorher. Es nutzt kein Internet: Hostnamen werden nicht aufgelöst.
+
 ### Apps
 
 - **Windows-Apps.** Entfernt vorinstallierte Apps aus einer bekannten Liste (Spiele und Werbe-Apps, Solitaire, Clipchamp, Nachrichten, Cortana, Skype…) über die Paketverwaltung von Windows, ohne PowerShell. Der Microsoft Store, Xbox, der Rechner, „Hilfe anfordern“ und Systemkomponenten werden nie angeboten. Das lässt sich nicht über „Wiederherstellen“ rückgängig machen: Die Apps werden aus dem Microsoft Store neu installiert.

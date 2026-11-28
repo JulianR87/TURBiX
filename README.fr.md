@@ -102,6 +102,13 @@ TURBiX commence par **analyser** (lecture seule) et affiche la place occupée pa
 
 Sont laissées de côté, volontairement, les « astuces » qui cassent des choses ou ne servent à rien : arrêter les services Xbox, SysMain ou le fichier d’échange, les modifications de `bcdedit` et tout ce qui affaiblit la sécurité.
 
+### Réseau
+
+- **Trafic.** Quels programmes utilisent le réseau et combien ils reçoivent et envoient, en direct et au total, regroupés par programme. Chaque « Hôte de service » indique de quel service Windows il s’agit. Seul le trafic réseau réel est compté (celui qui ne quitte pas le PC est ignoré) et les droits d’administrateur sont nécessaires.
+- **Connexions.** Chaque connexion TCP avec son programme, l’adresse et le port distants, le service (HTTPS, DNS…), si elle va vers Internet, le réseau local ou ce PC, et son état. On peut fermer une connexion d’un clic (IPv4 uniquement). Le programme peut en ouvrir une autre.
+- **Ports ouverts.** Qui écoute, et si le port n’est accessible que depuis ce PC ou ouvert au réseau. Les ports sensibles (partage de fichiers, bureau à distance, bases de données…) sont signalés à vérifier.
+- **Blocages.** Bloque un programme, une adresse IP ou un port avec des règles du Pare-feu Windows, regroupées sous « TURBiX ». Elles apparaissent dans l’onglet Blocages et se retirent avec « Débloquer ». TURBiX ne bloque pas les composants de Windows, lui-même, votre routeur ni vos serveurs DNS, car cela couperait votre propre connexion. Les règles restent dans le Pare-feu même si vous désinstallez TURBiX : débloquez donc avant. Il n’utilise pas Internet : il ne résout pas les noms d’hôtes.
+
 ### Applications
 
 - **Applications Windows.** Supprime les applications préinstallées d’une liste connue (jeux et applications promotionnels, Solitaire, Clipchamp, Actualités, Cortana, Skype…) avec le gestionnaire de packages de Windows, sans PowerShell. TURBiX ne propose jamais le Store, Xbox, la Calculatrice, « Obtenir de l’aide » ni les composants du système. Cela ne s’annule pas depuis « Restaurer » : elles se réinstallent depuis le Microsoft Store.

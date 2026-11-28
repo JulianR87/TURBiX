@@ -24,6 +24,7 @@ nav.changelog = Что нового
 nav.about = О TURBiX
 
 common.refresh = Обновить
+common.clearSearch = Очистить поиск
 common.refreshState = Обновить состояние
 common.quickSelect = Быстрый выбор
 common.recommended = Рекомендуемые

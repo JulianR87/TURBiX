@@ -102,6 +102,13 @@ Primero se **analiza** (solo lectura) y se muestra cuánto ocupa cada categoría
 
 Se dejan fuera a propósito los «trucos» que rompen cosas o no hacen nada: apagar los servicios de Xbox, SysMain o el archivo de paginación, cambios de `bcdedit` y cualquier cosa que debilite la seguridad.
 
+### Red
+
+- **Tráfico.** Qué programas usan la red y cuánto bajan y suben, en vivo y en total, agrupado por programa. Cada «Host de servicio» dice qué servicio de Windows es. Cuenta solo tráfico de red real (el que no sale del propio equipo se ignora) y necesita permisos de administrador.
+- **Conexiones.** Cada conexión TCP con su programa, dirección y puerto remotos, el servicio (HTTPS, DNS…), si va a Internet, a la red local o a este equipo, y su estado. Se puede cerrar una conexión con un clic (solo IPv4). El programa puede abrir otra.
+- **Puertos abiertos.** Quién escucha, y si solo se alcanza desde este equipo o está abierto a la red. Los puertos delicados (compartir archivos, escritorio remoto, bases de datos…) se marcan para revisar.
+- **Bloqueos.** Bloquea un programa, una dirección IP o un puerto con reglas del Firewall de Windows, agrupadas en «TURBiX». Aparecen en la pestaña Bloqueos y se quitan con «Desbloquear». TURBiX no bloquea componentes de Windows, a sí mismo, tu router ni tus servidores DNS, porque cortaría tu propia conexión. Las reglas siguen en el Firewall aunque desinstales TURBiX, así que desbloquea antes. No usa Internet: no resuelve nombres de equipos.
+
 ### Aplicaciones
 
 - **Apps de Windows.** Quita las apps preinstaladas de una lista conocida (juegos y apps de promoción, Solitario, Clipchamp, Noticias, Cortana, Skype…) con el administrador de paquetes de Windows, sin PowerShell. Nunca ofrece la Tienda, Xbox, la Calculadora, «Obtener ayuda» ni componentes del sistema. No se revierte desde «Restaurar»: se reinstalan desde Microsoft Store.

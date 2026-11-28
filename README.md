@@ -102,6 +102,13 @@ First it **scans** (read-only) and shows how much space each category takes up, 
 
 Left out on purpose are the “tricks” that break things or do nothing: turning off the Xbox services, SysMain or the page file, `bcdedit` changes and anything that weakens security.
 
+### Network
+
+- **Traffic.** Which programs use the network and how much they download and upload, live and in total, grouped by program. Each “Service Host” says which Windows service it is. It counts real network traffic only (traffic inside the PC itself is ignored) and needs administrator rights.
+- **Connections.** Every TCP connection with its program, remote address and port, the service (HTTPS, DNS…), whether it goes to the Internet, the local network or this PC, and its state. You can close a connection with one click (IPv4 only). The program may open another one.
+- **Open ports.** Who is listening, and whether it can only be reached from this PC or is open to the network. Sensitive ports (file sharing, remote desktop, databases…) are marked for review.
+- **Blocks.** Blocks a program, an IP address or a port with rules in Windows Firewall, grouped under “TURBiX”. They show up in the Blocks tab and can be removed with “Unblock”. TURBiX will not block Windows components, itself, your router or your DNS servers, because that would cut your own connection. The rules stay in Windows Firewall even if you uninstall TURBiX, so unblock first. It does not use the Internet: it does not look up host names.
+
 ### Apps
 
 - **Windows apps.** Removes preinstalled apps from a known list (promoted games and apps, Solitaire, Clipchamp, News, Cortana, Skype…) using the Windows package manager, without PowerShell. It never offers the Store, Xbox, Calculator, “Get Help” or system components. This can't be undone from “Restore”: the apps are reinstalled from Microsoft Store.

@@ -1,0 +1,512 @@
+<UserControl x:Class="Turbix.Views.NetworkView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:Turbix.Controls"
+             xmlns:l="clr-namespace:Turbix.Localization">
+  <UserControl.Resources>
+    <!-- Cabecera de columna que ordena al pulsarla -->
+    <Style x:Key="NetHeader" TargetType="Button">
+      <Setter Property="Foreground" Value="{DynamicResource TextDim}"/>
+      <Setter Property="FontSize" Value="11.5"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="FocusVisualStyle" Value="{StaticResource FocusRing}"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Border Background="Transparent" Padding="0,6">
+              <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center"/>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource Text}"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- Botón de icono que solo aparece al pasar el ratón por la fila (o con el teclado) -->
+    <Style x:Key="HoverIconButton" TargetType="Button" BasedOn="{StaticResource RowIconButton}">
+      <Setter Property="Visibility" Value="Hidden"/>
+      <Style.Triggers>
+        <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=ListBoxItem}}" Value="True">
+          <Setter Property="Visibility" Value="Visible"/>
+        </DataTrigger>
+        <Trigger Property="IsKeyboardFocused" Value="True">
+          <Setter Property="Visibility" Value="Visible"/>
+        </Trigger>
+        <Trigger Property="IsEnabled" Value="False">
+          <Setter Property="Opacity" Value="0.35"/>
+        </Trigger>
+      </Style.Triggers>
+    </Style>
+
+    <!-- Fila de las listas: sin foco, con resalte al pasar el ratón -->
+    <Style x:Key="NetRowItem" TargetType="ListBoxItem">
+      <Setter Property="Focusable" Value="False"/>
+      <Setter Property="Margin" Value="0,0,10,0"/>
+      <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="ListBoxItem">
+            <Border x:Name="Bd" Background="Transparent" CornerRadius="7" Padding="10,0" Height="48">
+              <ContentPresenter VerticalAlignment="Center"/>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource SurfaceHover}"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- Número de una columna: más tenue si no hay nada que mostrar, resaltado si el programa está moviendo datos -->
+    <Style x:Key="NetNumber" TargetType="TextBlock">
+      <Setter Property="FontSize" Value="12.5"/>
+      <Setter Property="Foreground" Value="{DynamicResource TextMuted}"/>
+      <Setter Property="HorizontalAlignment" Value="Right"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <!-- Columnas de la lista de programas -->
+    <GridLength x:Key="ColDown">88</GridLength>
+    <GridLength x:Key="ColUp">88</GridLength>
+    <GridLength x:Key="ColRx">84</GridLength>
+    <GridLength x:Key="ColTx">84</GridLength>
+    <GridLength x:Key="ColConn">56</GridLength>
+    <GridLength x:Key="ColAct">70</GridLength>
+  </UserControl.Resources>
+
+  <Grid Margin="40,8,40,0" DataContext="{Binding Network}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <StackPanel>
+      <TextBlock Text="{l:T nav.network}" Style="{StaticResource H1}"/>
+      <TextBlock Style="{StaticResource Muted}" Margin="0,4,0,14" TextWrapping="Wrap" Text="{l:T net.subtitle}"/>
+    </StackPanel>
+
+    <!-- Resumen: bajada, subida y estado -->
+    <Grid Grid.Row="1" Margin="0,0,0,12">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="12"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="12"/>
+        <ColumnDefinition Width="1.4*"/>
+      </Grid.ColumnDefinitions>
+
+      <Border Style="{StaticResource Card}" Padding="16,12">
+        <StackPanel>
+          <TextBlock Foreground="{DynamicResource TextDim}" FontSize="11.5" FontWeight="SemiBold">
+            <Run FontFamily="{StaticResource IconFont}" Text="&#xE896;"/><Run Text="  "/><Run Text="{l:T net.download}"/>
+          </TextBlock>
+          <TextBlock Text="{Binding DownText}" FontSize="22" FontWeight="SemiBold" Margin="0,4,0,0"/>
+          <TextBlock Text="{Binding DownTotal}" Style="{StaticResource Muted}" FontSize="12" Margin="0,2,0,0"/>
+        </StackPanel>
+      </Border>
+
+      <Border Grid.Column="2" Style="{StaticResource Card}" Padding="16,12">
+        <StackPanel>
+          <TextBlock Foreground="{DynamicResource TextDim}" FontSize="11.5" FontWeight="SemiBold">
+            <Run FontFamily="{StaticResource IconFont}" Text="&#xE898;"/><Run Text="  "/><Run Text="{l:T net.upload}"/>
+          </TextBlock>
+          <TextBlock Text="{Binding UpText}" FontSize="22" FontWeight="SemiBold" Margin="0,4,0,0"/>
+          <TextBlock Text="{Binding UpTotal}" Style="{StaticResource Muted}" FontSize="12" Margin="0,2,0,0"/>
+        </StackPanel>
+      </Border>
+
+      <Border Grid.Column="4" Style="{StaticResource Card}" Padding="16,12">
+        <StackPanel>
+          <TextBlock Foreground="{DynamicResource TextDim}" FontSize="11.5" FontWeight="SemiBold">
+            <Run FontFamily="{StaticResource IconFont}" Text="&#xE839;"/><Run Text="  "/><Run Text="{l:T net.status}"/>
+          </TextBlock>
+          <TextBlock Text="{Binding SumConns}" FontSize="13" Margin="0,5,0,0"/>
+          <TextBlock Text="{Binding SumPorts}" FontSize="13" Margin="0,1,0,0"/>
+          <TextBlock Text="{Binding SumExposed}" FontSize="13" Margin="0,1,0,0">
+            <TextBlock.Style>
+              <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{DynamicResource TextBody}"/>
+                <Style.Triggers>
+                  <DataTrigger Binding="{Binding HasExposed}" Value="True">
+                    <Setter Property="Foreground" Value="{DynamicResource Warning}"/>
+                  </DataTrigger>
+                </Style.Triggers>
+              </Style>
+            </TextBlock.Style>
+          </TextBlock>
+          <TextBlock Text="{Binding LinkText}" Style="{StaticResource Muted}" FontSize="12" Margin="0,4,0,0"/>
+        </StackPanel>
+      </Border>
+    </Grid>
+
+    <!-- Avisos -->
+    <StackPanel Grid.Row="2">
+      <Border Background="{DynamicResource WarningSoft}" CornerRadius="8" Padding="12,8" Margin="0,0,0,10"
+              Visibility="{Binding HasTrafficNotice, Converter={StaticResource BoolToVis}}">
+        <TextBlock Foreground="{DynamicResource Warning}" FontSize="12.5" TextWrapping="Wrap">
+          <Run FontFamily="{StaticResource IconFont}" Text="&#xE7BA;"/><Run Text="  "/><Run Text="{Binding TrafficNotice, Mode=OneWay}"/>
+        </TextBlock>
+      </Border>
+      <Border Background="{DynamicResource WarningSoft}" CornerRadius="8" Padding="12,8" Margin="0,0,0,10"
+              Visibility="{Binding FirewallOff, Converter={StaticResource BoolToVis}}">
+        <TextBlock Foreground="{DynamicResource Warning}" FontSize="12.5" TextWrapping="Wrap">
+          <Run FontFamily="{StaticResource IconFont}" Text="&#xE7BA;"/><Run Text="  "/><Run Text="{l:T net.firewallOff}"/>
+        </TextBlock>
+      </Border>
+    </StackPanel>
+
+    <!-- Pestañas y búsqueda: la búsqueda se encoge si falta espacio -->
+    <Grid Grid.Row="3" Margin="0,0,0,10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <Border Background="{DynamicResource Surface2}" BorderBrush="{DynamicResource Stroke}" BorderThickness="1"
+              CornerRadius="10" Padding="3" HorizontalAlignment="Left">
+        <StackPanel Orientation="Horizontal">
+          <RadioButton x:Name="TabTrafficButton" Style="{StaticResource SegmentItem}" GroupName="NetTab" Height="34" FontSize="13"
+                       Padding="12,0" Tag="&#xE9D9;" Content="{l:T net.tab.traffic}" IsChecked="True" Checked="OnTab"/>
+          <RadioButton x:Name="TabConnectionsButton" Style="{StaticResource SegmentItem}" GroupName="NetTab" Height="34" FontSize="13"
+                       Padding="12,0" Tag="&#xE71B;" Content="{l:T net.tab.connections}" Checked="OnTab"/>
+          <RadioButton x:Name="TabPortsButton" Style="{StaticResource SegmentItem}" GroupName="NetTab" Height="34" FontSize="13"
+                       Padding="12,0" Tag="&#xE839;" Content="{l:T net.tab.ports}" Checked="OnTab"/>
+          <RadioButton x:Name="TabBlocksButton" Style="{StaticResource SegmentItem}" GroupName="NetTab" Height="34" FontSize="13"
+                       Padding="12,0" Tag="&#xEA39;" Content="{l:T net.tab.blocks}" Checked="OnTab"/>
+        </StackPanel>
+      </Border>
+      <TextBox Grid.Column="1" Style="{StaticResource SearchBox}" MaxWidth="280" MinWidth="130" Height="34"
+               HorizontalAlignment="Right" VerticalAlignment="Center" Margin="12,0,0,0"
+               Tag="{l:T net.search}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged, Delay=150}"/>
+      <c:HelpTip x:Name="TabHelp" Grid.Column="2" Margin="10,0,0,0" VerticalAlignment="Center"/>
+    </Grid>
+
+    <!-- ============================================================ Tráfico por programa -->
+    <Grid x:Name="TabTraffic" Grid.Row="4" Margin="0,0,0,16">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <Border BorderBrush="{DynamicResource Stroke}" BorderThickness="0,0,0,1" Padding="10,0,20,0">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="{StaticResource ColDown}"/>
+            <ColumnDefinition Width="{StaticResource ColUp}"/>
+            <ColumnDefinition Width="{StaticResource ColRx}"/>
+            <ColumnDefinition Width="{StaticResource ColTx}"/>
+            <ColumnDefinition Width="{StaticResource ColConn}"/>
+            <ColumnDefinition Width="{StaticResource ColAct}"/>
+          </Grid.ColumnDefinitions>
+          <Button Style="{StaticResource NetHeader}" HorizontalAlignment="Left" Command="{Binding SortCommand}" CommandParameter="apps.name">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Text="{l:T net.col.program}"/>
+              <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="6,0,0,0" Text="{Binding [apps.name]}"/>
+            </StackPanel>
+          </Button>
+          <Button Grid.Column="1" Style="{StaticResource NetHeader}" HorizontalContentAlignment="Right" Command="{Binding SortCommand}" CommandParameter="apps.down">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="0,0,6,0" Text="{Binding [apps.down]}"/>
+              <TextBlock Text="{l:T net.col.down}"/>
+            </StackPanel>
+          </Button>
+          <Button Grid.Column="2" Style="{StaticResource NetHeader}" HorizontalContentAlignment="Right" Command="{Binding SortCommand}" CommandParameter="apps.up">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="0,0,6,0" Text="{Binding [apps.up]}"/>
+              <TextBlock Text="{l:T net.col.up}"/>
+            </StackPanel>
+          </Button>
+          <Button Grid.Column="3" Style="{StaticResource NetHeader}" HorizontalContentAlignment="Right" Command="{Binding SortCommand}" CommandParameter="apps.rx">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="0,0,6,0" Text="{Binding [apps.rx]}"/>
+              <TextBlock Text="{l:T net.col.received}"/>
+            </StackPanel>
+          </Button>
+          <Button Grid.Column="4" Style="{StaticResource NetHeader}" HorizontalContentAlignment="Right" Command="{Binding SortCommand}" CommandParameter="apps.tx">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="0,0,6,0" Text="{Binding [apps.tx]}"/>
+              <TextBlock Text="{l:T net.col.sent}"/>
+            </StackPanel>
+          </Button>
+          <Button Grid.Column="5" Style="{StaticResource NetHeader}" HorizontalContentAlignment="Right" Command="{Binding SortCommand}" CommandParameter="apps.conns">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="0,0,6,0" Text="{Binding [apps.conns]}"/>
+              <TextBlock Text="{l:T net.col.conns}"/>
+            </StackPanel>
+          </Button>
+        </Grid>
+      </Border>
+      <ListBox x:Name="AppsList" Grid.Row="1" ItemsSource="{Binding Apps}" Padding="0,4,0,0" Margin="0,0,-10,0"
+               ItemContainerStyle="{StaticResource NetRowItem}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+               VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling"
+               MouseEnter="OnListEnter" MouseLeave="OnListLeave">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="{StaticResource ColDown}"/>
+                <ColumnDefinition Width="{StaticResource ColUp}"/>
+                <ColumnDefinition Width="{StaticResource ColRx}"/>
+                <ColumnDefinition Width="{StaticResource ColTx}"/>
+                <ColumnDefinition Width="{StaticResource ColConn}"/>
+                <ColumnDefinition Width="{StaticResource ColAct}"/>
+              </Grid.ColumnDefinitions>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="*"/>
+                  <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid Width="20" Height="20" Margin="0,0,10,0">
+                  <TextBlock Style="{StaticResource Icon}" Text="&#xE7EF;" FontSize="15" Foreground="{DynamicResource TextDim}"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Visibility="{Binding HasIcon, Converter={StaticResource BoolToVis}, ConverterParameter=invert}"/>
+                  <Image Source="{Binding Icon}" Width="20" Height="20" RenderOptions.BitmapScalingMode="HighQuality"
+                         Visibility="{Binding HasIcon, Converter={StaticResource BoolToVis}}"/>
+                </Grid>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                  <TextBlock Text="{Binding Title}" FontSize="13" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" ToolTip="{Binding Title}"/>
+                  <TextBlock Text="{Binding Subtitle}" FontSize="11.5" Foreground="{DynamicResource TextDim}" TextTrimming="CharacterEllipsis" Margin="0,1,0,0"/>
+                </StackPanel>
+                <Border Grid.Column="2" Style="{StaticResource Chip}" Background="{DynamicResource DangerSoft}" Margin="8,0,0,0" Padding="6,1"
+                        VerticalAlignment="Center" Visibility="{Binding IsBlocked, Converter={StaticResource BoolToVis}}">
+                  <TextBlock Text="{l:T net.blocked}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource Danger}"/>
+                </Border>
+              </Grid>
+              <TextBlock Grid.Column="1" Text="{Binding DownText}" Style="{StaticResource NetNumber}"/>
+              <TextBlock Grid.Column="2" Text="{Binding UpText}" Style="{StaticResource NetNumber}"/>
+              <TextBlock Grid.Column="3" Text="{Binding RxText}" Style="{StaticResource NetNumber}"/>
+              <TextBlock Grid.Column="4" Text="{Binding TxText}" Style="{StaticResource NetNumber}"/>
+              <TextBlock Grid.Column="5" Text="{Binding ConnText}" Style="{StaticResource NetNumber}"/>
+              <StackPanel Grid.Column="6" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Style="{StaticResource HoverIconButton}" Command="{Binding ConnectionsCommand}" ToolTip="{l:T net.viewConnections}">
+                  <TextBlock Style="{StaticResource Icon}" Text="&#xE71B;" FontSize="12"/>
+                </Button>
+                <Button Style="{StaticResource HoverIconButton}" Command="{Binding BlockCommand}" ToolTip="{Binding BlockTooltip}"
+                        ToolTipService.ShowOnDisabled="True">
+                  <TextBlock Style="{StaticResource Icon}" Text="&#xEA39;" FontSize="12"/>
+                </Button>
+              </StackPanel>
+            </Grid>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+      <TextBlock Grid.Row="1" Text="{l:T net.empty.apps}" Foreground="{DynamicResource TextDim}" FontSize="13"
+                 HorizontalAlignment="Center" Margin="0,40,0,0"
+                 Visibility="{Binding HasApps, Converter={StaticResource BoolToVis}, ConverterParameter=invert}"/>
+    </Grid>
+
+    <!-- ============================================================ Conexiones -->
+    <Grid x:Name="TabConnections" Grid.Row="4" Margin="0,0,0,16" Visibility="Collapsed">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <CheckBox FontSize="12" Margin="10,0,0,8" Content="{l:T net.showClosing}" IsChecked="{Binding ShowClosing, Mode=TwoWay}"/>
+      <Border Grid.Row="1" BorderBrush="{DynamicResource Stroke}" BorderThickness="0,0,0,1" Padding="10,0,20,0">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="104"/>
+            <ColumnDefinition Width="80"/>
+          </Grid.ColumnDefinitions>
+          <Button Style="{StaticResource NetHeader}" HorizontalAlignment="Left" Command="{Binding SortCommand}" CommandParameter="conns.process">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Text="{l:T net.col.program}"/>
+              <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="6,0,0,0" Text="{Binding [conns.process]}"/>
+            </StackPanel>
+          </Button>
+          <Button Grid.Column="1" Style="{StaticResource NetHeader}" HorizontalAlignment="Left" Command="{Binding SortCommand}" CommandParameter="conns.remote">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Text="{l:T net.col.remote}"/>
+              <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="6,0,0,0" Text="{Binding [conns.remote]}"/>
+            </StackPanel>
+          </Button>
+          <Button Grid.Column="2" Style="{StaticResource NetHeader}" HorizontalAlignment="Left" Command="{Binding SortCommand}" CommandParameter="conns.state">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Text="{l:T net.col.state}"/>
+              <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="6,0,0,0" Text="{Binding [conns.state]}"/>
+            </StackPanel>
+          </Button>
+        </Grid>
+      </Border>
+      <ListBox x:Name="ConnectionsList" Grid.Row="2" ItemsSource="{Binding Connections}" Padding="0,4,0,0" Margin="0,0,-10,0"
+               ItemContainerStyle="{StaticResource NetRowItem}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+               VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling"
+               MouseEnter="OnListEnter" MouseLeave="OnListLeave">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="104"/>
+                <ColumnDefinition Width="80"/>
+              </Grid.ColumnDefinitions>
+              <StackPanel VerticalAlignment="Center" Margin="0,0,10,0">
+                <TextBlock Text="{Binding Process}" FontSize="13" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" ToolTip="{Binding Process}"/>
+                <TextBlock Text="{Binding Detail}" FontSize="11.5" Foreground="{DynamicResource TextDim}" TextTrimming="CharacterEllipsis"
+                           ToolTip="{Binding Detail}" Margin="0,1,0,0"/>
+              </StackPanel>
+              <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10,0">
+                <TextBlock Text="{Binding Remote}" FontSize="13" TextTrimming="CharacterEllipsis" ToolTip="{Binding Remote}"/>
+                <TextBlock Text="{Binding RemoteDetail}" FontSize="11.5" Foreground="{DynamicResource TextDim}" TextTrimming="CharacterEllipsis" Margin="0,1,0,0"/>
+              </StackPanel>
+              <TextBlock Grid.Column="2" Text="{Binding State}" FontSize="12.5" Foreground="{DynamicResource TextMuted}" VerticalAlignment="Center"/>
+              <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Style="{StaticResource HoverIconButton}" Command="{Binding CloseCommand}" ToolTip="{Binding CloseTooltip}" ToolTipService.ShowOnDisabled="True">
+                  <TextBlock Style="{StaticResource Icon}" Text="&#xE711;" FontSize="11"/>
+                </Button>
+                <Button Style="{StaticResource HoverIconButton}" Command="{Binding BlockAddressCommand}" ToolTip="{Binding BlockAddressTooltip}" ToolTipService.ShowOnDisabled="True">
+                  <TextBlock Style="{StaticResource Icon}" Text="&#xEA39;" FontSize="12"/>
+                </Button>
+              </StackPanel>
+            </Grid>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+      <TextBlock Grid.Row="2" Text="{l:T net.empty.connections}" Foreground="{DynamicResource TextDim}" FontSize="13"
+                 HorizontalAlignment="Center" Margin="0,40,0,0"
+                 Visibility="{Binding HasConnections, Converter={StaticResource BoolToVis}, ConverterParameter=invert}"/>
+    </Grid>
+
+    <!-- ============================================================ Puertos abiertos -->
+    <Grid x:Name="TabPorts" Grid.Row="4" Margin="0,0,0,16" Visibility="Collapsed">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <Border BorderBrush="{DynamicResource Stroke}" BorderThickness="0,0,0,1" Padding="10,0,20,0">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="44"/>
+          </Grid.ColumnDefinitions>
+          <StackPanel Orientation="Horizontal">
+            <Button Style="{StaticResource NetHeader}" Command="{Binding SortCommand}" CommandParameter="ports.port">
+              <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{l:T net.col.port}"/>
+                <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="6,0,0,0" Text="{Binding [ports.port]}"/>
+              </StackPanel>
+            </Button>
+            <Button Style="{StaticResource NetHeader}" Margin="18,0,0,0" Command="{Binding SortCommand}" CommandParameter="ports.process">
+              <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{l:T net.col.program}"/>
+                <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="6,0,0,0" Text="{Binding [ports.process]}"/>
+              </StackPanel>
+            </Button>
+          </StackPanel>
+          <Button Grid.Column="1" Style="{StaticResource NetHeader}" HorizontalAlignment="Left" Command="{Binding SortCommand}" CommandParameter="ports.exposure">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Text="{l:T net.col.reach}"/>
+              <TextBlock Style="{StaticResource Icon}" FontSize="9" Margin="6,0,0,0" Text="{Binding [ports.exposure]}"/>
+            </StackPanel>
+          </Button>
+        </Grid>
+      </Border>
+      <ListBox x:Name="PortsList" Grid.Row="1" ItemsSource="{Binding Ports}" Padding="0,4,0,0" Margin="0,0,-10,0"
+               ItemContainerStyle="{StaticResource NetRowItem}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+               VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling"
+               MouseEnter="OnListEnter" MouseLeave="OnListLeave">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="44"/>
+              </Grid.ColumnDefinitions>
+              <StackPanel VerticalAlignment="Center" Margin="0,0,10,0">
+                <TextBlock Text="{Binding Process}" FontSize="13" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" ToolTip="{Binding Process}"/>
+                <TextBlock Text="{Binding Detail}" FontSize="11.5" Foreground="{DynamicResource TextDim}" TextTrimming="CharacterEllipsis" Margin="0,1,0,0"/>
+              </StackPanel>
+              <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Text="{Binding Exposure}" FontSize="12.5" VerticalAlignment="Center" TextTrimming="CharacterEllipsis">
+                  <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                      <Setter Property="Foreground" Value="{DynamicResource TextMuted}"/>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding Review}" Value="True">
+                          <Setter Property="Foreground" Value="{DynamicResource Warning}"/>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </TextBlock.Style>
+                </TextBlock>
+                <Border Style="{StaticResource Chip}" Background="{DynamicResource WarningSoft}" Margin="8,0,0,0" Padding="6,1" VerticalAlignment="Center"
+                        ToolTip="{l:T net.review.help}" Visibility="{Binding Review, Converter={StaticResource BoolToVis}}">
+                  <TextBlock Text="{l:T net.review}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource Warning}"/>
+                </Border>
+              </StackPanel>
+              <Button Grid.Column="2" HorizontalAlignment="Right" Style="{StaticResource HoverIconButton}" Command="{Binding BlockPortCommand}"
+                      ToolTip="{Binding BlockTooltip}" ToolTipService.ShowOnDisabled="True">
+                <TextBlock Style="{StaticResource Icon}" Text="&#xEA39;" FontSize="12"/>
+              </Button>
+            </Grid>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+      <TextBlock Grid.Row="1" Text="{l:T net.empty.ports}" Foreground="{DynamicResource TextDim}" FontSize="13"
+                 HorizontalAlignment="Center" Margin="0,40,0,0"
+                 Visibility="{Binding HasPorts, Converter={StaticResource BoolToVis}, ConverterParameter=invert}"/>
+    </Grid>
+
+    <!-- ============================================================ Bloqueos -->
+    <Grid x:Name="TabBlocks" Grid.Row="4" Margin="0,0,0,16" Visibility="Collapsed">
+      <Border Style="{StaticResource Card}" VerticalAlignment="Top" Padding="28"
+              Visibility="{Binding HasBlocks, Converter={StaticResource BoolToVis}, ConverterParameter=invert}">
+        <StackPanel HorizontalAlignment="Center" MaxWidth="520">
+          <TextBlock Style="{StaticResource Icon}" Text="&#xEA39;" FontSize="28" Foreground="{DynamicResource TextDim}" HorizontalAlignment="Center"/>
+          <TextBlock Text="{l:T net.empty.blocks}" Style="{StaticResource Muted}" TextAlignment="Center" TextWrapping="Wrap" Margin="0,12,0,0"/>
+        </StackPanel>
+      </Border>
+      <ScrollViewer VerticalScrollBarVisibility="Auto" Focusable="False" Padding="0,0,10,0" Margin="0,0,-10,0">
+        <ItemsControl ItemsSource="{Binding Blocks}" Focusable="False" Margin="0,0,0,20">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <Border Style="{StaticResource RowCard}" Cursor="Arrow">
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                  </Grid.ColumnDefinitions>
+                  <Border Style="{StaticResource IconTile}" Background="{DynamicResource DangerSoft}" Margin="0,0,14,0">
+                    <TextBlock Style="{StaticResource Icon}" Text="{Binding Glyph}" HorizontalAlignment="Center" Foreground="{DynamicResource Danger}"/>
+                  </Border>
+                  <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Title}" FontSize="14" FontWeight="SemiBold" TextTrimming="CharacterEllipsis"/>
+                    <TextBlock Text="{Binding Subtitle}" Style="{StaticResource Muted}" FontSize="12.5" Margin="0,2,0,0"
+                               TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" ToolTip="{Binding Subtitle}"/>
+                  </StackPanel>
+                  <TextBlock Grid.Column="2" Text="{Binding Directions}" FontSize="12" Foreground="{DynamicResource TextDim}" Margin="16,0,16,0" VerticalAlignment="Center"/>
+                  <Button Grid.Column="3" Style="{StaticResource PillButton}" Command="{Binding RemoveCommand}" Margin="0">
+                    <StackPanel Orientation="Horizontal">
+                      <TextBlock Style="{StaticResource Icon}" Text="&#xE785;" FontSize="12"/>
+                      <TextBlock Text="{l:T net.unblock}" Margin="8,0,0,0"/>
+                    </StackPanel>
+                  </Button>
+                </Grid>
+              </Border>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </ScrollViewer>
+    </Grid>
+  </Grid>
+</UserControl>

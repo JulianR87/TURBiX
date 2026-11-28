@@ -4,6 +4,10 @@ Este arquivo aparece dentro do TURBiX, na seção “Novidades”. Cada versão 
 com as mudanças que importam, em poucas palavras. Cada versão começa com
 `## X.Y.Z` (sem data) e cada mudança é um item `- **Título.** Descrição curta.`
 
+## 1.2.1
+
+- **Nova seção “Rede”.** Mostra quais programas usam a rede e quanto baixam e enviam, as conexões abertas (que você pode fechar) e as portas que esperam conexões de fora. Dali você pode bloquear um programa, um endereço ou uma porta com o Firewall do Windows e desfazer quando quiser na aba “Bloqueios”. Ela mede o tráfego só enquanto a seção está aberta e não usa a internet.
+
 ## 1.2.0
 
 - **Novo site do projeto.** O TURBiX agora tem uma página própria, em seis idiomas: https://julianr87.github.io/TURBiX/

@@ -4,6 +4,10 @@ Diese Datei wird in TURBiX auf der Seite „Neuigkeiten“ angezeigt. Jede Versi
 mit den wichtigen Änderungen in Kurzform. Jede Version beginnt mit
 `## X.Y.Z` (ohne Datum) und jede Änderung ist ein Punkt `- **Titel.** Kurze Beschreibung.`
 
+## 1.2.1
+
+- **Neuer Bereich „Netzwerk“.** Zeigt, welche Programme das Netzwerk nutzen und wie viel sie herunter- und hochladen, die offenen Verbindungen (die Sie schließen können) und die Ports, die auf Verbindungen von außen warten. Von dort aus sperren Sie ein Programm, eine Adresse oder einen Port mit der Windows-Firewall und machen es jederzeit auf der Registerkarte „Sperren“ rückgängig. Der Datenverkehr wird nur gemessen, solange der Bereich geöffnet ist, und es wird kein Internet verwendet.
+
 ## 1.2.0
 
 - **Neue Projektwebsite.** TURBiX hat jetzt eine eigene Seite, in sechs Sprachen: https://julianr87.github.io/TURBiX/

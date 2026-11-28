@@ -342,6 +342,7 @@ namespace Turbix
         protected override void OnExit(ExitEventArgs e)
         {
             TrayIcon.Dispose();
+            try { Turbix.ViewModels.NetworkViewModel.Shutdown(); } catch { }
             try { _showWait?.Unregister(null); _showSignal?.Dispose(); } catch { }
             try { _singleInstance?.ReleaseMutex(); } catch { }
             base.OnExit(e);

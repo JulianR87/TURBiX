@@ -84,6 +84,7 @@ namespace Turbix.ViewModels
         public ObservableCollection<BackupViewModel> Backups { get; } = new ObservableCollection<BackupViewModel>();
         public ObservableCollection<LogEntry> LogLines { get; } = new ObservableCollection<LogEntry>();
         public ProcessesViewModel Processes { get; } = new ProcessesViewModel();
+        public NetworkViewModel Network { get; } = new NetworkViewModel();
         public List<ChangelogRelease> Releases { get; } = Changelog.Load();
 
         public ICommand NavigateCommand { get; }

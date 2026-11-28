@@ -69,6 +69,7 @@
           <RadioButton x:Name="NavPrivacy" Style="{StaticResource NavItem}" Tag="&#xEA18;" Content="{l:T nav.privacy}" Checked="OnNav"/>
           <RadioButton x:Name="NavCleanup" Style="{StaticResource NavItem}" Tag="&#xEA99;" Content="{l:T nav.cleanup}" Checked="OnNav"/>
           <RadioButton x:Name="NavPerformance" Style="{StaticResource NavItem}" Tag="&#xEC4A;" Content="{l:T nav.performance}" Checked="OnNav"/>
+          <RadioButton x:Name="NavNetwork" Style="{StaticResource NavItem}" Tag="&#xE774;" Content="{l:T nav.network}" Checked="OnNav"/>
           <RadioButton x:Name="NavApps" Style="{StaticResource NavItem}" Tag="&#xE71D;" Content="{l:T nav.apps}" Checked="OnNav"/>
           <RadioButton x:Name="NavHealth" Style="{StaticResource NavItem}" Tag="&#xE95E;" Content="{l:T nav.health}" Checked="OnNav"/>
           <RadioButton x:Name="NavTools" Style="{StaticResource NavItem}" Tag="&#xE90F;" Content="{l:T nav.tools}" Checked="OnNav"/>
