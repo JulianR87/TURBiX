@@ -4,6 +4,10 @@ This file is shown inside TURBiX, on the “What's new” page. Each version has
 with the changes that matter, kept short. Each version starts with
 `## X.Y.Z` (no date) and each change is a bullet `- **Title.** Short description.`
 
+## 1.2.2
+
+- **Notice when uninstalling.** If TURBiX has network blocks in Windows Firewall, the uninstaller says so: they stay active until you remove them from the “Blocks” tab.
+
 ## 1.2.1
 
 - **New “Network” section.** Shows which programs use the network and how much they download and upload, the open connections (which you can close) and the ports waiting for connections from outside. From there you can block a program, an address or a port with Windows Firewall and undo it any time in the “Blocks” tab. It measures traffic only while the section is open and doesn't use the internet.

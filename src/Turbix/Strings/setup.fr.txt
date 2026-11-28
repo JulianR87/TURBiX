@@ -17,6 +17,7 @@ setup.error.title = Impossible d’installer TURBiX
 setup.error.text = Windows n’a pas permis de terminer l’installation.\n\n{0}
 uninstall.confirm.title = Désinstaller TURBiX ?
 uninstall.confirm.text = Le programme, ses raccourcis et ses préférences seront supprimés.\n\nLes modifications que TURBiX a apportées à Windows ne sont pas annulées par la désinstallation : pour revenir en arrière, annulez et utilisez d’abord la section « Restaurer ».\n\nLes sauvegardes et le journal d’activité sont conservés dans {0}.
+uninstall.confirm.blocks = Des blocages réseau de TURBiX existent dans le Pare-feu Windows et resteront actifs après la désinstallation. Pour les retirer, annulez et utilisez d’abord l’onglet « Blocages » de la section Réseau.
 uninstall.confirm.button = Désinstaller
 uninstall.done.title = TURBiX a été désinstallé
 uninstall.done.text = Les sauvegardes et le journal d’activité se trouvent toujours dans {0}. Vous pouvez supprimer ce dossier si vous n’en avez plus besoin.

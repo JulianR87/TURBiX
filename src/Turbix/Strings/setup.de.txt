@@ -17,6 +17,7 @@ setup.error.title = TURBiX konnte nicht installiert werden
 setup.error.text = Windows hat den Abschluss der Installation nicht zugelassen.\n\n{0}
 uninstall.confirm.title = TURBiX deinstallieren?
 uninstall.confirm.text = Das Programm, seine Verknüpfungen und seine Einstellungen werden entfernt.\n\nDie Änderungen, die TURBiX an Windows vorgenommen hat, werden beim Deinstallieren nicht rückgängig gemacht: Wenn Sie das möchten, brechen Sie ab und verwenden Sie zuerst den Bereich „Wiederherstellen“.\n\nSicherungen und Aktivitätsprotokoll bleiben in {0} erhalten.
+uninstall.confirm.blocks = In der Windows-Firewall gibt es Netzwerksperren von TURBiX, die nach der Deinstallation aktiv bleiben. Um sie zu entfernen, brechen Sie ab und nutzen Sie zuerst den Tab „Sperren“ im Bereich Netzwerk.
 uninstall.confirm.button = Deinstallieren
 uninstall.done.title = TURBiX wurde deinstalliert
 uninstall.done.text = Sicherungen und Aktivitätsprotokoll liegen weiterhin in {0}. Sie können diesen Ordner löschen, wenn Sie sie nicht mehr brauchen.

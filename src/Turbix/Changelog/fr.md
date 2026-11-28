@@ -4,6 +4,10 @@ Ce fichier s’affiche dans TURBiX, sur la page « Nouveautés ». Chaque vers
 avec les changements utiles résumés en quelques mots. Chaque version commence par
 `## X.Y.Z` (sans date) et chaque changement est une puce `- **Titre.** Courte description.`
 
+## 1.2.2
+
+- **Avertissement à la désinstallation.** Si TURBiX a des blocages réseau dans le Pare-feu Windows, le programme de désinstallation le signale : ils restent actifs tant que vous ne les retirez pas depuis l’onglet « Blocages ».
+
 ## 1.2.1
 
 - **Nouvelle section « Réseau ».** Elle montre quels programmes utilisent le réseau et combien ils reçoivent et envoient, les connexions ouvertes (que vous pouvez fermer) et les ports qui attendent des connexions de l’extérieur. Vous pouvez y bloquer un programme, une adresse ou un port avec le Pare-feu Windows et annuler quand vous voulez dans l’onglet « Blocages ». Elle ne mesure le trafic que lorsque la section est ouverte et n’utilise pas Internet.

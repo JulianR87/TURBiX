@@ -307,8 +307,10 @@ namespace Turbix
         /// <summary>«Turbix.exe --uninstall»: lo llama Windows desde Configuración › Aplicaciones.</summary>
         private static void RunUninstall()
         {
-            if (!Dialogs.Confirm(L.T("uninstall.confirm.title"), L.F("uninstall.confirm.text", AppPaths.Root),
-                                 L.T("uninstall.confirm.button"))) return;
+            string text = L.F("uninstall.confirm.text", AppPaths.Root);
+            string blockError;
+            if (FirewallOps.List(out blockError).Count > 0) text += "\n\n" + L.T("uninstall.confirm.blocks");
+            if (!Dialogs.Confirm(L.T("uninstall.confirm.title"), text, L.T("uninstall.confirm.button"))) return;
 
             // El Turbix abierto (quizá solo junto al reloj) tiene que cerrarse antes: su exe no se puede borrar.
             while (Installer.IsTurbixRunning())
