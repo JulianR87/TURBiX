@@ -69,6 +69,7 @@ O TURBiX é um programa gratuito e de código aberto para **Windows 10 e Windows
 - **Honesto.** Não promete milagre: se o problema é um disco velho ou pouca memória, ele avisa. Também não traz “truques” que quebram coisas.
 - **Não usa a Internet.** Não baixa nada, não envia dados, não tem contas nem propaganda.
 - **Não mexe na segurança.** O Windows Update, o Microsoft Defender, o SmartScreen e o firewall ficam como estão.
+- **Testado em máquinas virtuais limpas.** Cada versão é testada em um Windows 10 e 11 recém-instalados, com pouco hardware de propósito (2 núcleos e 2 GB de RAM) para ficar parecido com um computador modesto. Com a otimização completa aplicada, a memória em repouso caiu 31 % (de 1000 para 694 MB), os processos 28 % (de 88 para 63) e os serviços 18 % (de 97 para 80), e foi liberado 1,1 GB de disco. A inicialização quase não mudou. Os números são aproximados e vêm de um ambiente virtual, então podem ser melhores ou piores conforme o seu hardware. Em um PC físico costumam ser melhores, embora isso a gente não tenha medido.
 - **Seis idiomas**, modo claro e escuro, e um ícone ao lado do relógio com atalhos.
 
 ## O que ele faz

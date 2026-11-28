@@ -69,6 +69,7 @@ Es un único `TURBiX.exe`. Se puede usar sin instalar (también hay un instalado
 - **Honesto.** No promete milagros: si el problema es un disco viejo o poca memoria, lo dice. Tampoco incluye «trucos» que rompen cosas.
 - **No usa Internet.** No descarga nada, no envía datos, no tiene cuentas ni publicidad.
 - **No toca la seguridad.** Windows Update, Microsoft Defender, SmartScreen y el firewall quedan como están.
+- **Probado en máquinas virtuales limpias.** Cada versión se prueba en un Windows 10 y 11 recién instalados, con poco hardware a propósito (2 núcleos y 2 GB de RAM) para que se parezca a un equipo modesto. Con la optimización completa aplicada, la memoria en reposo bajó un 31 % (de 1000 a 694 MB), los procesos un 28 % (de 88 a 63) y los servicios un 18 % (de 97 a 80), y se liberó 1,1 GB de disco. El arranque casi no cambió. Son cifras aproximadas, sacadas de un entorno virtual, así que según tu hardware pueden salir mejores o peores. En una PC física suelen salir mejores, aunque eso no lo medimos.
 - **Seis idiomas**, modo claro y oscuro, y un icono junto al reloj con atajos.
 
 ## Qué hace

@@ -162,7 +162,8 @@ def body(lang, t):
         h.append('<article class="row%s"><div class="row-text"><h3>%s</h3><p>%s</p><ul class="ticks">%s</ul></div><figure>%s</figure></article>' % (
             " rev" if i % 2 else "", e(title), e(text), "".join("<li>%s</li>" % e(b) for b in bullets),
             img(lang, SHOTS[i], title)))
-    h.append('<p class="also">%s</p></div></section>' % e(t["also"]))
+    h.append('<p class="also">%s</p>' % e(t["also"]))
+    h.append('<p class="also">%s</p></div></section>' % e(t["tested"]))
     # Safety
     h.append('<section id="safety" class="safety"><div class="wrap safety-grid"><div><h2>%s</h2><p class="lead">%s</p><ul class="left-alone">%s</ul></div>' % (
         e(t["safety_h2"]), e(t["safety_lead"]), "".join("<li>%s</li>" % e(x) for x in t["never"])))

@@ -69,6 +69,7 @@ TURBiX ist eine einzige `TURBiX.exe`. Sie läuft ohne Installation (wer möchte,
 - **Ehrlich.** TURBiX verspricht keine Wunder: Liegt es an einer alten Festplatte oder an zu wenig Arbeitsspeicher, sagt es das. „Tricks“, die etwas kaputt machen, sind nicht dabei.
 - **Nutzt kein Internet.** TURBiX lädt nichts herunter, sendet keine Daten und kennt weder Konten noch Werbung.
 - **Die Sicherheit bleibt unberührt.** Windows Update, Microsoft Defender, SmartScreen und die Firewall bleiben, wie sie sind.
+- **Auf sauberen virtuellen Maschinen getestet.** Jede Version wird auf einem frisch installierten Windows 10 und 11 ausprobiert, mit absichtlich wenig Hardware (2 Kerne und 2 GB RAM), damit es einem bescheidenen PC ähnelt. Mit der vollständigen Optimierung sank der Speicherverbrauch im Leerlauf um 31 % (von 1000 auf 694 MB), die Prozesse um 28 % (von 88 auf 63) und die Dienste um 18 % (von 97 auf 80), und 1,1 GB Speicherplatz wurden frei. Der Start änderte sich kaum. Die Werte sind ungefähr und stammen aus einer virtuellen Umgebung, je nach Hardware können sie besser oder schlechter ausfallen. Auf einem physischen PC fallen sie meist besser aus, das haben wir aber nicht gemessen.
 - **Sechs Sprachen**, heller und dunkler Modus und ein Symbol neben der Uhr mit Schnellzugriffen.
 
 ## Was TURBiX macht

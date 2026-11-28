@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1">
-  <assemblyIdentity version="1.2.3.0" name="Turbix.app"/>
+  <assemblyIdentity version="1.2.4.0" name="Turbix.app"/>
 
   <!-- Solo para capturas de pantalla automáticas: no pide elevación. NO distribuir. -->
   <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">

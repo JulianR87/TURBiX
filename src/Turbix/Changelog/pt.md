@@ -4,6 +4,10 @@ Este arquivo aparece dentro do TURBiX, na seção “Novidades”. Cada versão 
 com as mudanças que importam, em poucas palavras. Cada versão começa com
 `## X.Y.Z` (sem data) e cada mudança é um item `- **Título.** Descrição curta.`
 
+## 1.2.4
+
+- **Testes e números de desempenho.** O README e o site agora explicam que cada versão é testada em máquinas virtuais limpas com poucos recursos, e mostram o que foi medido com a otimização completa: a memória em repouso caiu 31 %. São números aproximados de um ambiente virtual.
+
 ## 1.2.3
 
 - **Rede testada no Windows 11.** O tráfego por programa, as conexões e os bloqueios da seção «Rede» também foram verificados no Windows 11.
