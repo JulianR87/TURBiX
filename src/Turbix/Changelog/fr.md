@@ -4,6 +4,10 @@ Ce fichier s’affiche dans TURBiX, sur la page « Nouveautés ». Chaque vers
 avec les changements utiles résumés en quelques mots. Chaque version commence par
 `## X.Y.Z` (sans date) et chaque changement est une puce `- **Titre.** Courte description.`
 
+## 1.2.3
+
+- **Réseau testé sous Windows 11.** Le trafic par programme, les connexions et les blocages de la section « Réseau » ont aussi été vérifiés sous Windows 11.
+
 ## 1.2.2
 
 - **Avertissement à la désinstallation.** Si TURBiX a des blocages réseau dans le Pare-feu Windows, le programme de désinstallation le signale : ils restent actifs tant que vous ne les retirez pas depuis l’onglet « Blocages ».

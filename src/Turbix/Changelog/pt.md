@@ -4,6 +4,10 @@ Este arquivo aparece dentro do TURBiX, na seção “Novidades”. Cada versão 
 com as mudanças que importam, em poucas palavras. Cada versão começa com
 `## X.Y.Z` (sem data) e cada mudança é um item `- **Título.** Descrição curta.`
 
+## 1.2.3
+
+- **Rede testada no Windows 11.** O tráfego por programa, as conexões e os bloqueios da seção «Rede» também foram verificados no Windows 11.
+
 ## 1.2.2
 
 - **Aviso ao desinstalar.** Se o TURBiX tiver bloqueios de rede no Firewall do Windows, o desinstalador avisa: eles continuam ativos até você removê-los na aba «Bloqueios».

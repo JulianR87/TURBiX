@@ -4,6 +4,10 @@ Diese Datei wird in TURBiX auf der Seite „Neuigkeiten“ angezeigt. Jede Versi
 mit den wichtigen Änderungen in Kurzform. Jede Version beginnt mit
 `## X.Y.Z` (ohne Datum) und jede Änderung ist ein Punkt `- **Titel.** Kurze Beschreibung.`
 
+## 1.2.3
+
+- **Netzwerk unter Windows 11 getestet.** Datenverkehr pro Programm, Verbindungen und Sperren im Bereich „Netzwerk“ wurden auch unter Windows 11 geprüft.
+
 ## 1.2.2
 
 - **Hinweis beim Deinstallieren.** Hat TURBiX Netzwerksperren in der Windows-Firewall, weist die Deinstallation darauf hin: Sie bleiben aktiv, bis Sie sie im Tab „Sperren“ entfernen.

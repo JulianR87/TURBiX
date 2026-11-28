@@ -4,6 +4,10 @@ This file is shown inside TURBiX, on the “What's new” page. Each version has
 with the changes that matter, kept short. Each version starts with
 `## X.Y.Z` (no date) and each change is a bullet `- **Title.** Short description.`
 
+## 1.2.3
+
+- **Network tested on Windows 11.** Traffic by program, connections and blocks in the “Network” section were also checked on Windows 11.
+
 ## 1.2.2
 
 - **Notice when uninstalling.** If TURBiX has network blocks in Windows Firewall, the uninstaller says so: they stay active until you remove them from the “Blocks” tab.
